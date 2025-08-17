@@ -1,0 +1,35 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://c2yufxk26robk"]
+
+[ext_resource type="Texture2D" uid="uid://bro4ugnssbd4b" path="res://Assets/Sprites/Fighters/Stage 0/ToyAgumon.png" id="1_5r44n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw3d8"]
+atlas = ExtResource("1_5r44n")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmk4m"]
+atlas = ExtResource("1_5r44n")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fw3d8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmk4m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"magic",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"melee",
+"speed": 5.0
+}]

@@ -1,0 +1,35 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://dkcqm1o5rqcfp"]
+
+[ext_resource type="Texture2D" uid="uid://gi4p8j36mtyn" path="res://Assets/Sprites/Fighters/Stage 3/WarGreymon.png" id="1_ben53"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ry0gj"]
+atlas = ExtResource("1_ben53")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5lao"]
+atlas = ExtResource("1_ben53")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ry0gj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5lao")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"magic",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"melee",
+"speed": 5.0
+}]

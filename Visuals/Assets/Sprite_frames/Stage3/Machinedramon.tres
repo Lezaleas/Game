@@ -1,0 +1,35 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://cr23305pdryhu"]
+
+[ext_resource type="Texture2D" uid="uid://1fyogitrkfcd" path="res://Assets/Sprites/Fighters/Stage 3/Mugendramon.png" id="1_11vb3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2d8f"]
+atlas = ExtResource("1_11vb3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sroor"]
+atlas = ExtResource("1_11vb3")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2d8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sroor")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"magic",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"melee",
+"speed": 5.0
+}]
