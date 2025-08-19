@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmba3bkmc4sep"
-path="res://.godot/imported/Gomamon.png-887b1ad60429b61f159e46e59a1237eb.ctex"
+path="res://.godot/imported/Gomamon.png-9cf3aaa0bc97068176f14b9099fc56e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage 0/Gomamon.png"
-dest_files=["res://.godot/imported/Gomamon.png-887b1ad60429b61f159e46e59a1237eb.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage 0/Gomamon.png"
+dest_files=["res://.godot/imported/Gomamon.png-9cf3aaa0bc97068176f14b9099fc56e0.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bd4jol38t4jgy"
-path="res://.godot/imported/Monzaemon.png-e780a4382f8427c85a38e239e9fd48b6.ctex"
+path="res://.godot/imported/Monzaemon.png-d51eb59b8e394311d3520a1a61cdac49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage2/Monzaemon.png"
-dest_files=["res://.godot/imported/Monzaemon.png-e780a4382f8427c85a38e239e9fd48b6.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage2/Monzaemon.png"
+dest_files=["res://.godot/imported/Monzaemon.png-d51eb59b8e394311d3520a1a61cdac49.ctex"]
 
 [params]
 

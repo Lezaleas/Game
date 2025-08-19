@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btmtigptn0av7"
-path="res://.godot/imported/Piccolomon.png-b8b0aa9c4498049cf71ddfd1e7741637.ctex"
+path="res://.godot/imported/Piccolomon.png-15066b7b178d9df718039fe6dfa9b1fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage2/Piccolomon.png"
-dest_files=["res://.godot/imported/Piccolomon.png-b8b0aa9c4498049cf71ddfd1e7741637.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage2/Piccolomon.png"
+dest_files=["res://.godot/imported/Piccolomon.png-15066b7b178d9df718039fe6dfa9b1fd.ctex"]
 
 [params]
 

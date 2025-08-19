@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4mlmm4dpk8nj"
-path="res://.godot/imported/Togemon.png-a5e0cec1748a4e10f68b3e33b0dba14e.ctex"
+path="res://.godot/imported/Togemon.png-345e3fb51914c9529741cd355e8086ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage 1/Togemon.png"
-dest_files=["res://.godot/imported/Togemon.png-a5e0cec1748a4e10f68b3e33b0dba14e.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage 1/Togemon.png"
+dest_files=["res://.godot/imported/Togemon.png-345e3fb51914c9529741cd355e8086ab.ctex"]
 
 [params]
 

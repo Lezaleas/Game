@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://i433h2fndg6w"
-path="res://.godot/imported/SkullMammon.png-5c66a2134b86c8a7d90972782a42338b.ctex"
+path="res://.godot/imported/SkullMammon.png-23a0c8a18af1cf462a9bfc124e686759.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage 3/SkullMammon.png"
-dest_files=["res://.godot/imported/SkullMammon.png-5c66a2134b86c8a7d90972782a42338b.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage 3/SkullMammon.png"
+dest_files=["res://.godot/imported/SkullMammon.png-23a0c8a18af1cf462a9bfc124e686759.ctex"]
 
 [params]
 

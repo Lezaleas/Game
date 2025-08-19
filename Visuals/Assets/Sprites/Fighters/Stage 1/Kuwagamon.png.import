@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlqkqsqy2dmw"
-path="res://.godot/imported/Kuwagamon.png-cc1d6e9078863ac9b19bd8b1cd8fe894.ctex"
+path="res://.godot/imported/Kuwagamon.png-fb174cccc5366b307fde3cf7021e5a45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage 1/Kuwagamon.png"
-dest_files=["res://.godot/imported/Kuwagamon.png-cc1d6e9078863ac9b19bd8b1cd8fe894.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage 1/Kuwagamon.png"
+dest_files=["res://.godot/imported/Kuwagamon.png-fb174cccc5366b307fde3cf7021e5a45.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jlv8t4p7leoh"
-path="res://.godot/imported/Candmon.png-4fc57dd8abd7abbd67bedcbf602dfbd9.ctex"
+path="res://.godot/imported/Candmon.png-b6a757bfe0d76326582ee811433523dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage 0/Candmon.png"
-dest_files=["res://.godot/imported/Candmon.png-4fc57dd8abd7abbd67bedcbf602dfbd9.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage 0/Candmon.png"
+dest_files=["res://.godot/imported/Candmon.png-b6a757bfe0d76326582ee811433523dd.ctex"]
 
 [params]
 

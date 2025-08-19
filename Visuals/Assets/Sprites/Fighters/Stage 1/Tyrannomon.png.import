@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwbjiyxfis0iu"
-path="res://.godot/imported/Tyrannomon.png-40018fb49331ce741a671d163ca1adda.ctex"
+path="res://.godot/imported/Tyrannomon.png-4cc171f6e1923e6434e85b27c0ba7469.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage 1/Tyrannomon.png"
-dest_files=["res://.godot/imported/Tyrannomon.png-40018fb49331ce741a671d163ca1adda.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage 1/Tyrannomon.png"
+dest_files=["res://.godot/imported/Tyrannomon.png-4cc171f6e1923e6434e85b27c0ba7469.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvdqnfaeqpug5"
-path="res://.godot/imported/HolyAngemon.png-e77ca46702cecd52dce35d76892c2647.ctex"
+path="res://.godot/imported/HolyAngemon.png-5a456da880385345481f8d33ea08d2fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage2/HolyAngemon.png"
-dest_files=["res://.godot/imported/HolyAngemon.png-e77ca46702cecd52dce35d76892c2647.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage2/HolyAngemon.png"
+dest_files=["res://.godot/imported/HolyAngemon.png-5a456da880385345481f8d33ea08d2fc.ctex"]
 
 [params]
 

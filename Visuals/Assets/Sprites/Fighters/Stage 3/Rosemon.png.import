@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmobqp22misyg"
-path="res://.godot/imported/Rosemon.png-4b7adf8278fd64e4bfe79bf07b3d2d4b.ctex"
+path="res://.godot/imported/Rosemon.png-ddcf0fea3a42fab93d15d62efde54d73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage 3/Rosemon.png"
-dest_files=["res://.godot/imported/Rosemon.png-4b7adf8278fd64e4bfe79bf07b3d2d4b.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage 3/Rosemon.png"
+dest_files=["res://.godot/imported/Rosemon.png-ddcf0fea3a42fab93d15d62efde54d73.ctex"]
 
 [params]
 

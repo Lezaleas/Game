@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpuavjx0vxy0k"
-path="res://.godot/imported/Vademon.png-f0bfa069484878f6442e76027b73ec3e.ctex"
+path="res://.godot/imported/Vademon.png-3606cd998d82a656382bd6be72127cb7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage2/Vademon.png"
-dest_files=["res://.godot/imported/Vademon.png-f0bfa069484878f6442e76027b73ec3e.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage2/Vademon.png"
+dest_files=["res://.godot/imported/Vademon.png-3606cd998d82a656382bd6be72127cb7.ctex"]
 
 [params]
 

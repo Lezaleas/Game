@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://e0adru88md0t"
-path="res://.godot/imported/Kunemon.png-3803f7493b5773e686ec24368e3c399b.ctex"
+path="res://.godot/imported/Kunemon.png-870b2fc2df930ba64795b875ff6a126f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage 0/Kunemon.png"
-dest_files=["res://.godot/imported/Kunemon.png-3803f7493b5773e686ec24368e3c399b.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage 0/Kunemon.png"
+dest_files=["res://.godot/imported/Kunemon.png-870b2fc2df930ba64795b875ff6a126f.ctex"]
 
 [params]
 

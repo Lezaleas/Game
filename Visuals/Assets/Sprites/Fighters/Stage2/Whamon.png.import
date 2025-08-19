@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cedirw26pftgr"
-path="res://.godot/imported/Whamon.png-dad7ff43e89181b384813895f5f4486b.ctex"
+path="res://.godot/imported/Whamon.png-6301954b04abd3b0d3dfeccd4f07798b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage2/Whamon.png"
-dest_files=["res://.godot/imported/Whamon.png-dad7ff43e89181b384813895f5f4486b.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage2/Whamon.png"
+dest_files=["res://.godot/imported/Whamon.png-6301954b04abd3b0d3dfeccd4f07798b.ctex"]
 
 [params]
 

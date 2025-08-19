@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cewp121g3cnal"
-path="res://.godot/imported/MetalGarurumon.png-39529423b05025881afd07315f821db7.ctex"
+path="res://.godot/imported/MetalGarurumon.png-04d3ae057b9483f867bb0eb16048446a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage 3/MetalGarurumon.png"
-dest_files=["res://.godot/imported/MetalGarurumon.png-39529423b05025881afd07315f821db7.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage 3/MetalGarurumon.png"
+dest_files=["res://.godot/imported/MetalGarurumon.png-04d3ae057b9483f867bb0eb16048446a.ctex"]
 
 [params]
 

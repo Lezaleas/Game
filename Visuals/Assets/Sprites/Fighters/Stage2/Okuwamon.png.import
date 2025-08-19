@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btjeba0j4fkvo"
-path="res://.godot/imported/Okuwamon.png-bc182f04e7f7828dabafe5c91cc6e539.ctex"
+path="res://.godot/imported/Okuwamon.png-23dda14afc65ec41a7b83ed8f7394ec3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage2/Okuwamon.png"
-dest_files=["res://.godot/imported/Okuwamon.png-bc182f04e7f7828dabafe5c91cc6e539.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage2/Okuwamon.png"
+dest_files=["res://.godot/imported/Okuwamon.png-23dda14afc65ec41a7b83ed8f7394ec3.ctex"]
 
 [params]
 

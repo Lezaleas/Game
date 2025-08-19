@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://is8wvohstfsw"
-path="res://.godot/imported/AtlurKabuterimon_Red.png-56885a95da0edafdba2b70dae02d7157.ctex"
+path="res://.godot/imported/AtlurKabuterimon_Red.png-720837e09bc3df99b6ad73184ce2c2bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage2/AtlurKabuterimon_Red.png"
-dest_files=["res://.godot/imported/AtlurKabuterimon_Red.png-56885a95da0edafdba2b70dae02d7157.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage2/AtlurKabuterimon_Red.png"
+dest_files=["res://.godot/imported/AtlurKabuterimon_Red.png-720837e09bc3df99b6ad73184ce2c2bc.ctex"]
 
 [params]
 

@@ -1,0 +1,9 @@
+# Team Comps:
+Default:	A warrior, tank, mage and support
+Mage Storm: 4 mage with magical attack triggers
+Juggernaut: 1 carry warrior with supporting stamina restoration
+Swarm:		Tanks will swarm the enemy to deplete stamina and trigger losing clash effect
+Protector:	1 Big tank will intercept attacks
+Aggro:		Win as fast as possible
+Control:	Defend and scale
+Reflect:	Reflect attacks

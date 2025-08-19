@@ -11,8 +11,18 @@ config_version=5
 [application]
 
 config/name="Game"
+run/main_scene="res://Logic/BattleInstance.tscn"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameRules="*res://Data/Autoloads/GameRules.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [rendering]
 

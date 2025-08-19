@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vvr00288k2cu"
-path="res://.godot/imported/Devimon.png-977c3d7fd75581e7c1ea089e0f895e5a.ctex"
+path="res://.godot/imported/Devimon.png-92ac7c4a0f70d3f1697ec6721a923dfa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage 1/Devimon.png"
-dest_files=["res://.godot/imported/Devimon.png-977c3d7fd75581e7c1ea089e0f895e5a.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage 1/Devimon.png"
+dest_files=["res://.godot/imported/Devimon.png-92ac7c4a0f70d3f1697ec6721a923dfa.ctex"]
 
 [params]
 

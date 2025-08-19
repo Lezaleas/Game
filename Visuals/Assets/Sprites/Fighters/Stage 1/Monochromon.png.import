@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7fe8egnwb3nr"
-path="res://.godot/imported/Monochromon.png-2ef34b7024b9e3dd4f4f57bbe1f8190a.ctex"
+path="res://.godot/imported/Monochromon.png-c103abe50c8393ae1f829db803fc8099.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage 1/Monochromon.png"
-dest_files=["res://.godot/imported/Monochromon.png-2ef34b7024b9e3dd4f4f57bbe1f8190a.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage 1/Monochromon.png"
+dest_files=["res://.godot/imported/Monochromon.png-c103abe50c8393ae1f829db803fc8099.ctex"]
 
 [params]
 

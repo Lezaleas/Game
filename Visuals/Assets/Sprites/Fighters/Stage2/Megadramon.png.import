@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkv7kd38wba8o"
-path="res://.godot/imported/Megadramon.png-aa8045740c8a01dc67f7d3be2b55d17c.ctex"
+path="res://.godot/imported/Megadramon.png-cb7ba8b53c8fe7a0bf4f56bd9ae9d6fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage2/Megadramon.png"
-dest_files=["res://.godot/imported/Megadramon.png-aa8045740c8a01dc67f7d3be2b55d17c.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage2/Megadramon.png"
+dest_files=["res://.godot/imported/Megadramon.png-cb7ba8b53c8fe7a0bf4f56bd9ae9d6fb.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://g0bsbsjc2d3"
-path="res://.godot/imported/BlackWarGreymon.png-bf8395f5cc156d83a313d8bc132b52ee.ctex"
+path="res://.godot/imported/BlackWarGreymon.png-5ead8a15b72386e96a0fc6c288e271de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage 3/BlackWarGreymon.png"
-dest_files=["res://.godot/imported/BlackWarGreymon.png-bf8395f5cc156d83a313d8bc132b52ee.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage 3/BlackWarGreymon.png"
+dest_files=["res://.godot/imported/BlackWarGreymon.png-5ead8a15b72386e96a0fc6c288e271de.ctex"]
 
 [params]
 

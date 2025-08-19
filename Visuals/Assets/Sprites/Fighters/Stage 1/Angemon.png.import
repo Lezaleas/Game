@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2xfe8npym1d5"
-path="res://.godot/imported/Angemon.png-796f55cba03b9b6a0f9fb9d00c9e0a96.ctex"
+path="res://.godot/imported/Angemon.png-78dafa943a5e6c1fe7940c31703767d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage 1/Angemon.png"
-dest_files=["res://.godot/imported/Angemon.png-796f55cba03b9b6a0f9fb9d00c9e0a96.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage 1/Angemon.png"
+dest_files=["res://.godot/imported/Angemon.png-78dafa943a5e6c1fe7940c31703767d7.ctex"]
 
 [params]
 

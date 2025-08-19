@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drllk768sxo4l"
-path="res://.godot/imported/LadyDevimon.png-991d80d8fb05144e163b037edde40ecd.ctex"
+path="res://.godot/imported/LadyDevimon.png-572b9c125ebf81d99bf493906ef7d240.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage2/LadyDevimon.png"
-dest_files=["res://.godot/imported/LadyDevimon.png-991d80d8fb05144e163b037edde40ecd.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage2/LadyDevimon.png"
+dest_files=["res://.godot/imported/LadyDevimon.png-572b9c125ebf81d99bf493906ef7d240.ctex"]
 
 [params]
 

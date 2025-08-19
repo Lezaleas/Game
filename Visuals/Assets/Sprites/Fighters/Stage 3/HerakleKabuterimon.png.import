@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c750v40me3dp1"
-path="res://.godot/imported/HerakleKabuterimon.png-9bcb58e30bcbd9ec513edaa034427bd0.ctex"
+path="res://.godot/imported/HerakleKabuterimon.png-9877fc24454db8ad7f642a4efbb14646.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage 3/HerakleKabuterimon.png"
-dest_files=["res://.godot/imported/HerakleKabuterimon.png-9bcb58e30bcbd9ec513edaa034427bd0.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage 3/HerakleKabuterimon.png"
+dest_files=["res://.godot/imported/HerakleKabuterimon.png-9877fc24454db8ad7f642a4efbb14646.ctex"]
 
 [params]
 

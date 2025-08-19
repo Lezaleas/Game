@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://v5dua1gl47yu"
-path="res://.godot/imported/Plotmon.png-f5d143d8b336fde91ba94cbdbd5575ad.ctex"
+path="res://.godot/imported/Plotmon.png-8b47f43b51010198f5caf681809a3dec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage 0/Plotmon.png"
-dest_files=["res://.godot/imported/Plotmon.png-f5d143d8b336fde91ba94cbdbd5575ad.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage 0/Plotmon.png"
+dest_files=["res://.godot/imported/Plotmon.png-8b47f43b51010198f5caf681809a3dec.ctex"]
 
 [params]
 

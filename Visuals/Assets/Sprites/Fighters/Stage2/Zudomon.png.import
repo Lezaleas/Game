@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6yi83uiwo8ee"
-path="res://.godot/imported/Zudomon.png-39431a25400af99040d5292c459d78f4.ctex"
+path="res://.godot/imported/Zudomon.png-9431d55dd83913ff13cca0dd0ff49f49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage2/Zudomon.png"
-dest_files=["res://.godot/imported/Zudomon.png-39431a25400af99040d5292c459d78f4.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage2/Zudomon.png"
+dest_files=["res://.godot/imported/Zudomon.png-9431d55dd83913ff13cca0dd0ff49f49.ctex"]
 
 [params]
 

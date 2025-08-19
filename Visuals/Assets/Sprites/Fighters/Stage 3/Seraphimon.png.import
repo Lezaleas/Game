@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dscfndkv6imjg"
-path="res://.godot/imported/Seraphimon.png-81b620c761263141df229db60454ae51.ctex"
+path="res://.godot/imported/Seraphimon.png-ac231e5f36a2938d497f4a314e655a40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage 3/Seraphimon.png"
-dest_files=["res://.godot/imported/Seraphimon.png-81b620c761263141df229db60454ae51.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage 3/Seraphimon.png"
+dest_files=["res://.godot/imported/Seraphimon.png-ac231e5f36a2938d497f4a314e655a40.ctex"]
 
 [params]
 

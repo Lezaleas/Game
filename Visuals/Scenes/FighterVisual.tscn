@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmvt0j48vea0q"]
+
+[ext_resource type="Script" uid="uid://fuuryq7mgds7" path="res://Visuals/Scenes/FighterVisual.gd" id="1_35wtw"]
+
+[node name="root" type="Node2D"]
+script = ExtResource("1_35wtw")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dw2l1mkyn7l6i"
-path="res://.godot/imported/silver_frame_half_size.png-3a58bf2005463d03038bcc1d5bc904c0.ctex"
+path="res://.godot/imported/silver_frame_half_size.png-4fcfdded12feba78057bf54132b0537d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Common/silver_frame_half_size.png"
-dest_files=["res://.godot/imported/silver_frame_half_size.png-3a58bf2005463d03038bcc1d5bc904c0.ctex"]
+source_file="res://Visuals/Assets/Sprites/Common/silver_frame_half_size.png"
+dest_files=["res://.godot/imported/silver_frame_half_size.png-4fcfdded12feba78057bf54132b0537d.ctex"]
 
 [params]
 

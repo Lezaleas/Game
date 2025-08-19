@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3at3orsoolpv"
-path="res://.godot/imported/MetalSeadramon.png-ec8f24e50ee6c6408306406c3c017f77.ctex"
+path="res://.godot/imported/MetalSeadramon.png-e01c2007f9220e043a0d95ce178a9a29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage 3/MetalSeadramon.png"
-dest_files=["res://.godot/imported/MetalSeadramon.png-ec8f24e50ee6c6408306406c3c017f77.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage 3/MetalSeadramon.png"
+dest_files=["res://.godot/imported/MetalSeadramon.png-e01c2007f9220e043a0d95ce178a9a29.ctex"]
 
 [params]
 

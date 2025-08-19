@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://calve621gi2dp"
-path="res://.godot/imported/344052__reitanna__weird-hiccup.wav-5d231ff3c1a8dec453797f7cccfdf2f4.sample"
+path="res://.godot/imported/344052__reitanna__weird-hiccup.wav-7727d7a3d82465c17c495ddec705d287.sample"
 
 [deps]
 
-source_file="res://Assets/Sfx/344052__reitanna__weird-hiccup.wav"
-dest_files=["res://.godot/imported/344052__reitanna__weird-hiccup.wav-5d231ff3c1a8dec453797f7cccfdf2f4.sample"]
+source_file="res://Visuals/Assets/Sfx/344052__reitanna__weird-hiccup.wav"
+dest_files=["res://.godot/imported/344052__reitanna__weird-hiccup.wav-7727d7a3d82465c17c495ddec705d287.sample"]
 
 [params]
 

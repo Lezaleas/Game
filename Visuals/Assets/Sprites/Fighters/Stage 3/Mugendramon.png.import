@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1fyogitrkfcd"
-path="res://.godot/imported/Mugendramon.png-5d1f2afa28465b2f618a4c0f4c5419a9.ctex"
+path="res://.godot/imported/Mugendramon.png-2cab0534e9c0e621ddd3fafdbf554351.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage 3/Mugendramon.png"
-dest_files=["res://.godot/imported/Mugendramon.png-5d1f2afa28465b2f618a4c0f4c5419a9.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage 3/Mugendramon.png"
+dest_files=["res://.godot/imported/Mugendramon.png-2cab0534e9c0e621ddd3fafdbf554351.ctex"]
 
 [params]
 

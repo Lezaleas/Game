@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bx7om7tww7q1j"
-path="res://.godot/imported/Holydramon.png-6a09a07be7707bf5aec6ac4ae90b80b5.ctex"
+path="res://.godot/imported/Holydramon.png-c54b9c600bc5c4d1b14ab4f2b86ab2c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage 3/Holydramon.png"
-dest_files=["res://.godot/imported/Holydramon.png-6a09a07be7707bf5aec6ac4ae90b80b5.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage 3/Holydramon.png"
+dest_files=["res://.godot/imported/Holydramon.png-c54b9c600bc5c4d1b14ab4f2b86ab2c4.ctex"]
 
 [params]
 

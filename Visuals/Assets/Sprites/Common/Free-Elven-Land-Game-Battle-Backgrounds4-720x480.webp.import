@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://yokx64p4ufm8"
-path="res://.godot/imported/Free-Elven-Land-Game-Battle-Backgrounds4-720x480.webp-7839e24e25124571ee564b974b7d6d55.ctex"
+path="res://.godot/imported/Free-Elven-Land-Game-Battle-Backgrounds4-720x480.webp-ee1c5f6a5d220df49f7b7f1086b9f0d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Common/Free-Elven-Land-Game-Battle-Backgrounds4-720x480.webp"
-dest_files=["res://.godot/imported/Free-Elven-Land-Game-Battle-Backgrounds4-720x480.webp-7839e24e25124571ee564b974b7d6d55.ctex"]
+source_file="res://Visuals/Assets/Sprites/Common/Free-Elven-Land-Game-Battle-Backgrounds4-720x480.webp"
+dest_files=["res://.godot/imported/Free-Elven-Land-Game-Battle-Backgrounds4-720x480.webp-ee1c5f6a5d220df49f7b7f1086b9f0d0.ctex"]
 
 [params]
 

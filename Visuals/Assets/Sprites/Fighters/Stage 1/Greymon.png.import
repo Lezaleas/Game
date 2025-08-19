@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://r20osdn07tm7"
-path="res://.godot/imported/Greymon.png-bd0f4a89fcd125435f8f30966a4f6276.ctex"
+path="res://.godot/imported/Greymon.png-1942deba0156dfb1c31dc13dcbfb2ee1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage 1/Greymon.png"
-dest_files=["res://.godot/imported/Greymon.png-bd0f4a89fcd125435f8f30966a4f6276.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage 1/Greymon.png"
+dest_files=["res://.godot/imported/Greymon.png-1942deba0156dfb1c31dc13dcbfb2ee1.ctex"]
 
 [params]
 

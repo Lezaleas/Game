@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgdwk6socw86c"
-path="res://.godot/imported/Ogremon.png-8b85222673a7db10ca78f0db6c1901aa.ctex"
+path="res://.godot/imported/Ogremon.png-5ae9a06c9bc110f2794a2b5c35797f69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage 1/Ogremon.png"
-dest_files=["res://.godot/imported/Ogremon.png-8b85222673a7db10ca78f0db6c1901aa.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage 1/Ogremon.png"
+dest_files=["res://.godot/imported/Ogremon.png-5ae9a06c9bc110f2794a2b5c35797f69.ctex"]
 
 [params]
 

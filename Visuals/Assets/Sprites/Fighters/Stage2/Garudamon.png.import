@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbx7gjtrvabw6"
-path="res://.godot/imported/Garudamon.png-1de9c72192a83bf291b016e84ade2c9a.ctex"
+path="res://.godot/imported/Garudamon.png-1b4c8fadccfe4be802f93c007bf0309f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage2/Garudamon.png"
-dest_files=["res://.godot/imported/Garudamon.png-1de9c72192a83bf291b016e84ade2c9a.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage2/Garudamon.png"
+dest_files=["res://.godot/imported/Garudamon.png-1b4c8fadccfe4be802f93c007bf0309f.ctex"]
 
 [params]
 

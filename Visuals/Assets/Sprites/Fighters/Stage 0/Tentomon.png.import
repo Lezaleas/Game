@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://crsukc37d5i0w"
-path="res://.godot/imported/Tentomon.png-26c941d6ed8d14e79eea9a33fdee4b14.ctex"
+path="res://.godot/imported/Tentomon.png-0fd4597b736afe0d93d699f44cd31203.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fighters/Stage 0/Tentomon.png"
-dest_files=["res://.godot/imported/Tentomon.png-26c941d6ed8d14e79eea9a33fdee4b14.ctex"]
+source_file="res://Visuals/Assets/Sprites/Fighters/Stage 0/Tentomon.png"
+dest_files=["res://.godot/imported/Tentomon.png-0fd4597b736afe0d93d699f44cd31203.ctex"]
 
 [params]
 
