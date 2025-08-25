@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnu5dkcfse3mh"]
+
+[ext_resource type="Script" uid="uid://d0ocgfwqb4c63" path="res://Visuals/Battle/BattleView.gd" id="1_4myeb"]
+[ext_resource type="Texture2D" uid="uid://yokx64p4ufm8" path="res://Data/Assets/Sprites/Common/Free-Elven-Land-Game-Battle-Backgrounds4-720x480.webp" id="1_tb0xq"]
+[ext_resource type="PackedScene" uid="uid://bsjh8r2261kmu" path="res://Visuals/Battle/DebugOverlay.tscn" id="3_lsuix"]
+
+[node name="BattleArena" type="Node2D"]
+script = ExtResource("1_4myeb")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(2.667, 2.25)
+texture = ExtResource("1_tb0xq")
+
+[node name="DebugOverlay" parent="." instance=ExtResource("3_lsuix")]
+unique_name_in_owner = true
+offset_left = 1631.0
+offset_top = 15.0
+offset_right = 1903.0
+offset_bottom = 161.0
+size_flags_horizontal = 0

@@ -1,0 +1,63 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://8x0uyos5hkcl"]
+
+[ext_resource type="Texture2D" uid="uid://btjeba0j4fkvo" path="res://Data/Assets/Sprites/Fighters/Stage2/Okuwamon.png" id="1_lqi01"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23gng"]
+atlas = ExtResource("1_lqi01")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3p74"]
+atlas = ExtResource("1_lqi01")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bihs"]
+atlas = ExtResource("1_lqi01")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fdhf"]
+atlas = ExtResource("1_lqi01")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w14v8"]
+atlas = ExtResource("1_lqi01")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chepq"]
+atlas = ExtResource("1_lqi01")
+region = Rect2(0, 48, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23gng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3p74")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bihs")
+}],
+"loop": false,
+"name": &"magic",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fdhf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w14v8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chepq")
+}],
+"loop": false,
+"name": &"melee",
+"speed": 4.0
+}]

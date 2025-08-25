@@ -1,0 +1,63 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://hwf7lgqtamll"]
+
+[ext_resource type="Texture2D" uid="uid://dt1s88048kf88" path="res://Data/Assets/Sprites/Fighters/Stage2/MetalGreymon.png" id="1_y7vqx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73agq"]
+atlas = ExtResource("1_y7vqx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsqpy"]
+atlas = ExtResource("1_y7vqx")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ijac"]
+atlas = ExtResource("1_y7vqx")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x610o"]
+atlas = ExtResource("1_y7vqx")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1t5b"]
+atlas = ExtResource("1_y7vqx")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lcag"]
+atlas = ExtResource("1_y7vqx")
+region = Rect2(0, 48, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73agq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsqpy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ijac")
+}],
+"loop": false,
+"name": &"magic",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x610o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1t5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lcag")
+}],
+"loop": false,
+"name": &"melee",
+"speed": 4.0
+}]

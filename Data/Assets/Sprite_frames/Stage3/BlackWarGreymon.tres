@@ -1,0 +1,43 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://c3xdqk1omr5ui"]
+
+[ext_resource type="Texture2D" uid="uid://k172t5x1ygd4" path="res://Data/Assets/Sprites/Fighters/Stage 0/Agumon.png" id="1_15kjm"]
+[ext_resource type="Texture2D" uid="uid://g0bsbsjc2d3" path="res://Data/Assets/Sprites/Fighters/Stage 3/BlackWarGreymon.png" id="1_oro0f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44w0t"]
+atlas = ExtResource("1_oro0f")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2khm"]
+atlas = ExtResource("1_oro0f")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiqgv"]
+atlas = ExtResource("1_15kjm")
+region = Rect2(0, 16, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44w0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2khm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jiqgv")
+}],
+"loop": false,
+"name": &"magic",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"melee",
+"speed": 4.0
+}]
