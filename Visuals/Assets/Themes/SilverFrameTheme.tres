@@ -1,6 +1,0 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://i6imkx3dvcw6"]
-
-[ext_resource type="StyleBox" uid="uid://cpilgpx5faalt" path="res://Assets/Themes/SIlverFrameBox.tres" id="1_qw8gs"]
-
-[resource]
-Panel/styles/panel = ExtResource("1_qw8gs")

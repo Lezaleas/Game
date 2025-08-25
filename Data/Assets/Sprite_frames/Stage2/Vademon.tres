@@ -1,0 +1,35 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://cauacygtrimeo"]
+
+[ext_resource type="Texture2D" uid="uid://dpuavjx0vxy0k" path="res://Data/Assets/Sprites/Fighters/Stage2/Vademon.png" id="1_7o50q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8t0d"]
+atlas = ExtResource("1_7o50q")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnymk"]
+atlas = ExtResource("1_7o50q")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8t0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnymk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"magic",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"melee",
+"speed": 5.0
+}]

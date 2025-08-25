@@ -1,0 +1,43 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://bvhmu6egjijra"]
+
+[ext_resource type="Texture2D" uid="uid://lan5hiqfyurm" path="res://Data/Assets/Sprites/Fighters/Stage 1/Coelamon.png" id="1_40gj0"]
+[ext_resource type="Texture2D" uid="uid://k172t5x1ygd4" path="res://Data/Assets/Sprites/Fighters/Stage 0/Agumon.png" id="1_nj3ul"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fndpt"]
+atlas = ExtResource("1_40gj0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_200cr"]
+atlas = ExtResource("1_40gj0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiqgv"]
+atlas = ExtResource("1_nj3ul")
+region = Rect2(0, 16, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fndpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_200cr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jiqgv")
+}],
+"loop": false,
+"name": &"magic",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"melee",
+"speed": 4.0
+}]

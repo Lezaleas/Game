@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmvt0j48vea0q"]
+
+[ext_resource type="Script" uid="uid://fuuryq7mgds7" path="res://Visuals/Battle/FighterView.gd" id="1_35wtw"]
+[ext_resource type="SpriteFrames" uid="uid://c4cphr1o62d7i" path="res://Data/Assets/Sprite_frames/Stage1/Airdramon.tres" id="2_3rxlq"]
+
+[node name="FighterView" type="Node2D"]
+script = ExtResource("1_35wtw")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(3, 3)
+sprite_frames = ExtResource("2_3rxlq")

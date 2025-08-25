@@ -1,0 +1,35 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://clbewicg6i1fl"]
+
+[ext_resource type="Texture2D" uid="uid://bmobqp22misyg" path="res://Data/Assets/Sprites/Fighters/Stage 3/Rosemon.png" id="1_6dpnu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vylid"]
+atlas = ExtResource("1_6dpnu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vrde"]
+atlas = ExtResource("1_6dpnu")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vylid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vrde")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"magic",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"melee",
+"speed": 5.0
+}]

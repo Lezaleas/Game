@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://c6oxoj08a2rn7"]
+
+[ext_resource type="Script" uid="uid://du7lyudpykfj8" path="res://Logic/Battle/BattleInstance.gd" id="1_abcde"]
+[ext_resource type="PackedScene" uid="uid://cnu5dkcfse3mh" path="res://Visuals/Battle/BattleView.tscn" id="2_fghij"]
+[ext_resource type="Script" uid="uid://b1spw7yifmbk" path="res://Logic/Battle/TurnTimer.gd" id="3_jcy1f"]
+[ext_resource type="Script" uid="uid://q1uqjthv4whk" path="res://State/BattleState.gd" id="3_ne4v5"]
+[ext_resource type="Script" uid="uid://gs2lfxhvgime" path="res://Logic/Battle/InputHandler.gd" id="4_kgc7g"]
+[ext_resource type="Script" uid="uid://vqvik18lc3t3" path="res://Logic/Battle/BattleSimulator.gd" id="4_ubano"]
+[ext_resource type="Script" uid="uid://7cachb0lbyea" path="res://Logic/Battle/FighterLogic.gd" id="5_1rp4n"]
+
+[node name="BattleInstance" type="Node"]
+script = ExtResource("1_abcde")
+
+[node name="State" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_ne4v5")
+
+[node name="Simulator" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_ubano")
+
+[node name="Input" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_kgc7g")
+
+[node name="Fighter" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_1rp4n")
+
+[node name="View" parent="." instance=ExtResource("2_fghij")]
+unique_name_in_owner = true
+
+[node name="TurnTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_jcy1f")

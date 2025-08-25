@@ -1,8 +1,0 @@
-
-[gd_resource type="EditorScript" script_class="log_game_event" format=3]
-
-[ext_resource type="Script" path="res://Skills/log_game_event.gd"]
-
-[resource]
-script = ExtResource("res://Skills/log_game_event.gd")
-description = "Logs game events to a text file."
