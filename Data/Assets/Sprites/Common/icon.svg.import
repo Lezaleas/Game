@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:Data/Assets/Sprites/Common/icon.svg.import
-uid="uid://beopslxk3012y"
+uid="uid://dm5wleww1edl6"
 path="res://.godot/imported/icon.svg-880273eec5cbb942c7e89942821afab2.ctex"
-========
-uid="uid://ctx2u45lv5xd4"
-path="res://.godot/imported/Info.svg-d705744d5aba14e8a04e26ab5926844a.ctex"
->>>>>>>> 698f8f140189a352d3baabff09e9d867bade14c3:addons/GoLogger/Resources/icons/Info.svg.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:Data/Assets/Sprites/Common/icon.svg.import
 source_file="res://Data/Assets/Sprites/Common/icon.svg"
 dest_files=["res://.godot/imported/icon.svg-880273eec5cbb942c7e89942821afab2.ctex"]
-========
-source_file="res://addons/GoLogger/Resources/icons/Info.svg"
-dest_files=["res://.godot/imported/Info.svg-d705744d5aba14e8a04e26ab5926844a.ctex"]
->>>>>>>> 698f8f140189a352d3baabff09e9d867bade14c3:addons/GoLogger/Resources/icons/Info.svg.import
 
 [params]
 
