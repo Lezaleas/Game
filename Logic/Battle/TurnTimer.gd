@@ -1,15 +1,11 @@
 extends Timer
 class_name TurnTimer
 
-@export var turn_duration: float = 1
-
-func _ready() -> void:
-	# ChatGPT magic, don't touch
-	if not is_connected("timeout", Callable(self, "_on_timeout")):
-		connect("timeout", Callable(self, "_on_timeout"))
+@export var turn_duration: float = 0.2
 
 func on_battle_started() -> void:
-	wait_time = turn_duration / 60
+	connect("timeout", Callable(self, "_on_timeout"))
+	wait_time = turn_duration
 	start()
 
 func _on_timeout() -> void:
@@ -30,8 +26,11 @@ func set_game_speed(speed_multiplier: float) -> void:
 		if is_stopped():
 			_on_timeout()
 		else:
-			pause_timer(true)
+			stop()
 	else:
-		wait_time = turn_duration / speed_multiplier / 60
-		if is_stopped():
+		wait_time = turn_duration / speed_multiplier
+		if not is_stopped():
+			stop()
 			start() # Restart if it was paused and speed is changed
+		else:
+			start()

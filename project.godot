@@ -17,14 +17,16 @@ config/icon="res://Data/Assets/Sprites/Common/icon.svg"
 
 [autoload]
 
-GameRules="*res://Data/Autoloads/GameRules.gd"
+Defines="*res://Logic/Autoloads/Defines.gd"
 Log="*res://addons/GoLogger/Log.tscn"
 EventBus="*res://Logic/Autoloads/EventBus.gd"
+Situation="*res://Logic/Autoloads/Situation.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/stretch/mode="viewport"
 
 [editor_plugins]
 

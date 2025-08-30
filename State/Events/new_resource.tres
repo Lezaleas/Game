@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SkillExample" load_steps=2 format=3 uid="uid://bj7o5lda4empr"]
+
+[ext_resource type="Script" uid="uid://dweeer74mbljf" path="res://State/Events/SkillExample.gd" id="1_6ah4d"]
+
+[resource]
+script = ExtResource("1_6ah4d")
+priority = 0
+metadata/_custom_type_script = "uid://dweeer74mbljf"

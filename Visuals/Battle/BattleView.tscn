@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnu5dkcfse3mh"]
+[gd_scene load_steps=6 format=3 uid="uid://cnu5dkcfse3mh"]
 
 [ext_resource type="Script" uid="uid://d0ocgfwqb4c63" path="res://Visuals/Battle/BattleView.gd" id="1_4myeb"]
 [ext_resource type="Texture2D" uid="uid://yokx64p4ufm8" path="res://Data/Assets/Sprites/Common/Free-Elven-Land-Game-Battle-Backgrounds4-720x480.webp" id="1_tb0xq"]
 [ext_resource type="PackedScene" uid="uid://bsjh8r2261kmu" path="res://Visuals/Battle/DebugOverlay.tscn" id="3_lsuix"]
+[ext_resource type="PackedScene" uid="uid://hqgvprlvyci1" path="res://Visuals/BattleUI/ManaLabel.tscn" id="3_wyc7p"]
+[ext_resource type="PackedScene" uid="uid://dest1tbuiwekb" path="res://Visuals/BattleUI/FigterPanel.tscn" id="4_3piun"]
 
-[node name="BattleArena" type="Node2D"]
+[node name="BattleView" type="Node2D"]
 script = ExtResource("1_4myeb")
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -12,10 +14,71 @@ position = Vector2(960, 540)
 scale = Vector2(2.667, 2.25)
 texture = ExtResource("1_tb0xq")
 
+[node name="UI" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="TopPanel" type="Panel" parent="UI"]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="TeamPanel" type="Panel" parent="UI/TopPanel"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="ManaLabel" parent="UI/TopPanel/TeamPanel" instance=ExtResource("3_wyc7p")]
+layout_mode = 0
+
+[node name="BottomPanel" type="Panel" parent="UI"]
+anchors_preset = -1
+anchor_top = 0.62
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/BottomPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel0" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("4_3piun")]
+layout_mode = 2
+
+[node name="Panel1" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("4_3piun")]
+layout_mode = 2
+
+[node name="Panel2" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("4_3piun")]
+layout_mode = 2
+
+[node name="Panel3" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("4_3piun")]
+layout_mode = 2
+
+[node name="Panel4" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("4_3piun")]
+layout_mode = 2
+
+[node name="Panel5" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("4_3piun")]
+layout_mode = 2
+
+[node name="Panel6" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("4_3piun")]
+layout_mode = 2
+
+[node name="Panel7" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("4_3piun")]
+layout_mode = 2
+
 [node name="DebugOverlay" parent="." instance=ExtResource("3_lsuix")]
 unique_name_in_owner = true
-offset_left = 1631.0
-offset_top = 15.0
-offset_right = 1903.0
-offset_bottom = 161.0
+offset_left = 1645.0
+offset_top = 215.0
+offset_right = 1917.0
+offset_bottom = 361.0
 size_flags_horizontal = 0

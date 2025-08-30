@@ -1,19 +1,12 @@
 extends Node
-class_name FighterLogic
+class_name FighterZZHandler
 
 func walk_forward(fighter: FighterState) -> void:
-	var old_position_x = fighter.position_x
-	var new_position_x = fighter.position_x + fighter.agi * fighter.team_id * GameRules.MOVE_SPEED
-
-	var move_event = FighterMoveEvent.new()
-	move_event.is_cancellable = true
-	move_event.fighter = fighter
-	move_event.original_position_x = old_position_x
-	move_event.new_position_x = new_position_x
-
-	EventBus.emit("fighter_moving", move_event)
-
-	if not move_event.is_cancelled:
-		fighter.position_x = move_event.new_position_x
-	else:
-		Log.entry("Fighter %d movement cancelled by passive skill." % fighter.id)
+	var distance = fighter.attributes[3].current * fighter.parent.direction * Defines.MOVE_SPEED as float
+	#region Walk Event
+	var cmd_walk = CmdWalk.new(fighter, distance)
+	cmd_walk = Situation.skills.resolve(cmd_walk)
+	if cmd_walk.is_cancelled: return
+	distance = cmd_walk.distance
+	#endregion
+	fighter.position_x += distance
