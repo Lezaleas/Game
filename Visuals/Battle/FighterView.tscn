@@ -10,3 +10,4 @@ script = ExtResource("1_35wtw")
 unique_name_in_owner = true
 scale = Vector2(3, 3)
 sprite_frames = ExtResource("2_3rxlq")
+animation = &"damaged"

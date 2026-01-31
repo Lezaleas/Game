@@ -10,3 +10,9 @@ Reflect:	Reflect attacks
 
 I need skills that allow a non role fighter to fulfill a subrole, example:
 	intercept ultimate attacks for your allies. reduce their damage based on your power
+
+fighter:
+	fighter skill
+	skill1: weapon
+	skill2: armor
+	skill3: accesory

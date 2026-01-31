@@ -14,6 +14,8 @@ func _engage_range_detect():
 	blue_clasher = Situation.teams[0].get_rightmost_fighter()
 	red_clasher = Situation.teams[1].get_leftmost_fighter()
 	if (red_clasher.position_x - blue_clasher.position_x) <= Defines.CLASH_ENGAGE_RANGE:
+		blue_clasher.clashed = true
+		red_clasher.clashed = true
 		return true
 	return false
 
@@ -29,11 +31,21 @@ func _resolve_clash():
 	red_clasher.clash_fought += 1
 	var blue_clashing_strength = blue_clasher.attributes[0].current * blue_clasher.stamina as float
 	var red_clashing_strength = red_clasher.attributes[0].current * red_clasher.stamina as float
+	
+	EventBus.emit("battle_action_clash_started", {
+		"blue": blue_clasher,
+		"red": red_clasher,
+		"blue_str": blue_clashing_strength,
+		"red_str": red_clashing_strength
+	})
+	
 	if blue_clashing_strength > red_clashing_strength:
 		blue_clasher.clash_won += 1
+		blue_clasher.gain_stamina(-Defines.STAMINA_LOSS_VICTORY)
 		_cast_link_attacks(blue_clasher, red_clasher)
 	elif red_clashing_strength > blue_clashing_strength:
 		red_clasher.clash_won += 1
+		red_clasher.gain_stamina(-Defines.STAMINA_LOSS_VICTORY)
 		_cast_link_attacks(red_clasher, blue_clasher)
 	else:
 		_cast_link_attacks(blue_clasher, red_clasher)
@@ -49,8 +61,8 @@ func _cast_link_attacks(clash_winner: FighterState, defender: FighterState):
 	var clash_link_event = CmdClashLink.new(clash_winner, attackers, defender, damage_mult)
 	clash_link_event = Situation.skills.resolve(clash_link_event)
 	if clash_link_event.is_cancelled: return
-	attackers = clash_link_event.attackers
-	defender = clash_link_event.defender
+	attackers = clash_link_event.links
+	defender = clash_link_event.loser
 	damage_mult = clash_link_event.damage_mult
 	#endregion
 	for fighter in attackers:

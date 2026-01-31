@@ -4,8 +4,13 @@ class_name AttackHandler
 
 ## casts a magic attack from the caster to the targets in targetting type. target type choose allows
 ## a manual target in the third argument
-func cast(caster:FighterState, element:int, potency:float, target_type:Defines.TARGETING_TYPE, choose= null):
+func cast(caster: FighterState, element: int, potency: float, target_type: Defines.TARGETING_TYPE, choose = null):
 	var targets = _get_targets(caster, target_type, choose)
+	EventBus.emit("battle_action_cast", {
+		"caster": caster,
+		"targets": targets,
+		"element": element
+	})
 	for target in targets:
 		_apply_magic_damage(caster, target, element, potency)
 
@@ -36,7 +41,7 @@ func _get_targets(caster: FighterState, target_type: Defines.TARGETING_TYPE, cho
 			push_error("Unhandled targeting type: %s" % target_type)
 			return []
 
-func _apply_magic_damage(attacker:FighterState, defender:FighterState, element:int, potency:float) -> void:
+func _apply_magic_damage(attacker: FighterState, defender: FighterState, element: int, potency: float) -> void:
 	var at_mana_mult = attacker.parent.reservoirs[element].mult
 	var df_mana_mult = defender.parent.reservoirs[element].mult
 	var at_spi = attacker.attributes[1].current
@@ -50,7 +55,7 @@ func _apply_magic_damage(attacker:FighterState, defender:FighterState, element:i
 	#endregion
 	_apply_push(attacker, defender, damage)
 
-func _apply_push(attacker:FighterState , defender: FighterState, damage: float) -> void:
+func _apply_push(attacker: FighterState, defender: FighterState, damage: float) -> void:
 	defender.position_x -= defender.parent.direction * damage
 	attacker.dmg_del += damage
 	defender.dmg_rec += damage

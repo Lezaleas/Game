@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnu5dkcfse3mh"]
+[gd_scene load_steps=8 format=3 uid="uid://cnu5dkcfse3mh"]
 
 [ext_resource type="Script" uid="uid://d0ocgfwqb4c63" path="res://Visuals/Battle/BattleView.gd" id="1_4myeb"]
 [ext_resource type="Texture2D" uid="uid://yokx64p4ufm8" path="res://Data/Assets/Sprites/Common/Free-Elven-Land-Game-Battle-Backgrounds4-720x480.webp" id="1_tb0xq"]
 [ext_resource type="PackedScene" uid="uid://bsjh8r2261kmu" path="res://Visuals/Battle/DebugOverlay.tscn" id="3_lsuix"]
 [ext_resource type="PackedScene" uid="uid://hqgvprlvyci1" path="res://Visuals/BattleUI/ManaLabel.tscn" id="3_wyc7p"]
 [ext_resource type="PackedScene" uid="uid://dest1tbuiwekb" path="res://Visuals/BattleUI/FigterPanel.tscn" id="4_3piun"]
+[ext_resource type="PackedScene" uid="uid://gbsaxm7tkvjg" path="res://Visuals/Battle/ClashVisuals.tscn" id="6_8dxy3"]
+[ext_resource type="Script" uid="uid://2oanpg57jk47" path="res://Visuals/Battle/AttackVisuals.gd" id="7_jiex7"]
 
 [node name="BattleView" type="Node2D"]
 script = ExtResource("1_4myeb")
@@ -56,24 +58,31 @@ layout_mode = 2
 
 [node name="Panel1" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("4_3piun")]
 layout_mode = 2
+id = 1
 
 [node name="Panel2" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("4_3piun")]
 layout_mode = 2
+id = 2
 
 [node name="Panel3" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("4_3piun")]
 layout_mode = 2
+id = 3
 
 [node name="Panel4" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("4_3piun")]
 layout_mode = 2
+id = 4
 
 [node name="Panel5" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("4_3piun")]
 layout_mode = 2
+id = 5
 
 [node name="Panel6" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("4_3piun")]
 layout_mode = 2
+id = 6
 
 [node name="Panel7" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("4_3piun")]
 layout_mode = 2
+id = 7
 
 [node name="DebugOverlay" parent="." instance=ExtResource("3_lsuix")]
 unique_name_in_owner = true
@@ -82,3 +91,34 @@ offset_top = 215.0
 offset_right = 1917.0
 offset_bottom = 361.0
 size_flags_horizontal = 0
+
+[node name="ClashVisuals" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="ClashVisuals1" parent="ClashVisuals" instance=ExtResource("6_8dxy3")]
+unique_name_in_owner = true
+
+[node name="ClashVisuals2" parent="ClashVisuals" instance=ExtResource("6_8dxy3")]
+unique_name_in_owner = true
+
+[node name="ClashVisuals3" parent="ClashVisuals" instance=ExtResource("6_8dxy3")]
+unique_name_in_owner = true
+
+[node name="ClashVisuals4" parent="ClashVisuals" instance=ExtResource("6_8dxy3")]
+unique_name_in_owner = true
+
+[node name="ClashVisuals5" parent="ClashVisuals" instance=ExtResource("6_8dxy3")]
+unique_name_in_owner = true
+
+[node name="ClashVisuals6" parent="ClashVisuals" instance=ExtResource("6_8dxy3")]
+unique_name_in_owner = true
+
+[node name="ClashVisuals7" parent="ClashVisuals" instance=ExtResource("6_8dxy3")]
+unique_name_in_owner = true
+
+[node name="ClashVisuals8" parent="ClashVisuals" instance=ExtResource("6_8dxy3")]
+unique_name_in_owner = true
+
+[node name="AttackVisuals" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("7_jiex7")

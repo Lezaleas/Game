@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FighterData" load_steps=3 format=3 uid="uid://brtrkpaq1d21m"]
+
+[ext_resource type="Script" uid="uid://jedpr1lbisg8" path="res://State/Intermission/FighterIntermission.gd" id="1_eox23"]
+[ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Data/Tools/Skill.gd" id="2_mprdc"]
+
+[resource]
+script = ExtResource("1_eox23")
+skills = Array[ExtResource("2_mprdc")]([])
+metadata/_custom_type_script = "uid://jedpr1lbisg8"

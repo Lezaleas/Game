@@ -16,12 +16,18 @@ func on_turn_started():
 	# apply skills timed by turns
 	Situation.skills.resolve(CmdTurnStart.new())
 
+	for attribute in Situation.attributes:
+		attribute.update()
+
 	for reservoir in Situation.reservoirs:
 		reservoir.update_multiplier()
 
 	# walk all fighters forward
 	for fighter in Situation.fighters:
-		fighter_handler.walk_forward(fighter)
+		if not fighter.clashed:
+			fighter_handler.walk_forward(fighter)
+		fighter.gain_stamina(2)
+		fighter.clashed = false
 
 	# check for clashes and resolve them
 	clash_handler.process_clash()

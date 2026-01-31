@@ -1,11 +1,17 @@
 extends Node
 
+var player_team_data: Array[FighterData] = []
+var enemy_team_data: Array[FighterData] = []
+
+var skill_library: SkillLibrary = load("res://Data/Tools/SkillLibrary.tres")
+var attack_handler: AttackHandler
 var battle: BattleState
 var skills: SkillsState
 var teams: Array[TeamState]
 var fighters: Array[FighterState]
 var reservoirs: Array[ReservoirState]
 var attributes: Array[AttributeState]
+var game_speed := 1.0
 
 func new_state():
 	battle = BattleState.new()
@@ -19,7 +25,7 @@ func new_state():
 		for _d in range(4):
 			var _reservoir = _new_state_unit(ReservoirState, team, reservoirs, team.reservoirs)
 
-func _new_state_unit(type:GDScript, parent:Resource, directory_list:Array, parent_list:Array):
+func _new_state_unit(type: GDScript, parent: Resource, directory_list: Array, parent_list: Array):
 	var state_unit = type.new()
 	state_unit.id = len(directory_list)
 	state_unit.parent = parent
@@ -31,8 +37,8 @@ func _new_state_unit(type:GDScript, parent:Resource, directory_list:Array, paren
 func clear_state_generic():
 	# Iterate over all properties on this autoload
 	for prop in get_property_list():
-		var name = prop.name
-		var value = get(name)
+		var prop_name = prop.name
+		var value = get(prop_name)
 		
 		# Clear arrays
 		if typeof(value) == TYPE_ARRAY:
@@ -40,4 +46,4 @@ func clear_state_generic():
 		
 		# Nullify single Resource references
 		elif typeof(value) == TYPE_OBJECT and value is Resource:
-			set(name, null)
+			set(prop_name, null)

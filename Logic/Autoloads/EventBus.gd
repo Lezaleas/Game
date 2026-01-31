@@ -42,7 +42,7 @@ func unsubscribe(event_name: String, target: Object, method_name: String = "") -
 # Emit event
 func emit(event_name: String, data = null) -> void:
 	if has_user_signal(event_name):
-		if data:
+		if data != null:
 			emit_signal(event_name, data)
 		else:
 			emit_signal(event_name)
