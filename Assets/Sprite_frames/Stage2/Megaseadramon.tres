@@ -1,0 +1,63 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://dl63jus2ubxek"]
+
+[ext_resource type="Texture2D" uid="uid://dcmvro5l2b4ch" path="res://Assets/Sprites/Fighters/Stage2/MegaSeadramon.png" id="1_35n7o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j8k0"]
+atlas = ExtResource("1_35n7o")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7ykc"]
+atlas = ExtResource("1_35n7o")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vt6cc"]
+atlas = ExtResource("1_35n7o")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bq58y"]
+atlas = ExtResource("1_35n7o")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrf3i"]
+atlas = ExtResource("1_35n7o")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u34mr"]
+atlas = ExtResource("1_35n7o")
+region = Rect2(0, 48, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j8k0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7ykc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vt6cc")
+}],
+"loop": false,
+"name": &"magic",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bq58y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrf3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u34mr")
+}],
+"loop": false,
+"name": &"melee",
+"speed": 4.0
+}]

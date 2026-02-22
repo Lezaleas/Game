@@ -1,0 +1,156 @@
+[gd_resource type="Resource" script_class="SkillLibrary" load_steps=46 format=3 uid="uid://fh7a4rvl3x8r"]
+
+[ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Skill.gd" id="1_efh84"]
+[ext_resource type="Script" uid="uid://dckloly716b32" path="res://Data/Skills/Mana/ManaAllyDefeat.gd" id="2_m2kye"]
+[ext_resource type="Texture2D" uid="uid://4amsbikjwilc" path="res://Assets/Sprites/Common/ElementalIcons/Purple.tres" id="2_srntn"]
+[ext_resource type="Script" uid="uid://45f53mbnnbtw" path="res://Data/Skills/Mana/ManaAllyVictory.gd" id="3_celrc"]
+[ext_resource type="Script" uid="uid://ypk7nxuxtawq" path="res://Data/Skills/Mana/ManaAvoidClash.gd" id="4_1dreg"]
+[ext_resource type="Script" uid="uid://dvkqykqgpnu4s" path="res://Data/Skills/Mana/ManaDefeat.gd" id="5_x7ppg"]
+[ext_resource type="Script" uid="uid://b03ka11gm5cgf" path="res://Data/Skills/Mana/ManaFractionDamage.gd" id="6_olq2x"]
+[ext_resource type="Script" uid="uid://cv0xweuxkhew5" path="res://Data/Skills/Mana/ManaHighestDamage.gd" id="7_0d6y1"]
+[ext_resource type="Script" uid="uid://cvasohg8d21xc" path="res://Data/Skills/Mana/ManaVictory.gd" id="8_otxic"]
+[ext_resource type="Script" uid="uid://casq4to7m04ak" path="res://Data/Skills/Mana/ManaWalk.gd" id="9_qas0m"]
+[ext_resource type="Script" uid="uid://btin7qrrwssnf" path="res://Data/Skills/Defeat/Adrenaline.gd" id="10_6kcxb"]
+[ext_resource type="Script" uid="uid://is23djry48un" path="res://Data/Skills/Defeat/Anger.gd" id="11_2443o"]
+[ext_resource type="Script" uid="uid://dqkimwh8vsmux" path="res://Data/Skills/Tank/Block.gd" id="12_bgiu5"]
+[ext_resource type="Script" uid="uid://c6xb6lelea20o" path="res://Data/Skills/Victory/Charm.gd" id="13_rdfnj"]
+[ext_resource type="Script" uid="uid://btm3l64srn3x7" path="res://Data/Skills/Defeat/Counter.gd" id="14_r14h3"]
+[ext_resource type="Script" uid="uid://c5rnj2i8jb2d8" path="res://Data/Skills/Victory/Domination.gd" id="15_kew7s"]
+[ext_resource type="Script" uid="uid://e24dnhe84hsl" path="res://Data/Skills/Damage/Focus.gd" id="16_slirp"]
+[ext_resource type="Script" uid="uid://d38fietx7acqa" path="res://Data/Skills/Tank/FrostShield.gd" id="17_hogab"]
+[ext_resource type="Script" uid="uid://ctct8no6uy73u" path="res://Data/Skills/Defeat/Guerrilla.gd" id="18_qolxl"]
+[ext_resource type="Script" uid="uid://dqoodkaws0ckq" path="res://Data/Skills/Tank/Jump.gd" id="19_adx57"]
+[ext_resource type="Script" uid="uid://bqojr5tnge58i" path="res://Data/Skills/Cast/Reprisal.gd" id="20_11uds"]
+[ext_resource type="Script" uid="uid://x8vxdthkohvo" path="res://Data/Skills/Cast/ShadowCast.gd" id="21_hx4od"]
+[ext_resource type="Script" uid="uid://dekfa58b38ie" path="res://Data/Skills/Victory/Triumph.gd" id="22_u5xge"]
+[ext_resource type="Script" uid="uid://c04fwbcnyxhqd" path="res://Data/Libraries/SkillLibrary.gd" id="24_htyoo"]
+
+[sub_resource type="Resource" id="Resource_qtqic"]
+script = ExtResource("2_m2kye")
+skill_name = "ManaAllyDefeat"
+metadata/_custom_type_script = "uid://dckloly716b32"
+
+[sub_resource type="Resource" id="Resource_3wtbg"]
+script = ExtResource("3_celrc")
+skill_name = "ManaAllyVictory"
+metadata/_custom_type_script = "uid://45f53mbnnbtw"
+
+[sub_resource type="Resource" id="Resource_dedpl"]
+script = ExtResource("4_1dreg")
+skill_name = "ManaAvoidClash"
+metadata/_custom_type_script = "uid://ypk7nxuxtawq"
+
+[sub_resource type="Resource" id="Resource_biv72"]
+script = ExtResource("5_x7ppg")
+skill_name = "ManaDefeat"
+metadata/_custom_type_script = "uid://dvkqykqgpnu4s"
+
+[sub_resource type="Resource" id="Resource_lp03b"]
+script = ExtResource("6_olq2x")
+skill_name = "ManaFractionDamage"
+metadata/_custom_type_script = "uid://b03ka11gm5cgf"
+
+[sub_resource type="Resource" id="Resource_tfv33"]
+script = ExtResource("7_0d6y1")
+skill_name = "ManaHigestDamage"
+metadata/_custom_type_script = "uid://cv0xweuxkhew5"
+
+[sub_resource type="Resource" id="Resource_yrov8"]
+script = ExtResource("8_otxic")
+skill_name = "ManaVictory"
+metadata/_custom_type_script = "uid://cvasohg8d21xc"
+
+[sub_resource type="Resource" id="Resource_ct7pb"]
+script = ExtResource("9_qas0m")
+skill_name = "ManaWalk"
+metadata/_custom_type_script = "uid://casq4to7m04ak"
+
+[sub_resource type="Resource" id="Resource_lk2ag"]
+script = ExtResource("10_6kcxb")
+skill_name = "Adrenaline"
+description = "Recover all stamina when losing a clash"
+power = 100.0
+metadata/_custom_type_script = "uid://btin7qrrwssnf"
+
+[sub_resource type="Resource" id="Resource_xy2kw"]
+script = ExtResource("11_2443o")
+skill_name = "Anger"
+description = "When damaged, gain a stack. When clashing, convert all stacks into power"
+power = 1.0
+metadata/_custom_type_script = "uid://is23djry48un"
+
+[sub_resource type="Resource" id="Resource_rmkri"]
+script = ExtResource("12_bgiu5")
+skill_name = "Block"
+description = "Reduce damage received by 10"
+metadata/_custom_type_script = "uid://dqkimwh8vsmux"
+
+[sub_resource type="Resource" id="Resource_oei5b"]
+script = ExtResource("13_rdfnj")
+skill_name = "Charm"
+description = "When winning a clash, the loser gets attacked by his allies instead of your allies"
+metadata/_custom_type_script = "uid://c6xb6lelea20o"
+
+[sub_resource type="Resource" id="Resource_syygy"]
+script = ExtResource("14_r14h3")
+skill_name = "Counter"
+description = "When losing a clash, attack the victor"
+metadata/_custom_type_script = "uid://btm3l64srn3x7"
+
+[sub_resource type="Resource" id="Resource_s5foy"]
+script = ExtResource("15_kew7s")
+skill_name = "Domination"
+description = "Winning 2 clashes in a row reduces enemy mana"
+metadata/_custom_type_script = "uid://c5rnj2i8jb2d8"
+
+[sub_resource type="Resource" id="Resource_kjw0b"]
+script = ExtResource("16_slirp")
+skill_name = "Focus"
+description = "Every second not damaged, gain a stack. Lose all stacks when getting damaged. Stacks increase magic
+"
+metadata/_custom_type_script = "uid://e24dnhe84hsl"
+
+[sub_resource type="Resource" id="Resource_luc21"]
+script = ExtResource("17_hogab")
+skill_name = "Frost Shield"
+description = "Cannot be damaged for more than 500"
+metadata/_custom_type_script = "uid://d38fietx7acqa"
+
+[sub_resource type="Resource" id="Resource_8c7io"]
+script = ExtResource("18_qolxl")
+skill_name = "Guerrilla"
+description = "when losing a clash, the winner loses stamina
+"
+metadata/_custom_type_script = "uid://ctct8no6uy73u"
+
+[sub_resource type="Resource" id="Resource_mvmr3"]
+script = ExtResource("19_adx57")
+skill_name = "Jump"
+description = "jump every 10 turns
+"
+metadata/_custom_type_script = "uid://dqoodkaws0ckq"
+
+[sub_resource type="Resource" id="Resource_j2345"]
+script = ExtResource("20_11uds")
+skill_name = "Reprisal"
+description = "when ally loses a clash, attack the winner
+"
+metadata/_custom_type_script = "uid://bqojr5tnge58i"
+
+[sub_resource type="Resource" id="Resource_ey2dl"]
+script = ExtResource("21_hx4od")
+skill_name = "Shadow Cast"
+description = "cast an attack every 10 turns
+"
+metadata/_custom_type_script = "uid://x8vxdthkohvo"
+
+[sub_resource type="Resource" id="Resource_054xh"]
+script = ExtResource("22_u5xge")
+skill_name = "Triumph"
+description = "multiplies link damage by power when winning a clash"
+metadata/_custom_type_script = "uid://dekfa58b38ie"
+
+[resource]
+script = ExtResource("24_htyoo")
+regular_skills = Array[ExtResource("1_efh84")]([SubResource("Resource_lk2ag"), SubResource("Resource_xy2kw"), SubResource("Resource_rmkri"), SubResource("Resource_oei5b"), SubResource("Resource_syygy"), SubResource("Resource_s5foy"), SubResource("Resource_kjw0b"), SubResource("Resource_luc21"), SubResource("Resource_8c7io"), SubResource("Resource_mvmr3"), SubResource("Resource_j2345"), SubResource("Resource_ey2dl"), SubResource("Resource_054xh")])
+mana_skills = Array[ExtResource("1_efh84")]([SubResource("Resource_qtqic"), SubResource("Resource_3wtbg"), SubResource("Resource_dedpl"), SubResource("Resource_biv72"), SubResource("Resource_lp03b"), SubResource("Resource_tfv33"), SubResource("Resource_yrov8"), SubResource("Resource_ct7pb")])

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://hqgvprlvyci1"]
+
+[ext_resource type="Script" uid="uid://bidjqsf8731br" path="res://Battle/UI/ManaLabel.gd" id="1_yisic"]
+
+[node name="ManaLabel" type="RichTextLabel"]
+offset_right = 134.0
+offset_bottom = 23.0
+bbcode_enabled = true
+text = "[img]res://Assets/Sprites/Common/ElementalIcons/Black.tres[/img]2487"
+script = ExtResource("1_yisic")

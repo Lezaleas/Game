@@ -1,0 +1,35 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://3lj0bwvwr0pu"]
+
+[ext_resource type="Texture2D" uid="uid://0wblmkxxyqi2" path="res://Assets/Sprites/Fighters/Stage 3/SaberLeomon.png" id="1_2npmm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vmf2"]
+atlas = ExtResource("1_2npmm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dckl0"]
+atlas = ExtResource("1_2npmm")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vmf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dckl0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"magic",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"melee",
+"speed": 5.0
+}]

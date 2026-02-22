@@ -1,0 +1,43 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://dfya2w6b22oj"]
+
+[ext_resource type="Texture2D" uid="uid://c750v40me3dp1" path="res://Assets/Sprites/Fighters/Stage 3/HerakleKabuterimon.png" id="1_t2jqs"]
+[ext_resource type="Texture2D" uid="uid://k172t5x1ygd4" path="res://Assets/Sprites/Fighters/Stage 0/Agumon.png" id="1_wnytw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23lf6"]
+atlas = ExtResource("1_t2jqs")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0esa"]
+atlas = ExtResource("1_t2jqs")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiqgv"]
+atlas = ExtResource("1_wnytw")
+region = Rect2(0, 16, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23lf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0esa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jiqgv")
+}],
+"loop": false,
+"name": &"magic",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"melee",
+"speed": 4.0
+}]

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="IconLibrary" load_steps=3 format=3 uid="uid://pjhksr0dvwkr"]
+
+[ext_resource type="Script" uid="uid://b14h4xu6g2440" path="res://Data/Libraries/IconLibrary.gd" id="1_c1fvt"]
+[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="1_ld1fh"]
+
+[resource]
+script = ExtResource("1_c1fvt")
+default_icon = ExtResource("1_ld1fh")
+metadata/_custom_type_script = "uid://b14h4xu6g2440"

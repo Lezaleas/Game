@@ -1,0 +1,63 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://c3v720sljwui"]
+
+[ext_resource type="Texture2D" uid="uid://bykyi5le3yshf" path="res://Assets/Sprites/Fighters/Stage2/Phantomon.png" id="1_cxut3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7eo8"]
+atlas = ExtResource("1_cxut3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4bxm"]
+atlas = ExtResource("1_cxut3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5aff3"]
+atlas = ExtResource("1_cxut3")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cld8"]
+atlas = ExtResource("1_cxut3")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbyur"]
+atlas = ExtResource("1_cxut3")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qip0d"]
+atlas = ExtResource("1_cxut3")
+region = Rect2(0, 48, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7eo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4bxm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5aff3")
+}],
+"loop": false,
+"name": &"magic",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cld8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbyur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qip0d")
+}],
+"loop": false,
+"name": &"melee",
+"speed": 4.0
+}]

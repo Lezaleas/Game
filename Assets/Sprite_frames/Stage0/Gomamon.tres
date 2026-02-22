@@ -1,0 +1,64 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://wxksa0orbxc2"]
+
+[ext_resource type="Texture2D" uid="uid://dmba3bkmc4sep" path="res://Assets/Sprites/Fighters/Stage 0/Gomamon.png" id="1_1bjl6"]
+[ext_resource type="Texture2D" uid="uid://bc0nm55vfpsvu" path="res://Assets/Sprites/Fighters/Stage 1/Airdramon.png" id="1_wh1n0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_em7ip"]
+atlas = ExtResource("1_1bjl6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6ijl"]
+atlas = ExtResource("1_1bjl6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_460ih"]
+atlas = ExtResource("1_wh1n0")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2qi4"]
+atlas = ExtResource("1_wh1n0")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7vfu"]
+atlas = ExtResource("1_wh1n0")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sv2rj"]
+atlas = ExtResource("1_wh1n0")
+region = Rect2(0, 48, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_em7ip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6ijl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_460ih")
+}],
+"loop": false,
+"name": &"magic",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2qi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7vfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sv2rj")
+}],
+"loop": false,
+"name": &"melee",
+"speed": 4.0
+}]

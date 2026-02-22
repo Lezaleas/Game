@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="PerkEffectAddAgi" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Data/Perks/PerkEffects/AddAgi.gd" id="1_addagi"]
+
+[resource]
+script = ExtResource("1_addagi")
+amount = 3

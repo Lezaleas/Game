@@ -1,0 +1,63 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://bec3yq8qm4j1e"]
+
+[ext_resource type="Texture2D" uid="uid://dbx7gjtrvabw6" path="res://Assets/Sprites/Fighters/Stage2/Garudamon.png" id="1_hypx4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6mf4"]
+atlas = ExtResource("1_hypx4")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1opq"]
+atlas = ExtResource("1_hypx4")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04gp7"]
+atlas = ExtResource("1_hypx4")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6m70"]
+atlas = ExtResource("1_hypx4")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3eacc"]
+atlas = ExtResource("1_hypx4")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pisxc"]
+atlas = ExtResource("1_hypx4")
+region = Rect2(0, 48, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6mf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1opq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04gp7")
+}],
+"loop": false,
+"name": &"magic",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6m70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3eacc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pisxc")
+}],
+"loop": false,
+"name": &"melee",
+"speed": 4.0
+}]

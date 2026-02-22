@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://brtrkpaq1d21m" path="res://State/Intermission/FighterBlue4.tres" id="6_xoing"]
 [ext_resource type="PackedScene" uid="uid://vfukryktftyv" path="res://Visuals/Intermission/SkillSwapHandler.tscn" id="9_p3kmi"]
 [ext_resource type="Script" uid="uid://qa4l33iaxr6v" path="res://Visuals/Intermission/SkillSwapHandler.gd" id="10_xoing"]
-[ext_resource type="PackedScene" path="res://Visuals/Debug/DebugSkillSelector.tscn" id="11_debug"]
+[ext_resource type="PackedScene" uid="uid://jodj6i7go4gp" path="res://Visuals/Debug/DebugSkillSelector.tscn" id="11_debug"]
 
 [node name="Intermission" type="Node2D"]
 script = ExtResource("1_2c64n")

@@ -13,15 +13,16 @@ config_version=5
 config/name="Game"
 run/main_scene="uid://dt6kwwcvro1th"
 config/features=PackedStringArray("4.5", "Mobile")
-config/icon="res://Data/Assets/Sprites/Common/icon.svg"
+config/icon="res://Assets/Sprites/Common/icon.svg"
 
 [autoload]
 
-Defines="*res://Logic/Autoloads/Defines.gd"
+Defines="*res://Autoloads/Defines.gd"
 Log="*res://addons/GoLogger/Log.tscn"
-EventBus="*res://Logic/Autoloads/EventBus.gd"
-Situation="*res://Logic/Autoloads/Situation.gd"
-AudioBus="*res://Logic/Autoloads/AudioBus.tscn"
+EventBus="*res://Autoloads/EventBus.gd"
+Situation="*res://Autoloads/Situation.gd"
+AudioBus="*res://Autoloads/AudioBus.tscn"
+RunManager="*res://Autoloads/RunManager.gd"
 
 [display]
 
@@ -37,8 +38,6 @@ enabled=PackedStringArray("res://addons/GoLogger/plugin.cfg")
 [file_customization]
 
 folder_colors={
-"res://Data/": "red",
-"res://Logic/": "blue",
 "res://State/": "yellow",
 "res://Visuals/": "green",
 "res://addons/": "gray"

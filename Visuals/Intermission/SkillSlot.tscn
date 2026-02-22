@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cn0o4gfvm6vo2"]
 
 [ext_resource type="Script" uid="uid://dga4pmr0w8w61" path="res://Visuals/Intermission/SkillSlot.gd" id="1_ta1t3"]
-[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Data/Assets/Sprites/Common/ElementalIcons/Blue.tres" id="2_tfgb7"]
+[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="2_tfgb7"]
 
 [node name="SkillSlot" type="Button"]
 custom_minimum_size = Vector2(120, 24)

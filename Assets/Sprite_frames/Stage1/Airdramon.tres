@@ -1,0 +1,68 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://c4cphr1o62d7i"]
+
+[ext_resource type="Texture2D" uid="uid://bc0nm55vfpsvu" path="res://Assets/Sprites/Fighters/Stage 1/Airdramon.png" id="1_6degy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2qi4"]
+atlas = ExtResource("1_6degy")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5iqka"]
+atlas = ExtResource("1_6degy")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1srha"]
+atlas = ExtResource("1_6degy")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6degy"]
+atlas = ExtResource("1_6degy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fbcb"]
+atlas = ExtResource("1_6degy")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_460ih"]
+atlas = ExtResource("1_6degy")
+region = Rect2(0, 16, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2qi4")
+}],
+"loop": false,
+"name": &"clashing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5iqka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1srha")
+}],
+"loop": false,
+"name": &"damaged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6degy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fbcb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_460ih")
+}],
+"loop": false,
+"name": &"magic",
+"speed": 5.0
+}]

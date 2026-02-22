@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://o46r8yv6hfi1"]
+
+[ext_resource type="Script" uid="uid://c8vd20ewh87a0" path="res://Run/Logic/InitializeRun.gd" id="1_vu363"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Initialize" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_vu363")
