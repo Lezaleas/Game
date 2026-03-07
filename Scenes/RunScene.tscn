@@ -1,9 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://o46r8yv6hfi1"]
+[gd_scene load_steps=5 format=3 uid="uid://o46r8yv6hfi1"]
 
-[ext_resource type="Script" uid="uid://c8vd20ewh87a0" path="res://Run/Logic/InitializeRun.gd" id="1_vu363"]
+[ext_resource type="Script" uid="uid://c8vd20ewh87a0" path="res://Systems/Run/Logic/InitializeRun.gd" id="1_vu363"]
+[ext_resource type="Script" uid="uid://b4rqpsmwynkng" path="res://Systems/Perks/Logic/PerkController.gd" id="2_kfcdj"]
+[ext_resource type="Script" uid="uid://qqk5jsv6e1m0" path="res://Systems/Run/Logic/InputController.gd" id="3_66y5i"]
+[ext_resource type="PackedScene" uid="uid://55dvelk1sqsw" path="res://Systems/Run/Visuals/RunVisuals.tscn" id="3_bj1me"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Initialize" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_vu363")
+
+[node name="PerkController" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_kfcdj")
+
+[node name="ShrineControler" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="EquipmentController" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="HeroController" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="InputController" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_66y5i")
+
+[node name="RunVisuals" parent="." instance=ExtResource("3_bj1me")]

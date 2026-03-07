@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="FighterData" load_steps=3 format=3 uid="uid://cdh37clc8mj7p"]
 
 [ext_resource type="Script" uid="uid://jedpr1lbisg8" path="res://State/Intermission/FighterIntermission.gd" id="1_qghwj"]
-[ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Skill.gd" id="2_khync"]
+[ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="2_khync"]
 
 [resource]
 script = ExtResource("1_qghwj")

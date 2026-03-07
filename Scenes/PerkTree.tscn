@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://df2gmv4afb7jo"]
+
+[ext_resource type="PackedScene" uid="uid://cr63pqtjs23ai" path="res://Scenes/PerkTier.tscn" id="1_is2p8"]
+
+[node name="VBoxContainer" type="VBoxContainer"]
+offset_right = 316.0
+offset_bottom = 316.0
+size_flags_horizontal = 3
+
+[node name="PerkTier" parent="." instance=ExtResource("1_is2p8")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PerkTier2" parent="." instance=ExtResource("1_is2p8")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PerkTier3" parent="." instance=ExtResource("1_is2p8")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PerkTier4" parent="." instance=ExtResource("1_is2p8")]
+layout_mode = 2
+size_flags_vertical = 3

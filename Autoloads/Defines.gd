@@ -16,6 +16,7 @@ const MANA_DECAY_TICK = 0.99 # mana decays to this fraction every 0.2 seconds
 const WIN_THRESHOLD_RATIO = 0.25 # percentage of the map to control to win
 const STAMINA_GAIN_TURN = 2 # how much stamina to regen each turn
 const TIERS_PER_PERK_TREE = 4
+const ATTRIBUTE_STARTING = 10 # base attribute level
 # ----------------------------
 # Enums
 # ----------------------------

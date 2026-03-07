@@ -1,0 +1,584 @@
+[gd_scene load_steps=24 format=3 uid="uid://ndg7ueks8cbi"]
+
+[ext_resource type="PackedScene" uid="uid://bjdswhus3xkjw" path="res://Scenes/InfoPanel.tscn" id="1_lc1oi"]
+[ext_resource type="PackedScene" uid="uid://cx55o3f4i4oja" path="res://Scenes/DefaultBorder.tscn" id="2_8od7v"]
+[ext_resource type="Texture2D" uid="uid://bnbl23npjlyar" path="res://Assets/Sprites/Common/New Imagen de mapa de bits (5).png" id="5_35xla"]
+[ext_resource type="Shader" uid="uid://dg4bormjoqika" path="res://Assets/Shaders/specandglow.gdshader" id="5_i3aeo"]
+[ext_resource type="PackedScene" uid="uid://o13vej1ds0oe" path="res://Scenes/DefaultBorder2.tscn" id="7_5wyu1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8od7v"]
+bg_color = Color(4.3317675e-07, 0.25477415, 0.45185345, 1)
+border_color = Color(0.71629614, 0.71629626, 0.71629596, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 20
+shadow_size = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0c07c"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0.6)
+border_width_bottom = 2
+border_color = Color(0.36862746, 0.34509805, 0.16078432, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 6
+corner_detail = 20
+shadow_size = 4
+shadow_offset = Vector2(1, 3)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3dsh"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.0627451, 0.31764707, 0.5176471, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.49260157, 0.46318084, 0.21413806, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 20
+shadow_color = Color(0, 0, 0, 0.6745098)
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mie3u"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.39810443, 0.3814492, 0.21582606, 1)
+corner_detail = 20
+anti_aliasing = false
+
+[sub_resource type="Gradient" id="Gradient_lc1oi"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8od7v"]
+gradient = SubResource("Gradient_lc1oi")
+fill_from = Vector2(0.2, 1)
+fill_to = Vector2(0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cgwh"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0.25882354, 0.45490196, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 20
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iaow0"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.2509804)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 20
+shadow_color = Color(1, 1, 1, 0.1254902)
+shadow_size = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qpfo2"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 20
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 3.0
+anti_aliasing = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0c07c"]
+shader = ExtResource("5_i3aeo")
+shader_parameter/base_color = Color(0, 0.29337206, 0.45533067, 1)
+shader_parameter/glow_color = Color(0, 0.25882354, 0.45490196, 1)
+shader_parameter/shine_intensity = 0.0
+shader_parameter/glow_intensity = 0.4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5wyu1"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8001019, 0.8001019, 0.8001019, 0)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 1
+anti_aliasing = false
+anti_aliasing_size = 2.478
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ys1qc"]
+shader = ExtResource("5_i3aeo")
+shader_parameter/base_color = Color(0, 0.25882354, 0.45490196, 1)
+shader_parameter/glow_color = Color(0, 0.5021107, 0.85430586, 1)
+shader_parameter/shine_intensity = 0.0
+shader_parameter/glow_intensity = 0.4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qc4db"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0.25882354, 0.45490196, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ys1qc"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_color = Color(0.27619392, 0.65457314, 1, 0.4)
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 1
+shadow_color = Color(0, 0, 0, 0.5)
+anti_aliasing = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i3aeo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35xla"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 0.21000001)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5wyu1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3aeo"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 0.5)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 1
+shadow_color = Color(3.008172e-07, 0.16343832, 0.29991978, 1)
+shadow_offset = Vector2(1, 2)
+anti_aliasing = false
+
+[node name="Test" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -625.0
+offset_top = -655.0
+offset_right = -16.0
+offset_bottom = 3.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 0
+
+[node name="PanelContainer" parent="CanvasLayer/VBoxContainer" instance=ExtResource("1_lc1oi")]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="PanelContainer2" parent="CanvasLayer/VBoxContainer" instance=ExtResource("1_lc1oi")]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="PanelContainer3" parent="CanvasLayer/VBoxContainer" instance=ExtResource("1_lc1oi")]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="PanelContainer4" parent="CanvasLayer/VBoxContainer" instance=ExtResource("1_lc1oi")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8od7v")
+
+[node name="DefaultBorder3" parent="CanvasLayer" instance=ExtResource("2_8od7v")]
+offset_left = 509.0
+offset_top = 576.0
+offset_right = 825.0
+offset_bottom = 651.0
+
+[node name="DefaultBorder7" type="PanelContainer" parent="CanvasLayer"]
+offset_left = 33.0
+offset_top = 616.0
+offset_right = 349.0
+offset_bottom = 691.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0c07c")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/DefaultBorder7"]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 3
+
+[node name="Border" type="Panel" parent="CanvasLayer/DefaultBorder7/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j3dsh")
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/DefaultBorder7/MarginContainer/Border"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="CornerFixer" type="Panel" parent="CanvasLayer/DefaultBorder7/MarginContainer/Border/MarginContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mie3u")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/DefaultBorder7/MarginContainer/Border"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/DefaultBorder7/MarginContainer/Border/MarginContainer"]
+modulate = Color(1, 1, 1, 0.2509804)
+layout_mode = 2
+texture = SubResource("GradientTexture2D_8od7v")
+expand_mode = 1
+flip_h = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/DefaultBorder7/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="InsideBlackLine" type="Panel" parent="CanvasLayer/DefaultBorder7/MarginContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2cgwh")
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/DefaultBorder7/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="LightHighlightBorder" type="Panel" parent="CanvasLayer/DefaultBorder7/MarginContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_iaow0")
+
+[node name="ExternalBlackLine" type="Panel" parent="CanvasLayer/DefaultBorder7/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qpfo2")
+
+[node name="Content" type="MarginContainer" parent="CanvasLayer/DefaultBorder7"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 7
+
+[node name="Border2" type="Panel" parent="CanvasLayer/DefaultBorder7/Content"]
+material = SubResource("ShaderMaterial_0c07c")
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5wyu1")
+
+[node name="Background" type="PanelContainer" parent="CanvasLayer/DefaultBorder7/Content"]
+z_index = 1
+material = SubResource("ShaderMaterial_ys1qc")
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qc4db")
+
+[node name="Margin1" type="MarginContainer" parent="CanvasLayer/DefaultBorder7/Content/Background"]
+use_parent_material = true
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="Border" type="Panel" parent="CanvasLayer/DefaultBorder7/Content/Background/Margin1"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ys1qc")
+
+[node name="Margin2" type="MarginContainer" parent="CanvasLayer/DefaultBorder7/Content/Background"]
+use_parent_material = true
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Border" type="Panel" parent="CanvasLayer/DefaultBorder7/Content/Background/Margin2"]
+material = SubResource("ShaderMaterial_i3aeo")
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_35xla")
+
+[node name="Margin3" type="MarginContainer" parent="CanvasLayer/DefaultBorder7/Content/Background"]
+use_parent_material = true
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Border" type="Panel" parent="CanvasLayer/DefaultBorder7/Content/Background/Margin3"]
+material = SubResource("ShaderMaterial_5wyu1")
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_i3aeo")
+
+[node name="Label" type="Label" parent="CanvasLayer/DefaultBorder7"]
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.67200005)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 2
+text = "Panel 2"
+horizontal_alignment = 1
+
+[node name="DefaultBorder4" parent="CanvasLayer" instance=ExtResource("7_5wyu1")]
+offset_left = 366.0
+offset_top = 592.0
+offset_right = 474.0
+offset_bottom = 647.0
+
+[node name="Background" type="PanelContainer" parent="CanvasLayer/DefaultBorder4/MarginContainer/Content" index="0"]
+z_index = 1
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qc4db")
+
+[node name="Border" type="Panel" parent="CanvasLayer/DefaultBorder4/MarginContainer/Content/Background"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ys1qc")
+
+[node name="Margin1" type="MarginContainer" parent="CanvasLayer/DefaultBorder4/MarginContainer/Content/Background"]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="Border" type="Panel" parent="CanvasLayer/DefaultBorder4/MarginContainer/Content/Background/Margin1"]
+modulate = Color(1.353256, 1.353256, 1.353256, 1)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ys1qc")
+
+[node name="Margin2" type="MarginContainer" parent="CanvasLayer/DefaultBorder4/MarginContainer/Content/Background"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Border" type="Panel" parent="CanvasLayer/DefaultBorder4/MarginContainer/Content/Background/Margin2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_35xla")
+
+[node name="Margin3" type="MarginContainer" parent="CanvasLayer/DefaultBorder4/MarginContainer/Content/Background"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Border" type="Panel" parent="CanvasLayer/DefaultBorder4/MarginContainer/Content/Background/Margin3"]
+modulate = Color(0.5370987, 0.5370987, 0.5370987, 1)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_i3aeo")
+
+[node name="DefaultBorder5" parent="CanvasLayer" instance=ExtResource("7_5wyu1")]
+offset_left = 54.0
+offset_top = 943.0
+offset_right = 369.0
+offset_bottom = 1014.0
+
+[node name="Background" type="PanelContainer" parent="CanvasLayer/DefaultBorder5/MarginContainer/Content" index="0"]
+z_index = 1
+material = SubResource("ShaderMaterial_ys1qc")
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qc4db")
+
+[node name="Margin3" type="MarginContainer" parent="CanvasLayer/DefaultBorder5/MarginContainer/Content/Background"]
+use_parent_material = true
+layout_mode = 2
+
+[node name="Border" type="Panel" parent="CanvasLayer/DefaultBorder5/MarginContainer/Content/Background/Margin3"]
+material = SubResource("ShaderMaterial_5wyu1")
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_i3aeo")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/DefaultBorder5/MarginContainer/Content/Background"]
+layout_mode = 2
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="Border2" type="Panel" parent="CanvasLayer/DefaultBorder5/MarginContainer/Content/Background/MarginContainer"]
+material = SubResource("ShaderMaterial_0c07c")
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5wyu1")
+
+[node name="Margin1" type="MarginContainer" parent="CanvasLayer/DefaultBorder5/MarginContainer/Content/Background"]
+use_parent_material = true
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 0
+
+[node name="Border2" type="Panel" parent="CanvasLayer/DefaultBorder5/MarginContainer/Content/Background/Margin1"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ys1qc")
+
+[node name="Margin2" type="MarginContainer" parent="CanvasLayer/DefaultBorder5/MarginContainer/Content/Background"]
+use_parent_material = true
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Border" type="Panel" parent="CanvasLayer/DefaultBorder5/MarginContainer/Content/Background/Margin2"]
+material = SubResource("ShaderMaterial_i3aeo")
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_35xla")
+
+[node name="Label" type="Label" parent="CanvasLayer/DefaultBorder5/MarginContainer/Content/Background"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.67200005)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 2
+text = "BUTTON 1"
+horizontal_alignment = 1
+
+[node name="DefaultBorder6" parent="CanvasLayer" instance=ExtResource("7_5wyu1")]
+offset_left = 27.0
+offset_top = 493.0
+offset_right = 341.0
+offset_bottom = 569.0
+
+[node name="Background" type="PanelContainer" parent="CanvasLayer/DefaultBorder6/MarginContainer/Content" index="0"]
+z_index = 1
+material = SubResource("ShaderMaterial_ys1qc")
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qc4db")
+
+[node name="Border2" type="Panel" parent="CanvasLayer/DefaultBorder6/MarginContainer/Content/Background"]
+material = SubResource("ShaderMaterial_0c07c")
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5wyu1")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer"]
+offset_left = 1062.0
+offset_top = 730.0
+offset_right = 1472.0
+offset_bottom = 888.0
+texture = ExtResource("5_35xla")
+
+[editable path="CanvasLayer/DefaultBorder3"]
+[editable path="CanvasLayer/DefaultBorder4"]
+[editable path="CanvasLayer/DefaultBorder5"]
+[editable path="CanvasLayer/DefaultBorder6"]

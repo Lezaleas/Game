@@ -1,0 +1,233 @@
+================================================================================
+RPG ROGUELIKE AUTOBATTLER — DESIGN DOCUMENT
+================================================================================
+
+PURPOSE OF THIS DOCUMENT
+-------------------------
+This document exists to help AI coding agents understand the game's design goals
+and code architecture before making changes. Keep it updated if the architecture
+changes.
+
+
+--------------------------------------------------------------------------------
+GAME OVERVIEW
+--------------------------------------------------------------------------------
+
+An RPG roguelike autobattler. The player manages a team of fighters across a
+series of auto-battles. Between battles, the player gains access to equipment,
+skills, and perk trees through a shrine system. The run ends when the player
+loses a battle.
+
+
+--------------------------------------------------------------------------------
+CORE GAME CONCEPTS (GLOSSARY)
+--------------------------------------------------------------------------------
+
+FIGHTER
+  A combatant unit. Each team has up to 4 fighters. Fighters have a position_x
+  on a horizontal battlefield and move toward the enemy.
+
+TEAM
+  A group of up to 4 fighters on the same side (blue team = index 0,
+  red team = index 1).
+
+CLASH
+  When the frontmost blue fighter and frontmost red fighter come within
+  CLASH_ENGAGE_RANGE of each other, a clash is triggered. The winner is the
+  fighter whose (strength attribute * stamina) is greater. The winner loses
+  stamina. The loser receives link attacks from all non-clashing allies of the
+  winner.
+
+STAMINA
+  A value from 0–100 on each fighter. Lost on winning a clash. Reduces clashing
+  power. A fighter with low stamina will lose clashes even if their base
+  attribute is high. Recovers when a fighter loses a clash (they stop and regen).
+
+ATTRIBUTE
+  A numeric stat on a fighter (e.g. strength). Stored as AttributeState.
+  Fighters have an array of AttributeState. Index 0 is always the clashing
+  strength attribute.
+
+RESERVOIR
+  A mana pool belonging to a team, not an individual fighter. Each team has up
+  to 4 reservoirs. Mana has a level computed from its current amount, which acts
+  as a multiplier (mult) on team power. Mana decays each tick.
+
+MANA
+  Gained by a team's reservoir through skill/perk triggers. The mana level
+  determines the team's power multiplier. Mana is shared across the whole team.
+
+SKILL
+  A passive triggered ability equipped to a fighter. Skills listen for battle
+  command events (e.g. CmdClashStart, CmdClashLink) and modify or react to them.
+  Skills are stored as data in SkillLibrary.tres.
+
+PERK TREE
+  A progression tree obtained from a shrine and grafted onto a fighter. Perks
+  provide passive bonuses and unlock skills. Stored in PerkTreeLibrary.tres.
+
+SHRINE
+  A game world event that grants the player access to a perk tree. Shrines
+  belong to gods and progressively unlock stronger equipment and abilities.
+
+
+--------------------------------------------------------------------------------
+RUN LOOP (HIGH LEVEL)
+--------------------------------------------------------------------------------
+
+1. INTERMISSION — Player prepares: selects equipment, skills, party composition.
+   If a shrine was encountered, perk trees can be grafted or advanced here.
+
+2. BATTLE — An auto-battle plays out. Fighters move and clash automatically.
+
+3. RESOLUTION — If the player loses, the run ends. If they win, rewards are
+   handed out and the loop repeats from step 1.
+
+(Specific timing of shrines and other events is intentionally left open.)
+
+
+--------------------------------------------------------------------------------
+BATTLE FLOW
+--------------------------------------------------------------------------------
+
+- Fighters from both teams walk forward each tick (position_x changes).
+- Each tick, ClashHandler checks if the frontmost opposing fighters are within
+  CLASH_ENGAGE_RANGE. If so, a clash is resolved.
+- Clash winner is determined by (attribute[0].current * stamina).
+  Winner loses stamina. Loser receives link attacks from ally fighters.
+- Skills can intercept battle commands (CmdClashStart, CmdClashLink, etc.)
+  to modify or cancel them before resolution.
+- WinHandler checks the win condition each tick (defined in WinHandler.gd).
+- BattleSimulator drives the main loop (tick-based). TurnTimer controls tick rate.
+
+
+--------------------------------------------------------------------------------
+CODE ARCHITECTURE — THE 4 PILLARS
+--------------------------------------------------------------------------------
+
+Every script must belong to exactly one of these four pillars. Never mix pillars.
+
+  DATA      — Static definitions. Resources (.tres files) that describe what
+              something IS. No logic. Lives in Data/ or as @export vars.
+              Examples: SkillData, PerkTreeData, FighterData, libraries.
+
+  STATE     — Runtime values. What the game currently IS right now during
+              play. Mutable resources instantiated at runtime.
+              Examples: FighterState, TeamState, BattleState, ReservoirState,
+                        AttributeState, SkillsState.
+
+  LOGIC     — Scripts that operate on state to DO things. Pure logic, no
+              display or input handling.
+              Examples: ClashHandler, AttackHandler, BattleSimulator,
+                        WinHandler, FighterLogic.
+
+  VISUALS/UI — Scripts that render, animate, or receive input. Must NOT
+              contain game rules.
+              Examples: FighterView, battle UI nodes, input handlers.
+
+
+--------------------------------------------------------------------------------
+DIRECTORY STRUCTURE
+--------------------------------------------------------------------------------
+
+  Autoloads/          — Global singletons (see Autoloads section below)
+  Data/Libraries/     — Static resource libraries (.tres) loaded by Defines
+  Systems/Battle/     — Battle system, split into Logic/, State/, UI/, Visuals/
+  Systems/Perks/      — Perk tree system, split into Data/, Logic/
+  Systems/Run/        — Run management, split into Logic/, State/, UI/
+  Systems/Skills/     — Skill system, split into Data/, Logic/, State/
+  State/Intermission/ — State for the between-battle intermission scene
+  Scenes/             — Godot scenes (.tscn). Scene scripts follow the Visuals
+                        pillar (display and input only).
+  Assets/             — Art, audio, and other raw assets
+
+
+--------------------------------------------------------------------------------
+AUTOLOADS
+--------------------------------------------------------------------------------
+
+  AudioBus     — All sound playback routes through here.
+
+  InputBus     — All player input is processed here before being dispatched.
+
+  EventBus     — A dynamic signal bus. Systems communicate via:
+                   EventBus.subscribe("event_name", target, "method_name")
+                   EventBus.emit("event_name", data)
+                 Prefer this over direct signal connections between systems.
+
+  Defines      — All game constants (CLASH_ENGAGE_RANGE, STAMINA_LOSS_VICTORY,
+                 MANA_DECAY_TICK, etc.) and references to loaded libraries
+                 (SkillLibrary, PerkTreeLibrary, IconLibrary) from Data/Libraries/.
+                 This is the single source of truth for ruleset values.
+
+  RunManager   — Stores and manages the state of the current roguelike run
+                 (which fighters the player owns, what perks they have, etc.).
+
+  Situation    — Stores all runtime state for the current battle. This is the
+                 single source of truth for anything happening in a battle right
+                 now. Key properties:
+                   battle       → BattleState (root of the battle state tree)
+                   teams        → Array[TeamState] (index 0 = blue, 1 = red)
+                   fighters     → flat Array[FighterState] (all fighters)
+                   reservoirs   → flat Array[ReservoirState] (mana pools)
+                   attributes   → flat Array[AttributeState]
+                   skills       → SkillsState (manages active skill listeners)
+                   attack_handler → AttackHandler node reference
+
+
+--------------------------------------------------------------------------------
+STATE HIERARCHY
+--------------------------------------------------------------------------------
+
+BattleState
+  └─ TeamState [×2]
+       ├─ FighterState [×4]
+       │    └─ AttributeState [×4]
+       └─ ReservoirState [×4]
+
+All state objects also appear in flat arrays on Situation for fast iteration.
+State objects hold a `parent` reference to their parent state object.
+State objects are created by Situation.new_state() at battle start.
+
+
+--------------------------------------------------------------------------------
+RUN STATE SERIALIZATION RULE
+--------------------------------------------------------------------------------
+
+All state that persists across battles (i.e. lives in RunManager or belongs to
+the run) MUST extend Resource, not Node. This makes save/load trivial via
+Godot's ResourceSaver and ResourceLoader.
+
+  CORRECT  — extends Resource  (can be saved to disk, duplicated cleanly)
+  WRONG    — extends Node       (scene-tree lifecycle, not serializable)
+
+This applies to: fighter run data, PerkController, equipment loadouts, and
+any other object that represents the player's persistent run progress.
+
+Transient/computed data (e.g. PerkTree.build() results, battle simulation
+objects) does NOT need to be serializable and can live on Nodes or as
+plain objects — but must not be stored inside serializable Resources.
+
+
+--------------------------------------------------------------------------------
+SYSTEMS
+--------------------------------------------------------------------------------
+
+BATTLE (Systems/Battle/)
+  Drives the auto-battle simulation. Logic scripts process clashes, attacks,
+  movement, and win conditions each tick. State scripts store the live battle
+  data. UI/Visuals scripts display the battle and handle speed controls.
+
+SKILLS (Systems/Skills/)
+  Skills are passive abilities that intercept battle command objects (Cmd*).
+  SkillsState holds the list of active skills. When a command event is raised
+  (e.g. CmdClashStart), SkillsState.resolve(event) is called; each skill can
+  read/modify the command before it executes. Data is in SkillLibrary.tres.
+
+PERKS (Systems/Perks/)
+  Perk trees are obtained from shrines and grafted onto fighters. They provide
+  passive stat bonuses and may unlock skills. Data is in PerkTreeLibrary.tres.
+
+RUN (Systems/Run/)
+  Manages the roguelike run loop: tracks run progress, applies rewards, and
+  orchestrates scene transitions between intermission and battle.

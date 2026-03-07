@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="Game"
-run/main_scene="uid://dt6kwwcvro1th"
+run/main_scene="uid://o46r8yv6hfi1"
 config/features=PackedStringArray("4.5", "Mobile")
+run/max_fps=60
 config/icon="res://Assets/Sprites/Common/icon.svg"
 
 [autoload]
@@ -23,6 +24,7 @@ EventBus="*res://Autoloads/EventBus.gd"
 Situation="*res://Autoloads/Situation.gd"
 AudioBus="*res://Autoloads/AudioBus.tscn"
 RunManager="*res://Autoloads/RunManager.gd"
+Utils="*res://Autoloads/Utils.gd"
 
 [display]
 
@@ -30,6 +32,8 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
 window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
+window/vsync/vsync_mode=0
 
 [editor_plugins]
 

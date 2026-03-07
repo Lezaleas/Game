@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ml8pokeuqynj"]
+[gd_scene load_steps=3 format=3 uid="uid://ml8pokeuqynj"]
 
 [ext_resource type="Script" uid="uid://dyof4pqi74s25" path="res://Visuals/Intermission/FighterIntermissionPanel.gd" id="1_vf8xn"]
 [ext_resource type="PackedScene" uid="uid://cemcca837u5m8" path="res://Visuals/Intermission/SkillInventory.tscn" id="2_0qvsk"]
-[ext_resource type="PackedScene" uid="uid://cn0o4gfvm6vo2" path="res://Visuals/Intermission/SkillSlot.tscn" id="3_lh4jt"]
 
 [node name="FighterIntermissionPanel" type="Panel"]
 anchors_preset = 15
@@ -22,4 +21,3 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 columns = 1
-slot_scene = ExtResource("3_lh4jt")

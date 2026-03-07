@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="PerkTreeLibrary" load_steps=4 format=3 uid="uid://dbiesblrmer5j"]
 
 [ext_resource type="Script" uid="uid://blijcaiswg3b0" path="res://Data/Libraries/PerkTreeLibrary.gd" id="1_fn066"]
-[ext_resource type="Script" uid="uid://cr3tr75kkxn8b" path="res://Systems/Perks/PerkTree.gd" id="2_w8jpj"]
-[ext_resource type="Resource" uid="uid://bt50a1qc4qgly" path="res://Data/Perks/PerkTrees/NothingTree.tres" id="3_w8jpj"]
+[ext_resource type="Script" uid="uid://v7t13w7elsp2" path="res://Systems/Perks/Data/PerkTree.gd" id="2_w8jpj"]
+[ext_resource type="Resource" uid="uid://df16gfesg8jeg" path="res://Systems/Perks/Data/PerkTrees/default.tres" id="3_6aj77"]
 
 [resource]
 script = ExtResource("1_fn066")
-trees = Array[ExtResource("2_w8jpj")]([ExtResource("3_w8jpj")])
+trees = Array[ExtResource("2_w8jpj")]([ExtResource("3_6aj77")])
 metadata/_custom_type_script = "uid://blijcaiswg3b0"

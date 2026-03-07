@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr63pqtjs23ai"]
+
+[ext_resource type="PackedScene" uid="uid://blrn71bg803u" path="res://Scenes/PerkIcon.tscn" id="1_hqtli"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+offset_right = 292.0
+offset_bottom = 70.0
+
+[node name="MarginContainer" parent="." instance=ExtResource("1_hqtli")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer2" parent="." instance=ExtResource("1_hqtli")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer3" parent="." instance=ExtResource("1_hqtli")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer4" parent="." instance=ExtResource("1_hqtli")]
+layout_mode = 2
+size_flags_horizontal = 3

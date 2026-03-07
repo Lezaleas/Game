@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7ofvuyk4us0u"]
+
+[ext_resource type="SpriteFrames" uid="uid://c4cphr1o62d7i" path="res://Assets/Sprite_frames/Stage1/Airdramon.tres" id="1_03e2s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03e2s"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+shadow_size = 2
+
+[node name="MarginContainer" type="MarginContainer"]
+custom_minimum_size = Vector2(22, 22)
+offset_right = 22.5
+offset_bottom = 22.5
+scale = Vector2(4, 4)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(3, 3)
+sprite_frames = ExtResource("1_03e2s")
+centered = false
+flip_h = true
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_03e2s")

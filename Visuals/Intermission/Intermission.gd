@@ -39,7 +39,6 @@ func _ready() -> void:
 
 func _on_debug_skills_selected(skills: Array[Skill]) -> void:
 	skill_inventory.populate(skills)
-	print("got here")
 
 func _on_start_battle_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/BattleInstance.tscn")

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="PerkTree" load_steps=9 format=3 uid="uid://df16gfesg8jeg"]
+
+[ext_resource type="Script" uid="uid://v7t13w7elsp2" path="res://Systems/Perks/Data/PerkTree.gd" id="1_bnjs7"]
+[ext_resource type="Script" uid="uid://d04bsobu4odrk" path="res://Systems/Perks/Data/PerkTier.gd" id="2_nc7pl"]
+[ext_resource type="Script" uid="uid://dy8fo3snvl7r6" path="res://Systems/Perks/Data/Perk.gd" id="3_lqvxk"]
+[ext_resource type="Resource" uid="uid://bdfjsgpj46a62" path="res://Systems/Perks/Data/Perks/default.tres" id="4_nc7pl"]
+
+[sub_resource type="Resource" id="Resource_f58x0"]
+script = ExtResource("2_nc7pl")
+perks = Array[ExtResource("3_lqvxk")]([ExtResource("4_nc7pl")])
+
+[sub_resource type="Resource" id="Resource_jki72"]
+script = ExtResource("2_nc7pl")
+perks = Array[ExtResource("3_lqvxk")]([ExtResource("4_nc7pl")])
+
+[sub_resource type="Resource" id="Resource_56w56"]
+script = ExtResource("2_nc7pl")
+perks = Array[ExtResource("3_lqvxk")]([ExtResource("4_nc7pl")])
+
+[sub_resource type="Resource" id="Resource_lqvxk"]
+script = ExtResource("2_nc7pl")
+perks = Array[ExtResource("3_lqvxk")]([ExtResource("4_nc7pl")])
+metadata/_custom_type_script = "uid://d04bsobu4odrk"
+
+[resource]
+script = ExtResource("1_bnjs7")
+id = "default"
+display_name = "default"
+tiers = Array[ExtResource("2_nc7pl")]([SubResource("Resource_f58x0"), SubResource("Resource_jki72"), SubResource("Resource_56w56"), SubResource("Resource_lqvxk")])
+metadata/_custom_type_script = "uid://v7t13w7elsp2"

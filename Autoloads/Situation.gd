@@ -1,7 +1,7 @@
 extends Node
 
-var player_team_data: Array[FighterData] = []
-var enemy_team_data: Array[FighterData] = []
+var player_team_data: Array[HeroState] = []
+var enemy_team_data: Array[HeroState] = []
 
 var skill_library: SkillLibrary = load("res://Data/Libraries/SkillLibrary.tres")
 var attack_handler: AttackHandler
@@ -20,7 +20,7 @@ func new_state():
 		var team = _new_state_unit(TeamState, battle, teams, battle.teams)
 		for _b in range(4):
 			var fighter = _new_state_unit(FighterState, team, fighters, team.fighters)
-			for _c in range(4):
+			for _c in range(Defines.ATTRIBUTE.size()):
 				var _attribute = _new_state_unit(AttributeState, fighter, attributes, fighter.attributes)
 		for _d in range(4):
 			var _reservoir = _new_state_unit(ReservoirState, team, reservoirs, team.reservoirs)
@@ -29,9 +29,10 @@ func _new_state_unit(type: GDScript, parent: Resource, directory_list: Array, pa
 	var state_unit = type.new()
 	state_unit.id = len(directory_list)
 	state_unit.parent = parent
-	if state_unit.has_method("setup"): state_unit.setup()
 	parent_list.append(state_unit)
 	directory_list.append(state_unit)
+	if state_unit.has_method("setup"):
+		state_unit.setup()
 	return state_unit
 
 func clear_state_generic():
