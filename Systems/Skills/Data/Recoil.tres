@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Recoil" load_steps=3 format=3 uid="uid://c748y7m1m7m"]
+
+[ext_resource type="Script" uid="uid://bgpqrsujgldxy" path="res://Systems/Skills/Data/Recoil.gd" id="1_recoil"]
+[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="1_t7qlr"]
+
+[resource]
+script = ExtResource("1_recoil")
+distance = 100
+skill_name = "Recoil"
+description = "Recoil: boost damage, but jump backwards on casting attacks"
+power = 0.25
+metadata/_custom_type_script = "uid://bgpqrsujgldxy"

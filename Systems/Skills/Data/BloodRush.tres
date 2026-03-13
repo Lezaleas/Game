@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BloodRush" load_steps=3 format=3 uid="uid://c6r8y7m1m7m"]
+
+[ext_resource type="Script" uid="uid://drbv35g37hk55" path="res://Systems/Skills/Data/BloodRush.gd" id="1_bloodrush"]
+[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="1_hcuox"]
+
+[resource]
+script = ExtResource("1_bloodrush")
+stamina_to_gain = 100.0
+skill_name = "BloodRush"
+description = "if you deal more than x damage, regain x stamina"
+power = 500.0
+metadata/_custom_type_script = "uid://drbv35g37hk55"

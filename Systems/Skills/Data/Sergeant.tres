@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Sergeant" load_steps=3 format=3 uid="uid://c778y7m1m7m"]
+
+[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="1_klcw3"]
+[ext_resource type="Script" uid="uid://wapc388nqpo3" path="res://Systems/Skills/Data/Sergeant.gd" id="1_sergeant"]
+
+[resource]
+script = ExtResource("1_sergeant")
+skill_name = "Sergeant"
+description = "Sergeant: when winning a clash, allies except me regain stamina"
+power = 25.0
+metadata/_custom_type_script = "uid://wapc388nqpo3"

@@ -1,13 +1,13 @@
-@icon("res://Data/Assets/Sprites/Common/ElementalIcons/Purple.tres")
+@icon("res://Assets/Sprites/Common/ElementalIcons/Red.tres")
 extends Resource
 class_name Skill
 
-@export var skill_name: String = "no_name"
+@export var skill_name: String
 @export_multiline var description: String
-@export var power: float = 10
+@export var power: float = 0.0
 @export var order: int = 0		# smaller goes first
 @export var mana_cost:int = 0
-@export var icon = preload("res://Assets/Sprites/Common/ElementalIcons/Purple.tres")
+@export var icon = preload("res://Assets/Sprites/Common/ElementalIcons/Blue.tres")
 var show_to_player: bool = true
 var owner: FighterState
 var element: int = 0

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Guerrilla" load_steps=3 format=3 uid="uid://c6x8y7m1m7m"]
+
+[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="1_5dxx2"]
+[ext_resource type="Script" uid="uid://ctct8no6uy73u" path="res://Systems/Skills/Data/Guerrilla.gd" id="1_guerrilla"]
+
+[resource]
+script = ExtResource("1_guerrilla")
+skill_name = "Guerrilla"
+description = "when losing a clash, the winner loses stamina"
+power = 20.0
+metadata/_custom_type_script = "uid://ctct8no6uy73u"

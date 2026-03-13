@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Triumph" load_steps=3 format=3 uid="uid://c808y7m1m7m"]
+
+[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="1_65xvp"]
+[ext_resource type="Script" uid="uid://dekfa58b38ie" path="res://Systems/Skills/Data/Triumph.gd" id="1_triumph"]
+
+[resource]
+script = ExtResource("1_triumph")
+skill_name = "Triumph"
+description = "Triumph: multiplies link damage when winning a clash"
+power = 1.2
+metadata/_custom_type_script = "uid://dekfa58b38ie"

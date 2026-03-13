@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Game"
-run/main_scene="uid://o46r8yv6hfi1"
+run/main_scene="uid://dt6kwwcvro1th"
 config/features=PackedStringArray("4.5", "Mobile")
 run/max_fps=60
 config/icon="res://Assets/Sprites/Common/icon.svg"
@@ -42,10 +42,13 @@ enabled=PackedStringArray("res://addons/GoLogger/plugin.cfg")
 [file_customization]
 
 folder_colors={
-"res://State/": "yellow",
 "res://Visuals/": "green",
 "res://addons/": "gray"
 }
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
 
 [input]
 

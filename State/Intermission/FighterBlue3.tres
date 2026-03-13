@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="FighterData" load_steps=3 format=3 uid="uid://bc0kdimvodpif"]
-
-[ext_resource type="Script" uid="uid://jedpr1lbisg8" path="res://State/Intermission/FighterIntermission.gd" id="1_83o25"]
-[ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="2_v07f3"]
-
-[resource]
-script = ExtResource("1_83o25")
-skills = Array[ExtResource("2_v07f3")]([])
-metadata/_custom_type_script = "uid://jedpr1lbisg8"

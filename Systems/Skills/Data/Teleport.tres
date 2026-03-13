@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Teleport" load_steps=3 format=3 uid="uid://bjknvk8rfpmxx"]
+
+[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="1_0tkdd"]
+[ext_resource type="Script" uid="uid://dxxt77xcdxyyv" path="res://Systems/Skills/Data/Teleport.gd" id="2_0tkdd"]
+
+[resource]
+script = ExtResource("2_0tkdd")
+skill_name = "Teleport"
+description = "Uses magic instead of agility to move"
+metadata/_custom_type_script = "uid://dxxt77xcdxyyv"

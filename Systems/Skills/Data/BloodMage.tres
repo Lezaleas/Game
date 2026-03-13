@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Bloodmage" load_steps=3 format=3 uid="uid://dil2o0envpeo4"]
+
+[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="1_16r0i"]
+[ext_resource type="Script" uid="uid://cmtajq8hqrlr4" path="res://Systems/Skills/Data/Bloodmage.gd" id="2_v2t21"]
+
+[resource]
+script = ExtResource("2_v2t21")
+skill_name = "Bloodmage"
+description = "Every 3rd attack received, counter attack"
+power = 3.0
+metadata/_custom_type_script = "uid://cmtajq8hqrlr4"

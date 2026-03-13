@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Lancer" load_steps=3 format=3 uid="uid://c608y7m1m7m"]
+
+[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="1_hxn55"]
+[ext_resource type="Script" uid="uid://b51w40v4cb53" path="res://Systems/Skills/Data/Lancer.gd" id="1_lancer"]
+
+[resource]
+script = ExtResource("1_lancer")
+skill_name = "Lancer"
+description = "Lancer: add my power to allies clashing in engage range of mine"
+power = 1.0
+metadata/_custom_type_script = "uid://b51w40v4cb53"

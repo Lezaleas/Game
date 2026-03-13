@@ -2,6 +2,16 @@
 extends Skill
 class_name ManaFractionDamage
 
+func _init() -> void:
+	if skill_name == "":
+		skill_name = "ManaFractionDamage"
+	if description == "":
+		description = "Gains mana based on your contribution to total team damage."
+	if power == 0:
+		power = 10.0
+	if order == 0:
+		order = 50
+
 func TurnStart(command: CmdTurnStart) -> CmdTurnStart:
 	var fraction = get_fighter_damage_fraction(owner)
 	owner.parent.reservoirs[element].gain_mana(power * fraction)

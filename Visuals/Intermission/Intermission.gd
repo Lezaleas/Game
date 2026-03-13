@@ -10,18 +10,17 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(Defines.perktrees.get_tree("nothing").tiers[0].perks[0].id)
-	var intermission_team: Array[FighterData] = [
-		load("res://State/Intermission/FighterBlue1.tres") as FighterData,
-		load("res://State/Intermission/FighterBlue2.tres") as FighterData,
-		load("res://State/Intermission/FighterBlue3.tres") as FighterData,
-		load("res://State/Intermission/FighterBlue4.tres") as FighterData,
+	var intermission_team: Array[HeroState] = [
+		load("res://Visuals/Fighters/Hero1.tres") as HeroState,
+		load("res://Visuals/Fighters/Hero2.tres") as HeroState,
+		load("res://Visuals/Fighters/Hero3.tres") as HeroState,
+		load("res://Visuals/Fighters/Hero4.tres") as HeroState,
 	]
-	var enemy_team: Array[FighterData] = [
-		load("res://State/Intermission/FighterRed1.tres") as FighterData,
-		load("res://State/Intermission/FighterRed2.tres") as FighterData,
-		load("res://State/Intermission/FighterRed3.tres") as FighterData,
-		load("res://State/Intermission/FighterRed4.tres") as FighterData,
+	var enemy_team: Array[HeroState] = [
+		load("res://Visuals/Fighters/Hero5.tres") as HeroState,
+		load("res://Visuals/Fighters/Hero6.tres") as HeroState,
+		load("res://Visuals/Fighters/Hero7.tres") as HeroState,
+		load("res://Visuals/Fighters/Hero8.tres") as HeroState,
 	]
 
 	Situation.player_team_data = intermission_team

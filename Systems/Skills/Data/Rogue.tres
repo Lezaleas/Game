@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Rogue" load_steps=2 format=3 uid="uid://c768y7m1m7m"]
+
+[ext_resource type="Script" uid="uid://d1eggpv1uxc45" path="res://Systems/Skills/Data/Rogue.gd" id="1_rogue"]
+
+[resource]
+script = ExtResource("1_rogue")
+skill_name = "Rogue"
+description = "Rogue: gain power stacks the less stamina your clashing opponent has"
+power = 0.1
+order = 0
+mana_cost = 0
+metadata/_custom_type_script = "uid://d1eggpv1uxc45"

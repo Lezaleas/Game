@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Monk" load_steps=2 format=3 uid="uid://c718y7m1m7m"]
+
+[ext_resource type="Script" uid="uid://bsqw3nhjy22jf" path="res://Systems/Skills/Data/Monk.gd" id="1_monk"]
+
+[resource]
+script = ExtResource("1_monk")
+skill_name = "Monk"
+description = "Monk: every x clashes lost, trigger a link attack from allies on the clash winner"
+power = 3.0
+order = 0
+mana_cost = 0
+metadata/_custom_type_script = "uid://bsqw3nhjy22jf"

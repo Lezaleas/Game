@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ranger" load_steps=3 format=3 uid="uid://c738y7m1m7m"]
+
+[ext_resource type="Script" uid="uid://dhe5pv482hkq5" path="res://Systems/Skills/Data/Ranger.gd" id="1_ranger"]
+[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="1_vwglc"]
+
+[resource]
+script = ExtResource("1_ranger")
+skill_name = "Ranger"
+description = "Ranger: the lower your stamina is, gain magic%"
+power = 0.05
+metadata/_custom_type_script = "uid://dhe5pv482hkq5"

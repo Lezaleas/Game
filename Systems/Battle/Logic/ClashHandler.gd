@@ -29,8 +29,8 @@ func _resolve_clash():
 	#endregion
 	blue_clasher.clash_fought += 1
 	red_clasher.clash_fought += 1
-	var blue_clashing_strength = blue_clasher.attributes[0].current * blue_clasher.stamina as float
-	var red_clashing_strength = red_clasher.attributes[0].current * red_clasher.stamina as float
+	var blue_clashing_strength = (blue_clasher.attributes[0].current + clash_event.blue_strength_bonus) * blue_clasher.stamina as float
+	var red_clashing_strength = (red_clasher.attributes[0].current + clash_event.red_strength_bonus) * red_clasher.stamina as float
 	
 	EventBus.emit("battle_action_clash_started", {
 		"blue": blue_clasher,

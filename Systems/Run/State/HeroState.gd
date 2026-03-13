@@ -3,16 +3,11 @@ class_name HeroState
 
 var id: int
 var sprite: AnimatedSprite2D
-var skills: Array[Skill] = []
-var passives: Array[Skill] = []
-var attributes_base = []
-var attributes_mult = []
-
-func _init() -> void:
-	for x in range (Defines.ATTRIBUTE.size()):
-		attributes_base.append(Defines.ATTRIBUTE_STARTING)
-		attributes_mult.append(1)
-	skills = [(Defines.skills.regular_skills[1])]
+@export var skills: Array[Skill] = []
+@export var passives: Array[Skill] = []
+@export var attributes_base = [10,10,10,10]
+@export var attributes_mult = [1,1,1,1]
+var perk_points: int = 0
 
 func increase_attribute_base(amount:int, attribute:Defines.ATTRIBUTE) -> void:
 	attributes_base[attribute] += amount

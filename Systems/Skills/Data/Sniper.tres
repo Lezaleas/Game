@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Sniper" load_steps=3 format=3 uid="uid://c8a8y7m1m7m"]
+
+[ext_resource type="Script" uid="uid://ch413jhpxp46r" path="res://Systems/Skills/Data/Sniper.gd" id="1_sniper"]
+[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="1_ve7vf"]
+
+[resource]
+script = ExtResource("1_sniper")
+skill_name = "Sniper"
+description = "Sniper: gain damage boost on attacks based on distance to the target"
+power = 0.5
+metadata/_custom_type_script = "uid://ch413jhpxp46r"

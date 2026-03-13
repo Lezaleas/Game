@@ -24,6 +24,10 @@ func on_turn_started():
 	# apply skills timed by turns
 	Situation.skills.resolve(CmdTurnStart.new())
 
+	# tick buffs
+	for fighter in Situation.fighters:
+		fighter.buffs.tick_all()
+
 	# walk all fighters forward and process their turn
 	for fighter in Situation.fighters:
 		fighter_handler.walk_forward(fighter)

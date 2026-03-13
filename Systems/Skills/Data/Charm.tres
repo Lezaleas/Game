@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Charm" load_steps=3 format=3 uid="uid://c6s8y7m1m7m"]
+
+[ext_resource type="Script" uid="uid://c6xb6lelea20o" path="res://Systems/Skills/Data/Charm.gd" id="1_charm"]
+[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="1_futbr"]
+
+[resource]
+script = ExtResource("1_charm")
+skill_name = "Charm"
+description = "When winning a clash, the loser gets attacked by his allies instead of yours"
+order = -5
+metadata/_custom_type_script = "uid://c6xb6lelea20o"

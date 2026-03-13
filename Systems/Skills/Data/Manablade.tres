@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Manablade" load_steps=2 format=3 uid="uid://c708y7m1m7m"]
+
+[ext_resource type="Script" uid="uid://dlck2hqj72vqd" path="res://Systems/Skills/Data/Manablade.gd" id="1_manablade"]
+
+[resource]
+script = ExtResource("1_manablade")
+skill_name = "Manablade"
+description = "Manablade: when winning a clash, attack the loser"
+power = 1.0
+order = 0
+mana_cost = 0
+metadata/_custom_type_script = "uid://dlck2hqj72vqd"

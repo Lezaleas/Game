@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FrostShield" load_steps=3 format=3 uid="uid://c6w8y7m1m7m"]
+
+[ext_resource type="Script" uid="uid://d38fietx7acqa" path="res://Systems/Skills/Data/FrostShield.gd" id="1_frostshield"]
+[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="1_k0euq"]
+
+[resource]
+script = ExtResource("1_frostshield")
+skill_name = "FrostShield"
+description = "caps damage received at some value"
+power = 250.0
+metadata/_custom_type_script = "uid://d38fietx7acqa"

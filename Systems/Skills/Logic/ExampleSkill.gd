@@ -6,15 +6,6 @@ class_name ExampleSkill
 # these methods correspond to each clash event possible
 # the full list of clash events in on the defines autoload
 
-func _init() -> void:
-	# set up default parameters here
-	skill_name = "default name"
-	description = "default description"
-	power = 25
-	order = 10	# smaller goes first
-	mana_cost = 0
-	icon = Defines.icons.default_icon
-
 func TurnStart(command: CmdTurnStart) -> CmdTurnStart:
 	# this function will execute when a turnstart event is called
 	# make sure to return the command so other skills can also process the event

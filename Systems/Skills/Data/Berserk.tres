@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Berserk" load_steps=3 format=3 uid="uid://c6q8y7m1m7m"]
+
+[ext_resource type="Script" uid="uid://c3jrkyno5tmk" path="res://Systems/Skills/Data/Berserk.gd" id="1_berserk"]
+[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="1_dikqs"]
+
+[resource]
+script = ExtResource("1_berserk")
+skill_name = "Berserk"
+description = "the lower your stamina is, boost link damage% on clash win"
+power = 0.02
+metadata/_custom_type_script = "uid://c3jrkyno5tmk"

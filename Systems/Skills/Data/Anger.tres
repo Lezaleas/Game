@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Anger" load_steps=2 format=3 uid="uid://bm7p6l7j6u1w"]
+
+[ext_resource type="Script" uid="uid://is23djry48un" path="res://Systems/Skills/Data/Anger.gd" id="1_anger"]
+
+[resource]
+script = ExtResource("1_anger")
+skill_name = "Anger"
+description = "when damaged, gain a stack. when clashing, convert all stacks into power"
+power = 1.0
+order = 0
+mana_cost = 0
+metadata/_custom_type_script = "uid://is23djry48un"

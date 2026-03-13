@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Adrenaline" load_steps=3 format=3 uid="uid://d3m4pwprey7jt"]
+
+[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="1_yifdu"]
+[ext_resource type="Script" uid="uid://btin7qrrwssnf" path="res://Systems/Skills/Data/Adrenaline.gd" id="2_74avi"]
+
+[resource]
+script = ExtResource("2_74avi")
+skill_name = "Adrenaline"
+description = "Gain stamina when losing a clash"
+power = 100.0
+metadata/_custom_type_script = "uid://btin7qrrwssnf"

@@ -13,11 +13,13 @@ var dmg_del = 0 as float
 var dmg_rec = 0 as float
 var clash_won = 0 as int
 var clash_fought = 0 as int
+var buffs: BuffsState
 var element: int = 0
 var view: FighterView
 var clashed := false
 
 func setup():
+	buffs = BuffsState.new(self)
 	position_x = 480 + 760 * parent.id + id * 50
 	position_y = 315 + 60 * (id - parent.id * 4)
 	direction = parent.direction
@@ -27,6 +29,9 @@ func gain_stamina(amount: float):
 	
 func jump(amount: float):
 	position_x += amount * direction
+
+func apply_buff(buff: Buff, amount: float):
+	buffs.apply_buff(buff, amount)
 
 ## receives a fighter and returns the previous fighter in the same team
 func get_previous_fighter() -> FighterState:

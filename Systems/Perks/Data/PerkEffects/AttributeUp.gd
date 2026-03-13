@@ -5,4 +5,4 @@ class_name AttributePerk
 @export var attribute: Defines.ATTRIBUTE
 
 func apply(_hero: HeroState) -> void:
-	_hero.increase_attribute(amount, attribute)
+	_hero.increase_attribute_base(amount, attribute)

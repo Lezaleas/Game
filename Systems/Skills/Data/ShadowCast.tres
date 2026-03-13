@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ShadowCast" load_steps=3 format=3 uid="uid://c788y7m1m7m"]
+
+[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="1_8rsgk"]
+[ext_resource type="Script" uid="uid://x8vxdthkohvo" path="res://Systems/Skills/Data/ShadowCast.gd" id="1_shadowcast"]
+
+[resource]
+script = ExtResource("1_shadowcast")
+skill_name = "ShadowCast"
+description = "cast an attack every 10 seconds"
+power = 1.0
+metadata/_custom_type_script = "uid://x8vxdthkohvo"
