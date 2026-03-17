@@ -1,7 +1,7 @@
 extends Resource
 class_name Buff
 
-@export var id: String
+@export var id: Defines.BUFF
 @export var display_name: String
 @export var icon: Texture2D
 @export var is_debuff: bool = true

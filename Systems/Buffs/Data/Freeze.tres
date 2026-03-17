@@ -1,12 +1,9 @@
-[gd_resource type="Resource" script_class="FreezeBuff" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="FreezeBuff" load_steps=2 format=3 uid="uid://cx17v2qlgn8g4"]
 
-[ext_resource type="Script" path="res://Systems/Buffs/Data/Freeze.gd" id="1_freeze"]
+[ext_resource type="Script" uid="uid://b75mj0u2r47w2" path="res://Systems/Buffs/Data/Freeze.gd" id="1_freeze"]
 
 [resource]
 script = ExtResource("1_freeze")
-id = "freeze"
+id = 1
 display_name = "Freeze"
-is_debuff = true
-trigger_threshold = 100.0
-duration_turns = 1
-apply_immediately = false
+duration_turns = 50

@@ -1,13 +1,11 @@
-[gd_resource type="Resource" script_class="HeroState" load_steps=6 format=3 uid="uid://l53x0uybgxlo"]
+[gd_resource type="Resource" script_class="HeroState" load_steps=4 format=3 uid="uid://l53x0uybgxlo"]
 
 [ext_resource type="Script" uid="uid://clbetd2tvnhj3" path="res://Systems/Run/State/HeroState.gd" id="1_dj320"]
 [ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="1_rrop2"]
-[ext_resource type="Resource" uid="uid://b8y7m1m7m7m" path="res://Systems/Skills/Data/Block.tres" id="3_nmg36"]
-[ext_resource type="Resource" uid="uid://c718y7m1m7m" path="res://Systems/Skills/Data/Monk.tres" id="4_3jwx6"]
-[ext_resource type="Resource" uid="uid://c728y7m1m7m" path="res://Systems/Skills/Data/Paladin.tres" id="5_yjov4"]
+[ext_resource type="SpriteFrames" uid="uid://bvhaeffg5j7em" path="res://Assets/Sprite_frames/Stage1/Tyranomon.tres" id="3_lj4np"]
 
 [resource]
 script = ExtResource("1_dj320")
-skills = Array[ExtResource("1_rrop2")]([ExtResource("3_nmg36"), ExtResource("4_3jwx6"), ExtResource("5_yjov4")])
-attributes_base = [10, 10, 20, 10]
+sprite = ExtResource("3_lj4np")
+attributes_base = [11, 10, 20, 10]
 metadata/_custom_type_script = "uid://clbetd2tvnhj3"

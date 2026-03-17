@@ -2,7 +2,7 @@ extends Resource
 class_name HeroState
 
 var id: int
-var sprite: AnimatedSprite2D
+@export var sprite: SpriteFrames
 @export var skills: Array[Skill] = []
 @export var passives: Array[Skill] = []
 @export var attributes_base = [10,10,10,10]

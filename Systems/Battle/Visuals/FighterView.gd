@@ -16,6 +16,7 @@ func _ready():
 	
 func refresh_battle_started():
 	fighter_state = Situation.fighters[id]
+	sprite.sprite_frames = fighter_state.sprite
 	self.position.y = fighter_state.position_y
 	self.position.x = fighter_state.position_x
 	last_x = fighter_state.position_x
@@ -62,10 +63,10 @@ func play_damaged_animation() -> void:
 func play_clashing_animation() -> void:
 	sprite.play("clashing")
 
-func _on_game_speed_changed(speed: float) -> void:
-	current_speed = speed
-	sprite.speed_scale = speed
+func _on_game_speed_changed(_speed: float) -> void:
+	current_speed = Situation.anim_speed
+	sprite.speed_scale = current_speed
 	if hit_flash_tween and hit_flash_tween.is_valid():
-		hit_flash_tween.set_speed_scale(speed)
+		hit_flash_tween.set_speed_scale(current_speed)
 	if move_tween and move_tween.is_valid():
-		move_tween.set_speed_scale(speed)
+		move_tween.set_speed_scale(current_speed)

@@ -4,8 +4,9 @@ extends CanvasLayer
 @onready var label_red = %LabelRed
 
 const CLASH_BAR_SCENE = preload("res://Systems/Battle/Visuals/ClashBar.tscn")
-const DASH_IN_DURATION = 0.10
-const DASH_OUT_DURATION = 0.10
+const DASH_IN_DURATION = 0.2
+const DASH_OUT_DURATION = 0.2
+const HIT_FREEZE_DURATION = 0.1
 const DASH_DISTANCE = 100.0
 
 func _ready() -> void:
@@ -29,9 +30,9 @@ func start_clash(data: Dictionary) -> void:
 	red_view.play_clashing_animation()
 	
 	if data.blue_str > data.red_str:
-		_dash_winner(blue_view, 1)
+		_dash_winner(blue_view, red_view, 1)
 	elif data.red_str > data.blue_str:
-		_dash_winner(red_view, -1)
+		_dash_winner(red_view, blue_view, -1)
 	
 	label_blue.position = blue_view.position + Vector2(-200, -20)
 	label_red.position = red_view.position + Vector2(200, -20)
@@ -61,27 +62,34 @@ func start_clash(data: Dictionary) -> void:
 func _get_fighter_view(id: int) -> FighterView:
 	return Situation.fighters[id].view
 
-func _dash_winner(winner_view: FighterView, blue_won: int) -> void:
+func _dash_winner(winner_view: FighterView, loser_view:FighterView, blue_won: int) -> void:
 	# Ensure we use a clean tween and kill any overlapping ones on this fighter
 	var tween = create_tween()
-	
-	# If we want to be really safe about overlapping clashes, 
-	# we should ideally know the 'resting' position. 
-	# For now, let's fix the syntax which was likely the main issue.
 	var orig_pos = winner_view.position
-	var dash_to = orig_pos + Vector2(DASH_DISTANCE, 0) * blue_won
-	winner_view.lock_movement()
+	#var dash_to = orig_pos + Vector2(DASH_DISTANCE, 0) * blue_won
+	var dash_to = loser_view.position
+	for fighter in Situation.fighters:
+		fighter.view.lock_movement()
+	EventBus.emit("request_pause", true)
 	
 	# Dash in
 	tween.tween_property(winner_view, "position", dash_to,
-		DASH_IN_DURATION / Situation.game_speed) \
-		.set_trans(Tween.TRANS_QUAD) \
+		DASH_IN_DURATION / Situation.anim_speed) \
+		.set_trans(Tween.TRANS_SPRING) \
 		.set_ease(Tween.EASE_OUT)
 	
+	await get_tree().create_timer(DASH_IN_DURATION + HIT_FREEZE_DURATION).timeout
+	tween = create_tween()
+	var winner_log_pos = Vector2(winner_view.fighter_state.position_x, winner_view.fighter_state.position_y)
+	
 	# Return with elasticity
-	tween.tween_property(winner_view, "position", orig_pos,
-		DASH_OUT_DURATION / Situation.game_speed) \
-		.set_trans(Tween.TRANS_ELASTIC) \
-		.set_ease(Tween.EASE_OUT)
+	tween.tween_property(winner_view, "position", winner_log_pos,
+		DASH_OUT_DURATION / Situation.anim_speed) \
+		.set_trans(Tween.TRANS_SINE) \
+		.set_ease(Tween.EASE_IN_OUT)
 		
-	winner_view.unlock_movement()
+	await get_tree().create_timer(DASH_OUT_DURATION).timeout
+		
+	for fighter in Situation.fighters:
+		fighter.view.unlock_movement()
+	EventBus.emit("request_pause", false)

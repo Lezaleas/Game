@@ -13,7 +13,7 @@ func setup(start_pos: Vector2, target: Node2D, on_hit: Callable) -> void:
 	position = start_pos
 	target_node = target
 	callback = on_hit
-	speed *= Situation.game_speed
+	speed *= Situation.anim_speed
 	set_process(true)
 
 func _process(delta: float) -> void:

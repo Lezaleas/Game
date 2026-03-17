@@ -1,12 +1,9 @@
-[gd_resource type="Resource" script_class="PoisonBuff" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="PoisonBuff" load_steps=2 format=3 uid="uid://cvlx0sda8bedb"]
 
-[ext_resource type="Script" path="res://Systems/Buffs/Data/Poison.gd" id="1_poison"]
+[ext_resource type="Script" uid="uid://dx3cooieicxah" path="res://Systems/Buffs/Data/Poison.gd" id="1_poison"]
 
 [resource]
 script = ExtResource("1_poison")
-id = "poison"
+id = 3
 display_name = "Poison"
-is_debuff = true
-trigger_threshold = 100.0
-duration_turns = 5
-apply_immediately = false
+duration_turns = 50

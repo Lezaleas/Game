@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="HeroState" load_steps=3 format=3 uid="uid://rd2jd1if1aba"]
+[gd_resource type="Resource" script_class="HeroState" load_steps=5 format=3 uid="uid://rd2jd1if1aba"]
 
 [ext_resource type="Script" uid="uid://clbetd2tvnhj3" path="res://Systems/Run/State/HeroState.gd" id="1_d3kel"]
 [ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="2_kxabe"]
+[ext_resource type="Resource" uid="uid://crvxxtlpjtqmn" path="res://Systems/Skills/Data/Hexstrike.tres" id="3_vyv23"]
+[ext_resource type="SpriteFrames" uid="uid://blgs775flffq3" path="res://Assets/Sprite_frames/Stage1/Greymon.tres" id="4_kxabe"]
 
 [resource]
 script = ExtResource("1_d3kel")
+sprite = ExtResource("4_kxabe")
+skills = Array[ExtResource("2_kxabe")]([ExtResource("3_vyv23")])
 attributes_base = [20, 10, 10, 10]
 metadata/_custom_type_script = "uid://clbetd2tvnhj3"

@@ -10,6 +10,8 @@ func walk_forward(fighter: FighterState) -> void:
 	if cmd_walk.is_cancelled: return
 	distance = cmd_walk.distance
 	#endregion
+	if fighter.buffs.get_buff_state(Defines.BUFF.Freeze):
+		distance /= 2
 	fighter.position_x += distance
 
 func process_turn(fighter: FighterState) -> void:

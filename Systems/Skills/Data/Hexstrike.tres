@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Hexstrike" load_steps=3 format=3 uid="uid://crvxxtlpjtqmn"]
+
+[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="1_lbf0e"]
+[ext_resource type="Script" uid="uid://y85yem54yqxb" path="res://Systems/Skills/Data/Hexstrike.gd" id="2_ux8ud"]
+
+[resource]
+script = ExtResource("2_ux8ud")
+skill_name = "Hexstrike"
+description = "Cast an attack on any enemy that gets a debuff"
+power = 1.0
+metadata/_custom_type_script = "uid://y85yem54yqxb"

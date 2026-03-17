@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c8vd20ewh87a0" path="res://Systems/Run/Logic/InitializeRun.gd" id="1_vu363"]
 [ext_resource type="Script" uid="uid://b4rqpsmwynkng" path="res://Systems/Perks/Logic/PerkController.gd" id="2_kfcdj"]
-[ext_resource type="Script" uid="uid://qqk5jsv6e1m0" path="res://Systems/Run/Logic/InputController.gd" id="3_66y5i"]
+[ext_resource type="Script" uid="uid://qqk5jsv6e1m0" path="res://Systems/Run/Logic/ButtonHandler.gd" id="3_66y5i"]
 [ext_resource type="PackedScene" uid="uid://55dvelk1sqsw" path="res://Systems/Run/Visuals/RunVisuals.tscn" id="3_bj1me"]
 
 [node name="Main" type="Node2D"]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BuffLibrary" load_steps=8 format=3 uid="uid://bcs7y8reo1lkk"]
+
+[ext_resource type="Script" uid="uid://dvcrf32whvkf5" path="res://Systems/Buffs/Logic/Buff.gd" id="1_buff"]
+[ext_resource type="Resource" path="res://Systems/Buffs/Data/Burn.tres" id="2_burn"]
+[ext_resource type="Resource" uid="uid://cx17v2qlgn8g4" path="res://Systems/Buffs/Data/Freeze.tres" id="3_freeze"]
+[ext_resource type="Resource" uid="uid://cvlx0sda8bedb" path="res://Systems/Buffs/Data/Poison.tres" id="4_poison"]
+[ext_resource type="Resource" uid="uid://df8n4c43ol3hw" path="res://Systems/Buffs/Data/Shield.tres" id="5_shield"]
+[ext_resource type="Resource" uid="uid://bmqvj7iqvqymw" path="res://Systems/Buffs/Data/Shock.tres" id="6_shock"]
+[ext_resource type="Script" uid="uid://dbqvn76m5ltid" path="res://Data/Libraries/BuffLibrary.gd" id="7_library"]
+
+[resource]
+script = ExtResource("7_library")
+buffs = Array[ExtResource("1_buff")]([ExtResource("2_burn"), ExtResource("3_freeze"), ExtResource("4_poison"), ExtResource("5_shield"), ExtResource("6_shock")])

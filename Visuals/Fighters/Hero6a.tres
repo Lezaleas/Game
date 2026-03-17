@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="HeroState" load_steps=6 format=3 uid="uid://cggco8ej2fcqh"]
+
+[ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="1_of8v8"]
+[ext_resource type="Script" uid="uid://clbetd2tvnhj3" path="res://Systems/Run/State/HeroState.gd" id="2_51i3t"]
+[ext_resource type="Resource" uid="uid://c8a8y7m1m7m" path="res://Systems/Skills/Data/Sniper.tres" id="3_h1op3"]
+[ext_resource type="Resource" uid="uid://c748y7m1m7m" path="res://Systems/Skills/Data/Recoil.tres" id="4_yqy3i"]
+[ext_resource type="Resource" uid="uid://c6v8y7m1m7m" path="res://Systems/Skills/Data/Focus.tres" id="5_4yii2"]
+
+[resource]
+script = ExtResource("2_51i3t")
+skills = Array[ExtResource("1_of8v8")]([ExtResource("3_h1op3"), ExtResource("4_yqy3i"), ExtResource("5_4yii2")])
+attributes_base = [10, 20, 10, 10]
+metadata/_custom_type_script = "uid://clbetd2tvnhj3"

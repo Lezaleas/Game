@@ -12,7 +12,7 @@ func _init(_data: Buff, _parent: FighterState) -> void:
 	data = _data
 	parent = _parent
 
-func add_amount(amount: float) -> bool:
+func add_amount(amount: float, applier: FighterState = null) -> bool:
 	# returns true if the buff triggers/refreshes
 	if data.apply_immediately:
 		stacks += int(amount)
@@ -28,6 +28,8 @@ func add_amount(amount: float) -> bool:
 	return false
 
 func tick() -> void:
+	if data.apply_immediately: return # early exit for buffs that don't tick
+
 	if remaining_turns > 0:
 		remaining_turns -= 1
 		if remaining_turns == 0:

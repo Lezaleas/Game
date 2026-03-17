@@ -1,12 +1,9 @@
-[gd_resource type="Resource" script_class="ShockBuff" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="ShockBuff" load_steps=2 format=3 uid="uid://bmqvj7iqvqymw"]
 
-[ext_resource type="Script" path="res://Systems/Buffs/Data/Shock.gd" id="1_shock"]
+[ext_resource type="Script" uid="uid://bjgfs6cao0rk4" path="res://Systems/Buffs/Data/Shock.gd" id="1_shock"]
 
 [resource]
 script = ExtResource("1_shock")
-id = "shock"
+id = 2
 display_name = "Shock"
-is_debuff = true
-trigger_threshold = 100.0
-duration_turns = 2
-apply_immediately = false
+duration_turns = 50

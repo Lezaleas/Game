@@ -1,12 +1,11 @@
-[gd_resource type="Resource" script_class="ShieldBuff" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="ShieldBuff" load_steps=2 format=3 uid="uid://df8n4c43ol3hw"]
 
-[ext_resource type="Script" path="res://Systems/Buffs/Data/Shield.gd" id="1_shield"]
+[ext_resource type="Script" uid="uid://daavxolfu1wbk" path="res://Systems/Buffs/Data/Shield.gd" id="1_shield"]
 
 [resource]
 script = ExtResource("1_shield")
-id = "shield"
+id = 4
 display_name = "Shield"
 is_debuff = false
-trigger_threshold = 100.0
 duration_turns = 99
 apply_immediately = true

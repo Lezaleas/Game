@@ -11,7 +11,7 @@ var teams: Array[TeamState]
 var fighters: Array[FighterState]
 var reservoirs: Array[ReservoirState]
 var attributes: Array[AttributeState]
-var game_speed := 1.0
+var anim_speed := 1.0
 
 func new_state():
 	battle = BattleState.new()

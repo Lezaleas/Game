@@ -22,10 +22,10 @@ const ATTRIBUTE_STARTING = 10 # base attribute level
 # ----------------------------
 enum ATTRIBUTE {Pwr, Spi, Wis, Agi}
 enum ELEMENT {Red, Blue, Yellow, Green}
-enum BUFF {Burn, Freeze, Shock, Poison}
+enum BUFF {Burn, Freeze, Shock, Poison, Shield}
 
 enum CMD_EVENT_TYPE {Walk, Attack, DealDmg, ReceiveDmg, TurnStart, ClashStart, ClashLink,
-					  StatsCalc}
+					  StatsCalc, ApplyBuff}
 enum TARGETING_TYPE {Choose, Leader, Enemies, Self, NextAlly, Allies, Everyone, EveryoneButMe}
 # ----------------------------
 # Libraries
@@ -33,3 +33,4 @@ enum TARGETING_TYPE {Choose, Leader, Enemies, Self, NextAlly, Allies, Everyone, 
 var skills = preload("res://Data/Libraries/SkillLibrary.tres")
 var icons = preload("res://Data/Libraries/IconLibrary.tres")
 var perktrees = preload("res://Data/Libraries/PerkTreeLibrary.tres")
+var buffs = preload("res://Data/Libraries/BuffLibrary.tres")

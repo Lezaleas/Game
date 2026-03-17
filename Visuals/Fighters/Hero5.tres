@@ -1,13 +1,11 @@
-[gd_resource type="Resource" script_class="HeroState" load_steps=6 format=3 uid="uid://bpcgjvl05snr7"]
+[gd_resource type="Resource" script_class="HeroState" load_steps=4 format=3 uid="uid://bpcgjvl05snr7"]
 
 [ext_resource type="Script" uid="uid://clbetd2tvnhj3" path="res://Systems/Run/State/HeroState.gd" id="1_clv6a"]
 [ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="1_warx5"]
-[ext_resource type="Resource" uid="uid://c808y7m1m7m" path="res://Systems/Skills/Data/Triumph.tres" id="3_udpt5"]
-[ext_resource type="Resource" uid="uid://c6q8y7m1m7m" path="res://Systems/Skills/Data/Berserk.tres" id="4_3qcn6"]
-[ext_resource type="Resource" uid="uid://c608y7m1m7m" path="res://Systems/Skills/Data/Lancer.tres" id="5_ickxx"]
+[ext_resource type="SpriteFrames" uid="uid://b2y68es0mxi23" path="res://Assets/Sprite_frames/Stage1/Bakemon.tres" id="3_liotv"]
 
 [resource]
 script = ExtResource("1_clv6a")
-skills = Array[ExtResource("1_warx5")]([ExtResource("3_udpt5"), ExtResource("4_3qcn6"), ExtResource("5_ickxx")])
-attributes_base = [20, 10, 10, 10]
+sprite = ExtResource("3_liotv")
+attributes_base = [21, 10, 10, 10]
 metadata/_custom_type_script = "uid://clbetd2tvnhj3"
