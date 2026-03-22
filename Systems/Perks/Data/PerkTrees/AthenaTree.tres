@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="PerkTree" load_steps=20 format=3 uid="uid://cv8vpxn7o4l6r"]
+
+[ext_resource type="Script" uid="uid://v7t13w7elsp2" path="res://Systems/Perks/Data/PerkTree.gd" id="1_eia52"]
+[ext_resource type="Script" uid="uid://d04bsobu4odrk" path="res://Systems/Perks/Data/PerkTier.gd" id="2_e031i"]
+[ext_resource type="Script" uid="uid://dy8fo3snvl7r6" path="res://Systems/Perks/Data/Perk.gd" id="3_1ejd5"]
+[ext_resource type="Resource" uid="uid://b7fr6i6q0d523" path="res://Systems/Perks/Data/SkillPerks/Focus.tres" id="4_focus"]
+[ext_resource type="Resource" uid="uid://cf0wcubvl5qtq" path="res://Systems/Perks/Data/SkillPerks/Ranger.tres" id="5_ranger"]
+[ext_resource type="Resource" uid="uid://brp21i1npxj5v" path="res://Systems/Perks/Data/SkillPerks/ShadowCast.tres" id="6_shadowcast"]
+[ext_resource type="Resource" uid="uid://d30kuum3weome" path="res://Systems/Perks/Data/SkillPerks/Teleport.tres" id="7_teleport"]
+[ext_resource type="Resource" uid="uid://dyivpyag4k3qp" path="res://Systems/Perks/Data/SkillPerks/FrostShield.tres" id="8_frostshield"]
+[ext_resource type="Resource" uid="uid://bw22t15chkt7u" path="res://Systems/Perks/Data/SkillPerks/Manablade.tres" id="9_manablade"]
+[ext_resource type="Resource" uid="uid://cqlwrwtmrs2q4" path="res://Systems/Perks/Data/SkillPerks/Hexstrike.tres" id="10_hexstrike"]
+[ext_resource type="Resource" uid="uid://cb4wc07wt8mn5" path="res://Systems/Perks/Data/SkillPerks/Charm.tres" id="11_charm"]
+[ext_resource type="Resource" uid="uid://dm56w5imq38e6" path="res://Systems/Perks/Data/SkillPerks/BloodMage.tres" id="12_bloodmage"]
+[ext_resource type="Resource" uid="uid://x6gmrr2uveep" path="res://Systems/Perks/Data/SkillPerks/Sniper.tres" id="13_sniper"]
+[ext_resource type="Resource" uid="uid://d1gsgf14vkbpy" path="res://Systems/Perks/Data/SkillPerks/Rogue.tres" id="14_rogue"]
+[ext_resource type="Resource" uid="uid://cuqujkx30b4k7" path="res://Systems/Perks/Data/SkillPerks/Triumph.tres" id="15_triumph"]
+
+[sub_resource type="Resource" id="Resource_f58x0"]
+script = ExtResource("2_e031i")
+perks = Array[ExtResource("3_1ejd5")]([ExtResource("4_focus"), ExtResource("5_ranger"), ExtResource("6_shadowcast")])
+
+[sub_resource type="Resource" id="Resource_jki72"]
+script = ExtResource("2_e031i")
+perks = Array[ExtResource("3_1ejd5")]([ExtResource("7_teleport"), ExtResource("8_frostshield"), ExtResource("9_manablade")])
+
+[sub_resource type="Resource" id="Resource_56w56"]
+script = ExtResource("2_e031i")
+perks = Array[ExtResource("3_1ejd5")]([ExtResource("10_hexstrike"), ExtResource("11_charm"), ExtResource("12_bloodmage")])
+
+[sub_resource type="Resource" id="Resource_lqvxk"]
+script = ExtResource("2_e031i")
+perks = Array[ExtResource("3_1ejd5")]([ExtResource("13_sniper"), ExtResource("14_rogue"), ExtResource("15_triumph")])
+
+[resource]
+script = ExtResource("1_eia52")
+id = "Athena"
+display_name = "Athena"
+tiers = Array[ExtResource("2_e031i")]([SubResource("Resource_f58x0"), SubResource("Resource_jki72"), SubResource("Resource_56w56"), SubResource("Resource_lqvxk")])
+metadata/_custom_type_script = "uid://v7t13w7elsp2"

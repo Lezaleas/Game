@@ -8,16 +8,14 @@ class_name AbilityInfoPanel
 func _ready() -> void:
 	EventBus.subscribe("skill_hovered", self, "show_skill")
 
-func show_skill(skill: Skill = null) -> void:
-	if skill == null:
-		return
-	name_label.text = skill.skill_name
-	_update_description(skill)
+func show_skill(data) -> void:
+	if data is Perk:
+		name_label.text = data.display_name
+		description.text = data.description
+	if data is Skill:
+		name_label.text = data.skill_name
+		description.text = data.description
 
 func clear() -> void:
 	name_label.text = ""
 	description.clear()
-
-func _update_description(skill: Skill) -> void:
-	description.clear()
-	description.append_text(skill.description)

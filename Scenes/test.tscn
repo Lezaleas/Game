@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://ndg7ueks8cbi"]
+[gd_scene load_steps=25 format=3 uid="uid://ndg7ueks8cbi"]
 
 [ext_resource type="PackedScene" uid="uid://bjdswhus3xkjw" path="res://Scenes/InfoPanel.tscn" id="1_lc1oi"]
 [ext_resource type="PackedScene" uid="uid://cx55o3f4i4oja" path="res://Scenes/DefaultBorder.tscn" id="2_8od7v"]
+[ext_resource type="SpriteFrames" uid="uid://pg85rknsymf2" path="res://Assets/Sprite_frames/Stage1/Seadramon.tres" id="5_5wyu1"]
 [ext_resource type="Texture2D" uid="uid://bnbl23npjlyar" path="res://Assets/Sprites/Common/New Imagen de mapa de bits (5).png" id="5_35xla"]
 [ext_resource type="Shader" uid="uid://dg4bormjoqika" path="res://Assets/Shaders/specandglow.gdshader" id="5_i3aeo"]
 [ext_resource type="PackedScene" uid="uid://o13vej1ds0oe" path="res://Scenes/DefaultBorder2.tscn" id="7_5wyu1"]
@@ -490,8 +491,8 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_i3aeo")
 
 [node name="DefaultBorder5" parent="CanvasLayer" instance=ExtResource("7_5wyu1")]
-offset_left = 54.0
-offset_top = 943.0
+offset_left = 299.0
+offset_top = 942.0
 offset_right = 369.0
 offset_bottom = 1014.0
 
@@ -545,14 +546,10 @@ material = SubResource("ShaderMaterial_i3aeo")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_35xla")
 
-[node name="Label" type="Label" parent="CanvasLayer/DefaultBorder5/MarginContainer/Content/Background"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.67200005)
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 4
-theme_override_constants/shadow_outline_size = 2
-text = "BUTTON 1"
-horizontal_alignment = 1
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/DefaultBorder5/MarginContainer/Content/Background"]
+position = Vector2(30, 30)
+scale = Vector2(3, 3)
+sprite_frames = ExtResource("5_5wyu1")
 
 [node name="DefaultBorder6" parent="CanvasLayer" instance=ExtResource("7_5wyu1")]
 offset_left = 27.0

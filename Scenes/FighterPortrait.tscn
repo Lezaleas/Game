@@ -31,6 +31,7 @@ centered = false
 flip_h = true
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 show_behind_parent = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_03e2s")

@@ -5,7 +5,7 @@ extends CanvasLayer
 
 const CLASH_BAR_SCENE = preload("res://Systems/Battle/Visuals/ClashBar.tscn")
 const DASH_IN_DURATION = 0.2
-const DASH_OUT_DURATION = 0.2
+const DASH_OUT_DURATION = 0.1
 const HIT_FREEZE_DURATION = 0.1
 const DASH_DISTANCE = 100.0
 
@@ -63,32 +63,33 @@ func _get_fighter_view(id: int) -> FighterView:
 	return Situation.fighters[id].view
 
 func _dash_winner(winner_view: FighterView, loser_view:FighterView, blue_won: int) -> void:
-	# Ensure we use a clean tween and kill any overlapping ones on this fighter
-	var tween = create_tween()
-	var orig_pos = winner_view.position
-	#var dash_to = orig_pos + Vector2(DASH_DISTANCE, 0) * blue_won
-	var dash_to = loser_view.position
+	EventBus.emit("request_pause", true)
 	for fighter in Situation.fighters:
 		fighter.view.lock_movement()
-	EventBus.emit("request_pause", true)
+	var tween = create_tween()
+	var orig_pos = winner_view.position
+	var dash_to = loser_view.position
+	winner_view.spawn_afterimages = true
 	
 	# Dash in
 	tween.tween_property(winner_view, "position", dash_to,
 		DASH_IN_DURATION / Situation.anim_speed) \
-		.set_trans(Tween.TRANS_SPRING) \
-		.set_ease(Tween.EASE_OUT)
+		.set_trans(Tween.TRANS_BACK) \
+		.set_ease(Tween.EASE_IN)
 	
-	await get_tree().create_timer(DASH_IN_DURATION + HIT_FREEZE_DURATION).timeout
+	await get_tree().create_timer(
+	DASH_IN_DURATION / Situation.anim_speed + HIT_FREEZE_DURATION / Situation.anim_speed).timeout
+	winner_view.spawn_afterimages = false
+	if tween: tween.kill()
 	tween = create_tween()
-	var winner_log_pos = Vector2(winner_view.fighter_state.position_x, winner_view.fighter_state.position_y)
 	
 	# Return with elasticity
-	tween.tween_property(winner_view, "position", winner_log_pos,
+	tween.tween_property(winner_view, "position", orig_pos,
 		DASH_OUT_DURATION / Situation.anim_speed) \
 		.set_trans(Tween.TRANS_SINE) \
 		.set_ease(Tween.EASE_IN_OUT)
 		
-	await get_tree().create_timer(DASH_OUT_DURATION).timeout
+	await get_tree().create_timer(DASH_OUT_DURATION / Situation.anim_speed).timeout
 		
 	for fighter in Situation.fighters:
 		fighter.view.unlock_movement()

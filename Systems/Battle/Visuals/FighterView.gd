@@ -9,6 +9,7 @@ var hit_flash_tween: Tween
 var move_tween: Tween
 var last_x: float = 0.0
 var lock_count: int = 0
+var spawn_afterimages: = false
 
 func _ready():
 	add_to_group("refresh")

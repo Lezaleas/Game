@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Perk" load_steps=6 format=3 uid="uid://dm56w5imq38e6"]
+
+[ext_resource type="Script" uid="uid://ctqshx5t1jl5d" path="res://Systems/Perks/Data/PerkEffect.gd" id="1_ge2hq"]
+[ext_resource type="Script" uid="uid://cjjs4er837kph" path="res://Systems/Perks/Data/PerkEffects/SkillPerk.gd" id="2_qxy7m"]
+[ext_resource type="Script" uid="uid://dy8fo3snvl7r6" path="res://Systems/Perks/Data/Perk.gd" id="2_ten5n"]
+[ext_resource type="Resource" uid="uid://dil2o0envpeo4" path="res://Systems/Skills/Data/BloodMage.tres" id="3_axuak"]
+
+[sub_resource type="Resource" id="Resource_kgvyv"]
+script = ExtResource("2_qxy7m")
+skill = ExtResource("3_axuak")
+metadata/_custom_type_script = "uid://cjjs4er837kph"
+
+[resource]
+script = ExtResource("2_ten5n")
+id = "BloodMage"
+display_name = "BloodMage"
+effects = Array[ExtResource("1_ge2hq")]([SubResource("Resource_kgvyv")])
+metadata/_custom_type_script = "uid://dy8fo3snvl7r6"

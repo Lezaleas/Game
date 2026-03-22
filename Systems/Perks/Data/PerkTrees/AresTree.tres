@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="PerkTree" load_steps=20 format=3 uid="uid://hcfi2lrv6ykm"]
+
+[ext_resource type="Script" uid="uid://v7t13w7elsp2" path="res://Systems/Perks/Data/PerkTree.gd" id="1_eia52"]
+[ext_resource type="Script" uid="uid://d04bsobu4odrk" path="res://Systems/Perks/Data/PerkTier.gd" id="2_e031i"]
+[ext_resource type="Script" uid="uid://dy8fo3snvl7r6" path="res://Systems/Perks/Data/Perk.gd" id="3_1ejd5"]
+[ext_resource type="Resource" uid="uid://jaj6c34hxtgy" path="res://Systems/Perks/Data/SkillPerks/Anger.tres" id="4_anger"]
+[ext_resource type="Resource" uid="uid://bo5jf0g231n2t" path="res://Systems/Perks/Data/SkillPerks/BloodRush.tres" id="5_bloodrush"]
+[ext_resource type="Resource" uid="uid://12ih6p4yrxqr" path="res://Systems/Perks/Data/SkillPerks/Counter.tres" id="6_counter"]
+[ext_resource type="Resource" uid="uid://scggqjl4wlap" path="res://Systems/Perks/Data/SkillPerks/Berserk.tres" id="7_berserk"]
+[ext_resource type="Resource" uid="uid://c4t8l78lyuaa6" path="res://Systems/Perks/Data/SkillPerks/Lancer.tres" id="8_lancer"]
+[ext_resource type="Resource" uid="uid://bbecv71jvrfll" path="res://Systems/Perks/Data/SkillPerks/Sergeant.tres" id="9_sergeant"]
+[ext_resource type="Resource" uid="uid://f73s6y6qxpxu" path="res://Systems/Perks/Data/SkillPerks/Recoil.tres" id="10_recoil"]
+[ext_resource type="Resource" uid="uid://b2qr4d8xwa5wv" path="res://Systems/Perks/Data/SkillPerks/Reprisal.tres" id="11_reprisal"]
+[ext_resource type="Resource" uid="uid://du53wi1l5vlsi" path="res://Systems/Perks/Data/SkillPerks/Monk.tres" id="12_monk"]
+[ext_resource type="Resource" uid="uid://d1gsgf14vkbpy" path="res://Systems/Perks/Data/SkillPerks/Rogue.tres" id="13_rogue"]
+[ext_resource type="Resource" uid="uid://dm56w5imq38e6" path="res://Systems/Perks/Data/SkillPerks/BloodMage.tres" id="14_bloodmage"]
+[ext_resource type="Resource" uid="uid://cuqujkx30b4k7" path="res://Systems/Perks/Data/SkillPerks/Triumph.tres" id="15_triumph"]
+
+[sub_resource type="Resource" id="Resource_f58x0"]
+script = ExtResource("2_e031i")
+perks = Array[ExtResource("3_1ejd5")]([ExtResource("4_anger"), ExtResource("5_bloodrush"), ExtResource("6_counter")])
+
+[sub_resource type="Resource" id="Resource_jki72"]
+script = ExtResource("2_e031i")
+perks = Array[ExtResource("3_1ejd5")]([ExtResource("7_berserk"), ExtResource("8_lancer"), ExtResource("9_sergeant")])
+
+[sub_resource type="Resource" id="Resource_56w56"]
+script = ExtResource("2_e031i")
+perks = Array[ExtResource("3_1ejd5")]([ExtResource("10_recoil"), ExtResource("11_reprisal"), ExtResource("12_monk")])
+
+[sub_resource type="Resource" id="Resource_lqvxk"]
+script = ExtResource("2_e031i")
+perks = Array[ExtResource("3_1ejd5")]([ExtResource("13_rogue"), ExtResource("14_bloodmage"), ExtResource("15_triumph")])
+
+[resource]
+script = ExtResource("1_eia52")
+id = "Ares"
+display_name = "Ares"
+tiers = Array[ExtResource("2_e031i")]([SubResource("Resource_f58x0"), SubResource("Resource_jki72"), SubResource("Resource_56w56"), SubResource("Resource_lqvxk")])
+metadata/_custom_type_script = "uid://v7t13w7elsp2"

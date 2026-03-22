@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="PerkTreeLibrary" load_steps=4 format=3 uid="uid://dbiesblrmer5j"]
+[gd_resource type="Resource" script_class="PerkTreeLibrary" load_steps=7 format=3 uid="uid://dbiesblrmer5j"]
 
 [ext_resource type="Script" uid="uid://blijcaiswg3b0" path="res://Data/Libraries/PerkTreeLibrary.gd" id="1_fn066"]
 [ext_resource type="Script" uid="uid://v7t13w7elsp2" path="res://Systems/Perks/Data/PerkTree.gd" id="2_w8jpj"]
-[ext_resource type="Resource" uid="uid://df16gfesg8jeg" path="res://Systems/Perks/Data/PerkTrees/default.tres" id="3_6aj77"]
+[ext_resource type="Resource" uid="uid://cv8vpxn7o4l6r" path="res://Systems/Perks/Data/PerkTrees/AthenaTree.tres" id="3_7elhw"]
+[ext_resource type="Resource" uid="uid://hcfi2lrv6ykm" path="res://Systems/Perks/Data/PerkTrees/AresTree.tres" id="4_keby0"]
+[ext_resource type="Resource" uid="uid://b0v6f7x4h8u1y" path="res://Systems/Perks/Data/PerkTrees/DemeterTree.tres" id="5_k4r42"]
+[ext_resource type="Resource" uid="uid://c5fnmb0wb877l" path="res://Systems/Perks/Data/PerkTrees/ArtemisTree.tres" id="6_01f5s"]
 
 [resource]
 script = ExtResource("1_fn066")
-trees = Array[ExtResource("2_w8jpj")]([ExtResource("3_6aj77")])
+trees = Array[ExtResource("2_w8jpj")]([ExtResource("3_7elhw"), ExtResource("4_keby0"), ExtResource("5_k4r42"), ExtResource("6_01f5s")])
 metadata/_custom_type_script = "uid://blijcaiswg3b0"
