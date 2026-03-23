@@ -23,6 +23,7 @@ const ATTRIBUTE_STARTING = 10 # base attribute level
 enum ATTRIBUTE {Pwr, Spi, Wis, Agi}
 enum ELEMENT {Red, Blue, Yellow, Green}
 enum BUFF {Burn, Freeze, Shock, Poison, Shield}
+enum EQUIP_TYPE {Weapon, Helmet, Armor, Accesory}
 
 enum CMD_EVENT_TYPE {Walk, Attack, DealDmg, ReceiveDmg, TurnStart, ClashStart, ClashLink,
 					  StatsCalc, ApplyBuff}

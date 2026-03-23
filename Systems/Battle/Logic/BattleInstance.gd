@@ -16,7 +16,9 @@ func _ready():
 	for x in range(Situation.player_team_data.size()):
 		Utils.HeroToFighter(Situation.player_team_data[x], Situation.fighters[x])
 	for x in range(Situation.enemy_team_data.size()):
-		Utils.HeroToFighter(Situation.enemy_team_data[x], Situation.fighters[x+4])
+		Utils.HeroToFighter(Situation.enemy_team_data[x], Situation.fighters[x+Defines.TEAM_SIZE])
+	
+	print(Situation.fighters[0].sprite.resource_path)
 	
 	# Load skills from intermission data
 	for fighter in Situation.fighters:

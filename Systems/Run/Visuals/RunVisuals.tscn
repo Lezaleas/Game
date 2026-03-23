@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://55dvelk1sqsw"]
+[gd_scene load_steps=7 format=3 uid="uid://55dvelk1sqsw"]
 
 [ext_resource type="PackedScene" uid="uid://ca5gfo26ni6ly" path="res://Scenes/ReusableButton.tscn" id="1_gsqkf"]
 [ext_resource type="Script" uid="uid://b7y2ojtvkfodh" path="res://Systems/Run/Visuals/RunVisuals.gd" id="1_hvrjw"]
 [ext_resource type="PackedScene" uid="uid://df2gmv4afb7jo" path="res://Systems/Run/Visuals/PerkTreeScene/PerkTree.tscn" id="2_twi4f"]
 [ext_resource type="PackedScene" uid="uid://dmo4kw52jfynx" path="res://Visuals/Intermission/SkillInfoPanel.tscn" id="3_2d4cy"]
 [ext_resource type="Resource" uid="uid://rd2jd1if1aba" path="res://Visuals/Fighters/Hero1.tres" id="3_mf8d5"]
+[ext_resource type="PackedScene" uid="uid://dlu1hpkw80bl8" path="res://Visuals/Intermission/equipment/EquipmentSelection.tscn" id="6_mkt83"]
 
 [node name="RunVisuals" type="Node2D"]
 script = ExtResource("1_hvrjw")
@@ -22,6 +23,88 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="PerkSelectionScreen" type="VBoxContainer" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+offset_right = 1920.0
+offset_bottom = 973.0
+
+[node name="SkillInfoPanel" parent="CanvasLayer/PerkSelectionScreen" instance=ExtResource("3_2d4cy")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PerkTrees" type="HBoxContainer" parent="CanvasLayer/PerkSelectionScreen"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSeparator5" type="HSeparator" parent="CanvasLayer/PerkSelectionScreen/PerkTrees"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PerkTree0" parent="CanvasLayer/PerkSelectionScreen/PerkTrees" instance=ExtResource("2_twi4f")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+hero = ExtResource("3_mf8d5")
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/PerkSelectionScreen/PerkTrees"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator6" type="HSeparator" parent="CanvasLayer/PerkSelectionScreen/PerkTrees"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PerkTree1" parent="CanvasLayer/PerkSelectionScreen/PerkTrees" instance=ExtResource("2_twi4f")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+hero = ExtResource("3_mf8d5")
+id = 1
+
+[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/PerkSelectionScreen/PerkTrees"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator7" type="HSeparator" parent="CanvasLayer/PerkSelectionScreen/PerkTrees"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PerkTree2" parent="CanvasLayer/PerkSelectionScreen/PerkTrees" instance=ExtResource("2_twi4f")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+hero = ExtResource("3_mf8d5")
+id = 2
+
+[node name="HSeparator8" type="HSeparator" parent="CanvasLayer/PerkSelectionScreen/PerkTrees"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator3" type="HSeparator" parent="CanvasLayer/PerkSelectionScreen/PerkTrees"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PerkTree3" parent="CanvasLayer/PerkSelectionScreen/PerkTrees" instance=ExtResource("2_twi4f")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+hero = ExtResource("3_mf8d5")
+id = 3
+
+[node name="HSeparator4" type="HSeparator" parent="CanvasLayer/PerkSelectionScreen/PerkTrees"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="BottomHBox" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 2
@@ -86,86 +169,7 @@ theme_override_font_sizes/font_size = 32
 text = "Yellow Fighter"
 item_id = 7
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = 117.0
-offset_bottom = 433.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HSeparator5" type="HSeparator" parent="CanvasLayer/HBoxContainer"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="PerkTree0" parent="CanvasLayer/HBoxContainer" instance=ExtResource("2_twi4f")]
+[node name="EquipmentSelectionScreen" parent="CanvasLayer" instance=ExtResource("6_mkt83")]
 unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 0
-hero = ExtResource("3_mf8d5")
-
-[node name="HSeparator" type="HSeparator" parent="CanvasLayer/HBoxContainer"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="HSeparator6" type="HSeparator" parent="CanvasLayer/HBoxContainer"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="PerkTree1" parent="CanvasLayer/HBoxContainer" instance=ExtResource("2_twi4f")]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 0
-hero = ExtResource("3_mf8d5")
-id = 1
-
-[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/HBoxContainer"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="HSeparator7" type="HSeparator" parent="CanvasLayer/HBoxContainer"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="PerkTree2" parent="CanvasLayer/HBoxContainer" instance=ExtResource("2_twi4f")]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 0
-hero = ExtResource("3_mf8d5")
-id = 2
-
-[node name="HSeparator8" type="HSeparator" parent="CanvasLayer/HBoxContainer"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="HSeparator3" type="HSeparator" parent="CanvasLayer/HBoxContainer"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="PerkTree3" parent="CanvasLayer/HBoxContainer" instance=ExtResource("2_twi4f")]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 0
-hero = ExtResource("3_mf8d5")
-id = 3
-
-[node name="HSeparator4" type="HSeparator" parent="CanvasLayer/HBoxContainer"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="SkillInfoPanel" parent="CanvasLayer" instance=ExtResource("3_2d4cy")]
-unique_name_in_owner = true
-offset_left = 1043.0
-offset_top = 84.0
-offset_right = -101.0
-offset_bottom = -502.0
+visible = false
+offset_bottom = -64.0

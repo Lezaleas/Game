@@ -13,7 +13,6 @@ func _ready() -> void:
 		hero.setup()
 		RunManager.run.heroes.append(hero)
 		RunManager.heroes.append(hero)
-		print(RunManager.heroes)
 		
 	# load default skills
 	RunManager.skills = Defines.skills.starting_skills.duplicate(true)
