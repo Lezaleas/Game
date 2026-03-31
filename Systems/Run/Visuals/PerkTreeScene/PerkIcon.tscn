@@ -107,6 +107,14 @@ scale = Vector2(4, 4)
 sprite_frames = ExtResource("2_j5vj2")
 centered = false
 
+[node name="Locked" type="Panel" parent="VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.39732322, 0.39732322, 0.39732322, 0.49)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_iuvwu")
+
 [node name="DefaultBorder3" parent="." instance=ExtResource("3_j5vj2")]
 custom_minimum_size = Vector2(0, 28)
 layout_mode = 0

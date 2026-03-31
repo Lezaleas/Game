@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://55dvelk1sqsw"]
+[gd_scene load_steps=8 format=3 uid="uid://55dvelk1sqsw"]
 
 [ext_resource type="PackedScene" uid="uid://ca5gfo26ni6ly" path="res://Scenes/ReusableButton.tscn" id="1_gsqkf"]
 [ext_resource type="Script" uid="uid://b7y2ojtvkfodh" path="res://Systems/Run/Visuals/RunVisuals.gd" id="1_hvrjw"]
 [ext_resource type="PackedScene" uid="uid://df2gmv4afb7jo" path="res://Systems/Run/Visuals/PerkTreeScene/PerkTree.tscn" id="2_twi4f"]
 [ext_resource type="PackedScene" uid="uid://dmo4kw52jfynx" path="res://Visuals/Intermission/SkillInfoPanel.tscn" id="3_2d4cy"]
 [ext_resource type="Resource" uid="uid://rd2jd1if1aba" path="res://Visuals/Fighters/Hero1.tres" id="3_mf8d5"]
-[ext_resource type="PackedScene" uid="uid://dlu1hpkw80bl8" path="res://Visuals/Intermission/equipment/EquipmentSelection.tscn" id="6_mkt83"]
+[ext_resource type="PackedScene" uid="uid://dlu1hpkw80bl8" path="res://Systems/Equipment/Visuals/EquipmentSelection.tscn" id="6_mkt83"]
+[ext_resource type="PackedScene" uid="uid://c1d2e3f4g5h6i" path="res://Systems/Enemies/Visuals/LevelSelection.tscn" id="9_extra"]
 
 [node name="RunVisuals" type="Node2D"]
 script = ExtResource("1_hvrjw")
@@ -106,40 +107,48 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="EquipmentSelectionScreen" parent="CanvasLayer" instance=ExtResource("6_mkt83")]
+unique_name_in_owner = true
+visible = false
+offset_bottom = -64.0
+
+[node name="LevelSelectionScreen" parent="CanvasLayer" instance=ExtResource("9_extra")]
+unique_name_in_owner = true
+visible = false
+
 [node name="BottomHBox" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = -53.0
-offset_right = 484.0
+offset_right = 1331.0
 grow_vertical = 0
 
 [node name="StatusMenuButton" parent="CanvasLayer/BottomHBox" instance=ExtResource("1_gsqkf")]
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_font_sizes/font_size = 32
-text = "STATUS"
+text = "Quit"
+
+[node name="ShrinesMenuButton" parent="CanvasLayer/BottomHBox" instance=ExtResource("1_gsqkf")]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 32
+text = "Battle"
+item_id = 3
 
 [node name="PerksMenuButton" parent="CanvasLayer/BottomHBox" instance=ExtResource("1_gsqkf")]
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_font_sizes/font_size = 32
-text = "PERKS"
 item_id = 1
 
 [node name="EquipMenuButton" parent="CanvasLayer/BottomHBox" instance=ExtResource("1_gsqkf")]
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_font_sizes/font_size = 32
-text = "EQUIP"
+text = "Equipment"
 item_id = 2
-
-[node name="ShrinesMenuButton" parent="CanvasLayer/BottomHBox" instance=ExtResource("1_gsqkf")]
-layout_mode = 2
-size_flags_horizontal = 6
-theme_override_font_sizes/font_size = 32
-text = "SHRINES"
-item_id = 3
 
 [node name="FighterButton0" parent="CanvasLayer/BottomHBox" instance=ExtResource("1_gsqkf")]
 layout_mode = 2
@@ -168,8 +177,3 @@ size_flags_horizontal = 6
 theme_override_font_sizes/font_size = 32
 text = "Yellow Fighter"
 item_id = 7
-
-[node name="EquipmentSelectionScreen" parent="CanvasLayer" instance=ExtResource("6_mkt83")]
-unique_name_in_owner = true
-visible = false
-offset_bottom = -64.0

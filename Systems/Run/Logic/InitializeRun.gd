@@ -1,6 +1,13 @@
 extends Node
 
 func _ready() -> void:
+	if RunManager.run != null:
+		return
+
+	randomize()
+	RunManager.run_seed = randi()
+	RunManager.run_rng.seed = RunManager.run_seed
+	
 	RunManager.run = RunState.new()
 	RunManager.heroes = RunManager.run.heroes
 	RunManager.shrines = Defines.perktrees.trees.duplicate(true)
@@ -13,8 +20,5 @@ func _ready() -> void:
 		hero.setup()
 		RunManager.run.heroes.append(hero)
 		RunManager.heroes.append(hero)
-		
-	# load default skills
-	RunManager.skills = Defines.skills.starting_skills.duplicate(true)
 		
 	EventBus.emit("run_started")

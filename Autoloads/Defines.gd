@@ -17,13 +17,16 @@ const WIN_THRESHOLD_RATIO = 0.25 # percentage of the map to control to win
 const STAMINA_GAIN_TURN = 2 # how much stamina to regen each turn
 const TIERS_PER_PERK_TREE = 4
 const ATTRIBUTE_STARTING = 10 # base attribute level
+const MAX_WEIGHT = 100
 # ----------------------------
 # Enums
 # ----------------------------
 enum ATTRIBUTE {Pwr, Spi, Wis, Agi}
 enum ELEMENT {Red, Blue, Yellow, Green}
 enum BUFF {Burn, Freeze, Shock, Poison, Shield}
-enum EQUIP_TYPE {Weapon, Helmet, Armor, Accesory}
+enum EQUIP_TYPE {Sword, Staff, Armor, Boots}
+enum EQUIP_QUALITY {Common, Rare, Epic, Legendary}
+enum INVESTMENT {None, Minor, Major, Master, Grandmaster}
 
 enum CMD_EVENT_TYPE {Walk, Attack, DealDmg, ReceiveDmg, TurnStart, ClashStart, ClashLink,
 					  StatsCalc, ApplyBuff}

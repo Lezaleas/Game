@@ -1,9 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://ndg7ueks8cbi"]
+[gd_scene load_steps=28 format=3 uid="uid://ndg7ueks8cbi"]
 
 [ext_resource type="PackedScene" uid="uid://bjdswhus3xkjw" path="res://Scenes/InfoPanel.tscn" id="1_lc1oi"]
 [ext_resource type="PackedScene" uid="uid://cx55o3f4i4oja" path="res://Scenes/DefaultBorder.tscn" id="2_8od7v"]
-[ext_resource type="SpriteFrames" uid="uid://pg85rknsymf2" path="res://Assets/Sprite_frames/Stage1/Seadramon.tres" id="5_5wyu1"]
-[ext_resource type="Texture2D" uid="uid://bnbl23npjlyar" path="res://Assets/Sprites/Common/New Imagen de mapa de bits (5).png" id="5_35xla"]
 [ext_resource type="Shader" uid="uid://dg4bormjoqika" path="res://Assets/Shaders/specandglow.gdshader" id="5_i3aeo"]
 [ext_resource type="PackedScene" uid="uid://o13vej1ds0oe" path="res://Scenes/DefaultBorder2.tscn" id="7_5wyu1"]
 
@@ -253,6 +251,98 @@ shadow_color = Color(3.008172e-07, 0.16343832, 0.29991978, 1)
 shadow_offset = Vector2(1, 2)
 anti_aliasing = false
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yb21e"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0qy5o"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0.25882354, 0.45490196, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.45792782, 0.73100954, 0.9999978, 1)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aees8"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1.6845763e-07, 0.20067841, 0.357682, 1)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ocox"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.12582114, 0.24165773, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7nf3m"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.115231045, 0.2207214, 1)
+border_blend = true
+corner_detail = 1
+anti_aliasing = false
+
 [node name="Test" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -291,8 +381,24 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_8od7v")
 [node name="DefaultBorder3" parent="CanvasLayer" instance=ExtResource("2_8od7v")]
 offset_left = 509.0
 offset_top = 576.0
-offset_right = 825.0
-offset_bottom = 651.0
+offset_right = 711.0
+offset_bottom = 647.0
+
+[node name="Border" parent="CanvasLayer/DefaultBorder3/MarginContainer" index="0"]
+visible = false
+
+[node name="TextureRect" parent="CanvasLayer/DefaultBorder3/MarginContainer/Border/MarginContainer" index="0"]
+visible = false
+
+[node name="Label2" type="Label" parent="CanvasLayer/DefaultBorder3"]
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.67200005)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 2
+text = "Panel 3"
+horizontal_alignment = 1
 
 [node name="DefaultBorder7" type="PanelContainer" parent="CanvasLayer"]
 offset_left = 33.0
@@ -490,11 +596,21 @@ modulate = Color(0.5370987, 0.5370987, 0.5370987, 1)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_i3aeo")
 
+[node name="Label5" type="Label" parent="CanvasLayer/DefaultBorder4"]
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.67200005)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 2
+text = "Panel 1"
+horizontal_alignment = 1
+
 [node name="DefaultBorder5" parent="CanvasLayer" instance=ExtResource("7_5wyu1")]
-offset_left = 299.0
-offset_top = 942.0
-offset_right = 369.0
-offset_bottom = 1014.0
+offset_left = 387.0
+offset_top = 460.0
+offset_right = 672.0
+offset_bottom = 532.0
 
 [node name="Background" type="PanelContainer" parent="CanvasLayer/DefaultBorder5/MarginContainer/Content" index="0"]
 z_index = 1
@@ -546,10 +662,15 @@ material = SubResource("ShaderMaterial_i3aeo")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_35xla")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/DefaultBorder5/MarginContainer/Content/Background"]
-position = Vector2(30, 30)
-scale = Vector2(3, 3)
-sprite_frames = ExtResource("5_5wyu1")
+[node name="Label4" type="Label" parent="CanvasLayer/DefaultBorder5"]
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.67200005)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 2
+text = "Panel 4"
+horizontal_alignment = 1
 
 [node name="DefaultBorder6" parent="CanvasLayer" instance=ExtResource("7_5wyu1")]
 offset_left = 27.0
@@ -568,12 +689,59 @@ material = SubResource("ShaderMaterial_0c07c")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5wyu1")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer"]
-offset_left = 1062.0
-offset_top = 730.0
-offset_right = 1472.0
-offset_bottom = 888.0
-texture = ExtResource("5_35xla")
+[node name="Label3" type="Label" parent="CanvasLayer/DefaultBorder6"]
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.67200005)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 2
+text = "Panel 5"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 990.0
+offset_top = 703.0
+offset_right = 1210.0
+offset_bottom = 748.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yb21e")
+
+[node name="MarginContainer1" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="Panel" type="Panel" parent="PanelContainer/MarginContainer1"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0qy5o")
+
+[node name="Panel2" type="Panel" parent="PanelContainer/MarginContainer1"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_aees8")
+
+[node name="Panel4" type="Panel" parent="PanelContainer/MarginContainer1"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2ocox")
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Panel" type="Panel" parent="PanelContainer/MarginContainer3"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7nf3m")
 
 [editable path="CanvasLayer/DefaultBorder3"]
 [editable path="CanvasLayer/DefaultBorder4"]

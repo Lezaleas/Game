@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dlu1hpkw80bl8"]
 
-[ext_resource type="Script" uid="uid://btthxhnoxyynp" path="res://Visuals/Intermission/equipment/EquipmentSelection.gd" id="1_ut6lr"]
-[ext_resource type="Script" uid="uid://cj8u1wan0yrys" path="res://Visuals/Intermission/equipment/EquipmentGrid.gd" id="2_grid"]
-[ext_resource type="Script" uid="uid://cbm3n2yg48cxc" path="res://Visuals/Intermission/equipment/EquipmentSwapHandler.gd" id="3_handler"]
-[ext_resource type="PackedScene" path="res://Visuals/Intermission/equipment/HeroEquipmentPanel.tscn" id="4_hero_panel"]
+[ext_resource type="Script" uid="uid://btthxhnoxyynp" path="res://Systems/Equipment/Visuals/EquipmentSelection.gd" id="1_ut6lr"]
+[ext_resource type="Script" uid="uid://cj8u1wan0yrys" path="res://Systems/Equipment/Visuals/EquipmentGrid.gd" id="2_grid"]
+[ext_resource type="Script" uid="uid://cbm3n2yg48cxc" path="res://Systems/Equipment/Visuals/EquipmentSwapHandler.gd" id="3_handler"]
+[ext_resource type="PackedScene" path="res://Systems/Equipment/Visuals/HeroEquipmentPanel.tscn" id="4_hero_panel"]
 
 [node name="EquipmentSelection" type="Control"]
 layout_mode = 3
@@ -45,22 +45,18 @@ alignment = 1
 [node name="HeroPanel0" parent="MainLayout/HeroPanels" instance=ExtResource("4_hero_panel")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="HeroPanel1" parent="MainLayout/HeroPanels" instance=ExtResource("4_hero_panel")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="HeroPanel2" parent="MainLayout/HeroPanels" instance=ExtResource("4_hero_panel")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="HeroPanel3" parent="MainLayout/HeroPanels" instance=ExtResource("4_hero_panel")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="InventorySection" type="VBoxContainer" parent="MainLayout"]
 layout_mode = 2

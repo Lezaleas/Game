@@ -4,33 +4,33 @@
 [ext_resource type="Script" uid="uid://d04bsobu4odrk" path="res://Systems/Perks/Data/PerkTier.gd" id="2_e031i"]
 [ext_resource type="Script" uid="uid://dy8fo3snvl7r6" path="res://Systems/Perks/Data/Perk.gd" id="3_1ejd5"]
 [ext_resource type="Resource" uid="uid://jaj6c34hxtgy" path="res://Systems/Perks/Data/SkillPerks/Anger.tres" id="4_anger"]
-[ext_resource type="Resource" uid="uid://bo5jf0g231n2t" path="res://Systems/Perks/Data/SkillPerks/BloodRush.tres" id="5_bloodrush"]
-[ext_resource type="Resource" uid="uid://12ih6p4yrxqr" path="res://Systems/Perks/Data/SkillPerks/Counter.tres" id="6_counter"]
-[ext_resource type="Resource" uid="uid://scggqjl4wlap" path="res://Systems/Perks/Data/SkillPerks/Berserk.tres" id="7_berserk"]
-[ext_resource type="Resource" uid="uid://c4t8l78lyuaa6" path="res://Systems/Perks/Data/SkillPerks/Lancer.tres" id="8_lancer"]
+[ext_resource type="Resource" uid="uid://12ih6p4yrxqr" path="res://Systems/Perks/Data/SkillPerks/Counter.tres" id="5_counter"]
+[ext_resource type="Resource" uid="uid://c4t8l78lyuaa6" path="res://Systems/Perks/Data/SkillPerks/Lancer.tres" id="6_lancer"]
+[ext_resource type="Resource" uid="uid://b2qr4d8xwa5wv" path="res://Systems/Perks/Data/SkillPerks/Reprisal.tres" id="7_reprisal"]
+[ext_resource type="Resource" uid="uid://du53wi1l5vlsi" path="res://Systems/Perks/Data/SkillPerks/Monk.tres" id="8_monk"]
 [ext_resource type="Resource" uid="uid://bbecv71jvrfll" path="res://Systems/Perks/Data/SkillPerks/Sergeant.tres" id="9_sergeant"]
-[ext_resource type="Resource" uid="uid://f73s6y6qxpxu" path="res://Systems/Perks/Data/SkillPerks/Recoil.tres" id="10_recoil"]
-[ext_resource type="Resource" uid="uid://b2qr4d8xwa5wv" path="res://Systems/Perks/Data/SkillPerks/Reprisal.tres" id="11_reprisal"]
-[ext_resource type="Resource" uid="uid://du53wi1l5vlsi" path="res://Systems/Perks/Data/SkillPerks/Monk.tres" id="12_monk"]
-[ext_resource type="Resource" uid="uid://d1gsgf14vkbpy" path="res://Systems/Perks/Data/SkillPerks/Rogue.tres" id="13_rogue"]
-[ext_resource type="Resource" uid="uid://dm56w5imq38e6" path="res://Systems/Perks/Data/SkillPerks/BloodMage.tres" id="14_bloodmage"]
-[ext_resource type="Resource" uid="uid://cuqujkx30b4k7" path="res://Systems/Perks/Data/SkillPerks/Triumph.tres" id="15_triumph"]
+[ext_resource type="Resource" uid="uid://cuqujkx30b4k7" path="res://Systems/Perks/Data/SkillPerks/Triumph.tres" id="10_triumph"]
+[ext_resource type="Resource" uid="uid://scggqjl4wlap" path="res://Systems/Perks/Data/SkillPerks/Berserk.tres" id="11_berserk"]
+[ext_resource type="Resource" uid="uid://dm56w5imq38e6" path="res://Systems/Perks/Data/SkillPerks/BloodMage.tres" id="12_bloodmage"]
+[ext_resource type="Resource" uid="uid://bo5jf0g231n2t" path="res://Systems/Perks/Data/SkillPerks/BloodRush.tres" id="13_bloodrush"]
+[ext_resource type="Resource" uid="uid://obus4dxwqbew" path="res://Systems/Perks/Data/SkillPerks/Paladin.tres" id="14_paladin"]
+[ext_resource type="Resource" uid="uid://d1gsgf14vkbpy" path="res://Systems/Perks/Data/SkillPerks/Rogue.tres" id="15_rogue"]
 
 [sub_resource type="Resource" id="Resource_f58x0"]
 script = ExtResource("2_e031i")
-perks = Array[ExtResource("3_1ejd5")]([ExtResource("4_anger"), ExtResource("5_bloodrush"), ExtResource("6_counter")])
+perks = Array[ExtResource("3_1ejd5")]([ExtResource("4_anger"), ExtResource("5_counter"), ExtResource("6_lancer")])
 
 [sub_resource type="Resource" id="Resource_jki72"]
 script = ExtResource("2_e031i")
-perks = Array[ExtResource("3_1ejd5")]([ExtResource("7_berserk"), ExtResource("8_lancer"), ExtResource("9_sergeant")])
+perks = Array[ExtResource("3_1ejd5")]([ExtResource("7_reprisal"), ExtResource("8_monk"), ExtResource("9_sergeant")])
 
 [sub_resource type="Resource" id="Resource_56w56"]
 script = ExtResource("2_e031i")
-perks = Array[ExtResource("3_1ejd5")]([ExtResource("10_recoil"), ExtResource("11_reprisal"), ExtResource("12_monk")])
+perks = Array[ExtResource("3_1ejd5")]([ExtResource("11_berserk"), ExtResource("12_bloodmage"), ExtResource("15_rogue")])
 
 [sub_resource type="Resource" id="Resource_lqvxk"]
 script = ExtResource("2_e031i")
-perks = Array[ExtResource("3_1ejd5")]([ExtResource("13_rogue"), ExtResource("14_bloodmage"), ExtResource("15_triumph")])
+perks = Array[ExtResource("3_1ejd5")]([ExtResource("13_bloodrush"), ExtResource("14_paladin"), ExtResource("10_triumph")])
 
 [resource]
 script = ExtResource("1_eia52")

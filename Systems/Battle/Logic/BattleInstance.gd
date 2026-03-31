@@ -7,7 +7,7 @@ extends Node
 
 func _ready():
 	EventBus.subscribe_many(["battle_started"], [view, turn_timer])
-	EventBus.subscribe_many(["1_released", "2_released", "3_released", "4_released"], [self])
+	EventBus.subscribe_many(["battle_won", "1_released", "2_released", "3_released", "4_released"], [self])
 
 	Situation.new_state()
 	Situation.attack_handler = %AttackHandler
@@ -15,10 +15,16 @@ func _ready():
 	# Load informaiton from the run heroes and apply them to the in combat fighters
 	for x in range(Situation.player_team_data.size()):
 		Utils.HeroToFighter(Situation.player_team_data[x], Situation.fighters[x])
-	for x in range(Situation.enemy_team_data.size()):
-		Utils.HeroToFighter(Situation.enemy_team_data[x], Situation.fighters[x+Defines.TEAM_SIZE])
-	
-	print(Situation.fighters[0].sprite.resource_path)
+	for x in range(4, 8):
+		match x:
+			4:
+				Utils.EnemyToFighter(Situation.level_data.enemy0, Situation.fighters[x])
+			5:
+				Utils.EnemyToFighter(Situation.level_data.enemy1, Situation.fighters[x])
+			6:
+				Utils.EnemyToFighter(Situation.level_data.enemy2, Situation.fighters[x])
+			7:
+				Utils.EnemyToFighter(Situation.level_data.enemy3, Situation.fighters[x])
 	
 	# Load skills from intermission data
 	for fighter in Situation.fighters:
@@ -33,3 +39,4 @@ func on_1_released(): turn_timer.set_game_speed(0.0)
 func on_2_released(): turn_timer.set_game_speed(0.2)
 func on_3_released(): turn_timer.set_game_speed(1.0)
 func on_4_released(): turn_timer.set_game_speed(5.0)
+func on_batte_won(): queue_free()

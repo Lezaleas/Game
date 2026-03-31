@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3]
 
-[ext_resource type="Script" uid="uid://dqhrpd4uukadv" path="res://Visuals/Intermission/equipment/HeroEquipmentPanel.gd" id="1_hero"]
-[ext_resource type="Script" uid="uid://cj8u1wan0yrys" path="res://Visuals/Intermission/equipment/EquipmentGrid.gd" id="2_grid"]
+[ext_resource type="Script" uid="uid://dqhrpd4uukadv" path="res://Systems/Equipment/Visuals/HeroEquipmentPanel.gd" id="1_hero"]
+[ext_resource type="Script" uid="uid://cj8u1wan0yrys" path="res://Systems/Equipment/Visuals/EquipmentGrid.gd" id="2_grid"]
 
 [node name="HeroEquipmentPanel" type="Panel"]
 custom_minimum_size = Vector2(180, 250)
@@ -20,6 +20,12 @@ grow_vertical = 2
 unique_name_in_owner = true
 layout_mode = 2
 text = "Hero Name"
+horizontal_alignment = 1
+
+[node name="WeightLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Weight: 0 / 100"
 horizontal_alignment = 1
 
 [node name="EquipmentGrid" type="Control" parent="VBoxContainer"]

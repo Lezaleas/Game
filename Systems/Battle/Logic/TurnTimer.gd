@@ -2,6 +2,7 @@ extends Timer
 class_name TurnTimer
 
 @export var turn_duration: float = 0.2
+var manual_turns: = false
 
 func on_battle_started() -> void:
 	EventBus.subscribe("request_pause", self, "pause_timer")
@@ -16,6 +17,7 @@ func pause_timer(pause: bool) -> void:
 	if pause:
 		stop()
 	else:
+		if manual_turns: return
 		start()
 
 func set_game_speed(speed_multiplier: float) -> void:
@@ -24,12 +26,13 @@ func set_game_speed(speed_multiplier: float) -> void:
 	# A speed_multiplier of 0.5 means half speed (turns take longer).
 	# A speed_multiplier of 2.0 means double speed (turns are shorter).
 	if speed_multiplier == 0:
-		Situation.anim_speed = 1
+		manual_turns = true
 		if is_stopped():
 			_on_timeout()
 		else:
 			stop()
 	else:
+		manual_turns = false
 		Situation.anim_speed = speed_multiplier
 		wait_time = turn_duration / speed_multiplier
 		if is_stopped():

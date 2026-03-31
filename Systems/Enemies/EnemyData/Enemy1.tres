@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=7 format=3 uid="uid://dxpl6ndfala61"]
+
+[ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="1_n52ds"]
+[ext_resource type="Script" uid="uid://do8fq684wbi2r" path="res://Systems/Enemies/Logic/EnemyData.gd" id="2_uc812"]
+[ext_resource type="Resource" uid="uid://c708y7m1m7m" path="res://Systems/Skills/Data/Manablade.tres" id="3_i6xr3"]
+[ext_resource type="SpriteFrames" uid="uid://pg85rknsymf2" path="res://Assets/Sprite_frames/Stage1/Seadramon.tres" id="3_uc812"]
+[ext_resource type="Resource" uid="uid://c6y8y7m1m7m" path="res://Systems/Skills/Data/Jump.tres" id="4_c4kff"]
+[ext_resource type="Resource" uid="uid://c738y7m1m7m" path="res://Systems/Skills/Data/Ranger.tres" id="5_0e8ac"]
+
+[resource]
+script = ExtResource("2_uc812")
+id = "Seadramon"
+sprite = ExtResource("3_uc812")
+skills = Array[ExtResource("1_n52ds")]([ExtResource("3_i6xr3"), ExtResource("4_c4kff"), ExtResource("5_0e8ac"), null])
+attributes_base = [60, 60, 60, 60]
+metadata/_custom_type_script = "uid://do8fq684wbi2r"

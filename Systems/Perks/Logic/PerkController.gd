@@ -9,8 +9,6 @@ func on_request_perk_unlock(perk:Perk) -> void:
 	var hero_id = perk.perk_tree.hero_id
 	perk.unlocked = true
 	RunManager.heroes[hero_id].unlock_perk(perk)
-	for hero in RunManager.heroes:
-		print(hero.unlocked_perks)
 
 func on_request_perk_remove(perk:Perk) -> void:
 	var hero_id = perk.perk_tree.hero_id

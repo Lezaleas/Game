@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EquipmentState" load_steps=3 format=3 uid="uid://c1li7iwhs3pak"]
+
+[ext_resource type="Script" uid="uid://bphok3uuhwcnv" path="res://Systems/Equipment/State/Equipment.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://cdx5e6h3y3ohs" path="res://Assets/Sprites/Common/ElementalIcons/Green.tres" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+num_id = 11
+display_name = "Armor +50 / 3"
+icon = ExtResource("2_icon")
+attributes = Array[int]([0, 0, 50, 0])
+perk_points = Array[int]([0, 0, 3, 0])
+weight = 30
+type = 2

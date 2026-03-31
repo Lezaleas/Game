@@ -231,3 +231,5 @@ PERKS (Systems/Perks/)
 RUN (Systems/Run/)
   Manages the roguelike run loop: tracks run progress, applies rewards, and
   orchestrates scene transitions between intermission and battle.
+
+Currently done:

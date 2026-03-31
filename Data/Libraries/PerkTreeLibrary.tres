@@ -9,5 +9,5 @@
 
 [resource]
 script = ExtResource("1_fn066")
-trees = Array[ExtResource("2_w8jpj")]([ExtResource("3_7elhw"), ExtResource("4_keby0"), ExtResource("5_k4r42"), ExtResource("6_01f5s")])
+trees = Array[ExtResource("2_w8jpj")]([ExtResource("4_keby0"), ExtResource("3_7elhw"), ExtResource("5_k4r42"), ExtResource("6_01f5s")])
 metadata/_custom_type_script = "uid://blijcaiswg3b0"

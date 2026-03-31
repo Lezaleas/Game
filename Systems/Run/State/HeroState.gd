@@ -2,15 +2,16 @@ extends Resource
 class_name HeroState
 
 var id: int
-@export var sprite: SpriteFrames
+var sprite: SpriteFrames
 var skills: Array[Skill] = []
 var passives: Array[Skill] = []
-@export var attributes_base = [10,10,10,10]
+var attributes_base = [10,10,10,10]
 var attributes_mult = [1,1,1,1]
-@export var perk_points: Array[int] = [4,3,2,1]
-@export var perk_trees: Array[PerkTree]
+var perk_points: Array[int] = [4,3,2,1]
+var perk_trees: Array[PerkTree]
 var unlocked_perks: Array[Perk]
 var equipment_slots: Array[EquipmentState] = [null,null,null,null]
+var weight: int = 0
 
 func setup():
 	perk_trees = RunManager.shrines.duplicate()
@@ -26,9 +27,26 @@ func setup():
 func equip(item:EquipmentState) -> void:
 	unequip(item.type)
 	equipment_slots[item.type] = item
+	weight += item.weight
 	
 func unequip(type:Defines.EQUIP_TYPE) -> void:
+	var old_item = equipment_slots[type]
+	if old_item:
+		weight -= old_item.weight
 	equipment_slots[type] = null
+
+func get_total_perk_points() -> Array[int]:
+	var result: Array[int] = [0, 0, 0, 0]
+	for item in equipment_slots:
+		if item:
+			for i in range(4):
+				result[i] += item.perk_points[i]
+	return result
+	
+func update_perk_points() -> void:
+	perk_points = get_total_perk_points()
+	for x in range(perk_points.size()):
+		perk_trees[x].perk_points = perk_points[x]
 	
 func get_equip_attributes() -> Array[int]:
 	var result: Array[int] = []
@@ -43,9 +61,11 @@ func get_equip_attributes() -> Array[int]:
 func unlock_perk(perk:Perk) -> void:
 	if perk not in unlocked_perks:
 		unlocked_perks.append(perk)
+		perk.unlock_or_remove(true)
 		
 func remove_perk(perk:Perk) -> void:
 	unlocked_perks.erase(perk)
+	perk.unlock_or_remove(false)
 
 func increase_attribute_base(amount:int, attribute:Defines.ATTRIBUTE) -> void:
 	attributes_base[attribute] += amount
@@ -55,6 +75,9 @@ func increase_attribute_mult(amount:int, attribute:Defines.ATTRIBUTE) -> void:
 	
 func grant_skill(skill:Skill) -> void:
 	skills.append(skill)
+	
+func remove_skill(skill:Skill) -> void:
+	skills.erase(skill)
 	
 func grant_passive(passive:Skill) -> void:
 	passive.show_to_player = false

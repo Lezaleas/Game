@@ -10,6 +10,7 @@ func _ready() -> void:
 func update() -> void:
 	if hero:
 		%HeroName.text = "Hero " + str(hero.id)
+		%WeightLabel.text = "Weight: " + str(hero.weight) + " / " + str(Defines.MAX_WEIGHT)
 		equipment_grid.populate(hero.equipment_slots, 4)
 	else:
 		%HeroName.text = "None"

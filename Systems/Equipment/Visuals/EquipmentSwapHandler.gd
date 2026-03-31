@@ -84,23 +84,43 @@ func _persist_slot_change(slot: EquipmentSlot) -> void:
 	slot.source_array[slot.index] = slot.equipment
 
 func _can_swap(a: EquipmentSlot, b: EquipmentSlot) -> bool:
+	var hero_a = _get_hero_from_slot(a)
+	var hero_b = _get_hero_from_slot(b)
+	
 	# Case 1: Swapping within inventory (both no restriction)
 	if a.equip_type_restriction == -1 and b.equip_type_restriction == -1:
 		return true
 		
 	# Case 2: From inventory to hero slot
 	if a.equip_type_restriction == -1 and b.equip_type_restriction != -1:
-		return a.equipment and a.equipment.type == b.equip_type_restriction
+		var type_match = a.equipment and a.equipment.type == b.equip_type_restriction
+		if not type_match: return false
+		
+		var weight_diff = a.equipment.weight - (b.equipment.weight if b.equipment else 0)
+		if hero_b.weight + weight_diff > Defines.MAX_WEIGHT:
+			print("Too heavy! Max weight is ", Defines.MAX_WEIGHT)
+			return false
+		return true
 		
 	# Case 3: From hero slot to inventory
 	if a.equip_type_restriction != -1 and b.equip_type_restriction == -1:
 		return true # Can always move back to inventory
 		
-	# Case 4: Swapping between hero slots (probably not needed but for completeness)
+	# Case 4: Swapping between hero slots
 	if a.equip_type_restriction != -1 and b.equip_type_restriction != -1:
 		var can_a_go_to_b = (not a.equipment) or (a.equipment.type == b.equip_type_restriction)
 		var can_b_go_to_a = (not b.equipment) or (b.equipment.type == a.equip_type_restriction)
-		return can_a_go_to_b and can_b_go_to_a
+		if not (can_a_go_to_b and can_b_go_to_a): return false
+		
+		if hero_a == hero_b: return true
+		
+		var weight_gain_a = (b.equipment.weight if b.equipment else 0) - (a.equipment.weight if a.equipment else 0)
+		var weight_gain_b = (a.equipment.weight if a.equipment else 0) - (b.equipment.weight if b.equipment else 0)
+		
+		if (hero_a.weight + weight_gain_a > Defines.MAX_WEIGHT) or (hero_b.weight + weight_gain_b > Defines.MAX_WEIGHT):
+			print("Weight limit reached for one of the heroes!")
+			return false
+		return true
 		
 	return false
 

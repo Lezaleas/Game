@@ -3,7 +3,7 @@ extends Control
 
 @export var columns: int = 5
 @onready var grid: GridContainer = %GridContainer
-@onready var slot_scene := preload("res://Visuals/Intermission/equipment/EquipmentSlot.tscn") as PackedScene
+@onready var slot_scene := preload("res://Systems/Equipment/Visuals/EquipmentSlot.tscn") as PackedScene
 var slots: Array[EquipmentSlot] = []
 
 func _ready() -> void:
@@ -31,7 +31,7 @@ func populate(items: Array[EquipmentState], fixed_size: int = -1) -> void:
 		# If it's a "hero slot" grid, assign type restriction
 		if fixed_size == 4:
 			slot.equip_type_restriction = i # 0: Weapon, 1: Helmet, 2: Armor, 3: Accessory
-		
+
 		slot.set_equipment(item)
 
 func _clear() -> void:

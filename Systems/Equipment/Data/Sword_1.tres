@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EquipmentState" load_steps=3 format=3 uid="uid://chncajw74vnfq"]
+
+[ext_resource type="Script" uid="uid://bphok3uuhwcnv" path="res://Systems/Equipment/State/Equipment.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://bs8soa7re1ko8" path="res://Assets/Sprites/Common/ElementalIcons/Red.tres" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+num_id = 1
+display_name = "Sword +10 / 2"
+icon = ExtResource("2_icon")
+attributes = Array[int]([10, 0, 0, 0])
+perk_points = Array[int]([2, 0, 0, 0])

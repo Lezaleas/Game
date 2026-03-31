@@ -5,12 +5,14 @@ class_name ClashHandler
 
 var blue_clasher: FighterState
 var red_clasher: FighterState
+var tiebreaker: = true
 
 func process_clash():
 	while _engage_range_detect():
 		EventBus.emit("request_pause", true)
 		_resolve_clash()
 		await get_tree().create_timer(0.50 / Situation.anim_speed).timeout
+		EventBus.emit("request_pause", false)
 
 func _engage_range_detect():
 	blue_clasher = Situation.teams[0].get_rightmost_fighter()
@@ -41,17 +43,21 @@ func _resolve_clash():
 		"red_str": red_clashing_strength
 	})
 	
-	if blue_clashing_strength > red_clashing_strength:
-		blue_clasher.clash_won += 1
-		blue_clasher.gain_stamina(-Defines.STAMINA_LOSS_VICTORY)
-		_cast_link_attacks(blue_clasher, red_clasher)
-	elif red_clashing_strength > blue_clashing_strength:
-		red_clasher.clash_won += 1
-		red_clasher.gain_stamina(-Defines.STAMINA_LOSS_VICTORY)
-		_cast_link_attacks(red_clasher, blue_clasher)
+	_decide_winner(blue_clasher, red_clasher, blue_clashing_strength, red_clashing_strength)
+	
+func _decide_winner(_blue_clasher, _red_clasher, blue_strength: int, red_strength: int) -> void:
+	var winner = null
+	if blue_strength == red_strength:
+		winner = blue_clasher if tiebreaker else red_clasher
+		tiebreaker = not tiebreaker
 	else:
-		_cast_link_attacks(blue_clasher, red_clasher)
-		_cast_link_attacks(red_clasher, blue_clasher)
+		winner = blue_clasher if blue_strength > red_strength else red_clasher
+	var loser = red_clasher if winner == blue_clasher else blue_clasher
+
+	winner.clash_won += 1
+	winner.gain_stamina(-Defines.STAMINA_LOSS_VICTORY)
+	_cast_link_attacks(winner, loser)
+			
 		
 func _cast_link_attacks(clash_winner: FighterState, defender: FighterState):
 	var damage_mult = 1.0 as float

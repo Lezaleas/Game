@@ -8,6 +8,7 @@ const PERK_ICON = preload("res://Systems/Run/Visuals/PerkTreeScene/PerkIcon.tscn
 
 func _ready() -> void:
 	if hero and hero.perk_trees.size() > id:
+		hero.update_perk_points()
 		tree = hero.perk_trees[id]
 		render()
 

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EquipmentState" load_steps=3 format=3 uid="uid://pur8p6rogcyr"]
+
+[ext_resource type="Script" uid="uid://bphok3uuhwcnv" path="res://Systems/Equipment/State/Equipment.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://ds5f5l60nx184" path="res://Assets/Sprites/Common/ElementalIcons/Yellow.tres" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+num_id = 15
+display_name = "Boots +50 / 3"
+icon = ExtResource("2_icon")
+attributes = Array[int]([0, 0, 0, 50])
+perk_points = Array[int]([0, 0, 0, 3])
+weight = 30
+type = 3

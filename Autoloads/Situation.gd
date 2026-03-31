@@ -1,7 +1,7 @@
 extends Node
 
 var player_team_data: Array[HeroState] = []
-var enemy_team_data: Array[HeroState] = []
+var level_data: LevelData
 
 var skill_library: SkillLibrary = load("res://Data/Libraries/SkillLibrary.tres")
 var attack_handler: AttackHandler
@@ -42,9 +42,7 @@ func clear_state_generic():
 		var value = get(prop_name)
 		
 		# Clear arrays
+		if prop_name == "player_team_data":
+			continue
 		if typeof(value) == TYPE_ARRAY:
 			value.clear()
-		
-		# Nullify single Resource references
-		elif typeof(value) == TYPE_OBJECT and value is Resource:
-			set(prop_name, null)

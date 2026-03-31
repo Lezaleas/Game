@@ -2,6 +2,7 @@ extends Button
 
 @onready var selector: Panel = %Selector
 @onready var favorite_selector: Panel = %Favorite
+@onready var locked: Panel = %Locked
 
 var favorite: = false
 var selected: = false
@@ -15,6 +16,11 @@ func _ready() -> void:
 	EventBus.subscribe("perk_icon_clicked", self)
 	
 func setup() -> void:
+	if perk.perk_tier:
+		if perk.perk_tier.index < perk.perk_tree.perk_points:
+			locked.visible = false
+		else:
+			locked.visible = true
 	if perk.unlocked:
 		selected = true
 		selector.visible = true

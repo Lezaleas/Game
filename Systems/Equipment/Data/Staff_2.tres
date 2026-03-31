@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EquipmentState" load_steps=3 format=3 uid="uid://bm655wwcoxted"]
+
+[ext_resource type="Script" uid="uid://bphok3uuhwcnv" path="res://Systems/Equipment/State/Equipment.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+num_id = 6
+display_name = "Staff +30 / 3"
+icon = ExtResource("2_icon")
+attributes = Array[int]([0, 30, 0, 0])
+perk_points = Array[int]([0, 3, 0, 0])
+weight = 20
+type = 1

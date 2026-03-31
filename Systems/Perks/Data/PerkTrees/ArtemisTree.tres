@@ -1,36 +1,35 @@
-[gd_resource type="Resource" script_class="PerkTree" load_steps=20 format=3 uid="uid://c5fnmb0wb877l"]
+[gd_resource type="Resource" script_class="PerkTree" load_steps=19 format=3 uid="uid://c5fnmb0wb877l"]
 
 [ext_resource type="Script" uid="uid://v7t13w7elsp2" path="res://Systems/Perks/Data/PerkTree.gd" id="1_eia52"]
 [ext_resource type="Script" uid="uid://d04bsobu4odrk" path="res://Systems/Perks/Data/PerkTier.gd" id="2_e031i"]
 [ext_resource type="Script" uid="uid://dy8fo3snvl7r6" path="res://Systems/Perks/Data/Perk.gd" id="3_1ejd5"]
 [ext_resource type="Resource" uid="uid://b28aa5s781yy6" path="res://Systems/Perks/Data/SkillPerks/Jump.tres" id="4_jump"]
-[ext_resource type="Resource" uid="uid://y22qcoplssfi" path="res://Systems/Perks/Data/SkillPerks/Adrenaline.tres" id="5_adrenaline"]
-[ext_resource type="Resource" uid="uid://dvrwm6vaacfp6" path="res://Systems/Perks/Data/SkillPerks/Guerrilla.tres" id="6_guerrilla"]
-[ext_resource type="Resource" uid="uid://cf0wcubvl5qtq" path="res://Systems/Perks/Data/SkillPerks/Ranger.tres" id="7_ranger"]
-[ext_resource type="Resource" uid="uid://d30kuum3weome" path="res://Systems/Perks/Data/SkillPerks/Teleport.tres" id="8_teleport"]
-[ext_resource type="Resource" uid="uid://d1gsgf14vkbpy" path="res://Systems/Perks/Data/SkillPerks/Rogue.tres" id="9_rogue"]
+[ext_resource type="Resource" uid="uid://dvrwm6vaacfp6" path="res://Systems/Perks/Data/SkillPerks/Guerrilla.tres" id="5_guerrilla"]
+[ext_resource type="Resource" uid="uid://y22qcoplssfi" path="res://Systems/Perks/Data/SkillPerks/Adrenaline.tres" id="7_adrenaline"]
+[ext_resource type="Resource" uid="uid://bo5jf0g231n2t" path="res://Systems/Perks/Data/SkillPerks/BloodRush.tres" id="8_bloodrush"]
+[ext_resource type="Resource" uid="uid://cb4wc07wt8mn5" path="res://Systems/Perks/Data/SkillPerks/Charm.tres" id="9_charm"]
 [ext_resource type="Resource" uid="uid://x6gmrr2uveep" path="res://Systems/Perks/Data/SkillPerks/Sniper.tres" id="10_sniper"]
-[ext_resource type="Resource" uid="uid://cb4wc07wt8mn5" path="res://Systems/Perks/Data/SkillPerks/Charm.tres" id="11_charm"]
-[ext_resource type="Resource" uid="uid://cuqujkx30b4k7" path="res://Systems/Perks/Data/SkillPerks/Triumph.tres" id="12_triumph"]
-[ext_resource type="Resource" uid="uid://brp21i1npxj5v" path="res://Systems/Perks/Data/SkillPerks/ShadowCast.tres" id="13_shadowcast"]
-[ext_resource type="Resource" uid="uid://cqlwrwtmrs2q4" path="res://Systems/Perks/Data/SkillPerks/Hexstrike.tres" id="14_hexstrike"]
-[ext_resource type="Resource" uid="uid://b7fr6i6q0d523" path="res://Systems/Perks/Data/SkillPerks/Focus.tres" id="15_focus"]
+[ext_resource type="Resource" uid="uid://f73s6y6qxpxu" path="res://Systems/Perks/Data/SkillPerks/Recoil.tres" id="11_recoil"]
+[ext_resource type="Resource" uid="uid://scggqjl4wlap" path="res://Systems/Perks/Data/SkillPerks/Berserk.tres" id="12_berserk"]
+[ext_resource type="Resource" uid="uid://d30kuum3weome" path="res://Systems/Perks/Data/SkillPerks/Teleport.tres" id="13_teleport"]
+[ext_resource type="Resource" uid="uid://cf0wcubvl5qtq" path="res://Systems/Perks/Data/SkillPerks/Ranger.tres" id="14_ranger"]
+[ext_resource type="Resource" uid="uid://d1gsgf14vkbpy" path="res://Systems/Perks/Data/SkillPerks/Rogue.tres" id="15_rogue_2"]
 
 [sub_resource type="Resource" id="Resource_f58x0"]
 script = ExtResource("2_e031i")
-perks = Array[ExtResource("3_1ejd5")]([ExtResource("4_jump"), ExtResource("5_adrenaline"), ExtResource("6_guerrilla")])
+perks = Array[ExtResource("3_1ejd5")]([ExtResource("4_jump"), ExtResource("5_guerrilla"), ExtResource("15_rogue_2")])
 
 [sub_resource type="Resource" id="Resource_jki72"]
 script = ExtResource("2_e031i")
-perks = Array[ExtResource("3_1ejd5")]([ExtResource("7_ranger"), ExtResource("8_teleport"), ExtResource("9_rogue")])
+perks = Array[ExtResource("3_1ejd5")]([ExtResource("7_adrenaline"), ExtResource("8_bloodrush"), ExtResource("9_charm")])
 
 [sub_resource type="Resource" id="Resource_56w56"]
 script = ExtResource("2_e031i")
-perks = Array[ExtResource("3_1ejd5")]([ExtResource("10_sniper"), ExtResource("11_charm"), ExtResource("12_triumph")])
+perks = Array[ExtResource("3_1ejd5")]([ExtResource("10_sniper"), ExtResource("11_recoil"), ExtResource("12_berserk")])
 
 [sub_resource type="Resource" id="Resource_lqvxk"]
 script = ExtResource("2_e031i")
-perks = Array[ExtResource("3_1ejd5")]([ExtResource("13_shadowcast"), ExtResource("14_hexstrike"), ExtResource("15_focus")])
+perks = Array[ExtResource("3_1ejd5")]([ExtResource("13_teleport"), ExtResource("14_ranger"), ExtResource("15_rogue_2")])
 
 [resource]
 script = ExtResource("1_eia52")

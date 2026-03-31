@@ -4,6 +4,7 @@ class_name PerkTree
 @export var id: String
 @export var display_name: String
 @export var tiers: Array[PerkTier] = []
+var perk_points: = 0
 var hero_id: int
 
 func _init() -> void:

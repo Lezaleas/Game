@@ -1,7 +1,7 @@
 extends Skill
 class_name Hexstrike
 
-# Gain stamina when losing a clash
+# Attack an enemy that got debuffed
 
 func ApplyBuff(command: CmdApplyBuff) -> CmdApplyBuff:
 	if command.defender in owner.get_enemy_team().fighters:

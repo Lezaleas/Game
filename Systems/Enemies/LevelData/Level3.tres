@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=3 format=3 uid="uid://cjs8eetmh8k68"]
+
+[ext_resource type="Resource" uid="uid://dis0j6p7pjk46" path="res://Systems/Enemies/EnemyData/Enemy3.tres" id="2_8mbpn"]
+[ext_resource type="Script" uid="uid://bkkbv8fknvgby" path="res://Systems/Enemies/Logic/LevelData.gd" id="5_ab8tw"]
+
+[resource]
+script = ExtResource("5_ab8tw")
+id = "Level 3"
+enemy0 = ExtResource("2_8mbpn")
+enemy1 = ExtResource("2_8mbpn")
+enemy2 = ExtResource("2_8mbpn")
+enemy3 = ExtResource("2_8mbpn")
+reward = null
+modifier = null
+metadata/_custom_type_script = "uid://bkkbv8fknvgby"
