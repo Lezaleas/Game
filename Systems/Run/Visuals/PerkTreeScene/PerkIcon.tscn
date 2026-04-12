@@ -30,11 +30,12 @@ corner_radius_bottom_left = 4
 shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iuvwu"]
+bg_color = Color(1, 1, 1, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
-border_color = Color(0, 0.7194965, 0.91790134, 1)
+border_color = Color(0.93145794, 0, 0.32220688, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4

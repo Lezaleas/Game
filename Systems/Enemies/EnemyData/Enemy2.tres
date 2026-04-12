@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyData" load_steps=7 format=3 uid="uid://dvfxo7pb28bf"]
+[gd_resource type="Resource" script_class="EnemyData" load_steps=8 format=3 uid="uid://dvfxo7pb28bf"]
 
 [ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="1_0sb4o"]
 [ext_resource type="Script" uid="uid://do8fq684wbi2r" path="res://Systems/Enemies/Logic/EnemyData.gd" id="2_re0oj"]
@@ -6,11 +6,12 @@
 [ext_resource type="Resource" uid="uid://c748y7m1m7m" path="res://Systems/Skills/Data/Recoil.tres" id="4_va6pi"]
 [ext_resource type="Resource" uid="uid://c6r8y7m1m7m" path="res://Systems/Skills/Data/BloodRush.tres" id="5_3xjj0"]
 [ext_resource type="SpriteFrames" uid="uid://bkgf72u3qfsli" path="res://Assets/Sprite_frames/Stage1/Devimon.tres" id="6_12jq4"]
+[ext_resource type="Resource" uid="uid://c6v8y7m1m7m" path="res://Systems/Skills/Data/Focus.tres" id="6_va6pi"]
 
 [resource]
 script = ExtResource("2_re0oj")
-id = "Tyranomon"
+id = "Devimon"
 sprite = ExtResource("6_12jq4")
-skills = Array[ExtResource("1_0sb4o")]([ExtResource("3_2j1nf"), ExtResource("4_va6pi"), ExtResource("5_3xjj0"), null])
-attributes_base = [60, 60, 60, 60]
+skills = Array[ExtResource("1_0sb4o")]([ExtResource("3_2j1nf"), ExtResource("4_va6pi"), ExtResource("5_3xjj0"), ExtResource("6_va6pi")])
+attributes_base = [60, 60, 60, 60, 0, 0, 0, 0, 0, 0, 0]
 metadata/_custom_type_script = "uid://do8fq684wbi2r"

@@ -28,8 +28,9 @@ func refresh(_delta: ):
 				label.text += str(skill)
 				label.text += "\n"
 	label2.text = ""
-	for attribute in fighter.attributes:
-		label2.text += (str(attribute.current))
+	for x in range(4):
+		var attribute = fighter.attributes[x]
+		label2.text += (str(int(attribute.current)))
 		label2.text += " - "
 	label2.text += str(fighter.stamina)
 	var buffs = fighter.buffs.buffs

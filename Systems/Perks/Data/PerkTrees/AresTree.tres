@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="PerkTree" load_steps=20 format=3 uid="uid://hcfi2lrv6ykm"]
 
-[ext_resource type="Script" uid="uid://v7t13w7elsp2" path="res://Systems/Perks/Data/PerkTree.gd" id="1_eia52"]
-[ext_resource type="Script" uid="uid://d04bsobu4odrk" path="res://Systems/Perks/Data/PerkTier.gd" id="2_e031i"]
-[ext_resource type="Script" uid="uid://dy8fo3snvl7r6" path="res://Systems/Perks/Data/Perk.gd" id="3_1ejd5"]
+[ext_resource type="Script" uid="uid://v7t13w7elsp2" path="res://Systems/Perks/Logic/PerkTree.gd" id="1_eia52"]
+[ext_resource type="Script" uid="uid://d04bsobu4odrk" path="res://Systems/Perks/Logic/PerkTier.gd" id="2_e031i"]
+[ext_resource type="Script" uid="uid://dy8fo3snvl7r6" path="res://Systems/Perks/Logic/Perk.gd" id="3_1ejd5"]
 [ext_resource type="Resource" uid="uid://jaj6c34hxtgy" path="res://Systems/Perks/Data/SkillPerks/Anger.tres" id="4_anger"]
 [ext_resource type="Resource" uid="uid://12ih6p4yrxqr" path="res://Systems/Perks/Data/SkillPerks/Counter.tres" id="5_counter"]
 [ext_resource type="Resource" uid="uid://c4t8l78lyuaa6" path="res://Systems/Perks/Data/SkillPerks/Lancer.tres" id="6_lancer"]

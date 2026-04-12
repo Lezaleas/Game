@@ -13,7 +13,7 @@ func ClashLink(command: CmdClashLink) -> CmdClashLink:
 			var attackers_count = 0
 			for ally in allies:
 				if ally != owner:
-					Situation.attack_handler.cast(ally, element, 1.0, Defines.TARGETING_TYPE.Choose, command.winner)
+					Situation.attack_handler.cast(ally, element, 1.0, Defines.TARGETING_TYPE.Choose, command.winner, [AttackHandler.Tag.COUNTER])
 					attackers_count += 1
 			
 			if attackers_count > 0:

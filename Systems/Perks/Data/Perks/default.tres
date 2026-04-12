@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Perk" load_steps=6 format=3 uid="uid://bdfjsgpj46a62"]
 
-[ext_resource type="Script" uid="uid://ctqshx5t1jl5d" path="res://Systems/Perks/Data/PerkEffect.gd" id="1_ih0ms"]
+[ext_resource type="Script" uid="uid://ctqshx5t1jl5d" path="res://Systems/Perks/Logic/PerkEffect.gd" id="1_ih0ms"]
 [ext_resource type="Script" uid="uid://xa6w3mfyk5j7" path="res://Systems/Perks/Data/PerkEffects/AttributeUp.gd" id="2_6tpoe"]
-[ext_resource type="Script" uid="uid://dy8fo3snvl7r6" path="res://Systems/Perks/Data/Perk.gd" id="2_ebe76"]
+[ext_resource type="Script" uid="uid://dy8fo3snvl7r6" path="res://Systems/Perks/Logic/Perk.gd" id="2_ebe76"]
 [ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="3_6tpoe"]
 
 [sub_resource type="Resource" id="Resource_ebe76"]

@@ -4,6 +4,7 @@ class_name CmdEvent
 var type: Defines.CMD_EVENT_TYPE
 var is_cancelled: bool = false
 var fighter_trigger: FighterState	# fighter that triggered the skill
+var tags: Array = []
 
 func _to_string():
 	return ("CmdEvent: " + str(type))

@@ -1,7 +1,7 @@
 extends Node
 class_name ButtonHandler
 
-@onready var run_visuals: = %RunVisuals
+@onready var run_visuals := %RunVisuals
 
 enum ITEM_IDS {
 	status_menu_button,
@@ -11,12 +11,15 @@ enum ITEM_IDS {
 	fighter_0,
 	fighter_1,
 	fighter_2,
-	fighter_3,}
+	fighter_3,
+	save_load_menu_button,
+	save_button,
+	load_button, }
 	
 func _ready() -> void:
-	EventBus.subscribe("item_activated", self)
+	EventBus.subscribe("item_activated", self )
 	
-func on_item_activated(item_id:ITEM_IDS) -> void:
+func on_item_activated(item_id: ITEM_IDS) -> void:
 	match item_id:
 		ITEM_IDS.equip_menu_button:
 			run_visuals.open_equipment_screen()
@@ -32,3 +35,10 @@ func on_item_activated(item_id:ITEM_IDS) -> void:
 			run_visuals.open_perk_tree(2)
 		ITEM_IDS.fighter_3:
 			run_visuals.open_perk_tree(3)
+		ITEM_IDS.save_load_menu_button:
+			run_visuals.open_save_load_screen()
+		ITEM_IDS.save_button:
+			RunState.save_run()
+		ITEM_IDS.load_button:
+			RunManager.loaded_run = RunState.load_run()
+			get_tree().reload_current_scene()

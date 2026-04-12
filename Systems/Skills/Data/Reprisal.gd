@@ -5,6 +5,6 @@ class_name Reprisal
 
 func ClashLink(command: CmdClashLink) -> CmdClashLink:
 	if owner.are_allied(command.loser):
-		Situation.attack_handler.cast(owner, element, 1, Defines.TARGETING_TYPE.Choose, command.winner)
+		Situation.attack_handler.cast(owner, element, 1, Defines.TARGETING_TYPE.Choose, command.winner, [AttackHandler.Tag.COUNTER])
 		entry("counter attacks after %s lost a clash" % command.loser)
 	return command

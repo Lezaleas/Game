@@ -31,7 +31,7 @@ static func generate_item(quality: Defines.EQUIP_QUALITY, type: Defines.EQUIP_TY
 	
 	# 3. Roll for Attribute Focus
 	#var attr_idx = RunManager.run_rng.randi() % 4
-	var attr_idx: = type
+	var attr_idx: = type # hardcoded stats size
 	
 	# 4. Adjudicate Perk Points to that order
 	item.perk_points[attr_idx] = int(upgrade_points + quality)
@@ -39,7 +39,8 @@ static func generate_item(quality: Defines.EQUIP_QUALITY, type: Defines.EQUIP_TY
 	# 5. Adjudicate Budget to that Attribute order
 	item.attributes[attr_idx] = quality * upgrade_points * 5
 			
-	print("Generated Item: ", item.display_name, " Weight: ", item.weight, " Focus Index: ", attr_idx, " Attr Bonus: ", item.attributes[attr_idx], " Perks: ", item.perk_points[attr_idx])
+	print("Generated Item: ", item.display_name, " Weight: ", item.weight, " Focus Index: ",
+	attr_idx, " Attr Bonus: ", item.attributes[attr_idx], " Perks: ", item.perk_points[attr_idx])
 	return item
 
 static func get_weighted_weight() -> int:

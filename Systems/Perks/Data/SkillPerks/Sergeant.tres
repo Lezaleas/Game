@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Perk" load_steps=6 format=3 uid="uid://bbecv71jvrfll"]
 
-[ext_resource type="Script" uid="uid://ctqshx5t1jl5d" path="res://Systems/Perks/Data/PerkEffect.gd" id="1_ge2hq"]
+[ext_resource type="Script" uid="uid://ctqshx5t1jl5d" path="res://Systems/Perks/Logic/PerkEffect.gd" id="1_ge2hq"]
 [ext_resource type="Script" uid="uid://cjjs4er837kph" path="res://Systems/Perks/Data/PerkEffects/SkillPerk.gd" id="2_qxy7m"]
-[ext_resource type="Script" uid="uid://dy8fo3snvl7r6" path="res://Systems/Perks/Data/Perk.gd" id="2_ten5n"]
+[ext_resource type="Script" uid="uid://dy8fo3snvl7r6" path="res://Systems/Perks/Logic/Perk.gd" id="2_ten5n"]
 [ext_resource type="Resource" uid="uid://c778y7m1m7m" path="res://Systems/Skills/Data/Sergeant.tres" id="3_axuak"]
 
 [sub_resource type="Resource" id="Resource_kgvyv"]

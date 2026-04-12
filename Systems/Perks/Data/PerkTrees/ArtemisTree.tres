@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="PerkTree" load_steps=19 format=3 uid="uid://c5fnmb0wb877l"]
 
-[ext_resource type="Script" uid="uid://v7t13w7elsp2" path="res://Systems/Perks/Data/PerkTree.gd" id="1_eia52"]
-[ext_resource type="Script" uid="uid://d04bsobu4odrk" path="res://Systems/Perks/Data/PerkTier.gd" id="2_e031i"]
-[ext_resource type="Script" uid="uid://dy8fo3snvl7r6" path="res://Systems/Perks/Data/Perk.gd" id="3_1ejd5"]
+[ext_resource type="Script" uid="uid://v7t13w7elsp2" path="res://Systems/Perks/Logic/PerkTree.gd" id="1_eia52"]
+[ext_resource type="Script" uid="uid://d04bsobu4odrk" path="res://Systems/Perks/Logic/PerkTier.gd" id="2_e031i"]
+[ext_resource type="Script" uid="uid://dy8fo3snvl7r6" path="res://Systems/Perks/Logic/Perk.gd" id="3_1ejd5"]
 [ext_resource type="Resource" uid="uid://b28aa5s781yy6" path="res://Systems/Perks/Data/SkillPerks/Jump.tres" id="4_jump"]
 [ext_resource type="Resource" uid="uid://dvrwm6vaacfp6" path="res://Systems/Perks/Data/SkillPerks/Guerrilla.tres" id="5_guerrilla"]
 [ext_resource type="Resource" uid="uid://y22qcoplssfi" path="res://Systems/Perks/Data/SkillPerks/Adrenaline.tres" id="7_adrenaline"]

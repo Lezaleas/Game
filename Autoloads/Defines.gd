@@ -13,7 +13,7 @@ const NUMBER_OF_ELEMENTS = 4 # red, blue, yellow, green
 const STAMINA_LOSS_VICTORY = 25 # stamina to lose after winning a clash
 const MANA_LEVEL_BASE = 100 # mana base value for each level up before multiplier
 const MANA_DECAY_TICK = 0.99 # mana decays to this fraction every 0.2 seconds
-const WIN_THRESHOLD_RATIO = 0.25 # percentage of the map to control to win
+const WIN_THRESHOLD_RATIO = 0.0 # percentage of the map to control to win
 const STAMINA_GAIN_TURN = 2 # how much stamina to regen each turn
 const TIERS_PER_PERK_TREE = 4
 const ATTRIBUTE_STARTING = 10 # base attribute level
@@ -21,7 +21,8 @@ const MAX_WEIGHT = 100
 # ----------------------------
 # Enums
 # ----------------------------
-enum ATTRIBUTE {Pwr, Spi, Wis, Agi}
+enum ATTRIBUTE {Pwr, Spi, Wis, Agi, Crit, Cdmg, Cdef, Acc, Eva, Datk, Ddef}
+enum PERKATT {Pwr, Spi, Wis, Agi}
 enum ELEMENT {Red, Blue, Yellow, Green}
 enum BUFF {Burn, Freeze, Shock, Poison, Shield}
 enum EQUIP_TYPE {Sword, Staff, Armor, Boots}

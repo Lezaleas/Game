@@ -8,6 +8,6 @@ script = ExtResource("1_script")
 num_id = 2
 display_name = "Sword +30 / 3"
 icon = ExtResource("2_icon")
-attributes = Array[int]([30, 0, 0, 0])
+attributes = Array[int]([30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 perk_points = Array[int]([3, 0, 0, 0])
 weight = 20

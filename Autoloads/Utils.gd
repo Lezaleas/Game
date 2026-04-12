@@ -1,13 +1,29 @@
 extends CanvasLayer
 
+var debug_label: Label
+
+func _ready() -> void:
+	debug_label = Label.new()
+	debug_label.visible = true
+	debug_label.position = Vector2(10, 10) # top-left corner
+	add_child(debug_label)
+
 ## debug function
+func show_debug(text: String) -> void:
+	debug_label.text = text
+	debug_label.visible = true
+
+func hide_debug() -> void:
+	debug_label.visible = false
+
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("exit_game"):
 		get_tree().quit()
 	
 	if event.is_action_pressed("q"):
-		var item = EquipmentGenerator.generate_item(Defines.EQUIP_QUALITY.Common, Defines.EQUIP_TYPE.Sword)
-		RunManager.equipment.append(item)
+		debug_label.text = ""
+		debug_label.text += "\n" + str(RunManager.heroes[1].skills)
 
 
 ## receives a herostate and a fighterstate and writes the hero properties on the fighter
@@ -16,8 +32,8 @@ func HeroToFighter(hero:HeroState, fighter:FighterState) -> FighterState:
 	var equipment_attributes: = hero.get_equip_attributes()
 	for x in range(Defines.ATTRIBUTE.size()):	#set attributes
 		fighter.attributes[x].base = hero.attributes_base[x]
-		fighter.attributes[x].base += equipment_attributes[x]
 		fighter.attributes[x].mult = hero.attributes_mult[x]
+		fighter.attributes[x].base += equipment_attributes[x]
 
 	fighter.skills = hero.skills.duplicate(true) + hero.passives.duplicate(true)
 	fighter.sprite = hero.sprite

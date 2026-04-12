@@ -1,23 +1,23 @@
 extends Resource
 class_name HeroState
 
-var id: int
-var sprite: SpriteFrames
-var skills: Array[Skill] = []
-var passives: Array[Skill] = []
-var attributes_base = [10,10,10,10]
-var attributes_mult = [1,1,1,1]
-var perk_points: Array[int] = [4,3,2,1]
-var perk_trees: Array[PerkTree]
-var unlocked_perks: Array[Perk]
-var equipment_slots: Array[EquipmentState] = [null,null,null,null]
-var weight: int = 0
+@export var id: int
+@export var sprite: SpriteFrames
+@export var skills: Array[Skill] = []
+@export var passives: Array[Skill] = []
+@export var attributes_base = [10,10,10,10, 0,0,0,0,0,0,0] # hardcoded stats size
+@export var attributes_mult = [1,1,1,1, 1,1,1,1,1,1,1]
+@export var perk_points: Array[int] = [0,0,0,0]
+@export var perk_trees: Array[PerkTree]
+@export var unlocked_perks: Array[Perk]
+@export var equipment_slots: Array[EquipmentState] = [null,null,null,null]
+@export var weight: int = 0
 
 func setup():
 	perk_trees = RunManager.shrines.duplicate()
 	for x in range(perk_trees.size()):
 		perk_trees[x] = perk_trees[x].duplicate(true)
-		perk_trees[x].setup(id)
+		perk_trees[x].setup(id, x)
 	match id:
 		0: sprite = load("res://Assets/Sprite_frames/Stage1/Greymon.tres")
 		1: sprite = load("res://Assets/Sprite_frames/Stage1/Garurumon.tres")
@@ -36,10 +36,10 @@ func unequip(type:Defines.EQUIP_TYPE) -> void:
 	equipment_slots[type] = null
 
 func get_total_perk_points() -> Array[int]:
-	var result: Array[int] = [0, 0, 0, 0]
+	var result: Array[int] = [0, 0, 0, 0] # hardcoded stats size
 	for item in equipment_slots:
 		if item:
-			for i in range(4):
+			for i in range(4): # hardcoded stats size
 				result[i] += item.perk_points[i]
 	return result
 	
@@ -50,7 +50,7 @@ func update_perk_points() -> void:
 	
 func get_equip_attributes() -> Array[int]:
 	var result: Array[int] = []
-	for x in Defines.ATTRIBUTE.values():
+	for x in range(Defines.ATTRIBUTE.size()):
 		var sum: = 0
 		for equipment in equipment_slots:
 			if equipment:

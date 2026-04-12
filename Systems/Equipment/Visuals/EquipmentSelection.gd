@@ -11,7 +11,6 @@ class_name EquipmentSelection
 func _ready() -> void:
 	hero_panels = [hero_panel_0, hero_panel_1, hero_panel_2, hero_panel_3]
 	refresh()
-	%NextButton.pressed.connect(_on_next_button_pressed)
 
 func refresh() -> void:
 	var equipped_items := get_equipped_items()
@@ -32,10 +31,3 @@ func get_equipped_items() -> Array[EquipmentState]:
 			if item:
 				result.append(item)
 	return result
-
-func _on_next_button_pressed() -> void:
-	# Proceed to battle or whatever is next
-	get_tree().change_scene_to_file("res://Scenes/BattleInstance.tscn")
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("exit_game"): get_tree().quit()

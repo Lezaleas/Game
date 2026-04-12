@@ -49,11 +49,17 @@ func unlock_movement() -> void:
 
 func play_magic_animation() -> void:
 	AudioBus.play_sound("magic")
-	sprite.play("magic")
+	if sprite.sprite_frames.has_animation("magic"):
+		sprite.play("magic")
+	else:
+		push_warning("Animation 'magic' not found")
 
 func play_damaged_animation() -> void:
 	AudioBus.play_sound("damaged")
-	sprite.play("damaged")
+	if sprite.sprite_frames.has_animation("damaged"):
+		sprite.play("damaged")
+	else:
+		push_warning("Animation 'damaged' not found")
 	# Flash red for hit effect
 	if hit_flash_tween: hit_flash_tween.kill()
 	hit_flash_tween = create_tween()
@@ -62,7 +68,10 @@ func play_damaged_animation() -> void:
 	hit_flash_tween.tween_property(sprite, "modulate", Color.WHITE, 0.1)
 	
 func play_clashing_animation() -> void:
-	sprite.play("clashing")
+	if sprite.sprite_frames.has_animation("clashing"):
+		sprite.play("clashing")
+	else:
+		push_warning("Animation 'clashing' not found")
 
 func _on_game_speed_changed(_speed: float) -> void:
 	current_speed = Situation.anim_speed

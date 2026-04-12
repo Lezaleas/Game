@@ -7,24 +7,25 @@ class_name Perk
 @export var icon: Texture2D
 @export var cost: int = 1
 @export var effects: Array[PerkEffect] = []
-var perk_points: int = 0
-var unlocked: = false
-var favorited: = false
-var perk_tree: PerkTree
-var perk_tier: PerkTier
+@export var perk_points: int = 0
+@export var unlocked: = false
+@export var favorited: = false
+@export var tree_index: int
+@export var tier_index: int
+@export var hero_id: int
 
-func setup(_perk_tree: PerkTree, _perk_tier: PerkTier) -> void:
-	perk_tier = _perk_tier
-	perk_tree = _perk_tree
+func setup(perk_tree: PerkTree, perk_tier: PerkTier, _hero_id) -> void:
+	tier_index = perk_tier.index
+	tree_index = perk_tree.index
+	hero_id = _hero_id
 	
 	if effects:
 		var main_effect: = effects[0]
-		if main_effect is SkillPerk:	# make name and description match the skill if applicable
-			id = main_effect.skill.skill_name
+		if main_effect is SkillPerk:	# make description match the skill if applicable
 			description = main_effect.skill.description
 			
 func unlock_or_remove(true_to_unlock:bool) -> void:
-	var hero = RunManager.heroes[perk_tree.hero_id]
+	var hero = RunManager.heroes[hero_id]
 	if true_to_unlock:
 		for effect in effects:
 			effect.unlock(hero)

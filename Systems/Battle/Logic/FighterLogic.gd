@@ -3,7 +3,7 @@ class_name FighterLogic
 
 func walk_forward(fighter: FighterState) -> void:
 	if fighter.clashed: return
-	var distance = fighter.attributes[3].current * fighter.parent.direction * Defines.MOVE_SPEED as float
+	var distance = fighter.attributes[Defines.ATTRIBUTE.Agi].current * fighter.parent.direction * Defines.MOVE_SPEED as float
 	#region Walk Event
 	var cmd_walk = CmdWalk.new(fighter, distance)
 	cmd_walk = Situation.skills.resolve(cmd_walk)

@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1d2e3f4g5h6i"]
+[gd_scene load_steps=3 format=3 uid="uid://c1d2e3f4g5h6i"]
 
-[ext_resource type="Script" uid="uid://e1d2e3f4g5h6i" path="res://Systems/Enemies/Visuals/LevelSelection.gd" id="1_1"]
+[ext_resource type="Script" uid="uid://ysmw32j8q1k" path="res://Systems/Enemies/Visuals/LevelSelection.gd" id="1_1"]
 [ext_resource type="PackedScene" uid="uid://d1e2f3g4h5i6j" path="res://Systems/Enemies/Visuals/LevelInfoPanel.tscn" id="2_extra"]
 
 [node name="LevelSelection" type="Control"]

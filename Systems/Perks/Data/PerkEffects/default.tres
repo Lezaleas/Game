@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PerkEffect" load_steps=2 format=3 uid="uid://186qaj1cw173"]
 
-[ext_resource type="Script" uid="uid://ctqshx5t1jl5d" path="res://Systems/Perks/Data/PerkEffect.gd" id="1_b737l"]
+[ext_resource type="Script" uid="uid://ctqshx5t1jl5d" path="res://Systems/Perks/Logic/PerkEffect.gd" id="1_b737l"]
 
 [resource]
 script = ExtResource("1_b737l")

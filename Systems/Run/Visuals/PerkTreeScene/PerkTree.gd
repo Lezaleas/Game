@@ -1,6 +1,6 @@
 extends VBoxContainer
 
-@export var hero: HeroState
+var hero: HeroState
 @export var id: int
 var tree: PerkTree
 
