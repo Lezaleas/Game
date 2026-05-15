@@ -1,4 +1,4 @@
-extends Panel
+extends MarginContainer
 
 var fighter: FighterState
 @export var id = 0 as int
@@ -15,9 +15,6 @@ func _ready() -> void:
 # Called when the node enters the scene tree for the first time
 func refresh_battle_started() -> void:
 	fighter = Situation.fighters[id]
-	v_box.add_child(label)
-	v_box.add_child(label2)
-	v_box.add_child(label3)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func refresh(_delta: ):

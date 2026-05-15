@@ -1,0 +1,1114 @@
+Roguelike Production Ecosystem System Design Document
+
+High-Level Vision
+
+The game is a run-based roguelike autobattler centered around emergent production ecosystems instead of deterministic crafting recipes.
+
+The player does not directly craft items. Instead, they shape buildings, rooms, villagers, and tag pressures to influence what kinds of items are generated each week.
+
+The core fantasy is:
+
+Designing evolving industrial cultures that generate powerful and unpredictable combat builds.
+
+The player gradually transforms buildings into specialized ecosystems such as:
+
+disciplined military foundries
+
+unstable arcane laboratories
+
+lightweight evasive leather workshops
+
+cursed occult industries
+
+tempo-oriented mobility studios
+
+The gameplay is about:
+
+shaping probabilities
+
+crossing specialization thresholds
+
+engineering synergistic production pipelines
+
+adapting to generated opportunities
+
+creating emergent item identities
+
+The system is intentionally:
+
+probabilistic instead of deterministic
+
+systemic instead of recipe-driven
+
+compositional instead of hardcoded
+
+run-based instead of permanent
+
+Core Gameplay Loop
+
+Weekly Loop
+
+Player acquires villagers, rooms, and upgrades
+
+Player assigns villagers to rooms
+
+Buildings calculate total tag pressures
+
+Rooms generate item opportunities
+
+Modifiers and thresholds alter generation outcomes
+
+Items are generated
+
+Player equips teams
+
+Battles occur
+
+Rewards feed back into the ecosystem
+
+Repeat
+
+The player is not solving fixed recipes.
+
+The player is shaping:
+
+tendencies
+
+environments
+
+identities
+
+specialization paths
+
+Core Design Philosophy
+
+Important Principle
+
+The system should never devolve into:
+
+Match tag color with room color.
+
+Instead, the player should constantly make strategic decisions involving:
+
+risk
+
+specialization
+
+variance
+
+instability
+
+long-term planning
+
+ecosystem identity
+
+The goal is:
+
+meaningful directional pressure rather than solved optimization.
+
+System Overview
+
+The production system consists of several interacting layers:
+
+Buildings
+	Rooms
+		Villagers
+			Tags
+			Methods
+			Passives
+
+Tag Pressure System
+Modifier System
+Threshold System
+Item Generation Pipeline
+Event System
+History System
+
+BUILDINGS
+
+Buildings are high-level production categories.
+
+Each building has:
+
+rooms
+
+tag pressure pools
+
+specialization identity
+
+item generation logic
+
+Buildings bias item generation but do not hard-lock outputs.
+
+Planned Buildings
+
+1. Forge
+
+Primary role:
+
+weapons
+
+offensive scaling
+
+aggression
+
+Typical tags:
+
+Metal
+
+Martial
+
+Fire
+
+Precision
+
+Typical outputs:
+
+swords
+
+axes
+
+bows
+
+polearms
+
+2. Atelier
+
+Primary role:
+
+magical equipment
+
+perk manipulation
+
+mutations
+
+Typical tags:
+
+Arcane
+
+Spirit
+
+Occult
+
+Knowledge
+
+Typical outputs:
+
+rings
+
+amulets
+
+relics
+
+catalysts
+
+3. Workshop
+
+Primary role:
+
+armor
+
+resilience
+
+stability
+
+Typical tags:
+
+Metal
+
+Nature
+
+Discipline
+
+Craftsmanship
+
+Typical outputs:
+
+heavy armor
+
+leather armor
+
+robes
+
+cloaks
+
+4. Cobblery
+
+Primary role:
+
+footwear
+
+tempo
+
+positioning
+
+Typical tags:
+
+Wind
+
+Rhythm
+
+Travel
+
+Precision
+
+Typical outputs:
+
+boots
+
+sandals
+
+greaves
+
+ROOMS
+
+Rooms are the core specialization units.
+
+Rooms define:
+
+production direction
+
+scaling behaviors
+
+tradeoffs
+
+threshold goals
+
+environmental identity
+
+Rooms should ask strategic questions.
+
+NOT:
+
+Who belongs here?
+
+BUT:
+
+What kind of ecosystem am I building?
+
+Room Structure
+
+Each room contains:
+
+1. Element
+
+Thematic environment.
+
+Examples:
+
+Fire
+
+Water
+
+Arcane
+
+Nature
+
+Wind
+
+Earth
+
+Elements are used by villager passives and interactions.
+
+2. Base Effect
+
+The room’s default effect.
+
+Example:
+
+Increase power
+
+Increase perk count
+
+Improve stability
+
+Reduce weight
+
+3. Scaling Rule
+
+The room scales using tag pressure.
+
+Example:
+
+Gain power scaling on Metal
+
+Gain perk chance scaling on Arcane
+
+Scaling can be:
+
+positive
+
+negative
+
+threshold-based
+
+nonlinear
+
+4. Tradeoff
+
+Every room should contain meaningful downsides.
+
+Examples:
+
+More power but heavier
+
+More perks but lower stats
+
+More mutations but instability
+
+More consistency but lower ceiling
+
+5. Threshold Effects
+
+Special breakpoints unlocked at certain tag values.
+
+Example:
+
+15 Fire → molten traits enabled
+
+30 Arcane → extra perk slot
+
+40 Martial → legendary weapon outcomes
+
+Thresholds create:
+
+specialization goals
+
+nonlinear scaling
+
+strategic commitment
+
+Example Rooms
+
+Metalworks
+
+Element:
+
+Fire
+
+Base:
+
+Increase item power
+
+Increase item weight
+
+Scaling:
+
+Metal increases power growth
+
+Thresholds:
+
+15 Metal → reinforced traits
+
+30 Metal → legendary forging enabled
+
+Apprenticeship Quarters
+
+Element:
+
+Water
+
+Base:
+
+Gain reroll token chance
+
+Scaling:
+
+Learning increases reroll generation
+
+Purpose:
+
+long-term economy support
+
+Infusion Chamber
+
+Element:
+
+Arcane
+
+Base:
+
+Increase perk point potential
+
+Reduce base stats
+
+Scaling:
+
+Arcane increases perk variance
+
+Thresholds:
+
+20 Arcane → forbidden perks enabled
+
+VILLAGERS
+
+Villagers are not merely stat batteries.
+
+Villagers should:
+
+influence ecosystems
+
+distort generation rules
+
+create strategic identity
+
+Villager Structure
+
+Each villager contains:
+
+1. Tags
+
+Numeric ecosystem influence.
+
+Example:
+
+Metal +5
+
+Martial +3
+
+Tags contribute to:
+
+room scaling
+
+thresholds
+
+generation weights
+
+building identity
+
+2. Method
+
+The villager’s working style.
+
+Methods alter generation behavior.
+
+Examples:
+
+Experimental
+
+Ritualistic
+
+Reckless
+
+Precise
+
+Obsessive
+
+Methods modify:
+
+variance
+
+consistency
+
+mutation chance
+
+specialization
+
+3. Passive Ability
+
+Conditional behavior modifications.
+
+Usually tied to:
+
+room elements
+
+item categories
+
+thresholds
+
+Example:
+
+In Fire rooms, increased heavy armor generation chance.
+
+4. Personality Trait
+
+Long-term identity modifiers.
+
+Examples:
+
+Stubborn
+
+Ambitious
+
+Fragile
+
+Fanatical
+
+Personality may affect:
+
+room synergy
+
+stress
+
+conflicts
+
+evolution
+
+ecosystem drift
+
+Example Villager
+
+Blacksmith
+
+Tags:
+
+Metal +5
+
+Martial +3
+
+Method:
+
+Precise
+
+Passive:
+
+In Fire rooms, increased heavy armor generation.
+
+Personality:
+
+Stubborn
+
+Effects:
+
+stronger in specialized rooms
+
+weaker in hybrid ecosystems
+
+TAG PRESSURE SYSTEM
+
+Tag pressure is the core systemic layer.
+
+Buildings accumulate tags from:
+
+villagers
+
+rooms
+
+events
+
+items
+
+upgrades
+
+Tag pressure influences:
+
+room scaling
+
+item pools
+
+thresholds
+
+perk generation
+
+mutations
+
+Important Rule
+
+Tag pressure should create:
+
+tendencies
+
+directional bias
+
+strategic identity
+
+NOT deterministic recipes.
+
+Example
+
+A building with:
+
+Fire 25
+
+Martial 20
+
+Arcane 5
+
+Should trend toward:
+
+aggressive heavy weapons
+
+explosive equipment
+
+offensive perks
+
+WITHOUT explicitly forcing:
+
+"berserker sword recipe"
+
+Modifier Categories
+
+The system uses several modifier types.
+
+1. Numerical Modifiers
+
+Examples:
+
++power
+
+-weight
+
++durability
+
+Simple foundational modifiers.
+
+2. Probability Modifiers
+
+Examples:
+
+increased heavy armor chance
+
+increased rare perk chance
+
+reduced cursed outcomes
+
+Used to shape ecosystem identity.
+
+3. Rule-Bending Modifiers
+
+Examples:
+
+perks may evolve
+
+duplicate affixes
+
+inherit destroyed item traits
+
+Rare and highly impactful.
+
+4. Resource Modifiers
+
+Examples:
+
+reroll generation
+
+instability generation
+
+crafting essence
+
+Influence long-term planning.
+
+5. Threshold Modifiers
+
+Examples:
+
+unlock hidden traits
+
+enable advanced perks
+
+allow hybrid outcomes
+
+Encourage specialization.
+
+6. Spatial Modifiers
+
+Examples:
+
+adjacent rooms inherit fire pressure
+
+neighboring rooms stabilize volatility
+
+Encourage layout gameplay.
+
+IMPORTANT SYSTEM GOALS
+
+1. Avoid Tag Soup
+
+Too many mixed tags should not create meaningless outputs.
+
+Use:
+
+dominant tags
+
+thresholds
+
+specialization rewards
+
+saturation penalties
+
+2. Preserve Identity
+
+Buildings should develop recognizable cultures over time.
+
+Examples:
+
+disciplined forge
+
+unstable arcane workshop
+
+lightweight mobility ecosystem
+
+3. Encourage Adaptation
+
+Players should constantly pivot based on:
+
+generated villagers
+
+room opportunities
+
+evolving ecosystems
+
+ITEM GENERATION PIPELINE
+
+This is the core technical structure.
+
+The game should use:
+
+staged generation with modifier injection hooks.
+
+Generation Pipeline Phases
+
+1. Create generation context
+2. Calculate tag pressures
+3. Determine item category
+4. Roll base item
+5. Apply room modifiers
+6. Apply villager modifiers
+7. Apply threshold effects
+8. Roll perks
+9. Resolve mutations
+10. Finalize item
+
+Each phase emits hooks.
+
+Modifiers subscribe to these hooks.
+
+ARCHITECTURE DESIGN
+
+The architecture should prioritize:
+
+composition
+
+modularity
+
+extensibility
+
+data-driven behavior
+
+Avoid:
+
+hardcoded interactions
+
+inheritance-heavy design
+
+special-case logic
+
+DATA-DRIVEN CONTENT
+
+Use Godot Resources heavily.
+
+Most content should be data.
+
+Example Resource Structures
+
+VillagerData
+
+class_name VillagerData
+extends Resource
+
+@export var villager_name: String
+@export var tags: Dictionary
+@export var methods: Array
+@export var modifiers: Array
+
+RoomData
+
+class_name RoomData
+extends Resource
+
+@export var room_name: String
+@export var element: String
+@export var scaling_rules: Array
+@export var thresholds: Array
+@export var modifiers: Array
+
+MODIFIER SYSTEM
+
+The modifier system is the most important architecture layer.
+
+Everything becomes modifiers:
+
+rooms
+
+villagers
+
+events
+
+relics
+
+upgrades
+
+corruption
+
+weather
+
+evolutions
+
+Modifier Hooks
+
+Use standardized lifecycle hooks.
+
+Example:
+
+enum ModifierHook {
+	BEFORE_ITEM_GENERATION,
+	AFTER_ITEM_GENERATION,
+	BEFORE_PERK_ROLL,
+	AFTER_PERK_ROLL,
+	CALCULATE_TAG_PRESSURE,
+	CALCULATE_WEIGHT
+}
+
+Modifiers register to hooks.
+
+Example Modifier
+
+class_name HeavyArmorModifier
+extends Modifier
+
+func applies(context) -> bool:
+	return (
+		context.room.element == "fire"
+		and context.item.category == "armor"
+	)
+
+func execute(context):
+	context.weights["heavy_armor"] += 25
+
+GENERATION CONTEXT
+
+A shared mutable object passed through the pipeline.
+
+Purpose:
+
+decouple systems
+
+avoid parameter explosion
+
+centralize simulation state
+
+Example
+
+class_name GenerationContext
+extends RefCounted
+
+var building
+var room
+var villagers
+var item
+var tags
+var weights
+var flags
+var history
+
+EVENT SYSTEM
+
+Use an event bus.
+
+Avoid direct dependencies.
+
+Example
+
+EventBus.emit("item_generated", context)
+
+Systems listen independently.
+
+This enables:
+
+emergent mechanics
+
+reactive systems
+
+future scalability
+
+WEIGHTED PROBABILITY SYSTEM
+
+Do NOT directly manipulate percentages everywhere.
+
+Instead:
+
+use weighted pools
+
+modifiers alter weights
+
+final roll selects outcomes
+
+Example
+
+weights = {
+	"heavy_armor": 10,
+	"light_armor": 5
+}
+
+Modifiers adjust weights.
+
+THRESHOLD SYSTEM
+
+Thresholds should be generic data structures.
+
+Example
+
+class Threshold:
+	var tag
+	var value
+	var effect
+
+This allows rooms to define:
+
+unlocks
+
+mutations
+
+new pools
+
+perk expansions
+
+without custom code.
+
+HISTORY SYSTEM
+
+Store:
+
+previously generated items
+
+repeated outcomes
+
+recent tags
+
+villager activity
+
+room behavior
+
+History enables:
+
+momentum mechanics
+
+specialization growth
+
+evolving ecosystem identities
+
+RECOMMENDED OBJECT STRUCTURE
+
+RunManager
+	Buildings
+		Rooms
+			Villagers
+
+GenerationPipeline
+	ModifierManager
+	EventBus
+	GenerationContext
+
+Data
+	VillagerData
+	RoomData
+	ItemData
+	ModifierData
+	ThresholdData
+
+CRITICAL ENGINEERING PRINCIPLES
+
+1. Composition Over Inheritance
+
+Avoid:
+
+Blacksmith.gd
+Arcanist.gd
+RunePriest.gd
+
+Prefer:
+
+VillagerData
++ tags
++ modifiers
++ methods
+
+Behavior emerges from composition.
+
+2. Systems Modify Context
+
+Avoid:
+
+villagers directly editing items
+
+rooms directly editing perks
+
+Everything modifies:
+
+GenerationContext
+
+This keeps systems modular.
+
+3. Declarative Content
+
+Prefer data-defined rules.
+
+Avoid hardcoding.
+
+Good:
+
+Condition:
+Fire >= 20
+
+Effect:
+Enable molten traits
+
+Bad:
+
+if fire > 20:
+	enable_molten_traits()
+
+LONG-TERM EXPANSION OPTIONS
+
+The architecture supports:
+
+corruption systems
+
+factions
+
+evolving villagers
+
+disasters
+
+biome modifiers
+
+seasonal effects
+
+building memories
+
+research trees
+
+relic systems
+
+multiplayer drafting
+
+mod support
+
+without rewriting core systems.
+
+FINAL DESIGN GOAL
+
+The player should feel like they are not:
+
+crafting items
+
+but instead:
+
+cultivating evolving industrial ecosystems that generate emergent combat identities.
+
+The system should create:
+
+memorable runs
+
+strange combinations
+
+production cultures
+
+strategic pivots
+
+emergent stories
+
+meaningful specialization
+
+through interacting probabilistic systems rather than fixed recipes.
+

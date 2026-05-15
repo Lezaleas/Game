@@ -4,6 +4,8 @@ class_name RunState
 @export var heroes: Array[HeroState]
 @export var shrines: Array[PerkTree]
 @export var equipment: Array[EquipmentState]
+@export var buildings: Array[Building]
+@export var villagers: Array[Villager]
 @export var run_seed: int
 @export var level: int = 1
 
@@ -13,6 +15,8 @@ static func save_run() -> RunState:
 	state.heroes = RunManager.heroes.duplicate(true)
 	state.shrines = RunManager.shrines.duplicate(true)
 	state.equipment = RunManager.equipment.duplicate(true)
+	state.buildings = ProgressionManager.buildings.duplicate(true)
+	state.villagers = ProgressionManager.villagers.duplicate(true)
 	
 	var err = ResourceSaver.save(state, "user://run.tres")
 	if err != OK:

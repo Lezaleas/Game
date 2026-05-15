@@ -1,6 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bjdswhus3xkjw"]
-
-[ext_resource type="Script" uid="uid://c01soqnmu8o5y" path="res://Scenes/InfoPanel.gd" id="1_script"]
+[gd_scene load_steps=13 format=3 uid="uid://b4cqasixw1ykq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2lyjj"]
 bg_color = Color(4.3317675e-07, 0.25477415, 0.45185345, 1)
@@ -10,6 +8,37 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 corner_detail = 20
+
+[sub_resource type="GDScript" id="GDScript_u3w4b"]
+script/source = "extends PanelContainer
+class_name InfoPanel
+
+## Reusable RPG info panel with soft shadow, dual pop-out borders, and clean spacing.
+## Add children to the Content VBoxContainer to populate.
+
+# --- Customization exports ---
+@export var enable_hover_animation := true
+
+var _base_scale: Vector2
+
+func _ready() -> void:
+	_base_scale = scale
+	if enable_hover_animation:
+		mouse_entered.connect(_on_mouse_entered)
+		mouse_exited.connect(_on_mouse_exited)
+
+
+# --- Hover / Focus Micro-Animation ---
+
+func _on_mouse_entered() -> void:
+	var tween := create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(self , \"scale\", _base_scale * 1.02, 0.12)
+
+
+func _on_mouse_exited() -> void:
+	var tween := create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(self , \"scale\", _base_scale, 0.12)
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cij1w"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -89,7 +118,7 @@ offset_top = 634.0
 offset_right = 1299.0
 offset_bottom = 733.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_2lyjj")
-script = ExtResource("1_script")
+script = SubResource("GDScript_u3w4b")
 
 [node name="MarginContainer4" type="MarginContainer" parent="."]
 layout_mode = 2

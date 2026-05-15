@@ -1,0 +1,249 @@
+[gd_scene load_steps=16 format=3 uid="uid://bxhp4ksd12tb2"]
+
+[ext_resource type="Shader" uid="uid://cs4x6d3122lfg" path="res://Assets/Shaders/DefaultBorder2.gdshader" id="1_toujq"]
+[ext_resource type="Script" uid="uid://dfway0pjn8t3q" path="res://Scenes/BarSmall.gd" id="1_u6wq7"]
+[ext_resource type="Shader" uid="uid://cqy3e8cuci2o1" path="res://Assets/Shaders/DefaultBorder.gdshader" id="2_nhgee"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nhgee"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_toujq"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+corner_detail = 20
+shadow_size = 4
+shadow_offset = Vector2(0, 3)
+anti_aliasing = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u6wq7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u6wq7"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0.25882354, 0.45490196, 1)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(8.1822276e-07, 0.28475982, 0.5725693, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 20
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cgwh"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0.25882354, 0.45490196, 1)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.61339027, 0.61339027, 0.61339027, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 20
+anti_aliasing = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pcb2s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2fepy"]
+shader = ExtResource("2_nhgee")
+shader_parameter/brightness_strength = 0.1
+shader_parameter/mid_sharpness = 0.80000003474012
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhgee"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0.25882354, 0.45490196, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 0.078431375)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_bottom_left = 8
+corner_detail = 20
+anti_aliasing = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ejise"]
+shader = ExtResource("1_toujq")
+shader_parameter/brightness_strength = 0.15
+shader_parameter/mid_sharpness = 1.00000004424012
+shader_parameter/sheen_intensity = 0.10000000475
+shader_parameter/inner_stroke_thickness = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fepy"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.019607844, 0.59607846, 1, 1)
+corner_radius_top_left = 8
+corner_radius_bottom_left = 8
+corner_detail = 20
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6dekc"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.1764706, 0.37254903, 1)
+corner_radius_top_left = 8
+corner_radius_bottom_left = 8
+corner_detail = 20
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06m5m"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+draw_center = false
+border_width_right = 4
+border_color = Color(0.25882354, 0.8352941, 1, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_bottom_left = 8
+corner_detail = 20
+shadow_size = 2
+anti_aliasing = false
+anti_aliasing_size = 1.51
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 79.0
+offset_bottom = 16.0
+script = ExtResource("1_u6wq7")
+
+[node name="SmallPanel" type="PanelContainer" parent="."]
+material = SubResource("ShaderMaterial_nhgee")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_toujq")
+
+[node name="BlackLine2" type="Panel" parent="SmallPanel"]
+material = SubResource("ShaderMaterial_u6wq7")
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_u6wq7")
+
+[node name="BlackLine" type="Panel" parent="SmallPanel"]
+material = SubResource("ShaderMaterial_u6wq7")
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2cgwh")
+
+[node name="Clipper" type="Control" parent="."]
+unique_name_in_owner = true
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Clipper"]
+material = SubResource("ShaderMaterial_pcb2s")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Clipper/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="BackgroundBorderShadow" type="Panel" parent="Clipper/MarginContainer/MarginContainer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_2fepy")
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nhgee")
+
+[node name="MainBorder" type="Panel" parent="Clipper/MarginContainer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_ejise")
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2fepy")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Clipper"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="OutsideBorderWall" type="Panel" parent="Clipper/MarginContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6dekc")
+
+[node name="MarginContainer3" type="MarginContainer" parent="Clipper"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(89, -3)
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="RightHighlitght" type="Panel" parent="Clipper/MarginContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_06m5m")

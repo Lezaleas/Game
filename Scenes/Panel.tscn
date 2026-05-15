@@ -1,4 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://cx55o3f4i4oja"]
+[gd_scene load_steps=15 format=3 uid="uid://cx55o3f4i4oja"]
+
+[ext_resource type="Shader" uid="uid://cs4x6d3122lfg" path="res://Assets/Shaders/DefaultBorder2.gdshader" id="1_s3v1n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0c07c"]
 content_margin_left = 0.0
@@ -18,6 +20,13 @@ shadow_size = 4
 shadow_offset = Vector2(1, 3)
 anti_aliasing = false
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r2204"]
+shader = ExtResource("1_s3v1n")
+shader_parameter/brightness_strength = 0.10000000475
+shader_parameter/mid_sharpness = 0.5
+shader_parameter/sheen_intensity = 0.10000000475
+shader_parameter/inner_stroke_thickness = 0.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3dsh"]
 content_margin_left = 0.0
 content_margin_top = 0.0
@@ -28,7 +37,7 @@ border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0.49260157, 0.46318084, 0.21413806, 1)
+border_color = Color(0.49411765, 0.4627451, 0.21568628, 0.58431375)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -53,13 +62,6 @@ border_color = Color(0.39810443, 0.3814492, 0.21582606, 1)
 corner_detail = 20
 anti_aliasing = false
 
-[sub_resource type="Gradient" id="Gradient_lc1oi"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_8od7v"]
-gradient = SubResource("Gradient_lc1oi")
-fill_from = Vector2(0.2, 1)
-fill_to = Vector2(0.8, 0)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cgwh"]
 content_margin_left = 0.0
 content_margin_top = 0.0
@@ -78,13 +80,19 @@ corner_radius_bottom_left = 4
 corner_detail = 20
 anti_aliasing = false
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s3v1n"]
+shader = ExtResource("1_s3v1n")
+shader_parameter/brightness_strength = 0.10000000475
+shader_parameter/mid_sharpness = 0.90000003949012
+shader_parameter/sheen_intensity = 0.0050000002375
+shader_parameter/inner_stroke_thickness = 0.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tac1t"]
 content_margin_left = 0.0
 content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
-draw_center = false
+bg_color = Color(0, 0.25882354, 0.45490196, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -98,38 +106,24 @@ corner_radius_bottom_left = 3
 corner_detail = 20
 anti_aliasing = false
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ejise"]
+shader = ExtResource("1_s3v1n")
+shader_parameter/brightness_strength = 0.15
+shader_parameter/mid_sharpness = 1.00000004424012
+shader_parameter/sheen_intensity = 0.10000000475
+shader_parameter/inner_stroke_thickness = 0.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7gpf"]
 content_margin_left = 0.0
 content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
 draw_center = false
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0.018783314, 0.59601384, 0.9999861, 1)
-border_blend = true
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 20
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejise"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
-draw_center = false
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0.25882354, 0.45490196, 1)
+border_color = Color(0.012920001, 0.6507289, 1, 1)
 border_blend = true
 corner_radius_top_left = 3
 corner_radius_top_right = 3
@@ -185,7 +179,7 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(1, 1, 1, 0.2509804)
+border_color = Color(0.75901616, 0.7273453, 0.461061, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -218,11 +212,13 @@ expand_margin_right = 1.0
 expand_margin_bottom = 3.0
 anti_aliasing = false
 
-[node name="DefaultBorder4" type="PanelContainer"]
-offset_left = 1160.0
-offset_top = 841.0
-offset_right = 1268.0
-offset_bottom = 896.0
+[node name="DefaultPanel" type="PanelContainer"]
+offset_left = 5.0
+offset_top = 10.0
+offset_right = 398.0
+offset_bottom = 132.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_0c07c")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -233,6 +229,7 @@ theme_override_constants/margin_right = 1
 theme_override_constants/margin_bottom = 3
 
 [node name="Border" type="Panel" parent="MarginContainer"]
+material = SubResource("ShaderMaterial_r2204")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_j3dsh")
 
@@ -251,25 +248,6 @@ theme_override_constants/margin_bottom = 3
 [node name="CornerFixer" type="Panel" parent="MarginContainer/Border/MarginContainer2"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_mie3u")
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Border"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 0
-theme_override_constants/margin_top = 1
-theme_override_constants/margin_right = 0
-theme_override_constants/margin_bottom = 0
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Border/MarginContainer"]
-modulate = Color(1, 1, 1, 0.2509804)
-layout_mode = 2
-texture = SubResource("GradientTexture2D_8od7v")
-expand_mode = 1
-flip_h = true
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -302,16 +280,14 @@ theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
 [node name="Panel" type="Panel" parent="MarginContainer/MarginContainer/InsideBlackLine/MarginContainer/MarginContainer"]
+material = SubResource("ShaderMaterial_s3v1n")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tac1t")
 
 [node name="Panel" type="Panel" parent="MarginContainer/MarginContainer/InsideBlackLine/MarginContainer"]
+material = SubResource("ShaderMaterial_ejise")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_a7gpf")
-
-[node name="Panel2" type="Panel" parent="MarginContainer/MarginContainer/InsideBlackLine/MarginContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ejise")
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/MarginContainer/InsideBlackLine"]
 layout_mode = 1
@@ -351,7 +327,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_qpfo2")
 [node name="Content" type="MarginContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 7
+theme_override_constants/margin_left = 9
+theme_override_constants/margin_top = 9
+theme_override_constants/margin_right = 9
+theme_override_constants/margin_bottom = 11

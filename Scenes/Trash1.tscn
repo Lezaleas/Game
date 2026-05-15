@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr4yyr43mhaan"]
+
+[sub_resource type="GDScript" id="GDScript_8n6o0"]
+script/source = "extends Button
+class_name ReusableButton
+
+@export var item_id: ButtonHandler.ITEM_IDS
+@export var tooltip_data: Dictionary
+@onready var highlight: ColorRect = $Highlight
+
+func _ready():
+	focus_entered.connect(_on_focus_entered)
+	focus_exited.connect(_on_focus_exited)
+	pressed.connect(_on_pressed)
+	mouse_entered.connect(func(): grab_focus())
+
+func _on_focus_entered():
+	highlight.visible = true
+	EventBus.emit(\"item_focused\", item_id)
+	EventBus.emit(\"tooltip_requested\", tooltip_data)
+
+func _on_focus_exited():
+	highlight.visible = false
+	
+func _on_pressed():
+	EventBus.emit(\"item_activated\", item_id)
+"
+
+[node name="ReusableButton" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+action_mode = 0
+script = SubResource("GDScript_8n6o0")
+
+[node name="Highlight" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.1764706)

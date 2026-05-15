@@ -29,8 +29,19 @@ enum EQUIP_TYPE {Sword, Staff, Armor, Boots}
 enum EQUIP_QUALITY {Common, Rare, Epic, Legendary}
 enum INVESTMENT {None, Minor, Major, Master, Grandmaster}
 
+enum PROG_TAG {
+	Metal, Martial, Fire, Precision,
+	Arcane, Spirit, Occult, Knowledge,
+	Nature, Discipline, Craftsmanship,
+	Wind, Rhythm, Travel, Learning
+}
+enum PROG_METHOD {Experimental, Ritualistic, Reckless, Precise, Obsessive}
+enum PROG_PERSONALITY {Stubborn, Ambitious, Fragile, Fanatical}
+enum PROG_ELEMENT {Fire, Water, Arcane, Nature, Wind, Earth}
+
+
 enum CMD_EVENT_TYPE {Walk, Attack, DealDmg, ReceiveDmg, TurnStart, ClashStart, ClashLink,
-					  StatsCalc, ApplyBuff}
+					  StatsCalc, ApplyBuff, ClashEvasion, ClashCrit, AttackEvasion, AttackCrit}
 enum TARGETING_TYPE {Choose, Leader, Enemies, Self, NextAlly, Allies, Everyone, EveryoneButMe}
 # ----------------------------
 # Libraries

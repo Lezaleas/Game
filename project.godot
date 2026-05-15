@@ -25,6 +25,7 @@ Situation="*res://Autoloads/Situation.gd"
 AudioBus="*res://Autoloads/AudioBus.tscn"
 RunManager="*res://Autoloads/RunManager.gd"
 Utils="*res://Autoloads/Utils.gd"
+ProgressionManager="*res://Systems/Progression/Logic/ProgressionManager.gd"
 
 [display]
 

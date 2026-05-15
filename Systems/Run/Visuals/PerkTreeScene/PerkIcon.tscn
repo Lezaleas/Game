@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bo1tmsidf3hfl" path="res://Systems/Run/Visuals/PerkTreeScene/PerkIcon.gd" id="1_vu1mm"]
 [ext_resource type="SpriteFrames" uid="uid://c4cphr1o62d7i" path="res://Assets/Sprite_frames/Stage1/Airdramon.tres" id="2_j5vj2"]
-[ext_resource type="PackedScene" uid="uid://cx55o3f4i4oja" path="res://Scenes/DefaultBorder.tscn" id="3_j5vj2"]
+[ext_resource type="PackedScene" uid="uid://cx55o3f4i4oja" path="res://Scenes/Panel.tscn" id="3_j5vj2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03e2s"]
 draw_center = false

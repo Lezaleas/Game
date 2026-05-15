@@ -50,12 +50,37 @@ func _apply_magic_damage(attacker: FighterState, defender: FighterState, element
 	var at_spi = attacker.attributes[Defines.ATTRIBUTE.Spi].current
 	var df_wis = defender.attributes[Defines.ATTRIBUTE.Wis].current
 	var damage = Defines.ATTACK_MULT * at_mana_mult / df_mana_mult * at_spi / df_wis * potency
-	#region Attack Event
+	
+	#region Attack Evasion ------------------------------------
+	var evasion_event = CmdAttackEvasion.new(attacker, defender)
+	var eva = defender.attributes[Defines.ATTRIBUTE.Eva].current
+	var acc = attacker.attributes[Defines.ATTRIBUTE.Acc].current
+	if randf() < (eva - acc) / 100.0:
+		evasion_event.is_evaded = true
+	
+	evasion_event = Situation.skills.resolve(evasion_event)
+	if evasion_event.is_evaded: return
+	#endregion -----------------------------------------------
+	
+	#region Attack Crit ---------------------------------------
+	var crit_event = CmdAttackCrit.new(attacker, defender)
+	var crit_chance = attacker.attributes[Defines.ATTRIBUTE.Crit].current
+	var crit_def = defender.attributes[Defines.ATTRIBUTE.Cdef].current
+	if randf() < (crit_chance - crit_def) / 100.0:
+		crit_event.is_critical = true
+	
+	crit_event = Situation.skills.resolve(crit_event)
+	if crit_event.is_critical:
+		damage *= crit_event.critical_mult
+	#endregion -----------------------------------------------
+	
+	#region Attack Event ------------------------------------
 	var attack_event = CmdAttack.new(attacker, defender, damage, tags)
 	attack_event = Situation.skills.resolve(attack_event)
 	if attack_event.is_cancelled: return
 	damage = attack_event.damage
-	#endregion
+	#endregion -----------------------------------------------
+	
 	_apply_push(attacker, defender, damage, tags)
 
 func _apply_push(attacker: FighterState, defender: FighterState, damage: float, tags: Array) -> void:

@@ -1,0 +1,179 @@
+[gd_scene load_steps=11 format=3 uid="uid://chdioylxfky3d"]
+
+[ext_resource type="Shader" uid="uid://cs4x6d3122lfg" path="res://Assets/Shaders/DefaultBorder2.gdshader" id="1_pcb2s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0c07c"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0.6)
+border_width_bottom = 2
+border_color = Color(0.36862746, 0.34509805, 0.16078432, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 6
+corner_detail = 20
+shadow_size = 4
+shadow_offset = Vector2(0, 3)
+anti_aliasing = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a7gpf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cgwh"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0.25882354, 0.45490196, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 20
+anti_aliasing = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pcb2s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4rl5p"]
+shader = ExtResource("1_pcb2s")
+shader_parameter/brightness_strength = 0.10000000475
+shader_parameter/mid_sharpness = 0.90000003949012
+shader_parameter/sheen_intensity = 0.0050000002375
+shader_parameter/inner_stroke_thickness = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tac1t"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0.25882354, 0.45490196, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 0.2)
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 20
+anti_aliasing = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ejise"]
+shader = ExtResource("1_pcb2s")
+shader_parameter/brightness_strength = 0.15
+shader_parameter/mid_sharpness = 1.00000004424012
+shader_parameter/sheen_intensity = 0.10000000475
+shader_parameter/inner_stroke_thickness = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7gpf"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.018783314, 0.59601384, 0.9999861, 1)
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 20
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2204"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0, 0.1764706, 0.37254903, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 20
+anti_aliasing = false
+
+[node name="SmallPanel" type="PanelContainer"]
+offset_right = 393.0
+offset_bottom = 122.0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0c07c")
+
+[node name="BlackLine" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_a7gpf")
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2cgwh")
+
+[node name="MarginContainer" type="MarginContainer" parent="BlackLine"]
+material = SubResource("ShaderMaterial_pcb2s")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="BlackLine/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="BackgroundBorderShadow" type="Panel" parent="BlackLine/MarginContainer/MarginContainer"]
+material = SubResource("ShaderMaterial_4rl5p")
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tac1t")
+
+[node name="MainBorder" type="Panel" parent="BlackLine/MarginContainer"]
+material = SubResource("ShaderMaterial_ejise")
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a7gpf")
+
+[node name="MarginContainer2" type="MarginContainer" parent="BlackLine"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="OutsideBorderWall" type="Panel" parent="BlackLine/MarginContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r2204")
+
+[node name="Content" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 7

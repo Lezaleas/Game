@@ -1,0 +1,203 @@
+[gd_scene load_steps=12 format=3 uid="uid://qewnooy03uvq"]
+
+[ext_resource type="Shader" uid="uid://dg4bormjoqika" path="res://Assets/Shaders/specandglow.gdshader" id="1_ax88c"]
+[ext_resource type="Script" uid="uid://b8v1mfwa61w5v" path="res://Scenes/ProgressBar.gd" id="1_wt5b5"]
+[ext_resource type="Shader" uid="uid://cqy3e8cuci2o1" path="res://Assets/Shaders/DefaultBorder.gdshader" id="2_046cr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wt5b5"]
+shader = ExtResource("2_046cr")
+shader_parameter/brightness_strength = 0.15
+shader_parameter/mid_sharpness = 0.5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vw6c6"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0.25490198, 0.4509804, 0.6)
+border_color = Color(1.540184e-06, 0.41448262, 0.7115285, 0.6)
+corner_radius_top_left = 6
+corner_radius_bottom_left = 6
+corner_detail = 20
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcchq"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.35804525, 0.59044033, 0.7739092, 1)
+corner_radius_top_left = 6
+corner_radius_bottom_left = 6
+corner_detail = 20
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8xw6"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+draw_center = false
+border_width_right = 4
+border_blend = true
+corner_detail = 5
+shadow_size = 2
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2js7i"]
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 20
+anti_aliasing = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_minad"]
+shader = ExtResource("1_ax88c")
+shader_parameter/base_color = Color(0.5686275, 0.59607846, 0.64705884, 1)
+shader_parameter/glow_color = Color(1, 1, 1, 1)
+shader_parameter/shine_intensity = 0.6
+shader_parameter/glow_intensity = 0.4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vut7"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0.25490198, 0.4509804, 0)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 20
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_minad"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.72464263, 0.7246426, 0.7246426, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 20
+shadow_size = 2
+
+[node name="GameBar" type="Control"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 63.0
+offset_bottom = 16.0
+script = ExtResource("1_wt5b5")
+
+[node name="Clipper" type="Control" parent="."]
+unique_name_in_owner = true
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Clipper"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Background" type="Panel" parent="Clipper/MarginContainer2"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_wt5b5")
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vw6c6")
+
+[node name="BorderHiglight" type="Panel" parent="Clipper/MarginContainer2/Background"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bcchq")
+
+[node name="RightBorder" type="Panel" parent="Clipper/MarginContainer2/Background"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_i8xw6")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="BlackOutline" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2js7i")
+
+[node name="SilverBorder" type="PanelContainer" parent="."]
+material = SubResource("ShaderMaterial_minad")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2vut7")
+
+[node name="SilverBorder" type="Panel" parent="SilverBorder"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_minad")
