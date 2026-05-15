@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://e1f2g3h4i5j6"]
+
+[ext_resource type="Script" path="res://Systems/Progression/Visuals/RoomUI.gd" id="1_script"]
+
+[node name="RoomUI" type="PanelContainer"]
+custom_minimum_size = Vector2(200, 200)
+script = ExtResource("1_script")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+mouse_filter = 2
+layout_mode = 2
+
+[node name="RoomName" type="Label" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Room Name"
+horizontal_alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VillagerContainer" type="VBoxContainer" parent="VBox/Scroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

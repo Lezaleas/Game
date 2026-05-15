@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://f1g2h3i4j5k6"]
+
+[ext_resource type="Script" path="res://Systems/Progression/Visuals/BuildingUI.gd" id="1_script"]
+
+[node name="BuildingUI" type="PanelContainer"]
+offset_right = 600.0
+offset_bottom = 300.0
+script = ExtResource("1_script")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="BuildingName" type="Label" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Building Name"
+
+[node name="PressureLabel" type="Label" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.8, 1, 1)
+text = "Pressure: ..."
+
+[node name="RoomContainer" type="HBoxContainer" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://55dvelk1sqsw"]
+[gd_scene load_steps=8 format=3 uid="uid://55dvelk1sqsw"]
 
 [ext_resource type="PackedScene" uid="uid://ca5gfo26ni6ly" path="res://Scenes/ReusableButton.tscn" id="1_gsqkf"]
 [ext_resource type="Script" uid="uid://b7y2ojtvkfodh" path="res://Systems/Run/Visuals/RunVisuals.gd" id="1_hvrjw"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dmo4kw52jfynx" path="res://Visuals/Intermission/SkillInfoPanel.tscn" id="3_2d4cy"]
 [ext_resource type="PackedScene" uid="uid://dlu1hpkw80bl8" path="res://Systems/Equipment/Visuals/EquipmentSelection.tscn" id="6_mkt83"]
 [ext_resource type="PackedScene" uid="uid://c1d2e3f4g5h6i" path="res://Systems/Enemies/Visuals/LevelSelection.tscn" id="9_extra"]
+[ext_resource type="PackedScene" path="res://Systems/Progression/Visuals/ProgressionScreen.tscn" id="10_prog"]
 
 [node name="RunVisuals" type="Node2D"]
 script = ExtResource("1_hvrjw")
@@ -111,6 +112,10 @@ offset_bottom = -64.0
 unique_name_in_owner = true
 visible = false
 
+[node name="ProgressionScreen" parent="CanvasLayer" instance=ExtResource("10_prog")]
+unique_name_in_owner = true
+visible = false
+
 [node name="BottomHBox" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 2
 anchor_top = 1.0
@@ -190,3 +195,11 @@ size_flags_vertical = 1
 theme_override_font_sizes/font_size = 32
 text = "Battle"
 item_id = 3
+
+[node name="ProgressionMenuButton" parent="CanvasLayer/BottomHBox" instance=ExtResource("1_gsqkf")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "Buildings"
+item_id = 11

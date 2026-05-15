@@ -14,7 +14,8 @@ enum ITEM_IDS {
 	fighter_3,
 	save_load_menu_button,
 	save_button,
-	load_button, }
+	load_button,
+	progression_menu_button, }
 	
 func _ready() -> void:
 	EventBus.subscribe("item_activated", self )
@@ -42,3 +43,5 @@ func on_item_activated(item_id: ITEM_IDS) -> void:
 		ITEM_IDS.load_button:
 			RunManager.loaded_run = RunState.load_run()
 			get_tree().reload_current_scene()
+		ITEM_IDS.progression_menu_button:
+			run_visuals.open_progression_screen()

@@ -1,0 +1,100 @@
+[gd_scene load_steps=2 format=3 uid="uid://1b2c3d4e5f6"]
+
+[ext_resource type="Script" path="res://Systems/Progression/Visuals/ProgressionScreen.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://c1d2e3f4g5h6j" path="res://Systems/Progression/Visuals/ProgressionInfoPanel.tscn" id="2_info"]
+[ext_resource type="Script" path="res://Systems/Progression/Visuals/ReserveDropZone.gd" id="3_drop"]
+
+[node name="ProgressionScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.1, 0.12, 0.95)
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Header" type="Label" parent="VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "PRODUCTION ECOSYSTEMS"
+horizontal_alignment = 1
+
+[node name="MainArea" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="MainScroll" type="ScrollContainer" parent="VBox/MainArea"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BuildingContainer" type="VBoxContainer" parent="VBox/MainArea/MainScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 30
+
+[node name="ProgressionInfoPanel" parent="VBox/MainArea" instance=ExtResource("2_info")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ProduceArea" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="ProduceButton" type="Button" parent="VBox/ProduceArea"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "PRODUCE ITEMS"
+
+[node name="ResultsLabel" type="Label" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 0, 1)
+text = "Results will appear here..."
+horizontal_alignment = 1
+
+[node name="ReserveBar" type="PanelContainer" parent="VBox"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+script = ExtResource("3_drop")
+
+[node name="VBox" type="VBoxContainer" parent="VBox/ReserveBar"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/ReserveBar/VBox"]
+layout_mode = 2
+text = "VILLAGER RESERVE (Drag to assign)"
+horizontal_alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="VBox/ReserveBar/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ReserveContainer" type="HBoxContainer" parent="VBox/ReserveBar/VBox/Scroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10

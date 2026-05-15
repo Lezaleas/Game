@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1d2e3f4g5h6j"]
+
+[ext_resource type="Script" path="res://Systems/Progression/Visuals/ProgressionInfoPanel.gd" id="1_script"]
+
+[node name="ProgressionInfoPanel" type="PanelContainer"]
+custom_minimum_size = Vector2(350, 0)
+script = ExtResource("1_script")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TitleLabel" type="Label" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Details"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBox"]
+layout_mode = 2
+
+[node name="DescLabel" type="Label" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+text = "Description goes here..."
+autowrap_mode = 2
+
+[node name="Scroll" type="ScrollContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DetailsVBox" type="VBoxContainer" parent="VBox/Scroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5

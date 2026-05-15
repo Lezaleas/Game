@@ -1,6 +1,6 @@
-extends SceneTree
+extends Node2D
 
-func _init() -> void:
+func _ready() -> void:
 	print("--- Testing Progression System Foundation ---")
 	
 	# 1. Create a Villager
@@ -51,4 +51,4 @@ func _init() -> void:
 	assert(global_pressure.has(0))
 	
 	print("--- Foundation Test Successful ---")
-	quit()
+	get_tree().quit()
