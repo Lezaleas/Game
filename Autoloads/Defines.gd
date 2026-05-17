@@ -29,15 +29,18 @@ enum EQUIP_TYPE {Sword, Staff, Armor, Boots}
 enum EQUIP_QUALITY {Common, Rare, Epic, Legendary}
 enum INVESTMENT {None, Minor, Major, Master, Grandmaster}
 
-enum PROG_TAG {
-	Metal, Martial, Fire, Precision,
-	Arcane, Spirit, Occult, Knowledge,
-	Nature, Discipline, Craftsmanship,
-	Wind, Rhythm, Travel, Learning
-}
+enum PROG_TAG {Smithing,Warfare,Arcane,Learning,Crafting,Stewardry,Charisma,Wildcraft}
 enum PROG_METHOD {Experimental, Ritualistic, Reckless, Precise, Obsessive}
 enum PROG_PERSONALITY {Stubborn, Ambitious, Fragile, Fanatical}
-enum PROG_ELEMENT {Fire, Water, Arcane, Nature, Wind, Earth}
+enum PROG_ELEMENT {Fire, Water, Wind, Earth}
+enum ModifierHook {
+	CALCULATE_TAG_PRESSURE,
+	CALCULATE_ITEM_WEIGHTS,
+	BEFORE_PERK_ROLL,
+	AFTER_PERK_ROLL,
+	AFTER_ITEM_GENERATION
+}
+
 
 
 enum CMD_EVENT_TYPE {Walk, Attack, DealDmg, ReceiveDmg, TurnStart, ClashStart, ClashLink,

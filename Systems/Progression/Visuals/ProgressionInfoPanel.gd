@@ -69,7 +69,7 @@ func show_building_info(building: Building) -> void:
 	for child in details_vbox.get_children():
 		child.queue_free()
 	
-	_add_detail("Specialization", building.specialization)
+	_add_detail("Specialization", str(building.specialization))
 
 func _add_detail(key: String, value: String) -> void:
 	var label = Label.new()

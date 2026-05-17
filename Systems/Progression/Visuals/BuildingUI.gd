@@ -27,5 +27,5 @@ func refresh_pressure() -> void:
 	var pressure = building.get_tag_pressure()
 	var text = "Pressure: "
 	for tag in pressure:
-		text += "[%s: %s] " % [Defines.PROG_TAG.keys()[tag], pressure[tag]]
+		text += "[%s: %s] " % [Defines.PROG_TAG.keys()[tag], str(pressure[tag])]
 	pressure_label.text = text

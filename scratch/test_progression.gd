@@ -37,7 +37,7 @@ func _ready() -> void:
 	
 	var building_pressure = forge_building.get_tag_pressure()
 	print("Building '", forge_building.building_name, "' pressure: ", building_pressure)
-	assert(building_pressure[1] == 3)
+	assert(building_pressure[1] == 13)
 	
 	# 4. Test ProgressionManager logic (manual instance for now)
 	var prog_manager = load("res://Systems/Progression/Logic/ProgressionManager.gd").new()
