@@ -24,7 +24,16 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("q"):
 		debug_label.text = ""
 		debug_label.text += "\n" + str(RunManager.heroes[1].skills)
+		
+## Returns a number between 1 and max_value inclusive.
+## Pass the RNG instance you want to use.
+func roll_dice(max_value: int, rng: RandomNumberGenerator) -> int:
+	return rng.randi_range(1, max_value)
 
+## Returns true with the given percent chance.
+## Example: 20.0 = 20% chance.
+func chance(percent: float, rng: RandomNumberGenerator) -> bool:
+	return rng.randf() < percent / 100.0
 
 ## receives a herostate and a fighterstate and writes the hero properties on the fighter
 func HeroToFighter(hero:HeroState, fighter:FighterState) -> FighterState:

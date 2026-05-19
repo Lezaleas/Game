@@ -53,14 +53,7 @@ func show_room_info(room: Room) -> void:
 		child.queue_free()
 		
 	_add_detail("Element", Defines.PROG_ELEMENT.keys()[room.element])
-	_add_detail("Base Effect", room.base_effect)
-	
-	if not room.thresholds.is_empty():
-		var thresh_header = Label.new()
-		thresh_header.text = "\nThresholds:"
-		thresh_header.modulate = Color.ORANGE
-		details_vbox.add_child(thresh_header)
-		# ... detail thresholds ...
+	_add_detail("Base Effect", str(room.base_effects))
 
 func show_building_info(building: Building) -> void:
 	title_label.text = building.building_name

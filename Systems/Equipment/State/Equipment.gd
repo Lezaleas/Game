@@ -7,4 +7,5 @@ class_name EquipmentState
 @export var attributes: Array[int] = [0,0,0,0, 0,0,0,0,0,0,0]
 @export var perk_points: Array[int] = [0,0,0,0] # hardcoded stats size
 @export var weight: int = 10
+@export var skill: Skill
 @export var type: Defines.EQUIP_TYPE

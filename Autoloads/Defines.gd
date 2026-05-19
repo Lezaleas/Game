@@ -33,14 +33,7 @@ enum PROG_TAG {Smithing,Warfare,Arcane,Learning,Crafting,Stewardry,Charisma,Wild
 enum PROG_METHOD {Experimental, Ritualistic, Reckless, Precise, Obsessive}
 enum PROG_PERSONALITY {Stubborn, Ambitious, Fragile, Fanatical}
 enum PROG_ELEMENT {Fire, Water, Wind, Earth}
-enum ModifierHook {
-	CALCULATE_TAG_PRESSURE,
-	CALCULATE_ITEM_WEIGHTS,
-	BEFORE_PERK_ROLL,
-	AFTER_PERK_ROLL,
-	AFTER_ITEM_GENERATION
-}
-
+enum ModifierHook {CALCULATE_TAG_PRESSURE,BEFORE_PERK_ROLL,AFTER_PERK_ROLL,AFTER_ITEM_GENERATION}
 
 
 enum CMD_EVENT_TYPE {Walk, Attack, DealDmg, ReceiveDmg, TurnStart, ClashStart, ClashLink,

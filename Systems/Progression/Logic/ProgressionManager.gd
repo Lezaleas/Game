@@ -5,6 +5,7 @@ extends Node
 var buildings: Array[Building] = []
 var villagers: Array[Villager] = []
 var reserve_villagers: Array[Villager] = []
+var last_calculated_tags: Dictionary = {}
 
 func _ready() -> void:
 	# Initial setup (this might be handled by RunManager in the future)
@@ -40,44 +41,23 @@ func _setup_debug_data() -> void:
 	var v1 = Villager.new()
 	v1.name = "Buliwyf"
 	v1.tags = {Defines.PROG_TAG.Smithing: 8, Defines.PROG_TAG.Crafting: 4}
-	v1.modifiers.append(HeavyArmorModifier.new())
+	
+	var synergy_mod = TagSynergyModifier.new()
+	synergy_mod.scaling_tag = Defines.PROG_TAG.Smithing
+	synergy_mod.scaling_tag_2 = Defines.PROG_TAG.Crafting
+	synergy_mod.chance = 0.5 # 8 * 10 = 80% chance
+	synergy_mod.power = 1
+	v1.modifiers.append(synergy_mod)
 	
 	var v2 = Villager.new()
 	v2.name = "Eir"
 	v2.tags = {Defines.PROG_TAG.Arcane: 7, Defines.PROG_TAG.Learning: 5}
-	v2.traits.append(PreciseSmithingModifier.new())
 	
 	var v3 = Villager.new()
 	v3.name = "Gunnar"
 	v3.tags = {Defines.PROG_TAG.Charisma: 6, Defines.PROG_TAG.Warfare: 3}
-	v3.modifiers.append(WeightTransformationModifier.new())
 	
 	reserve_villagers.append_array([v1, v2, v3])
-
-# Calculate total tag pressure for all buildings
-func get_global_tag_pressure() -> Dictionary:
-	var global_pressure = {}
-	for building in buildings:
-		var building_pressure = building.get_tag_pressure()
-		for tag in building_pressure:
-			if not global_pressure.has(tag):
-				global_pressure[tag] = 0
-			global_pressure[tag] += building_pressure[tag]
-	return global_pressure
-
-# Get pressure for a specific building
-func get_building_pressure(building_name: String) -> Dictionary:
-	for building in buildings:
-		if building.building_name == building_name:
-			return building.get_tag_pressure()
-	return {}
-
-# Advance the week (Weekly Loop logic)
-func advance_week() -> void:
-	print("Advancing progression week...")
-	var pressure = get_global_tag_pressure()
-	# ... implementation of week advancement ...
-	print("Tag pressure at end of week: ", pressure)
 
 # Runs the full 10-step item generation pipeline for a given building.
 func generate_item_via_pipeline(building: Building, global_modifiers: Array[Modifier] = []) -> EquipmentState:
@@ -85,39 +65,56 @@ func generate_item_via_pipeline(building: Building, global_modifiers: Array[Modi
 	var context = GenerationContext.new()
 	context.building = building
 	context.global_modifiers = global_modifiers
+	context.quality = building.quality
 	
 	var all_villagers: Array[Villager] = []
 	for r in building.rooms:
 		if r:
-			all_villagers.append_array(r.assigned_villagers)
+			all_villagers.append(r.assigned_villager)
 	context.villagers = all_villagers
 
 	# 2. Calculate building tag pressure
 	context.tags = building.get_tag_pressure().duplicate()
 
-	# 3. Collect active modifiers across all rooms and villagers
-	var modifiers: Array[Modifier] = []
-	modifiers.append_array(global_modifiers)
+	# 3. Collect active modifiers and group them by hook type
+	var modifiers_by_hook: Array[Array] = []
+	modifiers_by_hook.resize(Defines.ModifierHook.keys().size())
+	for i in range(modifiers_by_hook.size()):
+		modifiers_by_hook[i] = [] as Array[Modifier]
+
+	var register_modifier = func(mod: Modifier, r: Room, v: Villager):
+		if not mod: return
+		mod.room = r
+		mod.villager = v
+		for hook in mod.hook_type:
+			modifiers_by_hook[hook].append(mod)
+
+	for g_mod in global_modifiers:
+		register_modifier.call(g_mod, null, null)
+
 	for r in building.rooms:
 		if not r: continue
-		modifiers.append_array(r.modifiers)
-		for v in r.assigned_villagers:
-			if not v: continue
-			modifiers.append_array(v.modifiers)
-			modifiers.append_array(v.traits)
-			
-	# Sort modifiers by priority (highest priority first)
-	modifiers.sort_custom(func(a, b): return a.priority > b.priority)
+		var v: Villager = r.assigned_villager
+		for r_mod in r.base_effects:
+			if r_mod and not r_mod.is_global:
+				register_modifier.call(r_mod, r, v)
+		if not v: continue
+		for v_mod in v.modifiers:
+			if v_mod and not v_mod.is_global:
+				register_modifier.call(v_mod, r, v)
+		for v_trait in v.traits:
+			if v_trait and v_trait.is_global:
+				register_modifier.call(v_trait, r, v)
+
+	# Sort modifiers in each category by priority (highest priority first)
+	for list in modifiers_by_hook:
+		list.sort_custom(func(a, b): return a.priority > b.priority)
 
 	# 4. Execute CALCULATE_TAG_PRESSURE hooks
-	_execute_hook(Defines.ModifierHook.CALCULATE_TAG_PRESSURE, context, modifiers)
+	_execute_hook(Defines.ModifierHook.CALCULATE_TAG_PRESSURE, context, modifiers_by_hook[Defines.ModifierHook.CALCULATE_TAG_PRESSURE])
 
 	# 5. Generate item category weights
-	for type in Defines.EQUIP_TYPE.values():
-		if type == building.specialization:
-			context.item_weights[type] = 50.0 # Bias towards building specialization
-		else:
-			context.item_weights[type] = 10.0
+	var chosen_type = building.specialization
 
 	# Tag pressures influence base category weights
 	var smith = context.tags.get(Defines.PROG_TAG.Smithing, 0.0)
@@ -129,64 +126,19 @@ func generate_item_via_pipeline(building: Building, global_modifiers: Array[Modi
 	var charis = context.tags.get(Defines.PROG_TAG.Charisma, 0.0)
 	var wild = context.tags.get(Defines.PROG_TAG.Wildcraft, 0.0)
 
-	context.item_weights[Defines.EQUIP_TYPE.Sword] = context.item_weights.get(Defines.EQUIP_TYPE.Sword, 0.0) + smith * 1.5 + war * 1.0 + wild * 0.5
-	context.item_weights[Defines.EQUIP_TYPE.Staff] = context.item_weights.get(Defines.EQUIP_TYPE.Staff, 0.0) + arc * 2.0 + learn * 1.0 + charis * 1.0
-	context.item_weights[Defines.EQUIP_TYPE.Armor] = context.item_weights.get(Defines.EQUIP_TYPE.Armor, 0.0) + craft * 1.5 + smith * 1.0 + steward * 1.0
-	context.item_weights[Defines.EQUIP_TYPE.Boots] = context.item_weights.get(Defines.EQUIP_TYPE.Boots, 0.0) + wild * 1.5 + steward * 1.0 + war * 0.5
-
-	# 6. Execute CALCULATE_ITEM_WEIGHTS hooks
-	_execute_hook(Defines.ModifierHook.CALCULATE_ITEM_WEIGHTS, context, modifiers)
-
-	# 7. Roll item base
-	var chosen_type = _roll_weighted(context.item_weights)
-	
-	# Determine quality level based on building quality
-	var q_val = building.quality
-	context.quality = Defines.EQUIP_QUALITY.Common
-	if q_val >= 75.0:
-		context.quality = Defines.EQUIP_QUALITY.Legendary
-	elif q_val >= 50.0:
-		context.quality = Defines.EQUIP_QUALITY.Epic
-	elif q_val >= 25.0:
-		context.quality = Defines.EQUIP_QUALITY.Rare
-
-	var item = EquipmentGenerator.generate_item(context.quality, chosen_type)
+	var item = EquipmentGenerator.generate_item(context.quality, chosen_type, context.tags)
 	context.generated_item = item
 
 	# 8. Roll perks
 	# Execute BEFORE_PERK_ROLL hooks
-	_execute_hook(Defines.ModifierHook.BEFORE_PERK_ROLL, context, modifiers)
-
-	# Initialize perk weights from building specialization/type
-	for p_idx in range(4): # Pwr, Spi, Wis, Agi
-		context.perk_weights[p_idx] = 10.0
-
-	# Tag pressures influence perk weights
-	context.perk_weights[0] += smith * 1.5 + war * 1.0 + craft * 0.5
-	context.perk_weights[1] += arc * 1.5 + charis * 1.0
-	context.perk_weights[2] += arc * 0.5 + learn * 1.5 + steward * 1.0
-	context.perk_weights[3] += war * 0.5 + steward * 1.0 + wild * 1.5
-
-	var focus_idx = _roll_weighted(context.perk_weights)
-
-	# Distribute rolled perks and attributes
-	var total_perks = item.perk_points.reduce(func(accum, val): return accum + val, 0)
-	var total_attrs = item.attributes.reduce(func(accum, val): return accum + val, 0)
-
-	for i in range(item.perk_points.size()):
-		item.perk_points[i] = 0
-	item.perk_points[focus_idx] = total_perks
-
-	for i in range(item.attributes.size()):
-		item.attributes[i] = 0
-	item.attributes[focus_idx] = total_attrs
+	_execute_hook(Defines.ModifierHook.BEFORE_PERK_ROLL, context, modifiers_by_hook[Defines.ModifierHook.BEFORE_PERK_ROLL])
 
 	# 9. Execute perk hooks / AFTER_PERK_ROLL
-	_execute_hook(Defines.ModifierHook.AFTER_PERK_ROLL, context, modifiers)
+	_execute_hook(Defines.ModifierHook.AFTER_PERK_ROLL, context, modifiers_by_hook[Defines.ModifierHook.AFTER_PERK_ROLL])
 
 	# 10. Finalize item
 	# Execute AFTER_ITEM_GENERATION hooks
-	_execute_hook(Defines.ModifierHook.AFTER_ITEM_GENERATION, context, modifiers)
+	_execute_hook(Defines.ModifierHook.AFTER_ITEM_GENERATION, context, modifiers_by_hook[Defines.ModifierHook.AFTER_ITEM_GENERATION])
 
 	# Default naming based on dominant tag and rolled stats
 	var dominant_tag = -1
@@ -201,9 +153,10 @@ func generate_item_via_pipeline(building: Building, global_modifiers: Array[Modi
 		tag_name = Defines.PROG_TAG.keys()[dominant_tag]
 	
 	var type_name = Defines.EQUIP_TYPE.keys()[item.type]
-	var quality_name = Defines.EQUIP_QUALITY.keys()[context.quality]
+	var quality_name = str(context.quality)
 	item.display_name = "%s's %s %s" % [tag_name, quality_name, type_name]
-
+	
+	last_calculated_tags = context.tags
 	return item
 
 func _execute_hook(hook: Defines.ModifierHook, context: GenerationContext, modifiers: Array[Modifier]) -> void:
@@ -245,36 +198,39 @@ func produce_items() -> Array[String]:
 			if not room: continue
 			for mod in room.modifiers:
 				if mod and mod.is_global:
+					mod.room = room
+					mod.villager = room.assigned_villager
 					global_mods.append(mod)
-			for villager in room.assigned_villagers:
-				if not villager: continue
-				for mod in villager.modifiers:
-					if mod and mod.is_global:
-						global_mods.append(mod)
-				for v_trait in villager.traits:
-					if v_trait and v_trait.is_global:
-						global_mods.append(v_trait)
+			var villager = room.assigned_villager
+			if not villager: continue
+			for mod in villager.modifiers:
+				if mod and mod.is_global:
+					mod.villager = villager
+					mod.room = room
+					global_mods.append(mod)
+			for v_trait in villager.traits:
+				if v_trait and v_trait.is_global:
+					v_trait.villager = villager
+					v_trait.room = room
+					global_mods.append(v_trait)
 
 	# 2. Generate items for each building
 	var results: Array[String] = []
 	for building in buildings:
 		if not building: continue
+		if not building.produces: continue
 		var item = generate_item_via_pipeline(building, global_mods)
-		var result = "%s produced: %s (Weight: %s, Perks: %s)" % [building.building_name, item.display_name, str(item.weight), str(item.perk_points)]
+		var tags_str = ""
+		for tag_id in range(8):
+			tags_str += str(last_calculated_tags.get(tag_id, 0.0)) + ","
+		var skill_name = item.skill.skill_name if item.skill else "None"
+		var result = "%s produced: %s (Weight: %s, Perks: %s, Skill: %s) [%s]" % [building.building_name, item.display_name, str(item.weight), str(item.perk_points), skill_name, tags_str]
 		results.append(result)
 	
 	if buildings.is_empty():
 		results.append("No buildings to produce from!")
 		
 	return results
-
-# Helper to find a room by name across all buildings
-func find_room(room_name: String) -> Room:
-	for building in buildings:
-		for room in building.rooms:
-			if room.room_name == room_name:
-				return room
-	return null
 
 # Assign a villager to a room
 func assign_villager_to_room(villager: Villager, room: Room) -> bool:
@@ -283,14 +239,14 @@ func assign_villager_to_room(villager: Villager, room: Room) -> bool:
 	# Remove from previous room or reserve
 	for b in buildings:
 		for r in b.rooms:
-			if r.assigned_villagers.has(villager):
-				r.assigned_villagers.erase(villager)
+			if r.assigned_villager == villager:
+				r.assigned_villager = null
 	
 	if reserve_villagers.has(villager):
 		reserve_villagers.erase(villager)
 	
 	if room:
-		room.assigned_villagers.append(villager)
+		room.assigned_villager = villager
 	else:
 		# If room is null, move to reserve
 		reserve_villagers.append(villager)
@@ -311,8 +267,8 @@ func swap_villagers(v1: Villager, v2: Villager) -> void:
 	
 	for building in buildings:
 		for room in building.rooms:
-			if room.assigned_villagers.has(v1): v1_room = room
-			if room.assigned_villagers.has(v2): v2_room = room
+			if room.assigned_villager == v1: v1_room = room
+			if room.assigned_villager == v2: v2_room = room
 	
 	# Swap them
 	# If one is in reserve, assign_villager_to_room handles it correctly

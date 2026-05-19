@@ -13,7 +13,7 @@ func _ready() -> void:
 	room.room_name = "Testing Fire Room"
 	room.element = Defines.PROG_ELEMENT.Fire
 
-	# 2. Attach a Villager with Smithing/Crafting tags and HeavyArmorModifier
+	# 2. Attach a Villager with Smithing/Crafting tags
 	var smith = Villager.new()
 	smith.name = "Test Smith"
 	# Smithing (0) = 12, Crafting (4) = 5
@@ -22,17 +22,11 @@ func _ready() -> void:
 		Defines.PROG_TAG.Crafting: 5
 	}
 	
-	# Add modifier to the villager
-	var heavy_armor_mod = HeavyArmorModifier.new()
-	smith.modifiers.append(heavy_armor_mod)
-	print("Created Villager: ", smith.name, " with HeavyArmorModifier.")
-
 	# Attach villager to room
-	var villagers: Array[Villager] = [smith]
-	room.assigned_villagers = villagers
+	room.assigned_villager = smith
 	building.rooms.append(room)
 
-	# 3. Create ProgressionManager manually (or use autoload, but manually is safer for test scenes)
+	# 3. Create ProgressionManager manually
 	var prog_manager = load("res://Systems/Progression/Logic/ProgressionManager.gd").new()
 	prog_manager.buildings.append(building)
 
@@ -40,7 +34,7 @@ func _ready() -> void:
 	# Run pipeline manually first to inspect context
 	var context = GenerationContext.new()
 	context.building = building
-	context.villagers = room.assigned_villagers
+	context.villagers = [smith] as Array[Villager]
 
 	# Simulate Pipeline step-by-step to assert state mutations:
 	# Calculate base tags pressure: quality (20) + villager tags
@@ -56,98 +50,69 @@ func _ready() -> void:
 	print("Initial Tags Pressure: ", context.tags)
 	assert(context.tags[Defines.PROG_TAG.Smithing] == 32.0, "Smithing pressure should be quality (20) + villager (12) = 32")
 
-	# Collect and sort modifiers
-	var modifiers: Array[Modifier] = []
-	for r in building.rooms:
-		if not r: continue
-		modifiers.append_array(r.modifiers)
-		for v in r.assigned_villagers:
-			if not v: continue
-			modifiers.append_array(v.modifiers)
-			modifiers.append_array(v.traits)
-	
-	assert(modifiers.size() == 1, "Should have collected exactly 1 modifier")
-	assert(modifiers[0] is HeavyArmorModifier, "Collected modifier should be HeavyArmorModifier")
-
-	# Calculate base weights
-	for type in Defines.EQUIP_TYPE.values():
-		if type == building.specialization:
-			context.item_weights[type] = 50.0
-		else:
-			context.item_weights[type] = 10.0
-
-	# Tag pressures influence base category weights
-	var smith_pressure = context.tags.get(Defines.PROG_TAG.Smithing, 0.0)
-	var craft_pressure = context.tags.get(Defines.PROG_TAG.Crafting, 0.0)
-	context.item_weights[Defines.EQUIP_TYPE.Sword] += smith_pressure * 1.5
-	context.item_weights[Defines.EQUIP_TYPE.Armor] += craft_pressure * 1.5 + smith_pressure * 1.0
-
-	var sword_weight_before = context.item_weights[Defines.EQUIP_TYPE.Sword]
-	var armor_weight_before = context.item_weights[Defines.EQUIP_TYPE.Armor]
-	print("Category Weights before Modifier: Sword: ", sword_weight_before, ", Armor: ", armor_weight_before)
-
-	# Execute CALCULATE_ITEM_WEIGHTS hook
-	prog_manager._execute_hook(Defines.ModifierHook.CALCULATE_ITEM_WEIGHTS, context, modifiers)
-	
-	var armor_weight_after = context.item_weights[Defines.EQUIP_TYPE.Armor]
-	print("Category Weights after HeavyArmorModifier: Armor: ", armor_weight_after)
-	assert(armor_weight_after == armor_weight_before + 25.0, "Armor weight should be increased by 25 due to Fire room HeavyArmorModifier")
-
-	# Test perk weight modifier (PreciseSmithingModifier)
-	# Set up another villager with PreciseSmithingModifier in traits
-	var scholar = Villager.new()
-	scholar.name = "Test Scholar"
-	var precise_mod = PreciseSmithingModifier.new()
-	scholar.traits.append(precise_mod)
-	room.assigned_villagers.append(scholar)
-
-	# Re-collect modifiers
-	modifiers.clear()
-	for r in building.rooms:
-		if not r: continue
-		modifiers.append_array(r.modifiers)
-		for v in r.assigned_villagers:
-			if not v: continue
-			modifiers.append_array(v.modifiers)
-			modifiers.append_array(v.traits)
-	
-	modifiers.sort_custom(func(a, b): return a.priority > b.priority)
-	assert(modifiers.size() == 2, "Should have collected 2 modifiers")
-	assert(modifiers[0] is PreciseSmithingModifier, "PreciseSmithingModifier has priority 10 so it must be first in sorted order")
-
-	# Initialize perk weights
-	for p_idx in range(4):
-		context.perk_weights[p_idx] = 10.0
-	
-	# Smithing (32) >= 10, so PreciseSmithingModifier will trigger on BEFORE_PERK_ROLL
-	var pwr_weight_before = context.perk_weights[0]
-	prog_manager._execute_hook(Defines.ModifierHook.BEFORE_PERK_ROLL, context, modifiers)
-	var pwr_weight_after = context.perk_weights[0]
-	print("Perk Power Weights before hook: ", pwr_weight_before, ", after: ", pwr_weight_after)
-	assert(pwr_weight_after == pwr_weight_before + 15.0, "Power perk weight should be increased by 15 by PreciseSmithingModifier")
-
 	# Test full end-to-end generate function
 	var generated_item = prog_manager.generate_item_via_pipeline(building)
 	print("End-to-end generated item name: ", generated_item.display_name)
+	print("End-to-end generated item skill: ", generated_item.skill.skill_name if generated_item.skill else "None")
 	assert(generated_item.display_name.contains("Smithing"), "Item display name should be derived from dominant Smithing tag")
 
-	# Test global modifiers integration
-	var global_mod = HeavyArmorModifier.new()
-	var global_mods: Array[Modifier] = [global_mod]
-	var item_with_global = prog_manager.generate_item_via_pipeline(building, global_mods)
-	print("Generated item with global modifiers: ", item_with_global.display_name)
-	assert(item_with_global != null, "Should successfully generate item with global modifiers")
-
-	# Test WeightTransformationModifier integration
-	var gunnar = Villager.new()
-	gunnar.name = "Gunnar"
-	var weight_mod = WeightTransformationModifier.new()
-	gunnar.modifiers.append(weight_mod)
-	room.assigned_villagers.append(gunnar)
+	# Create a high tag pressure building to ensure 100% chance of skill rolls for sample verification
+	var hp_building = Building.new()
+	hp_building.building_name = "High Pressure Forge"
+	hp_building.specialization = Defines.EQUIP_TYPE.Sword
+	hp_building.quality = 1.0 # Low quality means room_tags / quality is high!
 	
-	var item_with_weight = prog_manager.generate_item_via_pipeline(building)
-	print("Item weight before modification: default base, after Heavyweight Infusion: ", item_with_weight.weight)
-	assert(item_with_weight.weight > 100, "Item weight should be increased by 100 due to WeightTransformationModifier on Fire room")
+	var hp_room = Room.new()
+	hp_room.room_name = "HP Room"
+	hp_room.element = Defines.PROG_ELEMENT.Fire
+	
+	var master_smith = Villager.new()
+	master_smith.name = "Master Smith"
+	master_smith.tags = {
+		Defines.PROG_TAG.Smithing: 80.0,
+		Defines.PROG_TAG.Crafting: 40.0
+	}
+	hp_room.assigned_villager = master_smith
+	hp_building.rooms.append(hp_room)
+	prog_manager.buildings.append(hp_building)
+
+	print("--- Running 10 sample generations to check skill rolls ---")
+	var skills_rolled = 0
+	for i in range(10):
+		var item = prog_manager.generate_item_via_pipeline(hp_building)
+		if item.skill:
+			skills_rolled += 1
+			print("Sample %d: Rolled Skill '%s'" % [i + 1, item.skill.skill_name])
+		else:
+			print("Sample %d: No Skill" % [i + 1])
+	print("Total skills rolled: ", skills_rolled, "/10")
+
+	# Test TagSynergyModifier integration
+	var synergy_context = GenerationContext.new()
+	synergy_context.building = building
+	synergy_context.villagers = [smith] as Array[Villager]
+	synergy_context.tags = {
+		Defines.PROG_TAG.Smithing: 20.0,
+		Defines.PROG_TAG.Crafting: 10.0
+	}
+	
+	var synergy_mod = TagSynergyModifier.new()
+	synergy_mod.scaling_tag = Defines.PROG_TAG.Smithing
+	synergy_mod.scaling_tag_2 = Defines.PROG_TAG.Crafting
+	synergy_mod.chance = 5.0 # 20.0 * 5.0 = 100% chance
+	synergy_mod.power = 0.5 # Increase by 20.0 * 0.5 = 10.0
+	
+	var test_mods: Array[Modifier] = [synergy_mod]
+	
+	print("Tags before TagSynergyModifier: Smithing: ", synergy_context.tags[Defines.PROG_TAG.Smithing], ", Crafting: ", synergy_context.tags[Defines.PROG_TAG.Crafting])
+	prog_manager._execute_hook(Defines.ModifierHook.CALCULATE_TAG_PRESSURE, synergy_context, test_mods)
+	print("Tags after TagSynergyModifier: Crafting: ", synergy_context.tags[Defines.PROG_TAG.Crafting])
+	
+	assert(synergy_context.tags[Defines.PROG_TAG.Crafting] == 20.0, "Crafting tag should be 10.0 (base) + 10.0 (synergy gain) = 20.0")
+
+	# Verify produce_items output format
+	var production_results = prog_manager.produce_items()
+	print("Production Results: ", production_results)
 
 	print("--- Tags, Traits, and Modifiers Item Pipeline Test Successful ---")
 	get_tree().quit()

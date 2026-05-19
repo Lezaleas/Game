@@ -22,16 +22,16 @@ func refresh() -> void:
 		child.queue_free()
 	
 	# Add current villagers
-	for villager in room.assigned_villagers:
-		var card = villager_card_scene.instantiate()
-		villager_container.add_child(card)
-		card.setup(villager)
-		
-		# Check for selection
-		if get_tree().current_scene.has_node("%ProgressionScreen"):
-			var screen = get_tree().current_scene.get_node("%ProgressionScreen")
-			if screen.selected_villager == villager:
-				card.set_selected(true)
+	if not room.assigned_villager: return
+	var card = villager_card_scene.instantiate()
+	villager_container.add_child(card)
+	card.setup(room.assigned_villager)
+	
+	# Check for selection
+	if get_tree().current_scene.has_node("%ProgressionScreen"):
+		var screen = get_tree().current_scene.get_node("%ProgressionScreen")
+		if screen.selected_villager == room.assigned_villager:
+			card.set_selected(true)
 
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	return data is Villager
