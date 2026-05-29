@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Villager" load_steps=3 format=3 uid="uid://33d6b50e2f75"]
+
+[ext_resource type="Script" path="res://Systems/Progression/Logic/Modifier.gd" id="1_a70ps"]
+[ext_resource type="Script" path="res://Systems/Progression/Data/Villager.gd" id="2_l8imy"]
+
+[resource]
+script = ExtResource("2_l8imy")
+name = "Artisan"
+description = "A skilled Artisan"
+tags = {
+4: 5
+}
+method = 3
+personality = 0
+modifiers = Array[ExtResource("1_a70ps")]([])
+traits = Array[ExtResource("1_a70ps")]([])

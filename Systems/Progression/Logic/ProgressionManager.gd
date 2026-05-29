@@ -2,62 +2,12 @@ extends Node
 # ProgressionManager
 # Handles the logic for the Progression System (Buildings, Rooms, Villagers).
 
-var buildings: Array[Building] = []
-var villagers: Array[Villager] = []
-var reserve_villagers: Array[Villager] = []
 var last_calculated_tags: Dictionary = {}
 
 func _ready() -> void:
-	# Initial setup (this might be handled by RunManager in the future)
-	if buildings.is_empty():
-		_setup_debug_data()
+	pass
 
-func _setup_debug_data() -> void:
-	# Create Forge
-	var forge = Building.new()
-	forge.building_name = "Iron Forge"
-	forge.specialization = Defines.EQUIP_TYPE.Sword
-	
-	var anvil_room = Room.new()
-	anvil_room.room_name = "Anvil Area"
-	anvil_room.element = Defines.PROG_ELEMENT.Fire
-	
-	forge.rooms.append(anvil_room)
-	buildings.append(forge)
-	
-	# Create Atelier
-	var atelier = Building.new()
-	atelier.building_name = "Mystic Atelier"
-	atelier.specialization = Defines.EQUIP_TYPE.Staff
-	
-	var altar_room = Room.new()
-	altar_room.room_name = "Ritual Altar"
-	altar_room.element = Defines.PROG_ELEMENT.Water
-	
-	atelier.rooms.append(altar_room)
-	buildings.append(atelier)
-	
-	# Create some villagers in reserve
-	var v1 = Villager.new()
-	v1.name = "Buliwyf"
-	v1.tags = {Defines.PROG_TAG.Smithing: 8, Defines.PROG_TAG.Crafting: 4}
-	
-	var synergy_mod = TagSynergyModifier.new()
-	synergy_mod.scaling_tag = Defines.PROG_TAG.Smithing
-	synergy_mod.scaling_tag_2 = Defines.PROG_TAG.Crafting
-	synergy_mod.chance = 0.5 # 8 * 10 = 80% chance
-	synergy_mod.power = 1
-	v1.modifiers.append(synergy_mod)
-	
-	var v2 = Villager.new()
-	v2.name = "Eir"
-	v2.tags = {Defines.PROG_TAG.Arcane: 7, Defines.PROG_TAG.Learning: 5}
-	
-	var v3 = Villager.new()
-	v3.name = "Gunnar"
-	v3.tags = {Defines.PROG_TAG.Charisma: 6, Defines.PROG_TAG.Warfare: 3}
-	
-	reserve_villagers.append_array([v1, v2, v3])
+	pass
 
 # Runs the full 10-step item generation pipeline for a given building.
 func generate_item_via_pipeline(building: Building, global_modifiers: Array[Modifier] = []) -> EquipmentState:
@@ -95,7 +45,7 @@ func generate_item_via_pipeline(building: Building, global_modifiers: Array[Modi
 	for r in building.rooms:
 		if not r: continue
 		var v: Villager = r.assigned_villager
-		for r_mod in r.base_effects:
+		for r_mod in r.modifiers:
 			if r_mod and not r_mod.is_global:
 				register_modifier.call(r_mod, r, v)
 		if not v: continue
@@ -192,7 +142,7 @@ func _roll_weighted(weights_dict: Dictionary) -> int:
 func produce_items() -> Array[String]:
 	# 1. Collect all global modifiers from all rooms and villagers across all buildings
 	var global_mods: Array[Modifier] = []
-	for building in buildings:
+	for building in RunManager.buildings:
 		if not building: continue
 		for room in building.rooms:
 			if not room: continue
@@ -216,7 +166,7 @@ func produce_items() -> Array[String]:
 
 	# 2. Generate items for each building
 	var results: Array[String] = []
-	for building in buildings:
+	for building in RunManager.buildings:
 		if not building: continue
 		if not building.produces: continue
 		var item = generate_item_via_pipeline(building, global_mods)
@@ -227,7 +177,7 @@ func produce_items() -> Array[String]:
 		var result = "%s produced: %s (Weight: %s, Perks: %s, Skill: %s) [%s]" % [building.building_name, item.display_name, str(item.weight), str(item.perk_points), skill_name, tags_str]
 		results.append(result)
 	
-	if buildings.is_empty():
+	if RunManager.buildings.is_empty():
 		results.append("No buildings to produce from!")
 		
 	return results
@@ -236,20 +186,25 @@ func produce_items() -> Array[String]:
 func assign_villager_to_room(villager: Villager, room: Room) -> bool:
 	if not villager: return false
 	
+	# If the room already has an occupant, swap them instead
+	if room and room.assigned_villager and room.assigned_villager != villager:
+		swap_villagers(villager, room.assigned_villager)
+		return true
+	
 	# Remove from previous room or reserve
-	for b in buildings:
+	for b in RunManager.buildings:
 		for r in b.rooms:
 			if r.assigned_villager == villager:
 				r.assigned_villager = null
 	
-	if reserve_villagers.has(villager):
-		reserve_villagers.erase(villager)
+	if RunManager.reserve_villagers.has(villager):
+		RunManager.reserve_villagers.erase(villager)
 	
 	if room:
 		room.assigned_villager = villager
 	else:
 		# If room is null, move to reserve
-		reserve_villagers.append(villager)
+		RunManager.reserve_villagers.append(villager)
 		
 	return true
 
@@ -264,13 +219,24 @@ func swap_villagers(v1: Villager, v2: Villager) -> void:
 	# Find where v1 and v2 are currently
 	var v1_room: Room = null
 	var v2_room: Room = null
+	var v1_in_reserve = RunManager.reserve_villagers.has(v1)
+	var v2_in_reserve = RunManager.reserve_villagers.has(v2)
 	
-	for building in buildings:
+	for building in RunManager.buildings:
 		for room in building.rooms:
 			if room.assigned_villager == v1: v1_room = room
 			if room.assigned_villager == v2: v2_room = room
 	
-	# Swap them
-	# If one is in reserve, assign_villager_to_room handles it correctly
-	assign_villager_to_room(v1, v2_room)
-	assign_villager_to_room(v2, v1_room)
+	# Remove both from their spots
+	if v1_room: v1_room.assigned_villager = null
+	if v2_room: v2_room.assigned_villager = null
+	if v1_in_reserve: RunManager.reserve_villagers.erase(v1)
+	if v2_in_reserve: RunManager.reserve_villagers.erase(v2)
+	
+	# Assign v1 to v2's spot
+	if v2_room: v2_room.assigned_villager = v1
+	else: RunManager.reserve_villagers.append(v1)
+	
+	# Assign v2 to v1's spot
+	if v1_room: v1_room.assigned_villager = v2
+	else: RunManager.reserve_villagers.append(v2)

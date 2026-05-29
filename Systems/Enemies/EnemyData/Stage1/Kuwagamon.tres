@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=8 format=3 uid="uid://cymlhkklag4yq"]
+
+[ext_resource type="Texture2D" uid="uid://dlqkqsqy2dmw" path="res://Assets/Sprites/Fighters/Stage 1/Kuwagamon.png" id="1_7wnnv"]
+[ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="1_fagsv"]
+[ext_resource type="Script" uid="uid://do8fq684wbi2r" path="res://Systems/Enemies/Logic/EnemyData.gd" id="2_h3mwd"]
+[ext_resource type="SpriteFrames" uid="uid://db4ke1fj0sbgf" path="res://Assets/Sprite_frames/Stage1/Kuwagamon.tres" id="3_3n534"]
+[ext_resource type="Resource" uid="uid://b8y7m1m7m7m" path="res://Systems/Skills/Data/Block.tres" id="4_5l5ix"]
+[ext_resource type="Resource" uid="uid://c728y7m1m7m" path="res://Systems/Skills/Data/Paladin.tres" id="5_pl1sr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tiwt"]
+atlas = ExtResource("1_7wnnv")
+region = Rect2(32, 32, 16, 16)
+
+[resource]
+script = ExtResource("2_h3mwd")
+id = "Kuwagamon"
+skills = Array[ExtResource("1_fagsv")]([ExtResource("4_5l5ix"), ExtResource("5_pl1sr"), null, null])
+attributes_base = [20, 14, 40, 14, 0, 0, 0, 0, 0, 0, 0]
+sprite = ExtResource("3_3n534")
+icon = SubResource("AtlasTexture_8tiwt")

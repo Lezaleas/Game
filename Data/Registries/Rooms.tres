@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="Registry" load_steps=2 format=3 uid="uid://bmxyhmqrlijj6"]
+
+[ext_resource type="Script" uid="uid://dqtv77mng5dyh" path="res://addons/yard/registry.gd" id="1_1423t"]
+
+[resource]
+script = ExtResource("1_1423t")
+_version = 2
+_scan_rulesets = Array[Dictionary]([{
+&"allowed_file_extensions": Array[String]([]),
+&"class_restrictions": Array[StringName]([&"Room"]),
+&"recursive_scan": true,
+&"scan_directories": Array[String](["res://Systems/Progression/Data"]),
+&"scan_regex_exclude": "",
+&"scan_regex_include": ""
+}])
+_uids_to_string_ids = Dictionary[StringName, StringName]({
+&"uid://12fb2f67871f": &"LeatherTannery",
+&"uid://25b641ab3178": &"AssemblyBench",
+&"uid://2ba137a4037": &"RitualAltar",
+&"uid://8f48ga0b43b": &"SmeltingFurnace",
+&"uid://ba1d0a67c8b7d": &"EnchantingCircle",
+&"uid://ba2dfbb45c7d": &"AnvilArea",
+&"uid://badd6abbad51b": &"SewingLoom",
+&"uid://edbd1cfb6223": &"PlatingStation",
+&"uid://o3rbxyxumciq": &"Room"
+})
+_string_ids_to_uids = Dictionary[StringName, StringName]({
+&"AnvilArea": &"uid://ba2dfbb45c7d",
+&"AssemblyBench": &"uid://25b641ab3178",
+&"EnchantingCircle": &"uid://ba1d0a67c8b7d",
+&"LeatherTannery": &"uid://12fb2f67871f",
+&"PlatingStation": &"uid://edbd1cfb6223",
+&"RitualAltar": &"uid://2ba137a4037",
+&"Room": &"uid://o3rbxyxumciq",
+&"SewingLoom": &"uid://badd6abbad51b",
+&"SmeltingFurnace": &"uid://8f48ga0b43b"
+})

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Building" load_steps=3 format=3 uid="uid://con8bfvax1icd"]
+
+[ext_resource type="Script" uid="uid://o3rbxyxumciq" path="res://Systems/Progression/Data/Room.gd" id="1_sctn2"]
+[ext_resource type="Script" uid="uid://q8kyky7g1m32" path="res://Systems/Progression/Data/Building.gd" id="2_vbksg"]
+
+[resource]
+script = ExtResource("2_vbksg")
+building_name = "Armoury"
+description = "A Armoury"
+specialization = 2

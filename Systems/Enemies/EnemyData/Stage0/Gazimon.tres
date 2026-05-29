@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=7 format=3 uid="uid://buifmg5r4nhbf"]
+
+[ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="1_eayxv"]
+[ext_resource type="Texture2D" uid="uid://en7egvas4rud" path="res://Assets/Sprites/Fighters/Stage 0/Gazimon.png" id="1_xcrm7"]
+[ext_resource type="Script" uid="uid://do8fq684wbi2r" path="res://Systems/Enemies/Logic/EnemyData.gd" id="2_0f3th"]
+[ext_resource type="SpriteFrames" uid="uid://b06x4mp0vcoea" path="res://Assets/Sprite_frames/Stage0/Gazimon.tres" id="3_xcrm7"]
+[ext_resource type="Resource" uid="uid://c708y7m1m7m" path="res://Systems/Skills/Data/Manablade.tres" id="4_rhkqt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqd8t"]
+atlas = ExtResource("1_xcrm7")
+region = Rect2(32, 32, 16, 16)
+
+[resource]
+script = ExtResource("2_0f3th")
+id = "Gazimon"
+skills = Array[ExtResource("1_eayxv")]([ExtResource("4_rhkqt"), null, null, null])
+attributes_base = [14, 14, 7, 7, 0, 0, 0, 0, 0, 0, 0]
+sprite = ExtResource("3_xcrm7")
+icon = SubResource("AtlasTexture_fqd8t")

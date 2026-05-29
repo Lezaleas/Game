@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="Registry" load_steps=2 format=3 uid="uid://xwxxkuvj8o3f"]
+
+[ext_resource type="Script" uid="uid://dqtv77mng5dyh" path="res://addons/yard/registry.gd" id="1_g7swa"]
+
+[resource]
+script = ExtResource("1_g7swa")
+_version = 2
+_scan_rulesets = Array[Dictionary]([{
+&"allowed_file_extensions": Array[String]([]),
+&"class_restrictions": Array[StringName]([&"Villager"]),
+&"recursive_scan": true,
+&"scan_directories": Array[String](["res://Systems/Progression/Data"]),
+&"scan_regex_exclude": "",
+&"scan_regex_include": ""
+}])
+_uids_to_string_ids = Dictionary[StringName, StringName]({
+&"uid://2daa4d3bda71": &"Scholar",
+&"uid://33d6b50e2f75": &"Artisan",
+&"uid://658e78ac2cbb": &"Blacksmith",
+&"uid://8c1a8a713d1f": &"Mage",
+&"uid://b3aqs3dsc0hdy": &"Villager",
+&"uid://b726af4dba3d": &"Ranger",
+&"uid://ba546ea18fb5b": &"Steward",
+&"uid://baafa18fa6874": &"Soldier",
+&"uid://e137fdbfa62d": &"Innkeeper"
+})
+_string_ids_to_uids = Dictionary[StringName, StringName]({
+&"Artisan": &"uid://33d6b50e2f75",
+&"Blacksmith": &"uid://658e78ac2cbb",
+&"Innkeeper": &"uid://e137fdbfa62d",
+&"Mage": &"uid://8c1a8a713d1f",
+&"Ranger": &"uid://b726af4dba3d",
+&"Scholar": &"uid://2daa4d3bda71",
+&"Soldier": &"uid://baafa18fa6874",
+&"Steward": &"uid://ba546ea18fb5b",
+&"Villager": &"uid://b3aqs3dsc0hdy"
+})

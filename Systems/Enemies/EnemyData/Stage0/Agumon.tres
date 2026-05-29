@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=7 format=3 uid="uid://ci0pbcmpfeiks"]
+
+[ext_resource type="Texture2D" uid="uid://k172t5x1ygd4" path="res://Assets/Sprites/Fighters/Stage 0/Agumon.png" id="1_1t2m0"]
+[ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="1_rj2ka"]
+[ext_resource type="Script" uid="uid://do8fq684wbi2r" path="res://Systems/Enemies/Logic/EnemyData.gd" id="2_xvfqv"]
+[ext_resource type="SpriteFrames" uid="uid://0ssrm0harrvl" path="res://Assets/Sprite_frames/Stage0/Agumon.tres" id="3_1t2m0"]
+[ext_resource type="Resource" uid="uid://c6q8y7m1m7m" path="res://Systems/Skills/Data/Berserk.tres" id="4_ks7rt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4i72"]
+atlas = ExtResource("1_1t2m0")
+region = Rect2(32, 32, 16, 16)
+
+[resource]
+script = ExtResource("2_xvfqv")
+id = "Agumon"
+skills = Array[ExtResource("1_rj2ka")]([ExtResource("4_ks7rt"), null, null, null])
+attributes_base = [20, 5, 10, 10, 0, 0, 0, 0, 0, 0, 0]
+sprite = ExtResource("3_1t2m0")
+icon = SubResource("AtlasTexture_a4i72")

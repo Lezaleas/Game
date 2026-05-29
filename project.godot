@@ -38,12 +38,11 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GoLogger/plugin.cfg")
+enabled=PackedStringArray("res://addons/GoLogger/plugin.cfg", "res://addons/reactive_signal/plugin.cfg", "res://addons/screen_debug/plugin.cfg", "res://addons/simple_resource_icons/plugin.cfg", "res://addons/yard/plugin.cfg")
 
 [file_customization]
 
 folder_colors={
-"res://Visuals/": "green",
 "res://addons/": "gray"
 }
 

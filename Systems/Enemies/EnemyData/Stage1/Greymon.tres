@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=8 format=3 uid="uid://c5n1px1sipn6c"]
+
+[ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="1_gsty3"]
+[ext_resource type="Texture2D" uid="uid://r20osdn07tm7" path="res://Assets/Sprites/Fighters/Stage 1/Greymon.png" id="1_ictjw"]
+[ext_resource type="Script" uid="uid://do8fq684wbi2r" path="res://Systems/Enemies/Logic/EnemyData.gd" id="2_ev7wr"]
+[ext_resource type="SpriteFrames" uid="uid://cc7x2fe6l0vqq" path="res://Assets/Sprite_frames/Stage1/Greymon.tres" id="3_56g3m"]
+[ext_resource type="Resource" uid="uid://c6q8y7m1m7m" path="res://Systems/Skills/Data/Berserk.tres" id="4_gvfjs"]
+[ext_resource type="Resource" uid="uid://bm7p6l7j6u1w" path="res://Systems/Skills/Data/Anger.tres" id="5_p8qpf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_citoj"]
+atlas = ExtResource("1_ictjw")
+region = Rect2(32, 32, 16, 16)
+
+[resource]
+script = ExtResource("2_ev7wr")
+id = "Greymon"
+skills = Array[ExtResource("1_gsty3")]([ExtResource("4_gvfjs"), ExtResource("5_p8qpf"), null, null])
+attributes_base = [40, 10, 20, 20, 0, 0, 0, 0, 0, 0, 0]
+sprite = ExtResource("3_56g3m")
+icon = SubResource("AtlasTexture_citoj")

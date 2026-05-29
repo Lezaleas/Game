@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="EnemyTemplate" load_steps=12 format=3 uid="uid://c7dclpredh74d"]
+
+[ext_resource type="Script" uid="uid://dtjm668qa541k" path="res://Systems/Enemies/EnemyCreator/Template.gd" id="1_ms0oi"]
+[ext_resource type="Resource" uid="uid://c6q8y7m1m7m" path="res://Systems/Skills/Data/Berserk.tres" id="2_ms0oi"]
+[ext_resource type="Resource" uid="uid://bm7p6l7j6u1w" path="res://Systems/Skills/Data/Anger.tres" id="3_vysnu"]
+[ext_resource type="Script" uid="uid://bqojr5tnge58i" path="res://Systems/Skills/Data/Reprisal.gd" id="4_hh6lq"]
+[ext_resource type="SpriteFrames" uid="uid://0ssrm0harrvl" path="res://Assets/Sprite_frames/Stage0/Agumon.tres" id="4_wyq6g"]
+[ext_resource type="Script" uid="uid://ch413jhpxp46r" path="res://Systems/Skills/Data/Sniper.gd" id="5_2qhhy"]
+[ext_resource type="SpriteFrames" uid="uid://cc7x2fe6l0vqq" path="res://Assets/Sprite_frames/Stage1/Greymon.tres" id="5_tjgkr"]
+[ext_resource type="SpriteFrames" uid="uid://by65rs65buu8j" path="res://Assets/Sprite_frames/Stage2/Garudamon.tres" id="8_bg1he"]
+[ext_resource type="SpriteFrames" uid="uid://du1b6iy341n4u" path="res://Assets/Sprite_frames/Stage3/Phoenixmon.tres" id="9_pycjr"]
+
+[sub_resource type="Resource" id="Resource_kaqya"]
+script = ExtResource("4_hh6lq")
+metadata/_custom_type_script = "uid://bqojr5tnge58i"
+
+[sub_resource type="Resource" id="Resource_s03xk"]
+script = ExtResource("5_2qhhy")
+metadata/_custom_type_script = "uid://ch413jhpxp46r"
+
+[resource]
+script = ExtResource("1_ms0oi")
+sprite_0 = ExtResource("4_wyq6g")
+sprite_1 = ExtResource("5_tjgkr")
+sprite_2 = ExtResource("8_bg1he")
+sprite_3 = ExtResource("9_pycjr")
+id_0 = "Agumon"
+id_1 = "Greymon"
+id_2 = "Garudamon"
+id_3 = "Phoenixmon"
+attribute_pow = 4
+attribute_spi = 0
+skill_0 = ExtResource("2_ms0oi")
+skill_1 = ExtResource("3_vysnu")
+skill_2 = SubResource("Resource_kaqya")
+skill_3 = SubResource("Resource_s03xk")
+metadata/_custom_type_script = "uid://dtjm668qa541k"

@@ -23,7 +23,14 @@ func display(data: LevelData) -> void:
 			if skill == null:continue
 			_add_label(skill.skill_name, skill.description)
 	
-	reward_label.text = "Reward: " + (str(data.reward) if data.reward else "None")
+	if data.rewards.is_empty():
+		reward_label.text = "Reward: None"
+	else:
+		var reward_strings := []
+		for reward in data.rewards:
+			if reward:
+				reward_strings.append(reward.get_description())
+		reward_label.text = "Rewards: " + ", ".join(reward_strings)
 	modifier_label.text = "Modifier: " + (str(data.modifier) if data.modifier else "None")
 
 

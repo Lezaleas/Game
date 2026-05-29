@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=8 format=3 uid="uid://wwesrl8130hg"]
+
+[ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="1_5icvb"]
+[ext_resource type="Texture2D" uid="uid://g1cm6fwm06hs" path="res://Assets/Sprites/Fighters/Stage 1/Seadramon.png" id="1_n0m1d"]
+[ext_resource type="Script" uid="uid://do8fq684wbi2r" path="res://Systems/Enemies/Logic/EnemyData.gd" id="2_gg3ok"]
+[ext_resource type="SpriteFrames" uid="uid://m0c11hj76x5j" path="res://Assets/Sprite_frames/Stage1/Seadramon.tres" id="3_jx6wj"]
+[ext_resource type="Resource" uid="uid://c6v8y7m1m7m" path="res://Systems/Skills/Data/Focus.tres" id="4_wupf6"]
+[ext_resource type="Resource" uid="uid://c748y7m1m7m" path="res://Systems/Skills/Data/Recoil.tres" id="5_yo13d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ioagf"]
+atlas = ExtResource("1_n0m1d")
+region = Rect2(32, 32, 16, 16)
+
+[resource]
+script = ExtResource("2_gg3ok")
+id = "Seadramon"
+skills = Array[ExtResource("1_5icvb")]([ExtResource("4_wupf6"), ExtResource("5_yo13d"), null, null])
+attributes_base = [40, 40, 10, 10, 0, 0, 0, 0, 0, 0, 0]
+sprite = ExtResource("3_jx6wj")
+icon = SubResource("AtlasTexture_ioagf")

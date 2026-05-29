@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="1_d4pb3"]
 [ext_resource type="Script" uid="uid://do8fq684wbi2r" path="res://Systems/Enemies/Logic/EnemyData.gd" id="2_8gas1"]
 [ext_resource type="Resource" uid="uid://c6w8y7m1m7m" path="res://Systems/Skills/Data/FrostShield.tres" id="2_u15p3"]
-[ext_resource type="SpriteFrames" uid="uid://b2y68es0mxi23" path="res://Assets/Sprite_frames/Stage1/Bakemon.tres" id="3_8gas1"]
+[ext_resource type="SpriteFrames" uid="uid://ci0k3omgu12wd" path="res://Assets/Sprite_frames/Stage1/Bakemon.tres" id="3_8gas1"]
 [ext_resource type="Resource" uid="uid://c758y7m1m7m" path="res://Systems/Skills/Data/Reprisal.tres" id="3_goh4p"]
 [ext_resource type="Resource" uid="uid://c788y7m1m7m" path="res://Systems/Skills/Data/ShadowCast.tres" id="4_4hp0l"]
 [ext_resource type="Resource" uid="uid://c8a8y7m1m7m" path="res://Systems/Skills/Data/Sniper.tres" id="6_goh4p"]

@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="Registry" load_steps=2 format=3 uid="uid://bcerrks3x6su4"]
+
+[ext_resource type="Script" uid="uid://dqtv77mng5dyh" path="res://addons/yard/registry.gd" id="1_ij530"]
+
+[resource]
+script = ExtResource("1_ij530")
+_version = 2
+_scan_rulesets = Array[Dictionary]([{
+&"allowed_file_extensions": Array[String]([]),
+&"class_restrictions": Array[StringName]([&"Building"]),
+&"recursive_scan": true,
+&"scan_directories": Array[String](["res://Systems/Progression/Data"]),
+&"scan_regex_exclude": "",
+&"scan_regex_include": ""
+}])
+_uids_to_string_ids = Dictionary[StringName, StringName]({
+&"uid://cef3062e10ce": &"Atelier",
+&"uid://con8bfvax1icd": &"Armoury_2",
+&"uid://ff03561c0820": &"Forge",
+&"uid://q8kyky7g1m32": &"Building",
+&"uid://y7rf82fwwmf0": &"Outfitter"
+})
+_string_ids_to_uids = Dictionary[StringName, StringName]({
+&"Armoury_2": &"uid://con8bfvax1icd",
+&"Atelier": &"uid://cef3062e10ce",
+&"Building": &"uid://q8kyky7g1m32",
+&"Forge": &"uid://ff03561c0820",
+&"Outfitter": &"uid://y7rf82fwwmf0"
+})

@@ -117,7 +117,7 @@ anti_aliasing = false
 [node name="SmallPanel" type="PanelContainer"]
 offset_left = 875.0
 offset_top = 774.0
-offset_right = 935.0
+offset_right = 919.0
 offset_bottom = 808.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -205,4 +205,4 @@ expand_mode = 1
 
 [node name="Label" type="Label" parent="Content/MarginContainer/HBoxContainer"]
 layout_mode = 2
-text = "123"
+text = "Skill Name"

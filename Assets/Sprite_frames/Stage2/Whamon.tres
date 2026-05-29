@@ -1,35 +1,68 @@
-[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://dwulg7wxpidwf"]
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://cl1ol57hgxy48"]
 
 [ext_resource type="Texture2D" uid="uid://cedirw26pftgr" path="res://Assets/Sprites/Fighters/Stage2/Whamon.png" id="1_6rd06"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wvw44"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5u3ev"]
+atlas = ExtResource("1_6rd06")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q65oe"]
+atlas = ExtResource("1_6rd06")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bivk5"]
+atlas = ExtResource("1_6rd06")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g37qy"]
+atlas = ExtResource("1_6rd06")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02pyq"]
 atlas = ExtResource("1_6rd06")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e5nh8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq45k"]
 atlas = ExtResource("1_6rd06")
-region = Rect2(0, 0, 16, 16)
+region = Rect2(0, 16, 16, 16)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wvw44")
+"texture": SubResource("AtlasTexture_5u3ev")
+}],
+"loop": false,
+"name": &"clashing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q65oe")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_e5nh8")
+"texture": SubResource("AtlasTexture_bivk5")
+}],
+"loop": false,
+"name": &"damaged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g37qy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02pyq")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq45k")
+}],
 "loop": false,
 "name": &"magic",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": false,
-"name": &"melee",
 "speed": 5.0
 }]

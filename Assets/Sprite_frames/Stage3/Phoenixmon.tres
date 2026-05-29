@@ -1,35 +1,68 @@
-[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://ddxtcqsau06pu"]
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://du1b6iy341n4u"]
 
 [ext_resource type="Texture2D" uid="uid://b6l3hvan146rv" path="res://Assets/Sprites/Fighters/Stage 3/Hououmon.png" id="1_8u6ar"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fdxga"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yrjg"]
+atlas = ExtResource("1_8u6ar")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fv76i"]
+atlas = ExtResource("1_8u6ar")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkiju"]
+atlas = ExtResource("1_8u6ar")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0chel"]
 atlas = ExtResource("1_8u6ar")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_66281"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojb7u"]
 atlas = ExtResource("1_8u6ar")
 region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_notbu"]
+atlas = ExtResource("1_8u6ar")
+region = Rect2(0, 16, 16, 16)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fdxga")
+"texture": SubResource("AtlasTexture_5yrjg")
+}],
+"loop": false,
+"name": &"clashing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fv76i")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_66281")
+"texture": SubResource("AtlasTexture_qkiju")
+}],
+"loop": false,
+"name": &"damaged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0chel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojb7u")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_notbu")
+}],
 "loop": false,
 "name": &"magic",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": false,
-"name": &"melee",
 "speed": 5.0
 }]

@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="EnemyTemplate" load_steps=12 format=3 uid="uid://b4p6syysubop"]
+
+[ext_resource type="Script" uid="uid://dtjm668qa541k" path="res://Systems/Enemies/EnemyCreator/Template.gd" id="1_mssqo"]
+[ext_resource type="Resource" uid="uid://c6v8y7m1m7m" path="res://Systems/Skills/Data/Focus.tres" id="2_mssqo"]
+[ext_resource type="Resource" uid="uid://c748y7m1m7m" path="res://Systems/Skills/Data/Recoil.tres" id="3_ree2m"]
+[ext_resource type="Script" uid="uid://bqojr5tnge58i" path="res://Systems/Skills/Data/Reprisal.gd" id="4_kndu4"]
+[ext_resource type="Script" uid="uid://ch413jhpxp46r" path="res://Systems/Skills/Data/Sniper.gd" id="5_7noee"]
+[ext_resource type="SpriteFrames" uid="uid://dt3m5tdiwejma" path="res://Assets/Sprite_frames/Stage0/Penguinmon.tres" id="6_mssqo"]
+[ext_resource type="SpriteFrames" uid="uid://m0c11hj76x5j" path="res://Assets/Sprite_frames/Stage1/Seadramon.tres" id="7_ree2m"]
+[ext_resource type="SpriteFrames" uid="uid://by65rs65buu8j" path="res://Assets/Sprite_frames/Stage2/Garudamon.tres" id="8_e1niy"]
+[ext_resource type="SpriteFrames" uid="uid://du1b6iy341n4u" path="res://Assets/Sprite_frames/Stage3/Phoenixmon.tres" id="9_82tcq"]
+
+[sub_resource type="Resource" id="Resource_kaqya"]
+script = ExtResource("4_kndu4")
+metadata/_custom_type_script = "uid://bqojr5tnge58i"
+
+[sub_resource type="Resource" id="Resource_s03xk"]
+script = ExtResource("5_7noee")
+metadata/_custom_type_script = "uid://ch413jhpxp46r"
+
+[resource]
+script = ExtResource("1_mssqo")
+sprite_0 = ExtResource("6_mssqo")
+sprite_1 = ExtResource("7_ree2m")
+sprite_2 = ExtResource("8_e1niy")
+sprite_3 = ExtResource("9_82tcq")
+id_0 = "Penguinmon"
+id_1 = "Seadramon"
+id_2 = "Garudamon"
+id_3 = "Phoenixmon"
+attribute_pow = 4
+attribute_spi = 4
+attribute_wis = 0
+attribute_agi = 0
+skill_0 = ExtResource("2_mssqo")
+skill_1 = ExtResource("3_ree2m")
+skill_2 = SubResource("Resource_kaqya")
+skill_3 = SubResource("Resource_s03xk")
+metadata/_custom_type_script = "uid://dtjm668qa541k"

@@ -1,28 +1,58 @@
-[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://boho6kc3b4p2u"]
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://boho6kc3b4p2u"]
 
-[ext_resource type="Texture2D" uid="uid://k172t5x1ygd4" path="res://Assets/Sprites/Fighters/Stage 0/Agumon.png" id="1_5lj5v"]
 [ext_resource type="Texture2D" uid="uid://cmjolm2hpom7b" path="res://Assets/Sprites/Fighters/Stage 1/Tailmon.png" id="1_uchma"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_38ocq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_em0jo"]
+atlas = ExtResource("1_uchma")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi6cp"]
+atlas = ExtResource("1_uchma")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ns34"]
+atlas = ExtResource("1_uchma")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ml415"]
 atlas = ExtResource("1_uchma")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qevkv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuc3i"]
 atlas = ExtResource("1_uchma")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jiqgv"]
-atlas = ExtResource("1_5lj5v")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ighiq"]
+atlas = ExtResource("1_uchma")
 region = Rect2(0, 16, 16, 16)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_38ocq")
+"texture": SubResource("AtlasTexture_em0jo")
+}],
+"loop": false,
+"name": &"clashing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi6cp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qevkv")
+"texture": SubResource("AtlasTexture_0ns34")
+}],
+"loop": false,
+"name": &"damaged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ml415")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuc3i")
 }],
 "loop": true,
 "name": &"default",
@@ -30,14 +60,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jiqgv")
+"texture": SubResource("AtlasTexture_ighiq")
 }],
 "loop": false,
 "name": &"magic",
 "speed": 5.0
-}, {
-"frames": [],
-"loop": false,
-"name": &"melee",
-"speed": 4.0
 }]

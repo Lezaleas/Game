@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=8 format=3 uid="uid://63x022fgcsw5"]
+
+[ext_resource type="Texture2D" uid="uid://bwbjiyxfis0iu" path="res://Assets/Sprites/Fighters/Stage 1/Tyrannomon.png" id="1_d4nms"]
+[ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="1_dhqdo"]
+[ext_resource type="Script" uid="uid://do8fq684wbi2r" path="res://Systems/Enemies/Logic/EnemyData.gd" id="2_y43d7"]
+[ext_resource type="SpriteFrames" uid="uid://bhgqr1hgwddi5" path="res://Assets/Sprite_frames/Stage1/Tyranomon.tres" id="3_gohgs"]
+[ext_resource type="Resource" uid="uid://c778y7m1m7m" path="res://Systems/Skills/Data/Sergeant.tres" id="4_78bmc"]
+[ext_resource type="Resource" uid="uid://c6s8y7m1m7m" path="res://Systems/Skills/Data/Charm.tres" id="5_vhyu8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_liij6"]
+atlas = ExtResource("1_d4nms")
+region = Rect2(32, 32, 16, 16)
+
+[resource]
+script = ExtResource("2_y43d7")
+id = "Tyranomon"
+skills = Array[ExtResource("1_dhqdo")]([ExtResource("4_78bmc"), ExtResource("5_vhyu8"), null, null])
+attributes_base = [40, 10, 20, 20, 0, 0, 0, 0, 0, 0, 0]
+sprite = ExtResource("3_gohgs")
+icon = SubResource("AtlasTexture_liij6")

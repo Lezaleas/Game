@@ -1,56 +1,68 @@
-[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://bnwo06iqxrjgf"]
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://db4ke1fj0sbgf"]
 
 [ext_resource type="Texture2D" uid="uid://dlqkqsqy2dmw" path="res://Assets/Sprites/Fighters/Stage 1/Kuwagamon.png" id="1_pknx5"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_us7xf"]
-atlas = ExtResource("1_pknx5")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ffvw4"]
-atlas = ExtResource("1_pknx5")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pknx5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tiwt"]
 atlas = ExtResource("1_pknx5")
 region = Rect2(32, 32, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x8qwo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_c56h0"]
 atlas = ExtResource("1_pknx5")
 region = Rect2(16, 48, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k4vjm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pt0e8"]
 atlas = ExtResource("1_pknx5")
 region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nuke"]
+atlas = ExtResource("1_pknx5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64rik"]
+atlas = ExtResource("1_pknx5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj25j"]
+atlas = ExtResource("1_pknx5")
+region = Rect2(0, 16, 16, 16)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_us7xf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ffvw4")
+"texture": SubResource("AtlasTexture_8tiwt")
 }],
-"loop": true,
-"name": &"default",
-"speed": 4.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"magic",
+"loop": false,
+"name": &"clashing",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pknx5")
+"texture": SubResource("AtlasTexture_c56h0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x8qwo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k4vjm")
+"texture": SubResource("AtlasTexture_pt0e8")
 }],
 "loop": false,
-"name": &"melee",
-"speed": 4.0
+"name": &"damaged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nuke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64rik")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vj25j")
+}],
+"loop": false,
+"name": &"magic",
+"speed": 5.0
 }]

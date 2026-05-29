@@ -6,7 +6,4 @@
 script = ExtResource("1_counter")
 skill_name = "Counter"
 description = "when losing a clash, cast a link attack"
-power = 0.0
-order = 0
-mana_cost = 0
 metadata/_custom_type_script = "uid://btm3l64srn3x7"

@@ -50,7 +50,7 @@ theme_override_constants/margin_right = 8
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-text = "Fightername"
+text = "Fighter Name"
 label_settings = SubResource("LabelSettings_i67f8")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -91,8 +91,26 @@ size_flags_horizontal = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="VBox/PanelContainer3/Content" index="0"]
 layout_mode = 2
 
-[node name="SmallPanel" parent="VBox/PanelContainer3/Content/HBoxContainer" instance=ExtResource("5_eca5n")]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBox/PanelContainer3/Content/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="SmallPanel" parent="VBox/PanelContainer3/Content/HBoxContainer/VBoxContainer" instance=ExtResource("5_eca5n")]
+layout_mode = 2
+size_flags_horizontal = 1
+
+[node name="SmallPanel2" parent="VBox/PanelContainer3/Content/HBoxContainer/VBoxContainer" instance=ExtResource("5_eca5n")]
+layout_mode = 2
+size_flags_horizontal = 1
+
+[node name="SmallPanel3" parent="VBox/PanelContainer3/Content/HBoxContainer/VBoxContainer" instance=ExtResource("5_eca5n")]
+layout_mode = 2
+size_flags_horizontal = 1
+
+[node name="SmallPanel4" parent="VBox/PanelContainer3/Content/HBoxContainer/VBoxContainer" instance=ExtResource("5_eca5n")]
+layout_mode = 2
+size_flags_horizontal = 1
 
 [editable path="VBox/PanelContainer2"]
 [editable path="VBox/PanelContainer2/Content/HBoxContainer/SmallPanel2"]

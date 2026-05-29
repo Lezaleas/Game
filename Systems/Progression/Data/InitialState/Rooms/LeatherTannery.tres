@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Room" load_steps=3 format=3 uid="uid://12fb2f67871f"]
+
+[ext_resource type="Script" path="res://Systems/Progression/Logic/Modifier.gd" id="1_qj5yn"]
+[ext_resource type="Script" path="res://Systems/Progression/Data/Room.gd" id="2_yfqwf"]
+
+[resource]
+script = ExtResource("2_yfqwf")
+room_name = "Leather Tannery"
+description = "A Leather Tannery"
+element = 2

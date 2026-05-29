@@ -28,6 +28,15 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 	# Return the villager object as drag data
 	return villager
 
+func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
+	return data is Villager and data != villager
+
+func _drop_data(_at_position: Vector2, data: Variant) -> void:
+	var dropped_villager = data as Villager
+	ProgressionManager.swap_villagers(dropped_villager, villager)
+	EventBus.emit("progression_updated", {})
+
+
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:

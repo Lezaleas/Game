@@ -16,6 +16,13 @@ func check_win_condition():
 func _trigger_win(team_id: int):
 	# Using current log for now, can be expanded to UI
 	Log.entry("Battle Ended! Team %d Wins!" % team_id)
+	
+	if team_id == 0 and Situation.level_data:
+		Situation.level_data.cleared = true
+		for reward in Situation.level_data.rewards:
+			if reward:
+				reward.apply_reward()
+	
 	get_tree().change_scene_to_file("res://Systems/Run/Logic/RunScene.tscn")
 	Situation.clear_state_generic()
 	EventBus.emit("battle_won", team_id)

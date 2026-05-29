@@ -5,6 +5,8 @@ class_name ProgressionScreen
 @onready var reserve_container = %ReserveContainer
 @onready var results_label = %ResultsLabel
 @onready var produce_button = %ProduceButton
+@onready var skill_pools_button = %SkillPoolsButton
+@onready var skill_pools_panel = %SkillPoolsPanel
 
 var building_ui_scene = preload("res://Systems/Progression/Visuals/BuildingUI.tscn")
 var villager_card_scene = preload("res://Systems/Progression/Visuals/VillagerCard.tscn")
@@ -17,6 +19,7 @@ func _ready() -> void:
 	EventBus.subscribe("room_clicked", self)
 	
 	produce_button.pressed.connect(_on_produce_pressed)
+	skill_pools_button.pressed.connect(_on_skill_pools_pressed)
 	
 	# Handle drop on reserve
 	reserve_container.gui_input.connect(_on_reserve_input)
@@ -26,7 +29,7 @@ func refresh() -> void:
 	for child in building_container.get_children():
 		child.queue_free()
 	
-	for building in ProgressionManager.buildings:
+	for building in RunManager.buildings:
 		var building_ui = building_ui_scene.instantiate()
 		building_container.add_child(building_ui)
 		building_ui.setup(building)
@@ -35,7 +38,7 @@ func refresh() -> void:
 	for child in reserve_container.get_children():
 		child.queue_free()
 	
-	for villager in ProgressionManager.reserve_villagers:
+	for villager in RunManager.reserve_villagers:
 		var card = villager_card_scene.instantiate()
 		reserve_container.add_child(card)
 		card.setup(villager)
@@ -47,7 +50,13 @@ func on_villager_selected(villager: Villager) -> void:
 	if selected_villager == villager:
 		selected_villager = null
 	else:
-		selected_villager = villager
+		if selected_villager:
+			ProgressionManager.swap_villagers(selected_villager, villager)
+			selected_villager = null
+			refresh()
+			return
+		else:
+			selected_villager = villager
 	
 	# Instead of refresh(), just update highlights to preserve node instances
 	# for the drag-and-drop system.
@@ -76,6 +85,9 @@ func on_progression_updated(_data) -> void:
 func _on_produce_pressed() -> void:
 	var results = ProgressionManager.produce_items()
 	results_label.text = "\n".join(results)
+
+func _on_skill_pools_pressed() -> void:
+	skill_pools_panel.display()
 
 # Reserve area drop handling
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:

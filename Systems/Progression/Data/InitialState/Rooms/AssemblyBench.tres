@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Room" load_steps=3 format=3 uid="uid://25b6409b3178"]
+
+[ext_resource type="Script" path="res://Systems/Progression/Logic/Modifier.gd" id="1_p8oka"]
+[ext_resource type="Script" path="res://Systems/Progression/Data/Room.gd" id="2_2rfmi"]
+
+[resource]
+script = ExtResource("2_2rfmi")
+room_name = "Assembly Bench"
+description = "A Assembly Bench"
+element = 3

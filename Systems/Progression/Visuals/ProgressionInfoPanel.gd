@@ -53,7 +53,6 @@ func show_room_info(room: Room) -> void:
 		child.queue_free()
 		
 	_add_detail("Element", Defines.PROG_ELEMENT.keys()[room.element])
-	_add_detail("Base Effect", str(room.base_effects))
 
 func show_building_info(building: Building) -> void:
 	title_label.text = building.building_name

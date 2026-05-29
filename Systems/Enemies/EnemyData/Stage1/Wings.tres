@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=8 format=3 uid="uid://0s3764jk378u"]
+
+[ext_resource type="Texture2D" uid="uid://csbsgkmo5g4p2" path="res://Assets/Sprites/Fighters/Stage 1/Birdramon.png" id="1_gmxx8"]
+[ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="2_5uqmt"]
+[ext_resource type="Script" uid="uid://do8fq684wbi2r" path="res://Systems/Enemies/Logic/EnemyData.gd" id="3_ch1kb"]
+[ext_resource type="Resource" uid="uid://c6y8y7m1m7m" path="res://Systems/Skills/Data/Jump.tres" id="4_7l200"]
+[ext_resource type="Resource" uid="uid://c6t8y7m1m7m" path="res://Systems/Skills/Data/Counter.tres" id="5_wmd7p"]
+[ext_resource type="SpriteFrames" uid="uid://b3mx65482nx24" path="res://Assets/Sprite_frames/Stage1/Birdramon.tres" id="6_px2hm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwqgo"]
+atlas = ExtResource("1_gmxx8")
+region = Rect2(32, 32, 16, 16)
+
+[resource]
+script = ExtResource("3_ch1kb")
+id = "Birdramon"
+skills = Array[ExtResource("2_5uqmt")]([ExtResource("4_7l200"), ExtResource("5_wmd7p"), null, null])
+attributes_base = [14, 28, 10, 40, 0, 0, 0, 0, 0, 0, 0]
+sprite = ExtResource("6_px2hm")
+icon = SubResource("AtlasTexture_qwqgo")

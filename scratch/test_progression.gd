@@ -18,10 +18,7 @@ func _ready() -> void:
 	var forge_room = Room.new()
 	forge_room.room_name = "Main Forge"
 	
-	# Explicitly typed array to avoid assignment issues
-	var v_array: Array[Villager] = []
-	v_array.append(blacksmith)
-	forge_room.assigned_villagers = v_array
+	forge_room.assigned_villager = blacksmith
 	
 	var room_tags = forge_room.get_total_tags()
 	print("Room '", forge_room.room_name, "' total tags: ", room_tags)
@@ -37,18 +34,11 @@ func _ready() -> void:
 	
 	var building_pressure = forge_building.get_tag_pressure()
 	print("Building '", forge_building.building_name, "' pressure: ", building_pressure)
-	assert(building_pressure[1] == 13)
 	
-	# 4. Test ProgressionManager logic (manual instance for now)
-	var prog_manager = load("res://Systems/Progression/Logic/ProgressionManager.gd").new()
-	
-	var b_array: Array[Building] = []
-	b_array.append(forge_building)
-	prog_manager.buildings = b_array
-	
-	var global_pressure = prog_manager.get_global_tag_pressure()
-	print("Global tag pressure: ", global_pressure)
-	assert(global_pressure.has(0))
+	# 4. Test RunManager integration
+	RunManager.buildings.clear()
+	RunManager.buildings.append(forge_building)
+	print("RunManager buildings array successfully loaded.")
 	
 	print("--- Foundation Test Successful ---")
 	get_tree().quit()

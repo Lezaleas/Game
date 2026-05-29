@@ -4,8 +4,6 @@ class_name Room
 @export var room_name: String = "New Room"
 @export_multiline var description: String = ""
 @export var element: Defines.PROG_ELEMENT = Defines.PROG_ELEMENT.Fire
-@export var scaling_rules: Dictionary = {} # PROG_TAG -> Effect string or multiplier
-@export var base_effects: Array[Modifier] = []
 @export var assigned_villager: Villager
 @export var modifiers: Array[Modifier] = []
 

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=4 format=3 uid="uid://4b23cb1949b0"]
+
+[ext_resource type="Script" path="res://Systems/Skills/Logic/Skill.gd" id="1_ihn82"]
+[ext_resource type="Script" path="res://Systems/Enemies/Logic/EnemyData.gd" id="2_0em3j"]
+[ext_resource type="SpriteFrames" path="res://Assets/Sprite_frames/Stage2/Okuwamon.tres" id="3_13pcj"]
+
+[resource]
+script = ExtResource("2_0em3j")
+id = "Okuwamon"
+sprite = ExtResource("3_13pcj")
+skills = Array[ExtResource("1_ihn82")]([null, null, null, null])
+passives = Array[ExtResource("1_ihn82")]([null, null, null, null])
+attributes_base = [40, 40, 40, 40, 0, 0, 0, 0, 0, 0, 0]
+attributes_mult = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]

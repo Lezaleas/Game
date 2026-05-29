@@ -20,10 +20,10 @@ func hide_debug() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("exit_game"):
 		get_tree().quit()
-	
+		
 	if event.is_action_pressed("q"):
-		debug_label.text = ""
-		debug_label.text += "\n" + str(RunManager.heroes[1].skills)
+		for fighter in Situation.teams[0].fighters:
+			fighter.position_x = 3000
 		
 ## Returns a number between 1 and max_value inclusive.
 ## Pass the RNG instance you want to use.

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Building" load_steps=3 format=3 uid="uid://y7rf82fwwmf0"]
+
+[ext_resource type="Script" uid="uid://o3rbxyxumciq" path="res://Systems/Progression/Data/Room.gd" id="1_2j3vc"]
+[ext_resource type="Script" uid="uid://q8kyky7g1m32" path="res://Systems/Progression/Data/Building.gd" id="2_bi064"]
+
+[resource]
+script = ExtResource("2_bi064")
+building_name = "Outfitter"
+description = "A Outfitter"
+specialization = 3

@@ -6,7 +6,7 @@ class_name LevelData
 @export var enemy1: EnemyData
 @export var enemy2: EnemyData
 @export var enemy3: EnemyData
-@export var reward = null
+@export var rewards: Array[LevelReward] = []
 @export var modifier = null
 @export var prerequisite: LevelData
-var cleared: = true
+var cleared: bool = false

@@ -1,39 +1,58 @@
-[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://c3v720sljwui"]
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://b88uyflmlrhsc"]
 
 [ext_resource type="Texture2D" uid="uid://bykyi5le3yshf" path="res://Assets/Sprites/Fighters/Stage2/Phantomon.png" id="1_cxut3"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x7eo8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvtdb"]
 atlas = ExtResource("1_cxut3")
-region = Rect2(0, 0, 16, 16)
+region = Rect2(32, 32, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h4bxm"]
-atlas = ExtResource("1_cxut3")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5aff3"]
-atlas = ExtResource("1_cxut3")
-region = Rect2(0, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8cld8"]
-atlas = ExtResource("1_cxut3")
-region = Rect2(32, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gbyur"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxj04"]
 atlas = ExtResource("1_cxut3")
 region = Rect2(16, 48, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qip0d"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nl72g"]
 atlas = ExtResource("1_cxut3")
 region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2h60k"]
+atlas = ExtResource("1_cxut3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3wti"]
+atlas = ExtResource("1_cxut3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0whiv"]
+atlas = ExtResource("1_cxut3")
+region = Rect2(0, 16, 16, 16)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x7eo8")
+"texture": SubResource("AtlasTexture_bvtdb")
+}],
+"loop": false,
+"name": &"clashing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxj04")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h4bxm")
+"texture": SubResource("AtlasTexture_nl72g")
+}],
+"loop": false,
+"name": &"damaged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2h60k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3wti")
 }],
 "loop": true,
 "name": &"default",
@@ -41,23 +60,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5aff3")
+"texture": SubResource("AtlasTexture_0whiv")
 }],
 "loop": false,
 "name": &"magic",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8cld8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gbyur")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qip0d")
-}],
-"loop": false,
-"name": &"melee",
-"speed": 4.0
 }]

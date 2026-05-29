@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=8 format=3 uid="uid://f81fp3t0vqiu"]
+
+[ext_resource type="Texture2D" uid="uid://bc0nm55vfpsvu" path="res://Assets/Sprites/Fighters/Stage 1/Airdramon.png" id="1_a0dgo"]
+[ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="1_b0mnv"]
+[ext_resource type="Script" uid="uid://do8fq684wbi2r" path="res://Systems/Enemies/Logic/EnemyData.gd" id="2_1qfab"]
+[ext_resource type="SpriteFrames" uid="uid://cqb5710humle3" path="res://Assets/Sprite_frames/Stage1/Airdramon.tres" id="3_ykxqj"]
+[ext_resource type="Resource" uid="uid://c758y7m1m7m" path="res://Systems/Skills/Data/Reprisal.tres" id="4_q12k6"]
+[ext_resource type="Resource" uid="uid://c788y7m1m7m" path="res://Systems/Skills/Data/ShadowCast.tres" id="5_ngrpa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq1pd"]
+atlas = ExtResource("1_a0dgo")
+region = Rect2(32, 32, 16, 16)
+
+[resource]
+script = ExtResource("2_1qfab")
+id = "Airdramon"
+skills = Array[ExtResource("1_b0mnv")]([ExtResource("4_q12k6"), ExtResource("5_ngrpa"), null, null])
+attributes_base = [20, 40, 14, 14, 0, 0, 0, 0, 0, 0, 0]
+sprite = ExtResource("3_ykxqj")
+icon = SubResource("AtlasTexture_yq1pd")

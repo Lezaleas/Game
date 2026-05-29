@@ -1,35 +1,68 @@
-[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://dkcqm1o5rqcfp"]
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://b3b2c0ydqsbgb"]
 
 [ext_resource type="Texture2D" uid="uid://gi4p8j36mtyn" path="res://Assets/Sprites/Fighters/Stage 3/WarGreymon.png" id="1_ben53"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ry0gj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw0sc"]
+atlas = ExtResource("1_ben53")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5bol"]
+atlas = ExtResource("1_ben53")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koxmw"]
+atlas = ExtResource("1_ben53")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olvba"]
 atlas = ExtResource("1_ben53")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q5lao"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tv262"]
 atlas = ExtResource("1_ben53")
 region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq0aw"]
+atlas = ExtResource("1_ben53")
+region = Rect2(0, 16, 16, 16)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ry0gj")
+"texture": SubResource("AtlasTexture_gw0sc")
+}],
+"loop": false,
+"name": &"clashing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5bol")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q5lao")
+"texture": SubResource("AtlasTexture_koxmw")
+}],
+"loop": false,
+"name": &"damaged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olvba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tv262")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vq0aw")
+}],
 "loop": false,
 "name": &"magic",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": false,
-"name": &"melee",
 "speed": 5.0
 }]

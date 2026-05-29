@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=12 format=3 uid="uid://dwa6sq7cw2vf7"]
+
+[ext_resource type="Texture2D" uid="uid://b6l3hvan146rv" path="res://Assets/Sprites/Fighters/Stage 3/Hououmon.png" id="1_bvcg0"]
+[ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="2_tdcbk"]
+[ext_resource type="Script" uid="uid://do8fq684wbi2r" path="res://Systems/Enemies/Logic/EnemyData.gd" id="3_x0k0x"]
+[ext_resource type="Resource" uid="uid://c6y8y7m1m7m" path="res://Systems/Skills/Data/Jump.tres" id="4_xi5f6"]
+[ext_resource type="Resource" uid="uid://c6t8y7m1m7m" path="res://Systems/Skills/Data/Counter.tres" id="5_vt43n"]
+[ext_resource type="Script" uid="uid://bqojr5tnge58i" path="res://Systems/Skills/Data/Reprisal.gd" id="6_gsd34"]
+[ext_resource type="Script" uid="uid://ch413jhpxp46r" path="res://Systems/Skills/Data/Sniper.gd" id="7_i522b"]
+[ext_resource type="SpriteFrames" uid="uid://du1b6iy341n4u" path="res://Assets/Sprite_frames/Stage3/Phoenixmon.tres" id="8_35stv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yrjg"]
+atlas = ExtResource("1_bvcg0")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="Resource" id="Resource_kaqya"]
+script = ExtResource("6_gsd34")
+metadata/_custom_type_script = "uid://bqojr5tnge58i"
+
+[sub_resource type="Resource" id="Resource_s03xk"]
+script = ExtResource("7_i522b")
+metadata/_custom_type_script = "uid://ch413jhpxp46r"
+
+[resource]
+script = ExtResource("3_x0k0x")
+id = "Cygnus"
+skills = Array[ExtResource("2_tdcbk")]([ExtResource("4_xi5f6"), ExtResource("5_vt43n"), SubResource("Resource_kaqya"), SubResource("Resource_s03xk")])
+attributes_base = [56, 112, 40, 160, 0, 0, 0, 0, 0, 0, 0]
+sprite = ExtResource("8_35stv")
+icon = SubResource("AtlasTexture_5yrjg")

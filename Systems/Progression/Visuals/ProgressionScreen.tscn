@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Systems/Progression/Visuals/ProgressionScreen.gd" id="1_script"]
 [ext_resource type="PackedScene" uid="uid://c1d2e3f4g5h6j" path="res://Systems/Progression/Visuals/ProgressionInfoPanel.tscn" id="2_info"]
 [ext_resource type="Script" path="res://Systems/Progression/Visuals/ReserveDropZone.gd" id="3_drop"]
+[ext_resource type="PackedScene" uid="uid://skills_panel_uid" path="res://Systems/Progression/Visuals/SkillPoolsPanel.tscn" id="4_skills"]
 
 [node name="ProgressionScreen" type="Control"]
 layout_mode = 3
@@ -60,6 +61,7 @@ layout_mode = 2
 [node name="ProduceArea" type="HBoxContainer" parent="VBox"]
 layout_mode = 2
 alignment = 1
+theme_override_constants/separation = 20
 
 [node name="ProduceButton" type="Button" parent="VBox/ProduceArea"]
 unique_name_in_owner = true
@@ -67,6 +69,13 @@ custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "PRODUCE ITEMS"
+
+[node name="SkillPoolsButton" type="Button" parent="VBox/ProduceArea"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "VIEW SKILL POOLS"
 
 [node name="ResultsLabel" type="Label" parent="VBox"]
 unique_name_in_owner = true
@@ -98,3 +107,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 10
+
+[node name="SkillPoolsPanel" parent="." instance=ExtResource("4_skills")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1

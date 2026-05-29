@@ -28,6 +28,7 @@ enum BUFF {Burn, Freeze, Shock, Poison, Shield}
 enum EQUIP_TYPE {Sword, Staff, Armor, Boots}
 enum EQUIP_QUALITY {Common, Rare, Epic, Legendary}
 enum INVESTMENT {None, Minor, Major, Master, Grandmaster}
+enum ENEMY_ATTRIBUTE {Weak, Low, Medium, High, Strong}
 
 enum PROG_TAG {Smithing,Warfare,Arcane,Learning,Crafting,Stewardry,Charisma,Wildcraft}
 enum PROG_METHOD {Experimental, Ritualistic, Reckless, Precise, Obsessive}

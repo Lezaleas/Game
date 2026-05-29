@@ -1,35 +1,68 @@
-[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://clbewicg6i1fl"]
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://bphgeaclsct0j"]
 
 [ext_resource type="Texture2D" uid="uid://bmobqp22misyg" path="res://Assets/Sprites/Fighters/Stage 3/Rosemon.png" id="1_6dpnu"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vylid"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag3xy"]
+atlas = ExtResource("1_6dpnu")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lewno"]
+atlas = ExtResource("1_6dpnu")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qf8o5"]
+atlas = ExtResource("1_6dpnu")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjtgn"]
 atlas = ExtResource("1_6dpnu")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2vrde"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gf1eo"]
 atlas = ExtResource("1_6dpnu")
 region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jypbg"]
+atlas = ExtResource("1_6dpnu")
+region = Rect2(0, 16, 16, 16)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vylid")
+"texture": SubResource("AtlasTexture_ag3xy")
+}],
+"loop": false,
+"name": &"clashing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lewno")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2vrde")
+"texture": SubResource("AtlasTexture_qf8o5")
+}],
+"loop": false,
+"name": &"damaged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjtgn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gf1eo")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jypbg")
+}],
 "loop": false,
 "name": &"magic",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": false,
-"name": &"melee",
 "speed": 5.0
 }]

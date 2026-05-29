@@ -1,28 +1,58 @@
-[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://dfya2w6b22oj"]
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://d0ww3iwtlson1"]
 
 [ext_resource type="Texture2D" uid="uid://c750v40me3dp1" path="res://Assets/Sprites/Fighters/Stage 3/HerakleKabuterimon.png" id="1_t2jqs"]
-[ext_resource type="Texture2D" uid="uid://k172t5x1ygd4" path="res://Assets/Sprites/Fighters/Stage 0/Agumon.png" id="1_wnytw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_23lf6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5p3d"]
+atlas = ExtResource("1_t2jqs")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0y0r"]
+atlas = ExtResource("1_t2jqs")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ll1v"]
+atlas = ExtResource("1_t2jqs")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asbeo"]
 atlas = ExtResource("1_t2jqs")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a0esa"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ee5j"]
 atlas = ExtResource("1_t2jqs")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jiqgv"]
-atlas = ExtResource("1_wnytw")
+[sub_resource type="AtlasTexture" id="AtlasTexture_veaq6"]
+atlas = ExtResource("1_t2jqs")
 region = Rect2(0, 16, 16, 16)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_23lf6")
+"texture": SubResource("AtlasTexture_e5p3d")
+}],
+"loop": false,
+"name": &"clashing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0y0r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a0esa")
+"texture": SubResource("AtlasTexture_7ll1v")
+}],
+"loop": false,
+"name": &"damaged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asbeo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ee5j")
 }],
 "loop": true,
 "name": &"default",
@@ -30,14 +60,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jiqgv")
+"texture": SubResource("AtlasTexture_veaq6")
 }],
 "loop": false,
 "name": &"magic",
 "speed": 5.0
-}, {
-"frames": [],
-"loop": false,
-"name": &"melee",
-"speed": 4.0
 }]

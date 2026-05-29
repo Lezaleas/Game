@@ -12,6 +12,10 @@ func _ready() -> void:
 		RunManager.heroes = loaded_run.heroes
 		RunManager.shrines = loaded_run.shrines
 		RunManager.equipment = loaded_run.equipment
+		RunManager.buildings = loaded_run.buildings
+		RunManager.villagers = loaded_run.villagers
+		RunManager.reserve_villagers = loaded_run.reserve_villagers
+		RunManager.skill_pools = loaded_run.skill_pools
 		RunManager.loaded_run = null
 		EventBus.emit("run_loaded")
 		return
@@ -27,4 +31,7 @@ func _ready() -> void:
 		hero.id = x
 		hero.setup()
 		RunManager.heroes.append(hero)
+		
+	RunManager.reset_skill_pools()
+	RunManager.reset_progression_data()
 	EventBus.emit("run_started")

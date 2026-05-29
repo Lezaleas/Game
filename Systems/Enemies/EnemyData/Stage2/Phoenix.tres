@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=10 format=3 uid="uid://1jtp04vliurq"]
+
+[ext_resource type="Texture2D" uid="uid://dbx7gjtrvabw6" path="res://Assets/Sprites/Fighters/Stage2/Garudamon.png" id="1_kwlv4"]
+[ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="2_58oo0"]
+[ext_resource type="Script" uid="uid://do8fq684wbi2r" path="res://Systems/Enemies/Logic/EnemyData.gd" id="3_rnlh7"]
+[ext_resource type="Resource" uid="uid://c6y8y7m1m7m" path="res://Systems/Skills/Data/Jump.tres" id="4_rsirv"]
+[ext_resource type="Resource" uid="uid://c6t8y7m1m7m" path="res://Systems/Skills/Data/Counter.tres" id="5_kw717"]
+[ext_resource type="Script" uid="uid://bqojr5tnge58i" path="res://Systems/Skills/Data/Reprisal.gd" id="6_sgma6"]
+[ext_resource type="SpriteFrames" uid="uid://by65rs65buu8j" path="res://Assets/Sprite_frames/Stage2/Garudamon.tres" id="7_eq7ch"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhpn7"]
+atlas = ExtResource("1_kwlv4")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="Resource" id="Resource_kaqya"]
+script = ExtResource("6_sgma6")
+metadata/_custom_type_script = "uid://bqojr5tnge58i"
+
+[resource]
+script = ExtResource("3_rnlh7")
+id = "Phoenix"
+skills = Array[ExtResource("2_58oo0")]([ExtResource("4_rsirv"), ExtResource("5_kw717"), SubResource("Resource_kaqya"), null])
+attributes_base = [28, 56, 20, 80, 0, 0, 0, 0, 0, 0, 0]
+sprite = ExtResource("7_eq7ch")
+icon = SubResource("AtlasTexture_jhpn7")

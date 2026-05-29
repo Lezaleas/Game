@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Building" load_steps=3 format=3 uid="uid://cef3062e10ce"]
+
+[ext_resource type="Script" path="res://Systems/Progression/Data/Room.gd" id="1_ug0vl"]
+[ext_resource type="Script" path="res://Systems/Progression/Data/Building.gd" id="2_d4t0y"]
+
+[resource]
+script = ExtResource("2_d4t0y")
+building_name = "Atelier"
+description = "A Atelier"
+specialization = 1

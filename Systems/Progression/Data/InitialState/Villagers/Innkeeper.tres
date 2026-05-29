@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Villager" load_steps=3 format=3 uid="uid://e137fdbfa62d"]
+
+[ext_resource type="Script" path="res://Systems/Progression/Logic/Modifier.gd" id="1_sllpd"]
+[ext_resource type="Script" path="res://Systems/Progression/Data/Villager.gd" id="2_n21bs"]
+
+[resource]
+script = ExtResource("2_n21bs")
+name = "Innkeeper"
+description = "A skilled Innkeeper"
+tags = {
+6: 5
+}
+method = 3
+personality = 0
+modifiers = Array[ExtResource("1_sllpd")]([])
+traits = Array[ExtResource("1_sllpd")]([])

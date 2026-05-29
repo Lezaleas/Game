@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=8 format=3 uid="uid://bb5ohhw8y8kqb"]
+
+[ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="1_fjhka"]
+[ext_resource type="Texture2D" uid="uid://bhk72otp67usa" path="res://Assets/Sprites/Fighters/Stage 1/Garurumon.png" id="1_r8nhg"]
+[ext_resource type="Script" uid="uid://do8fq684wbi2r" path="res://Systems/Enemies/Logic/EnemyData.gd" id="2_a74b3"]
+[ext_resource type="SpriteFrames" uid="uid://ckcrpvuhseaj6" path="res://Assets/Sprite_frames/Stage1/Garurumon.tres" id="3_o7er6"]
+[ext_resource type="Resource" uid="uid://c708y7m1m7m" path="res://Systems/Skills/Data/Manablade.tres" id="4_rddf8"]
+[ext_resource type="Resource" uid="uid://c738y7m1m7m" path="res://Systems/Skills/Data/Ranger.tres" id="5_yj2xo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ygd8"]
+atlas = ExtResource("1_r8nhg")
+region = Rect2(32, 32, 16, 16)
+
+[resource]
+script = ExtResource("2_a74b3")
+id = "Garurumon"
+skills = Array[ExtResource("1_fjhka")]([ExtResource("4_rddf8"), ExtResource("5_yj2xo"), null, null])
+attributes_base = [28, 28, 14, 14, 0, 0, 0, 0, 0, 0, 0]
+sprite = ExtResource("3_o7er6")
+icon = SubResource("AtlasTexture_2ygd8")

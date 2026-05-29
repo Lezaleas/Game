@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="EnemyTemplate" load_steps=12 format=3 uid="uid://sxvlg3hknado"]
+
+[ext_resource type="Script" uid="uid://dtjm668qa541k" path="res://Systems/Enemies/EnemyCreator/Template.gd" id="1_t7f83"]
+[ext_resource type="Resource" uid="uid://b8y7m1m7m7m" path="res://Systems/Skills/Data/Block.tres" id="2_t7f83"]
+[ext_resource type="Resource" uid="uid://c728y7m1m7m" path="res://Systems/Skills/Data/Paladin.tres" id="3_ma73o"]
+[ext_resource type="Script" uid="uid://bqojr5tnge58i" path="res://Systems/Skills/Data/Reprisal.gd" id="4_iu176"]
+[ext_resource type="Script" uid="uid://ch413jhpxp46r" path="res://Systems/Skills/Data/Sniper.gd" id="5_dk1wp"]
+[ext_resource type="SpriteFrames" uid="uid://bs4c64vgthcir" path="res://Assets/Sprite_frames/Stage0/Tentomon.tres" id="6_ar2tv"]
+[ext_resource type="SpriteFrames" uid="uid://db4ke1fj0sbgf" path="res://Assets/Sprite_frames/Stage1/Kuwagamon.tres" id="7_iu176"]
+[ext_resource type="SpriteFrames" uid="uid://by65rs65buu8j" path="res://Assets/Sprite_frames/Stage2/Garudamon.tres" id="8_abhco"]
+[ext_resource type="SpriteFrames" uid="uid://du1b6iy341n4u" path="res://Assets/Sprite_frames/Stage3/Phoenixmon.tres" id="9_odnk3"]
+
+[sub_resource type="Resource" id="Resource_kaqya"]
+script = ExtResource("4_iu176")
+metadata/_custom_type_script = "uid://bqojr5tnge58i"
+
+[sub_resource type="Resource" id="Resource_s03xk"]
+script = ExtResource("5_dk1wp")
+metadata/_custom_type_script = "uid://ch413jhpxp46r"
+
+[resource]
+script = ExtResource("1_t7f83")
+sprite_0 = ExtResource("6_ar2tv")
+sprite_1 = ExtResource("7_iu176")
+sprite_2 = ExtResource("8_abhco")
+sprite_3 = ExtResource("9_odnk3")
+id_0 = "Tentomon"
+id_1 = "Kuwagamon"
+id_2 = "Garudamon"
+id_3 = "Phoenixmon"
+attribute_spi = 1
+attribute_wis = 4
+attribute_agi = 1
+skill_0 = ExtResource("2_t7f83")
+skill_1 = ExtResource("3_ma73o")
+skill_2 = SubResource("Resource_kaqya")
+skill_3 = SubResource("Resource_s03xk")
+metadata/_custom_type_script = "uid://dtjm668qa541k"

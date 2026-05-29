@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Room" load_steps=3 format=3 uid="uid://91d0a67c8b7d"]
+
+[ext_resource type="Script" path="res://Systems/Progression/Logic/Modifier.gd" id="1_bjjf4"]
+[ext_resource type="Script" path="res://Systems/Progression/Data/Room.gd" id="2_ahct2"]
+
+[resource]
+script = ExtResource("2_ahct2")
+room_name = "Enchanting Circle"
+description = "A Enchanting Circle"
+element = 1

@@ -1,35 +1,68 @@
-[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://chusf681s0b7p"]
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://dveqi0xpxs1vx"]
 
 [ext_resource type="Texture2D" uid="uid://bd4jol38t4jgy" path="res://Assets/Sprites/Fighters/Stage2/Monzaemon.png" id="1_d7qnl"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ygln"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7na6h"]
+atlas = ExtResource("1_d7qnl")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bct42"]
+atlas = ExtResource("1_d7qnl")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2vpo"]
+atlas = ExtResource("1_d7qnl")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sf4rh"]
 atlas = ExtResource("1_d7qnl")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_itohf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gof0w"]
 atlas = ExtResource("1_d7qnl")
 region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tnx2"]
+atlas = ExtResource("1_d7qnl")
+region = Rect2(0, 16, 16, 16)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1ygln")
+"texture": SubResource("AtlasTexture_7na6h")
+}],
+"loop": false,
+"name": &"clashing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bct42")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_itohf")
+"texture": SubResource("AtlasTexture_w2vpo")
+}],
+"loop": false,
+"name": &"damaged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sf4rh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gof0w")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tnx2")
+}],
 "loop": false,
 "name": &"magic",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": false,
-"name": &"melee",
 "speed": 5.0
 }]

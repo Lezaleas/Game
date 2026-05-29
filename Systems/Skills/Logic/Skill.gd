@@ -7,7 +7,6 @@ class_name Skill
 @export var power: float = 0.0
 @export var order: int = 0		# smaller goes first
 @export var mana_cost:int = 0
-@export var icon = preload("res://Assets/Sprites/Common/ElementalIcons/Blue.tres")
 var show_to_player: bool = true
 var owner: FighterState
 var element: int = 0

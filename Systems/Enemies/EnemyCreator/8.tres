@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="EnemyTemplate" load_steps=12 format=3 uid="uid://dhjpgy8ks4eco"]
+
+[ext_resource type="Script" uid="uid://dtjm668qa541k" path="res://Systems/Enemies/EnemyCreator/Template.gd" id="1_2ik6a"]
+[ext_resource type="Resource" uid="uid://c6y8y7m1m7m" path="res://Systems/Skills/Data/Jump.tres" id="2_iq38q"]
+[ext_resource type="Resource" uid="uid://c6t8y7m1m7m" path="res://Systems/Skills/Data/Counter.tres" id="3_aw8cd"]
+[ext_resource type="Script" uid="uid://bqojr5tnge58i" path="res://Systems/Skills/Data/Reprisal.gd" id="4_5gbgq"]
+[ext_resource type="Script" uid="uid://ch413jhpxp46r" path="res://Systems/Skills/Data/Sniper.gd" id="5_5iw22"]
+[ext_resource type="SpriteFrames" uid="uid://de3dk68ftynmt" path="res://Assets/Sprite_frames/Stage0/Elecmon.tres" id="6_hcrg8"]
+[ext_resource type="SpriteFrames" uid="uid://b3mx65482nx24" path="res://Assets/Sprite_frames/Stage1/Birdramon.tres" id="7_id6cs"]
+[ext_resource type="SpriteFrames" uid="uid://by65rs65buu8j" path="res://Assets/Sprite_frames/Stage2/Garudamon.tres" id="8_mjh70"]
+[ext_resource type="SpriteFrames" uid="uid://du1b6iy341n4u" path="res://Assets/Sprite_frames/Stage3/Phoenixmon.tres" id="9_t0gim"]
+
+[sub_resource type="Resource" id="Resource_kaqya"]
+script = ExtResource("4_5gbgq")
+metadata/_custom_type_script = "uid://bqojr5tnge58i"
+
+[sub_resource type="Resource" id="Resource_s03xk"]
+script = ExtResource("5_5iw22")
+metadata/_custom_type_script = "uid://ch413jhpxp46r"
+
+[resource]
+script = ExtResource("1_2ik6a")
+sprite_0 = ExtResource("6_hcrg8")
+sprite_1 = ExtResource("7_id6cs")
+sprite_2 = ExtResource("8_mjh70")
+sprite_3 = ExtResource("9_t0gim")
+id_0 = "Elecmon"
+id_1 = "Birdramon"
+id_2 = "Phoenix"
+id_3 = "Cygnus"
+attribute_pow = 1
+attribute_spi = 3
+attribute_wis = 0
+attribute_agi = 4
+skill_0 = ExtResource("2_iq38q")
+skill_1 = ExtResource("3_aw8cd")
+skill_2 = SubResource("Resource_kaqya")
+skill_3 = SubResource("Resource_s03xk")
+metadata/_custom_type_script = "uid://dtjm668qa541k"
