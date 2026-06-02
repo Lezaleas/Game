@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://lboxuid"]
 
-[ext_resource type="Script" path="res://Scenes/Debug/LevelEditor/LevelBox.gd" id="1_lbox"]
-[ext_resource type="PackedScene" path="res://Scenes/Debug/LevelEditor/EnemySlot.tscn" id="2_eslot"]
+[ext_resource type="Script" uid="uid://bwr3boodymybu" path="res://Scenes/Debug/LevelEditor/LevelBox.gd" id="1_lbox"]
+[ext_resource type="PackedScene" uid="uid://eslotuid" path="res://Scenes/Debug/LevelEditor/EnemySlot.tscn" id="2_eslot"]
 
 [node name="LevelBox" type="PanelContainer"]
 offset_right = 300.0
@@ -18,8 +18,8 @@ horizontal_alignment = 1
 
 [node name="Slots" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-alignment = 1
 theme_override_constants/separation = 25
+alignment = 1
 
 [node name="EnemySlot0" parent="VBoxContainer/Slots" instance=ExtResource("2_eslot")]
 layout_mode = 2
@@ -52,9 +52,9 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/Slots/SumPanel/Margin/VBox"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
 text = "Sums"
 horizontal_alignment = 1
-theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
 
 [node name="SumLabel" type="RichTextLabel" parent="VBoxContainer/Slots/SumPanel/Margin/VBox"]
 layout_mode = 2

@@ -1,5 +1,7 @@
 extends Node
 
+var deleteme: = "deleteplz"
+
 func _ready() -> void:
 	match RunManager.load_mode:
 		RunManager.RunLoadMode.NEW_RUN: _start_new_run()

@@ -14,7 +14,8 @@ class_name HeroState
 @export var weight: int = 0
 
 func setup():
-	perk_trees = RunManager.shrines.duplicate()
+	if not perk_trees:
+		perk_trees = RunManager.shrines.duplicate()
 	for x in range(perk_trees.size()):
 		perk_trees[x] = perk_trees[x].duplicate(true)
 		perk_trees[x].setup(id, x)
@@ -23,6 +24,10 @@ func setup():
 		1: sprite = load("res://Assets/Sprite_frames/Stage1/Garurumon.tres")
 		2: sprite = load("res://Assets/Sprite_frames/Stage1/Birdramon.tres")
 		3: sprite = load("res://Assets/Sprite_frames/Stage1/Airdramon.tres")
+		
+func swap_perk_tree(new_tree:PerkTree, position:int) -> void:
+	perk_trees[position] = new_tree.duplicate(true)
+	perk_trees[position].setup(id, position)
 		
 func equip(item:EquipmentState) -> void:
 	unequip(item.type)

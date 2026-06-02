@@ -22,8 +22,16 @@ func _input(event: InputEvent) -> void:
 		get_tree().quit()
 		
 	if event.is_action_pressed("q"):
-		for fighter in Situation.teams[0].fighters:
-			fighter.position_x = 3000
+		swap_perk_tree()
+	
+func swap_perk_tree():
+	var hero = RunManager.heroes[0]
+	var perktree = EnemyToPerkTree.Convert(load("res://Systems/Enemies/EnemyData/Stage1/Airdramon.tres"))
+	hero.swap_perk_tree(perktree, 0)
+	
+func win():
+	for fighter in Situation.teams[0].fighters:
+		fighter.position_x = 3000
 		
 ## Returns a number between 1 and max_value inclusive.
 ## Pass the RNG instance you want to use.
