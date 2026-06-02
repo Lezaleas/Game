@@ -7,9 +7,9 @@
 [ext_resource type="Resource" uid="uid://b8y7m1m7m7m" path="res://Systems/Skills/Data/Block.tres" id="4_5l5ix"]
 [ext_resource type="Resource" uid="uid://c728y7m1m7m" path="res://Systems/Skills/Data/Paladin.tres" id="5_pl1sr"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8tiwt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nuke"]
 atlas = ExtResource("1_7wnnv")
-region = Rect2(32, 32, 16, 16)
+region = Rect2(0, 0, 16, 16)
 
 [resource]
 script = ExtResource("2_h3mwd")
@@ -17,4 +17,5 @@ id = "Kuwagamon"
 skills = Array[ExtResource("1_fagsv")]([ExtResource("4_5l5ix"), ExtResource("5_pl1sr"), null, null])
 attributes_base = [20, 14, 40, 14, 0, 0, 0, 0, 0, 0, 0]
 sprite = ExtResource("3_3n534")
-icon = SubResource("AtlasTexture_8tiwt")
+icon = SubResource("AtlasTexture_1nuke")
+role = 2

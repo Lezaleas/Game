@@ -34,6 +34,11 @@ func _gui_input(event: InputEvent) -> void:
 			EventBus.emit("equipment_hovered", equipment)
 		else:
 			EventBus.emit("equipment_hovered", null)
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+			if equipment:
+				EventBus.emit("equipment_slot_right_clicked", self)
+				accept_event()
 
 func _pressed() -> void:
 	EventBus.emit("equipment_slot_clicked", self)

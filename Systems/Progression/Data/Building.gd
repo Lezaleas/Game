@@ -17,5 +17,5 @@ func get_tag_pressure() -> Dictionary:
 		if not room: continue
 		var room_tags = room.get_total_tags()
 		for tag in room_tags:
-			pressure[tag] += room_tags[tag]/quality
+			pressure[tag] += room_tags[tag]/quality*100
 	return pressure

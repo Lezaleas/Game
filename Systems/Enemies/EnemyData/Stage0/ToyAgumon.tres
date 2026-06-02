@@ -6,9 +6,9 @@
 [ext_resource type="SpriteFrames" uid="uid://c01erdde0ir1o" path="res://Assets/Sprite_frames/Stage0/ToyAgumon.tres" id="3_wkb74"]
 [ext_resource type="Resource" uid="uid://c758y7m1m7m" path="res://Systems/Skills/Data/Reprisal.tres" id="4_ys4bm"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_djyvo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hfrd"]
 atlas = ExtResource("1_wkb74")
-region = Rect2(32, 32, 16, 16)
+region = Rect2(0, 0, 16, 16)
 
 [resource]
 script = ExtResource("2_lntsj")
@@ -16,4 +16,5 @@ id = "ToyAgumon"
 skills = Array[ExtResource("1_ncagu")]([ExtResource("4_ys4bm"), null, null, null])
 attributes_base = [10, 20, 7, 7, 0, 0, 0, 0, 0, 0, 0]
 sprite = ExtResource("3_wkb74")
-icon = SubResource("AtlasTexture_djyvo")
+icon = SubResource("AtlasTexture_6hfrd")
+role = 1

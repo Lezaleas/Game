@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://inspaneluid"]
+
+[ext_resource type="Script" path="res://Scenes/Debug/LevelEditor/InspectorPanel.gd" id="1_ins"]
+
+[node name="InspectorPanel" type="PanelContainer"]
+custom_minimum_size = Vector2(250, 0)
+offset_right = 250.0
+offset_bottom = 400.0
+script = ExtResource("1_ins")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Hover an Enemy"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="StatsLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Stats:"
+
+[node name="StatsGrid" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="SkillsLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Skills:"
+
+[node name="SkillsList" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2

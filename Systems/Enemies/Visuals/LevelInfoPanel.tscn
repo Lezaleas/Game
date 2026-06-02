@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bath5gogsyskf" path="res://Systems/Enemies/Visuals/LevelInfoPanel.gd" id="1_1"]
 
 [node name="LevelInfoPanel" type="PanelContainer"]
-custom_minimum_size = Vector2(300, 400)
+custom_minimum_size = Vector2(300, 800)
 offset_right = 300.0
 offset_bottom = 400.0
 script = ExtResource("1_1")

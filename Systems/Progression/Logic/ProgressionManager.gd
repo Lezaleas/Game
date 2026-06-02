@@ -90,21 +90,13 @@ func generate_item_via_pipeline(building: Building, global_modifiers: Array[Modi
 	# Execute AFTER_ITEM_GENERATION hooks
 	_execute_hook(Defines.ModifierHook.AFTER_ITEM_GENERATION, context, modifiers_by_hook[Defines.ModifierHook.AFTER_ITEM_GENERATION])
 
-	# Default naming based on dominant tag and rolled stats
-	var dominant_tag = -1
-	var max_val = 0.0
-	for tag in context.tags:
-		if context.tags[tag] > max_val:
-			max_val = context.tags[tag]
-			dominant_tag = tag
-	
-	var tag_name = "Generic"
-	if dominant_tag != -1:
-		tag_name = Defines.PROG_TAG.keys()[dominant_tag]
-	
-	var type_name = Defines.EQUIP_TYPE.keys()[item.type]
-	var quality_name = str(context.quality)
-	item.display_name = "%s's %s %s" % [tag_name, quality_name, type_name]
+	# Naming: "<stat value> <skill name>" or "<stat value> Generic"
+	var skill_name = "Generic"
+	if item.skill:
+		skill_name = item.skill.skill_name
+	var power_value = item.attributes[item.type]  # the attributed stat for this item type
+	item.display_name = "%d %s" % [power_value, skill_name]
+
 	
 	last_calculated_tags = context.tags
 	return item
@@ -170,6 +162,7 @@ func produce_items() -> Array[String]:
 		if not building: continue
 		if not building.produces: continue
 		var item = generate_item_via_pipeline(building, global_mods)
+		RunManager.equipment.append(item)
 		var tags_str = ""
 		for tag_id in range(8):
 			tags_str += str(last_calculated_tags.get(tag_id, 0.0)) + ","

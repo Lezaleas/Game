@@ -5,7 +5,7 @@ class_name HeroState
 @export var sprite: SpriteFrames
 @export var skills: Array[Skill] = []
 @export var passives: Array[Skill] = []
-@export var attributes_base = [10,10,10,10, 0,0,0,0,0,0,0] # hardcoded stats size
+@export var attributes_base = [0,0,0,0, 0,0,0,0,0,0,0] # hardcoded stats size
 @export var attributes_mult = [1,1,1,1, 1,1,1,1,1,1,1]
 @export var perk_points: Array[int] = [0,0,0,0]
 @export var perk_trees: Array[PerkTree]
@@ -28,12 +28,14 @@ func equip(item:EquipmentState) -> void:
 	unequip(item.type)
 	equipment_slots[item.type] = item
 	weight += item.weight
+	if item.skill: skills.append(item.skill)
 	
 func unequip(type:Defines.EQUIP_TYPE) -> void:
-	var old_item = equipment_slots[type]
-	if old_item:
-		weight -= old_item.weight
+	var item = equipment_slots[type]
+	if item:
+		weight -= item.weight
 	equipment_slots[type] = null
+	if item.skill: skills.erase(item.skill)
 
 func get_total_perk_points() -> Array[int]:
 	var result: Array[int] = [0, 0, 0, 0] # hardcoded stats size

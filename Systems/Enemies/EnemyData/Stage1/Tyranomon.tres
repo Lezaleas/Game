@@ -7,9 +7,9 @@
 [ext_resource type="Resource" uid="uid://c778y7m1m7m" path="res://Systems/Skills/Data/Sergeant.tres" id="4_78bmc"]
 [ext_resource type="Resource" uid="uid://c6s8y7m1m7m" path="res://Systems/Skills/Data/Charm.tres" id="5_vhyu8"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_liij6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_oosww"]
 atlas = ExtResource("1_d4nms")
-region = Rect2(32, 32, 16, 16)
+region = Rect2(0, 0, 16, 16)
 
 [resource]
 script = ExtResource("2_y43d7")
@@ -17,4 +17,4 @@ id = "Tyranomon"
 skills = Array[ExtResource("1_dhqdo")]([ExtResource("4_78bmc"), ExtResource("5_vhyu8"), null, null])
 attributes_base = [40, 10, 20, 20, 0, 0, 0, 0, 0, 0, 0]
 sprite = ExtResource("3_gohgs")
-icon = SubResource("AtlasTexture_liij6")
+icon = SubResource("AtlasTexture_oosww")

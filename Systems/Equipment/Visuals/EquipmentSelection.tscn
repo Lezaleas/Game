@@ -92,7 +92,19 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 8
 
-[node name="NextButton" type="Button" parent="MainLayout"]
+[node name="ActionButtons" type="HBoxContainer" parent="MainLayout"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 20
+
+[node name="DiscardButton" type="Button" parent="MainLayout/ActionButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "DISCARD SELECTED"
+
+[node name="NextButton" type="Button" parent="MainLayout/ActionButtons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
@@ -102,3 +114,22 @@ text = "START BATTLE"
 
 [node name="EquipmentSwapHandler" type="Node" parent="."]
 script = ExtResource("3_handler")
+
+[node name="HintLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -32.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 13
+text = "Right-click an item to discard it"
+horizontal_alignment = 2

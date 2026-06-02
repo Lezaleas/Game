@@ -6,9 +6,9 @@
 [ext_resource type="SpriteFrames" uid="uid://dt3m5tdiwejma" path="res://Assets/Sprite_frames/Stage0/Penguinmon.tres" id="3_0ipgk"]
 [ext_resource type="Resource" uid="uid://c6v8y7m1m7m" path="res://Systems/Skills/Data/Focus.tres" id="4_xubbx"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jdouo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xw7b"]
 atlas = ExtResource("1_0ipgk")
-region = Rect2(32, 32, 16, 16)
+region = Rect2(0, 0, 16, 16)
 
 [resource]
 script = ExtResource("2_aaly7")
@@ -16,4 +16,5 @@ id = "Penguinmon"
 skills = Array[ExtResource("1_t4qa5")]([ExtResource("4_xubbx"), null, null, null])
 attributes_base = [20, 20, 5, 5, 0, 0, 0, 0, 0, 0, 0]
 sprite = ExtResource("3_0ipgk")
-icon = SubResource("AtlasTexture_jdouo")
+icon = SubResource("AtlasTexture_1xw7b")
+role = 1

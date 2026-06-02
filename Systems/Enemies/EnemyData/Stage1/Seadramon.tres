@@ -7,9 +7,9 @@
 [ext_resource type="Resource" uid="uid://c6v8y7m1m7m" path="res://Systems/Skills/Data/Focus.tres" id="4_wupf6"]
 [ext_resource type="Resource" uid="uid://c748y7m1m7m" path="res://Systems/Skills/Data/Recoil.tres" id="5_yo13d"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ioagf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhr8h"]
 atlas = ExtResource("1_n0m1d")
-region = Rect2(32, 32, 16, 16)
+region = Rect2(0, 0, 16, 16)
 
 [resource]
 script = ExtResource("2_gg3ok")
@@ -17,4 +17,5 @@ id = "Seadramon"
 skills = Array[ExtResource("1_5icvb")]([ExtResource("4_wupf6"), ExtResource("5_yo13d"), null, null])
 attributes_base = [40, 40, 10, 10, 0, 0, 0, 0, 0, 0, 0]
 sprite = ExtResource("3_jx6wj")
-icon = SubResource("AtlasTexture_ioagf")
+icon = SubResource("AtlasTexture_nhr8h")
+role = 1

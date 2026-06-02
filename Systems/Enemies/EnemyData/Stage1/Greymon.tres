@@ -7,9 +7,9 @@
 [ext_resource type="Resource" uid="uid://c6q8y7m1m7m" path="res://Systems/Skills/Data/Berserk.tres" id="4_gvfjs"]
 [ext_resource type="Resource" uid="uid://bm7p6l7j6u1w" path="res://Systems/Skills/Data/Anger.tres" id="5_p8qpf"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_citoj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6335"]
 atlas = ExtResource("1_ictjw")
-region = Rect2(32, 32, 16, 16)
+region = Rect2(0, 0, 16, 16)
 
 [resource]
 script = ExtResource("2_ev7wr")
@@ -17,4 +17,5 @@ id = "Greymon"
 skills = Array[ExtResource("1_gsty3")]([ExtResource("4_gvfjs"), ExtResource("5_p8qpf"), null, null])
 attributes_base = [40, 10, 20, 20, 0, 0, 0, 0, 0, 0, 0]
 sprite = ExtResource("3_56g3m")
-icon = SubResource("AtlasTexture_citoj")
+icon = SubResource("AtlasTexture_a6335")
+role = 5

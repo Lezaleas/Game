@@ -6,9 +6,9 @@
 [ext_resource type="SpriteFrames" uid="uid://b06x4mp0vcoea" path="res://Assets/Sprite_frames/Stage0/Gazimon.tres" id="3_xcrm7"]
 [ext_resource type="Resource" uid="uid://c708y7m1m7m" path="res://Systems/Skills/Data/Manablade.tres" id="4_rhkqt"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fqd8t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgv18"]
 atlas = ExtResource("1_xcrm7")
-region = Rect2(32, 32, 16, 16)
+region = Rect2(0, 0, 16, 16)
 
 [resource]
 script = ExtResource("2_0f3th")
@@ -16,4 +16,5 @@ id = "Gazimon"
 skills = Array[ExtResource("1_eayxv")]([ExtResource("4_rhkqt"), null, null, null])
 attributes_base = [14, 14, 7, 7, 0, 0, 0, 0, 0, 0, 0]
 sprite = ExtResource("3_xcrm7")
-icon = SubResource("AtlasTexture_fqd8t")
+icon = SubResource("AtlasTexture_lgv18")
+role = 4

@@ -1,6 +1,9 @@
 # RunManager
 extends Node
 
+enum RunLoadMode {NEW_RUN,RESUME_RUN,LOAD_SAVE}
+
+var load_mode: RunLoadMode = RunLoadMode.NEW_RUN
 var run_seed: int
 var run_rng: RandomNumberGenerator = RandomNumberGenerator.new()
 var run: RunState
@@ -11,6 +14,7 @@ var buildings: Array[Building]
 var villagers: Array[Villager]
 var reserve_villagers: Array[Villager]
 var loaded_run: RunState
+var levels: Array[LevelData] = []
 
 @export var skill_pools: Dictionary = {
 	Defines.PROG_TAG.Smithing: [] as Array[Skill],
@@ -42,6 +46,9 @@ func _ready() -> void:
 	load("res://Systems/Equipment/Data/Boots_3.tres").duplicate(true),
 	load("res://Systems/Equipment/Data/Boots_4.tres").duplicate(true)]
 
+	if levels.is_empty():
+		reset_levels()
+
 	# Initialize skill pools if empty
 	var all_empty = true
 	for pool in skill_pools.values():
@@ -54,6 +61,26 @@ func _ready() -> void:
 		
 	if buildings.is_empty():
 		reset_progression_data()
+
+func reset_levels() -> void:
+	levels = [
+		(load("res://Systems/Enemies/LevelData/Stage0/11.tres") as LevelData).duplicate(true),
+		(load("res://Systems/Enemies/LevelData/Stage0/12.tres") as LevelData).duplicate(true),
+		(load("res://Systems/Enemies/LevelData/Stage0/13.tres") as LevelData).duplicate(true),
+		(load("res://Systems/Enemies/LevelData/Stage0/14.tres") as LevelData).duplicate(true),
+		(load("res://Systems/Enemies/LevelData/Stage1/21.tres") as LevelData).duplicate(true),
+		(load("res://Systems/Enemies/LevelData/Stage1/22.tres") as LevelData).duplicate(true),
+		(load("res://Systems/Enemies/LevelData/Stage1/23.tres") as LevelData).duplicate(true),
+		(load("res://Systems/Enemies/LevelData/Stage1/24.tres") as LevelData).duplicate(true),
+		(load("res://Systems/Enemies/LevelData/Stage2/31.tres") as LevelData).duplicate(true),
+		(load("res://Systems/Enemies/LevelData/Stage2/32.tres") as LevelData).duplicate(true),
+		(load("res://Systems/Enemies/LevelData/Stage2/33.tres") as LevelData).duplicate(true),
+		(load("res://Systems/Enemies/LevelData/Stage2/34.tres") as LevelData).duplicate(true),
+		(load("res://Systems/Enemies/LevelData/Stage3/41.tres") as LevelData).duplicate(true),
+		(load("res://Systems/Enemies/LevelData/Stage3/42.tres") as LevelData).duplicate(true),
+		(load("res://Systems/Enemies/LevelData/Stage3/43.tres") as LevelData).duplicate(true),
+		(load("res://Systems/Enemies/LevelData/Stage3/44.tres") as LevelData).duplicate(true)
+	]
 
 func reset_skill_pools() -> void:
 	for tag in skill_pools.keys():

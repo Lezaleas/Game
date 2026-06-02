@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://enemycarduid"]
+
+[ext_resource type="Script" uid="uid://ct3jigqgulfxt" path="res://Scenes/Debug/LevelEditor/EnemyCard.gd" id="1_ecard"]
+
+[node name="EnemyCard" type="PanelContainer"]
+custom_minimum_size = Vector2(64, 84)
+offset_right = 80.0
+offset_bottom = 100.0
+script = ExtResource("1_ecard")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 1
+stretch_mode = 5
+
+[node name="InfoLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NameLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+
+[node name="SkillsLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+theme_override_colors/default_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/normal_font_size = 11

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=7 format=3 uid="uid://km1vbb10woo0"]
+
+[ext_resource type="Script" uid="uid://cc1ocmy3ne2ik" path="res://Systems/Enemies/Logic/LevelReward.gd" id="1_glwsa"]
+[ext_resource type="Resource" uid="uid://cymlhkklag4yq" path="res://Systems/Enemies/EnemyData/Stage1/Kuwagamon.tres" id="1_oxud3"]
+[ext_resource type="Resource" uid="uid://rdsxgxt0il6x" path="res://Systems/Enemies/EnemyData/Stage0/Penguinmon.tres" id="2_323nm"]
+[ext_resource type="Script" uid="uid://bkkbv8fknvgby" path="res://Systems/Enemies/Logic/LevelData.gd" id="2_chdbk"]
+[ext_resource type="Resource" uid="uid://buifmg5r4nhbf" path="res://Systems/Enemies/EnemyData/Stage0/Gazimon.tres" id="3_oh5y7"]
+[ext_resource type="Resource" uid="uid://cwax0bhpjxf6q" path="res://Systems/Enemies/EnemyData/Stage0/ToyAgumon.tres" id="4_ls6bx"]
+
+[resource]
+script = ExtResource("2_chdbk")
+id = "23"
+enemy0 = ExtResource("1_oxud3")
+enemy1 = ExtResource("2_323nm")
+enemy2 = ExtResource("3_oh5y7")
+enemy3 = ExtResource("4_ls6bx")
+modifier = null
+metadata/_custom_type_script = "uid://bkkbv8fknvgby"

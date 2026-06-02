@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=10 format=3 uid="uid://mt6uymhto5fm"]
+
+[ext_resource type="Script" uid="uid://bkkbv8fknvgby" path="res://Systems/Enemies/Logic/LevelData.gd" id="1_hvjfp"]
+[ext_resource type="Resource" uid="uid://ci0pbcmpfeiks" path="res://Systems/Enemies/EnemyData/Stage0/Agumon.tres" id="1_xipgn"]
+[ext_resource type="Resource" uid="uid://buifmg5r4nhbf" path="res://Systems/Enemies/EnemyData/Stage0/Gazimon.tres" id="2_lf8iv"]
+[ext_resource type="Script" uid="uid://cc1ocmy3ne2ik" path="res://Systems/Enemies/Logic/LevelReward.gd" id="2_vkb7o"]
+[ext_resource type="Resource" uid="uid://d51nd3k2jrvs" path="res://Systems/Enemies/EnemyData/Stage0/Gomamon.tres" id="3_xd7uh"]
+[ext_resource type="Script" uid="uid://bxa5mtfofeme1" path="res://Systems/Enemies/Logic/SkillReward.gd" id="3_xrahm"]
+[ext_resource type="Resource" uid="uid://dsuvhqcbtc0ic" path="res://Systems/Enemies/EnemyData/Stage0/Salamon.tres" id="4_0p1ih"]
+[ext_resource type="Resource" uid="uid://c6v8y7m1m7m" path="res://Systems/Skills/Data/Focus.tres" id="4_m12i0"]
+
+[sub_resource type="Resource" id="Resource_0p1ih"]
+script = ExtResource("3_xrahm")
+skill = ExtResource("4_m12i0")
+metadata/_custom_type_script = "uid://bxa5mtfofeme1"
+
+[resource]
+script = ExtResource("1_hvjfp")
+id = "Level 1"
+enemy0 = ExtResource("1_xipgn")
+enemy1 = ExtResource("2_lf8iv")
+enemy2 = ExtResource("3_xd7uh")
+enemy3 = ExtResource("4_0p1ih")
+rewards = Array[ExtResource("2_vkb7o")]([SubResource("Resource_0p1ih")])
+modifier = null
+metadata/_custom_type_script = "uid://bkkbv8fknvgby"

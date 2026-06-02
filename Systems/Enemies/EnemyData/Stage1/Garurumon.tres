@@ -7,9 +7,9 @@
 [ext_resource type="Resource" uid="uid://c708y7m1m7m" path="res://Systems/Skills/Data/Manablade.tres" id="4_rddf8"]
 [ext_resource type="Resource" uid="uid://c738y7m1m7m" path="res://Systems/Skills/Data/Ranger.tres" id="5_yj2xo"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ygd8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_18ggd"]
 atlas = ExtResource("1_r8nhg")
-region = Rect2(32, 32, 16, 16)
+region = Rect2(0, 0, 16, 16)
 
 [resource]
 script = ExtResource("2_a74b3")
@@ -17,4 +17,5 @@ id = "Garurumon"
 skills = Array[ExtResource("1_fjhka")]([ExtResource("4_rddf8"), ExtResource("5_yj2xo"), null, null])
 attributes_base = [28, 28, 14, 14, 0, 0, 0, 0, 0, 0, 0]
 sprite = ExtResource("3_o7er6")
-icon = SubResource("AtlasTexture_2ygd8")
+icon = SubResource("AtlasTexture_18ggd")
+role = 4

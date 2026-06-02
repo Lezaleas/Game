@@ -47,6 +47,7 @@ theme_override_constants/margin_left = 8
 theme_override_constants/margin_right = 8
 
 [node name="Label" type="Label" parent="VBox/PanelContainer2/Content/HBoxContainer/SmallPanel2/Content" index="0"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -67,20 +68,24 @@ layout_mode = 2
 columns = 2
 
 [node name="Control" parent="VBox/PanelContainer/Content/GridContainer" instance=ExtResource("5_c0qth")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 fill_ratio = 1.0
 
 [node name="Control2" parent="VBox/PanelContainer/Content/GridContainer" instance=ExtResource("5_c0qth")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Control3" parent="VBox/PanelContainer/Content/GridContainer" instance=ExtResource("5_c0qth")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 fill_ratio = 0.0
 
 [node name="Control4" parent="VBox/PanelContainer/Content/GridContainer" instance=ExtResource("5_c0qth")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -97,18 +102,22 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 
 [node name="SmallPanel" parent="VBox/PanelContainer3/Content/HBoxContainer/VBoxContainer" instance=ExtResource("5_eca5n")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 1
 
 [node name="SmallPanel2" parent="VBox/PanelContainer3/Content/HBoxContainer/VBoxContainer" instance=ExtResource("5_eca5n")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 1
 
 [node name="SmallPanel3" parent="VBox/PanelContainer3/Content/HBoxContainer/VBoxContainer" instance=ExtResource("5_eca5n")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 1
 
 [node name="SmallPanel4" parent="VBox/PanelContainer3/Content/HBoxContainer/VBoxContainer" instance=ExtResource("5_eca5n")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 1
 

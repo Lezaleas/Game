@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=7 format=3 uid="uid://bb3vhg4cg4joa"]
+
+[ext_resource type="Texture2D" uid="uid://bcnogy66keeu0" path="res://Assets/Sprites/Fighters/Stage 0/Elecmon.png" id="1_a7pbm"]
+[ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="2_vmvd0"]
+[ext_resource type="Script" uid="uid://do8fq684wbi2r" path="res://Systems/Enemies/Logic/EnemyData.gd" id="3_1paf1"]
+[ext_resource type="Resource" uid="uid://c6y8y7m1m7m" path="res://Systems/Skills/Data/Jump.tres" id="4_dwhhk"]
+[ext_resource type="SpriteFrames" uid="uid://de3dk68ftynmt" path="res://Assets/Sprite_frames/Stage0/Elecmon.tres" id="5_cs6ru"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpo4r"]
+atlas = ExtResource("1_a7pbm")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+script = ExtResource("3_1paf1")
+id = "Elecmon"
+skills = Array[ExtResource("2_vmvd0")]([ExtResource("4_dwhhk"), null, null, null])
+attributes_base = [7, 14, 5, 20, 0, 0, 0, 0, 0, 0, 0]
+sprite = ExtResource("5_cs6ru")
+icon = SubResource("AtlasTexture_kpo4r")
+role = 8

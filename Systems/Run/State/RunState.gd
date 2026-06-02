@@ -10,6 +10,7 @@ class_name RunState
 @export var skill_pools: Dictionary
 @export var run_seed: int
 @export var level: int = 1
+@export var levels: Array[LevelData]
 
 static func save_run() -> RunState:
 	var state = RunState.new()
@@ -21,6 +22,7 @@ static func save_run() -> RunState:
 	state.villagers = RunManager.villagers.duplicate(true)
 	state.reserve_villagers = RunManager.reserve_villagers.duplicate(true)
 	state.skill_pools = RunManager.skill_pools.duplicate(true)
+	state.levels = RunManager.levels.duplicate(true)
 	
 	var err = ResourceSaver.save(state, "user://run.tres")
 	if err != OK:

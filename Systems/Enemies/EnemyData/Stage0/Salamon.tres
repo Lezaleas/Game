@@ -6,9 +6,9 @@
 [ext_resource type="SpriteFrames" uid="uid://dlpp1u77ex7u4" path="res://Assets/Sprite_frames/Stage0/Salamon.tres" id="3_s32p4"]
 [ext_resource type="Resource" uid="uid://c778y7m1m7m" path="res://Systems/Skills/Data/Sergeant.tres" id="4_b1yfh"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xnfcm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5j2yo"]
 atlas = ExtResource("1_s32p4")
-region = Rect2(32, 32, 16, 16)
+region = Rect2(0, 0, 16, 16)
 
 [resource]
 script = ExtResource("2_vwdx4")
@@ -16,4 +16,4 @@ id = "Salamon"
 skills = Array[ExtResource("1_0ys3r")]([ExtResource("4_b1yfh"), null, null, null])
 attributes_base = [20, 5, 10, 10, 0, 0, 0, 0, 0, 0, 0]
 sprite = ExtResource("3_s32p4")
-icon = SubResource("AtlasTexture_xnfcm")
+icon = SubResource("AtlasTexture_5j2yo")

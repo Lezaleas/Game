@@ -13,6 +13,7 @@ class_name EnemyData
 		_update_icon()
 
 @export var icon : Texture2D
+@export var role: Defines.ENEMY_ROLES = Defines.ENEMY_ROLES.SP
 
 func _update_icon():
 	if sprite == null:

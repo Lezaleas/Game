@@ -47,17 +47,33 @@ func HeroToFighter(hero:HeroState, fighter:FighterState) -> FighterState:
 	fighter.skills = hero.skills.duplicate(true) + hero.passives.duplicate(true)
 	fighter.sprite = hero.sprite
 	return fighter
+
+func _non_null(s):
+	return s != null
 	
 ## receives a enemydata and a fighterstate and writes the hero properties on the fighter
 func EnemyToFighter(enemy:EnemyData, fighter:FighterState) -> FighterState:
-	
-	for x in range(Defines.ATTRIBUTE.size())	:#set attributes
+	for x in range(Defines.ATTRIBUTE.size()):
 		fighter.attributes[x].base = enemy.attributes_base[x]
 		fighter.attributes[x].mult = enemy.attributes_mult[x]
 
-	fighter.skills = (enemy.skills.duplicate(true) + enemy.passives.duplicate(true)).filter(
-		func(s): return s != null
-	)
+	fighter.skills = (enemy.skills.duplicate(true) + enemy.passives.duplicate(true)).filter(_non_null)
 
 	fighter.sprite = enemy.sprite
 	return fighter
+
+func _on_reduce_stats_pressed() -> void:
+	print("tgsg")
+	for hero in RunManager.heroes:
+		if not hero:
+			continue
+		var attrs = [Defines.ATTRIBUTE.Pwr, Defines.ATTRIBUTE.Spi, Defines.ATTRIBUTE.Wis, Defines.ATTRIBUTE.Agi]
+		for attr in attrs:
+			var new_val = hero.attributes_base[attr] - 1
+			print(new_val)
+			if new_val < 0:
+				push_warning("Hero %s attribute %s would go below 0; clamped to 0" % [hero.id, attr])
+				hero.attributes_base[attr] = 0
+			else:
+				hero.attributes_base[attr] = new_val
+	print("Reduced main stats of all heroes by 1.")

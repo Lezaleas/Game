@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciicq68npkoeh"]
+
+[ext_resource type="Script" uid="uid://8ded8qjny7nm" path="res://Scenes/Debug/LevelEditor/DebugRoom.gd" id="1_droom"]
+[ext_resource type="PackedScene" path="res://Scenes/Debug/LevelEditor/InspectorPanel.tscn" id="2_insp"]
+
+[node name="DebugRoom" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+script = ExtResource("1_droom")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="LeftPanel" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/LeftPanel"]
+layout_mode = 2
+text = "Enemies (Drag to assign)"
+horizontal_alignment = 1
+
+[node name="StageTabs" type="TabContainer" parent="HBoxContainer/LeftPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CenterPanel" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+
+[node name="Label" type="Label" parent="HBoxContainer/CenterPanel"]
+layout_mode = 2
+text = "Levels"
+horizontal_alignment = 1
+
+[node name="LevelTabs" type="TabContainer" parent="HBoxContainer/CenterPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RightPanel" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.8
+theme_override_constants/separation = 20
+
+[node name="SaveButton" type="Button" parent="HBoxContainer/RightPanel"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Save All Levels"
+
+[node name="InspectorPanel" parent="HBoxContainer/RightPanel" instance=ExtResource("2_insp")]
+layout_mode = 2
+size_flags_vertical = 3

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=10 format=3 uid="uid://6287u1cdngo"]
+
+[ext_resource type="Resource" uid="uid://rdsxgxt0il6x" path="res://Systems/Enemies/EnemyData/Stage0/Penguinmon.tres" id="1_3bbit"]
+[ext_resource type="Resource" uid="uid://ci0pbcmpfeiks" path="res://Systems/Enemies/EnemyData/Stage0/Agumon.tres" id="2_ab8tw"]
+[ext_resource type="Script" uid="uid://cc1ocmy3ne2ik" path="res://Systems/Enemies/Logic/LevelReward.gd" id="2_gdtaj"]
+[ext_resource type="Script" uid="uid://bxa5mtfofeme1" path="res://Systems/Enemies/Logic/SkillReward.gd" id="3_3bbit"]
+[ext_resource type="Resource" uid="uid://dsuvhqcbtc0ic" path="res://Systems/Enemies/EnemyData/Stage0/Salamon.tres" id="3_875i1"]
+[ext_resource type="Resource" uid="uid://cwax0bhpjxf6q" path="res://Systems/Enemies/EnemyData/Stage0/ToyAgumon.tres" id="4_6cy0f"]
+[ext_resource type="Resource" uid="uid://c758y7m1m7m" path="res://Systems/Skills/Data/Reprisal.tres" id="4_obobv"]
+[ext_resource type="Script" uid="uid://bkkbv8fknvgby" path="res://Systems/Enemies/Logic/LevelData.gd" id="5_ab8tw"]
+
+[sub_resource type="Resource" id="Resource_bl36x"]
+script = ExtResource("3_3bbit")
+skill = ExtResource("4_obobv")
+metadata/_custom_type_script = "uid://bxa5mtfofeme1"
+
+[resource]
+script = ExtResource("5_ab8tw")
+id = "Level 3"
+enemy0 = ExtResource("1_3bbit")
+enemy1 = ExtResource("2_ab8tw")
+enemy2 = ExtResource("3_875i1")
+enemy3 = ExtResource("4_6cy0f")
+rewards = Array[ExtResource("2_gdtaj")]([SubResource("Resource_bl36x")])
+modifier = null
+metadata/_custom_type_script = "uid://bkkbv8fknvgby"

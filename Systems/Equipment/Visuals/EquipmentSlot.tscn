@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://ceyikxaxrxtqo" path="res://Visuals/Intermission/equipment/EquipmentSlot.gd" id="1_slot"]
 
 [node name="EquipmentSlot" type="Button"]
-custom_minimum_size = Vector2(120, 24)
+custom_minimum_size = Vector2(120, 48)
 offset_right = 120.0
-offset_bottom = 29.0
+offset_bottom = 48.0
 script = ExtResource("1_slot")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -24,8 +24,8 @@ mouse_filter = 2
 
 [node name="ItemName" type="Label" parent="HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(96, 24)
+custom_minimum_size = Vector2(96, 48)
 layout_mode = 2
 text = "Item Name"
 vertical_alignment = 1
-clip_text = true
+autowrap_mode = 3

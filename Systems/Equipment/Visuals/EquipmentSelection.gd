@@ -7,8 +7,12 @@ class_name EquipmentSelection
 @onready var hero_panel_3: HeroEquipmentPanel = %HeroPanel3
 @onready var hero_panels: Array[HeroEquipmentPanel]
 @onready var inventory_grid: EquipmentGrid = %InventoryGrid
+@onready var discard_button: Button = %DiscardButton
+@onready var swap_handler: EquipmentSwapHandler = $EquipmentSwapHandler
 
 func _ready() -> void:
+	if discard_button:
+		discard_button.pressed.connect(_on_discard_pressed)
 	hero_panels = [hero_panel_0, hero_panel_1, hero_panel_2, hero_panel_3]
 	refresh()
 
@@ -31,3 +35,21 @@ func get_equipped_items() -> Array[EquipmentState]:
 			if item:
 				result.append(item)
 	return result
+
+func _on_discard_pressed() -> void:
+	if not swap_handler: return
+	var slot = swap_handler.selected_slot
+	if slot and slot.equipment:
+		var item = slot.equipment
+		if RunManager.equipment.has(item):
+			RunManager.equipment.erase(item)
+			
+		var hero = swap_handler._get_hero_from_slot(slot)
+		if hero:
+			hero.unequip(slot.equip_type_restriction)
+			
+		swap_handler._clear_selection()
+		refresh()
+		print("Discarded equipment: ", item.display_name if item.display_name else "Unknown")
+	else:
+		print("No equipment selected to discard.")

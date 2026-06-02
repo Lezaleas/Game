@@ -29,6 +29,7 @@ enum EQUIP_TYPE {Sword, Staff, Armor, Boots}
 enum EQUIP_QUALITY {Common, Rare, Epic, Legendary}
 enum INVESTMENT {None, Minor, Major, Master, Grandmaster}
 enum ENEMY_ATTRIBUTE {Weak, Low, Medium, High, Strong}
+enum ENEMY_ROLES {F,M,T,R,FM,FT,FR,MT,MR,SP}
 
 enum PROG_TAG {Smithing,Warfare,Arcane,Learning,Crafting,Stewardry,Charisma,Wildcraft}
 enum PROG_METHOD {Experimental, Ritualistic, Reckless, Precise, Obsessive}

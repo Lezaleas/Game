@@ -6,9 +6,9 @@
 [ext_resource type="SpriteFrames" uid="uid://bs4c64vgthcir" path="res://Assets/Sprite_frames/Stage0/Tentomon.tres" id="3_8fx48"]
 [ext_resource type="Resource" uid="uid://b8y7m1m7m7m" path="res://Systems/Skills/Data/Block.tres" id="4_a3rvw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5vef5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiwcj"]
 atlas = ExtResource("1_8fx48")
-region = Rect2(32, 32, 16, 16)
+region = Rect2(0, 0, 16, 16)
 
 [resource]
 script = ExtResource("2_0hcs6")
@@ -16,4 +16,5 @@ id = "Tentomon"
 skills = Array[ExtResource("1_oby7m")]([ExtResource("4_a3rvw"), null, null, null])
 attributes_base = [10, 7, 20, 7, 0, 0, 0, 0, 0, 0, 0]
 sprite = ExtResource("3_8fx48")
-icon = SubResource("AtlasTexture_5vef5")
+icon = SubResource("AtlasTexture_jiwcj")
+role = 2

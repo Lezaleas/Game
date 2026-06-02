@@ -42,6 +42,7 @@ func on_item_activated(item_id: ITEM_IDS) -> void:
 			RunState.save_run()
 		ITEM_IDS.load_button:
 			RunManager.loaded_run = RunState.load_run()
+			RunManager.load_mode = RunManager.RunLoadMode.LOAD_SAVE
 			get_tree().reload_current_scene()
 		ITEM_IDS.progression_menu_button:
 			run_visuals.open_progression_screen()

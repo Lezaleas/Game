@@ -7,9 +7,9 @@
 [ext_resource type="Resource" uid="uid://c6x8y7m1m7m" path="res://Systems/Skills/Data/Guerrilla.tres" id="4_105ar"]
 [ext_resource type="Resource" uid="uid://c6w8y7m1m7m" path="res://Systems/Skills/Data/FrostShield.tres" id="5_yeggh"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vqum2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5bjy"]
 atlas = ExtResource("1_lha8u")
-region = Rect2(32, 32, 16, 16)
+region = Rect2(0, 0, 16, 16)
 
 [resource]
 script = ExtResource("2_sq76b")
@@ -17,4 +17,5 @@ id = "Coelamon"
 skills = Array[ExtResource("1_q8056")]([ExtResource("4_105ar"), ExtResource("5_yeggh"), null, null])
 attributes_base = [20, 20, 10, 40, 0, 0, 0, 0, 0, 0, 0]
 sprite = ExtResource("3_5gmhd")
-icon = SubResource("AtlasTexture_vqum2")
+icon = SubResource("AtlasTexture_p5bjy")
+role = 3

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=7 format=3 uid="uid://wwm5kcx2p81o"]
+
+[ext_resource type="Resource" uid="uid://63x022fgcsw5" path="res://Systems/Enemies/EnemyData/Stage1/Tyranomon.tres" id="1_3q2la"]
+[ext_resource type="Script" uid="uid://cc1ocmy3ne2ik" path="res://Systems/Enemies/Logic/LevelReward.gd" id="1_ahb2h"]
+[ext_resource type="Resource" uid="uid://wwesrl8130hg" path="res://Systems/Enemies/EnemyData/Stage1/Seadramon.tres" id="2_aebk0"]
+[ext_resource type="Script" uid="uid://bkkbv8fknvgby" path="res://Systems/Enemies/Logic/LevelData.gd" id="2_ndrv2"]
+[ext_resource type="Resource" uid="uid://cymlhkklag4yq" path="res://Systems/Enemies/EnemyData/Stage1/Kuwagamon.tres" id="3_2bipd"]
+[ext_resource type="Resource" uid="uid://0s3764jk378u" path="res://Systems/Enemies/EnemyData/Stage1/Birdramon.tres" id="4_6lm5u"]
+
+[resource]
+script = ExtResource("2_ndrv2")
+id = "42"
+enemy0 = ExtResource("1_3q2la")
+enemy1 = ExtResource("2_aebk0")
+enemy2 = ExtResource("3_2bipd")
+enemy3 = ExtResource("4_6lm5u")
+modifier = null
+metadata/_custom_type_script = "uid://bkkbv8fknvgby"

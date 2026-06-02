@@ -14,14 +14,38 @@ _scan_rulesets = Array[Dictionary]([{
 &"scan_regex_include": ""
 }])
 _uids_to_string_ids = Dictionary[StringName, StringName]({
-&"uid://607u2kvxyogs": &"Level2",
-&"uid://c24f77aps5rpx": &"Level0",
-&"uid://cjs8eetmh8k68": &"Level3",
-&"uid://d1k2m3n4o5p6q": &"Level1"
+&"uid://0mt4rx7ujtfb": &"12",
+&"uid://6287u1cdngo": &"13",
+&"uid://bafmbh1shfrnu": &"43",
+&"uid://bdfiengubtclu": &"32",
+&"uid://bfvd3syeumdaq": &"34",
+&"uid://bg42i8mgsnqe0": &"41",
+&"uid://bux1lwbdmcqr7": &"24",
+&"uid://cj0sj65agfnwf": &"31",
+&"uid://d57aal5otmb3": &"14",
+&"uid://dwvajntiiifc3": &"21",
+&"uid://glyfo1ol2i24": &"33",
+&"uid://km1vbb10woo0": &"23",
+&"uid://lj6hbyuv5jvc": &"44",
+&"uid://mt6uymhto5fm": &"11",
+&"uid://t7jd0b2ajw7c": &"22",
+&"uid://wwm5kcx2p81o": &"42"
 })
 _string_ids_to_uids = Dictionary[StringName, StringName]({
-&"Level0": &"uid://c24f77aps5rpx",
-&"Level1": &"uid://d1k2m3n4o5p6q",
-&"Level2": &"uid://607u2kvxyogs",
-&"Level3": &"uid://cjs8eetmh8k68"
+&"11": &"uid://mt6uymhto5fm",
+&"12": &"uid://0mt4rx7ujtfb",
+&"13": &"uid://6287u1cdngo",
+&"14": &"uid://d57aal5otmb3",
+&"21": &"uid://dwvajntiiifc3",
+&"22": &"uid://t7jd0b2ajw7c",
+&"23": &"uid://km1vbb10woo0",
+&"24": &"uid://bux1lwbdmcqr7",
+&"31": &"uid://cj0sj65agfnwf",
+&"32": &"uid://bdfiengubtclu",
+&"33": &"uid://glyfo1ol2i24",
+&"34": &"uid://bfvd3syeumdaq",
+&"41": &"uid://bg42i8mgsnqe0",
+&"42": &"uid://wwm5kcx2p81o",
+&"43": &"uid://bafmbh1shfrnu",
+&"44": &"uid://lj6hbyuv5jvc"
 })

@@ -6,9 +6,9 @@
 [ext_resource type="SpriteFrames" uid="uid://dvwiv071cic74" path="res://Assets/Sprite_frames/Stage0/Gomamon.tres" id="3_f4qms"]
 [ext_resource type="Resource" uid="uid://c6x8y7m1m7m" path="res://Systems/Skills/Data/Guerrilla.tres" id="4_u2loq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0wbp1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_142ra"]
 atlas = ExtResource("1_f4qms")
-region = Rect2(32, 32, 16, 16)
+region = Rect2(0, 0, 16, 16)
 
 [resource]
 script = ExtResource("2_a6s2q")
@@ -16,4 +16,5 @@ id = "Gomamon"
 skills = Array[ExtResource("1_ggffr")]([ExtResource("4_u2loq"), null, null, null])
 attributes_base = [10, 10, 5, 20, 0, 0, 0, 0, 0, 0, 0]
 sprite = ExtResource("3_f4qms")
-icon = SubResource("AtlasTexture_0wbp1")
+icon = SubResource("AtlasTexture_142ra")
+role = 3

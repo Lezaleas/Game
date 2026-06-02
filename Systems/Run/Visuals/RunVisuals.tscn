@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ca5gfo26ni6ly" path="res://Scenes/ReusableButton.tscn" id="1_gsqkf"]
 [ext_resource type="Script" uid="uid://b7y2ojtvkfodh" path="res://Systems/Run/Visuals/RunVisuals.gd" id="1_hvrjw"]
 [ext_resource type="PackedScene" uid="uid://df2gmv4afb7jo" path="res://Systems/Run/Visuals/PerkTreeScene/PerkTree.tscn" id="2_twi4f"]
-[ext_resource type="PackedScene" uid="uid://dmo4kw52jfynx" path="res://Visuals/Intermission/SkillInfoPanel.tscn" id="3_2d4cy"]
+[ext_resource type="PackedScene" path="res://Visuals/Intermission/SkillInfoPanel.tscn" id="3_2d4cy"]
 [ext_resource type="PackedScene" uid="uid://dlu1hpkw80bl8" path="res://Systems/Equipment/Visuals/EquipmentSelection.tscn" id="6_mkt83"]
 [ext_resource type="PackedScene" uid="uid://c1d2e3f4g5h6i" path="res://Systems/Enemies/Visuals/LevelSelection.tscn" id="9_extra"]
 [ext_resource type="PackedScene" uid="uid://1b2c3d4e5f6" path="res://Systems/Progression/Visuals/ProgressionScreen.tscn" id="10_prog"]

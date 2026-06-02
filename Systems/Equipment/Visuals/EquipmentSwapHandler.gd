@@ -7,6 +7,7 @@ var selected_slot: EquipmentSlot = null
 
 func _ready() -> void:
 	EventBus.subscribe("equipment_slot_clicked", self, "on_slot_clicked")
+	EventBus.subscribe("equipment_slot_right_clicked", self, "on_slot_right_clicked")
 
 func on_slot_clicked(slot: EquipmentSlot) -> void:
 	if selected_slot == null:
@@ -127,3 +128,16 @@ func _can_swap(a: EquipmentSlot, b: EquipmentSlot) -> bool:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		_clear_selection()
+
+func on_slot_right_clicked(slot: EquipmentSlot) -> void:
+	if not slot or not slot.equipment:
+		return
+	var item = slot.equipment
+	var hero = _get_hero_from_slot(slot)
+	if hero:
+		hero.unequip(slot.equip_type_restriction)
+	if RunManager.equipment.has(item):
+		RunManager.equipment.erase(item)
+	print("Right-click discarded: ", item.display_name)
+	if selection_screen:
+		selection_screen.refresh()

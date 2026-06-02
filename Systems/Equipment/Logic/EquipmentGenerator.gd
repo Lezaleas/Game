@@ -6,9 +6,21 @@ static func generate_item(quality_budget: float, type: Defines.EQUIP_TYPE, tags:
 	var item = EquipmentState.new()
 	item.type = type
 	item.display_name = str(quality_budget) + " " + str(Defines.EQUIP_TYPE.keys()[type])
+	# Assign default icon based on type
+	match type:
+		Defines.EQUIP_TYPE.Sword:
+			item.icon = load("res://Assets/Sprites/Common/ElementalIcons/Red.tres")
+		Defines.EQUIP_TYPE.Staff:
+			item.icon = load("res://Assets/Sprites/Common/ElementalIcons/Blue.tres")
+		Defines.EQUIP_TYPE.Armor:
+			item.icon = load("res://Assets/Sprites/Common/ElementalIcons/Green.tres")
+		Defines.EQUIP_TYPE.Boots:
+			item.icon = load("res://Assets/Sprites/Common/ElementalIcons/Yellow.tres")
+		_:
+			item.icon = load("res://Assets/Sprites/Common/ElementalIcons/White.tres")
 	
 	# 1. Roll Weight (Weighted Bell Curve)
-	item.weight = get_weighted_weight()
+	item.weight = get_weighted_weight() / 10
 	
 	# 2. Calculate Perk Points (based on weight)
 	var upgrade_points = (item.weight) / 10
