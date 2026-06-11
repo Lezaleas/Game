@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Systems/Run/Visuals/CritterSelection/FighterPortrait.gd" id="1_script"]
+
+[node name="PanelContainer" type="PanelContainer"]
+script = ExtResource("1_script")
+
+[node name="portrait_texture" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(96, 96)
+expand_mode = 1
+stretch_mode = 5

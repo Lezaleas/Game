@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://m0c11hj76x5j"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://m0c11hj76x5j"]
 
 [ext_resource type="Texture2D" uid="uid://g1cm6fwm06hs" path="res://Assets/Sprites/Fighters/Stage 1/Seadramon.png" id="1_e68co"]
 

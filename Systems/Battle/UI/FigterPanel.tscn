@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dest1tbuiwekb"]
+[gd_scene format=3 uid="uid://dest1tbuiwekb"]
 
 [ext_resource type="Script" uid="uid://dgf6kilajlei2" path="res://Systems/Battle/UI/FighterPanel.gd" id="1_reio6"]
+[ext_resource type="Script" uid="uid://cu2yjjbveofqe" path="res://Systems/Battle/UI/CaptureButton.gd" id="2_h0y21"]
 [ext_resource type="PackedScene" uid="uid://yxjq3qg62p4x" path="res://Scenes/PanelInside.tscn" id="2_j0bwj"]
 [ext_resource type="PackedScene" uid="uid://dhkbs5jrkrkff" path="res://Scenes/FighterPortraitDeluxe.tscn" id="3_4qjjt"]
 [ext_resource type="PackedScene" uid="uid://chdioylxfky3d" path="res://Scenes/PanelSmall.tscn" id="4_i67f8"]
@@ -9,35 +10,45 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_i67f8"]
 
-[node name="MarginContainer" type="MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" unique_id=1853127042]
 offset_right = 226.0
 offset_bottom = 298.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_reio6")
 
-[node name="VBox" type="VBoxContainer" parent="."]
+[node name="VBox" type="VBoxContainer" parent="." unique_id=1773525315]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = -7
 
-[node name="PanelContainer2" parent="VBox" instance=ExtResource("2_j0bwj")]
+[node name="PanelContainer4" type="PanelContainer" parent="VBox" unique_id=1454286329]
+layout_mode = 2
+
+[node name="CaptureButton" type="Button" parent="VBox/PanelContainer4" unique_id=2108788237]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "capture"
+script = ExtResource("2_h0y21")
+
+[node name="PanelContainer2" parent="VBox" unique_id=1217346846 instance=ExtResource("2_j0bwj")]
 layout_mode = 2
 size_flags_vertical = 0
 
 [node name="Content" parent="VBox/PanelContainer2" index="3"]
 size_flags_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBox/PanelContainer2/Content" index="0"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBox/PanelContainer2/Content" index="0" unique_id=158242940]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="SmallPanel" parent="VBox/PanelContainer2/Content/HBoxContainer" instance=ExtResource("3_4qjjt")]
+[node name="SmallPanel" parent="VBox/PanelContainer2/Content/HBoxContainer" unique_id=1595034666 instance=ExtResource("3_4qjjt")]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="SmallPanel2" parent="VBox/PanelContainer2/Content/HBoxContainer" instance=ExtResource("4_i67f8")]
+[node name="SmallPanel2" parent="VBox/PanelContainer2/Content/HBoxContainer" unique_id=1884890606 instance=ExtResource("4_i67f8")]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
@@ -46,7 +57,7 @@ size_flags_vertical = 4
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_right = 8
 
-[node name="Label" type="Label" parent="VBox/PanelContainer2/Content/HBoxContainer/SmallPanel2/Content" index="0"]
+[node name="Label" type="Label" parent="VBox/PanelContainer2/Content/HBoxContainer/SmallPanel2/Content" index="0" unique_id=646540396]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -56,67 +67,67 @@ label_settings = SubResource("LabelSettings_i67f8")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PanelContainer" parent="VBox" instance=ExtResource("2_j0bwj")]
+[node name="PanelContainer" parent="VBox" unique_id=407542165 instance=ExtResource("2_j0bwj")]
 layout_mode = 2
 size_flags_vertical = 1
 
 [node name="Content" parent="VBox/PanelContainer" index="3"]
 size_flags_vertical = 0
 
-[node name="GridContainer" type="GridContainer" parent="VBox/PanelContainer/Content" index="0"]
+[node name="GridContainer" type="GridContainer" parent="VBox/PanelContainer/Content" index="0" unique_id=970239957]
 layout_mode = 2
 columns = 2
 
-[node name="Control" parent="VBox/PanelContainer/Content/GridContainer" instance=ExtResource("5_c0qth")]
+[node name="Control" parent="VBox/PanelContainer/Content/GridContainer" unique_id=1187526555 instance=ExtResource("5_c0qth")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 fill_ratio = 1.0
 
-[node name="Control2" parent="VBox/PanelContainer/Content/GridContainer" instance=ExtResource("5_c0qth")]
+[node name="Control2" parent="VBox/PanelContainer/Content/GridContainer" unique_id=1872033267 instance=ExtResource("5_c0qth")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Control3" parent="VBox/PanelContainer/Content/GridContainer" instance=ExtResource("5_c0qth")]
+[node name="Control3" parent="VBox/PanelContainer/Content/GridContainer" unique_id=420358650 instance=ExtResource("5_c0qth")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 fill_ratio = 0.0
 
-[node name="Control4" parent="VBox/PanelContainer/Content/GridContainer" instance=ExtResource("5_c0qth")]
+[node name="Control4" parent="VBox/PanelContainer/Content/GridContainer" unique_id=559961945 instance=ExtResource("5_c0qth")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PanelContainer3" parent="VBox" instance=ExtResource("2_j0bwj")]
+[node name="PanelContainer3" parent="VBox" unique_id=1918496549 instance=ExtResource("2_j0bwj")]
 layout_mode = 2
 size_flags_horizontal = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBox/PanelContainer3/Content" index="0"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBox/PanelContainer3/Content" index="0" unique_id=1804812961]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBox/PanelContainer3/Content/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBox/PanelContainer3/Content/HBoxContainer" unique_id=291410840]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
-[node name="SmallPanel" parent="VBox/PanelContainer3/Content/HBoxContainer/VBoxContainer" instance=ExtResource("5_eca5n")]
+[node name="SmallPanel" parent="VBox/PanelContainer3/Content/HBoxContainer/VBoxContainer" unique_id=1303759594 instance=ExtResource("5_eca5n")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 1
 
-[node name="SmallPanel2" parent="VBox/PanelContainer3/Content/HBoxContainer/VBoxContainer" instance=ExtResource("5_eca5n")]
+[node name="SmallPanel2" parent="VBox/PanelContainer3/Content/HBoxContainer/VBoxContainer" unique_id=1421420171 instance=ExtResource("5_eca5n")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 1
 
-[node name="SmallPanel3" parent="VBox/PanelContainer3/Content/HBoxContainer/VBoxContainer" instance=ExtResource("5_eca5n")]
+[node name="SmallPanel3" parent="VBox/PanelContainer3/Content/HBoxContainer/VBoxContainer" unique_id=1026196447 instance=ExtResource("5_eca5n")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 1
 
-[node name="SmallPanel4" parent="VBox/PanelContainer3/Content/HBoxContainer/VBoxContainer" instance=ExtResource("5_eca5n")]
+[node name="SmallPanel4" parent="VBox/PanelContainer3/Content/HBoxContainer/VBoxContainer" unique_id=1714065218 instance=ExtResource("5_eca5n")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 1

@@ -11,9 +11,9 @@ func _ready():
 # Processes a single turn of the battle
 func on_turn_started():
 	Situation.battle.turn += 1
-	Log.entry("\n")
-	Log.entry("--- Turn: %d ---" % Situation.battle.turn)
-	Log.entry("Positions: %s" % str(Situation.fighters.map(func(f): return f.position_x)))
+	#Log.entry("\n")
+	#Log.entry("--- Turn: %d ---" % Situation.battle.turn)
+	#Log.entry("Positions: %s" % str(Situation.fighters.map(func(f): return f.position_x)))
 	
 	# update entities
 	for attribute in Situation.attributes:

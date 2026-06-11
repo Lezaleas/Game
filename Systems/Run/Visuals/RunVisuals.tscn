@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://55dvelk1sqsw"]
+[gd_scene format=3 uid="uid://55dvelk1sqsw"]
 
 [ext_resource type="PackedScene" uid="uid://ca5gfo26ni6ly" path="res://Scenes/ReusableButton.tscn" id="1_gsqkf"]
 [ext_resource type="Script" uid="uid://b7y2ojtvkfodh" path="res://Systems/Run/Visuals/RunVisuals.gd" id="1_hvrjw"]
@@ -6,132 +6,168 @@
 [ext_resource type="PackedScene" path="res://Visuals/Intermission/SkillInfoPanel.tscn" id="3_2d4cy"]
 [ext_resource type="PackedScene" uid="uid://dlu1hpkw80bl8" path="res://Systems/Equipment/Visuals/EquipmentSelection.tscn" id="6_mkt83"]
 [ext_resource type="PackedScene" uid="uid://c1d2e3f4g5h6i" path="res://Systems/Enemies/Visuals/LevelSelection.tscn" id="9_extra"]
-[ext_resource type="PackedScene" uid="uid://1b2c3d4e5f6" path="res://Systems/Progression/Visuals/ProgressionScreen.tscn" id="10_prog"]
+[ext_resource type="Script" uid="uid://r3vvqaspeuft" path="res://Systems/Run/Visuals/CritterSelection/CritterSelectionController.gd" id="10_critter_script"]
+[ext_resource type="PackedScene" path="res://Systems/Run/Visuals/CritterSelection/CritterInfoPanel.tscn" id="11_critter_panel"]
 
-[node name="RunVisuals" type="Node2D"]
+[node name="RunVisuals" type="Node2D" unique_id=1865448252]
 script = ExtResource("1_hvrjw")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=28420332]
 
-[node name="Background" type="Panel" parent="CanvasLayer"]
-unique_name_in_owner = true
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1806739075]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
-[node name="PerkSelectionScreen" type="VBoxContainer" parent="CanvasLayer"]
+[node name="PerkSelectionScreen" type="VBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=1601230323]
 unique_name_in_owner = true
 visible = false
-offset_right = 1920.0
-offset_bottom = 973.0
+layout_mode = 2
+size_flags_vertical = 3
 
-[node name="SkillInfoPanel" parent="CanvasLayer/PerkSelectionScreen" instance=ExtResource("3_2d4cy")]
+[node name="SkillInfoPanel" parent="CanvasLayer/VBoxContainer/PerkSelectionScreen" unique_id=1927493139 instance=ExtResource("3_2d4cy")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="PerkTrees" type="HBoxContainer" parent="CanvasLayer/PerkSelectionScreen"]
+[node name="PerkTrees" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/PerkSelectionScreen" unique_id=2141451035]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HSeparator5" type="HSeparator" parent="CanvasLayer/PerkSelectionScreen/PerkTrees"]
+[node name="HSeparator5" type="HSeparator" parent="CanvasLayer/VBoxContainer/PerkSelectionScreen/PerkTrees" unique_id=1725608428]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PerkTree0" parent="CanvasLayer/PerkSelectionScreen/PerkTrees" instance=ExtResource("2_twi4f")]
+[node name="PerkTree0" parent="CanvasLayer/VBoxContainer/PerkSelectionScreen/PerkTrees" unique_id=1982336274 instance=ExtResource("2_twi4f")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="HSeparator" type="HSeparator" parent="CanvasLayer/PerkSelectionScreen/PerkTrees"]
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/VBoxContainer/PerkSelectionScreen/PerkTrees" unique_id=541869637]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HSeparator6" type="HSeparator" parent="CanvasLayer/PerkSelectionScreen/PerkTrees"]
+[node name="HSeparator6" type="HSeparator" parent="CanvasLayer/VBoxContainer/PerkSelectionScreen/PerkTrees" unique_id=558954295]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PerkTree1" parent="CanvasLayer/PerkSelectionScreen/PerkTrees" instance=ExtResource("2_twi4f")]
+[node name="PerkTree1" parent="CanvasLayer/VBoxContainer/PerkSelectionScreen/PerkTrees" unique_id=1536407061 instance=ExtResource("2_twi4f")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 0
 id = 1
 
-[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/PerkSelectionScreen/PerkTrees"]
+[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/VBoxContainer/PerkSelectionScreen/PerkTrees" unique_id=533549762]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HSeparator7" type="HSeparator" parent="CanvasLayer/PerkSelectionScreen/PerkTrees"]
+[node name="HSeparator7" type="HSeparator" parent="CanvasLayer/VBoxContainer/PerkSelectionScreen/PerkTrees" unique_id=1455258223]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PerkTree2" parent="CanvasLayer/PerkSelectionScreen/PerkTrees" instance=ExtResource("2_twi4f")]
+[node name="PerkTree2" parent="CanvasLayer/VBoxContainer/PerkSelectionScreen/PerkTrees" unique_id=1916052686 instance=ExtResource("2_twi4f")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 0
 id = 2
 
-[node name="HSeparator8" type="HSeparator" parent="CanvasLayer/PerkSelectionScreen/PerkTrees"]
+[node name="HSeparator8" type="HSeparator" parent="CanvasLayer/VBoxContainer/PerkSelectionScreen/PerkTrees" unique_id=1113997836]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HSeparator3" type="HSeparator" parent="CanvasLayer/PerkSelectionScreen/PerkTrees"]
+[node name="HSeparator3" type="HSeparator" parent="CanvasLayer/VBoxContainer/PerkSelectionScreen/PerkTrees" unique_id=1101003291]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PerkTree3" parent="CanvasLayer/PerkSelectionScreen/PerkTrees" instance=ExtResource("2_twi4f")]
+[node name="PerkTree3" parent="CanvasLayer/VBoxContainer/PerkSelectionScreen/PerkTrees" unique_id=112487017 instance=ExtResource("2_twi4f")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 0
 id = 3
 
-[node name="HSeparator4" type="HSeparator" parent="CanvasLayer/PerkSelectionScreen/PerkTrees"]
+[node name="HSeparator4" type="HSeparator" parent="CanvasLayer/VBoxContainer/PerkSelectionScreen/PerkTrees" unique_id=1051686829]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="EquipmentSelectionScreen" parent="CanvasLayer" instance=ExtResource("6_mkt83")]
+[node name="EquipmentSelectionScreen" parent="CanvasLayer/VBoxContainer" unique_id=1045977731 instance=ExtResource("6_mkt83")]
 unique_name_in_owner = true
 visible = false
-offset_bottom = -64.0
+layout_mode = 2
+size_flags_vertical = 3
 
-[node name="LevelSelectionScreen" parent="CanvasLayer" instance=ExtResource("9_extra")]
+[node name="LevelSelectionScreen" parent="CanvasLayer/VBoxContainer" unique_id=1535403199 instance=ExtResource("9_extra")]
 unique_name_in_owner = true
 visible = false
+layout_mode = 2
+size_flags_vertical = 3
 
-[node name="ProgressionScreen" parent="CanvasLayer" instance=ExtResource("10_prog")]
+[node name="ProgressionScreen" type="Control" parent="CanvasLayer/VBoxContainer" unique_id=1259153762 node_paths=PackedStringArray("fighter_container", "critter_container", "info_panel")]
 unique_name_in_owner = true
 visible = false
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("10_critter_script")
+fighter_container = NodePath("HBoxContainer/LeftBox/FighterBox")
+critter_container = NodePath("HBoxContainer/LeftBox/ScrollContainer/CritterGrid")
+info_panel = NodePath("HBoxContainer/RightBox/CritterInfoPanel")
 
-[node name="BottomHBox" type="HBoxContainer" parent="CanvasLayer"]
-anchors_preset = 2
-anchor_top = 1.0
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/ProgressionScreen" unique_id=1050661824]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -53.0
-offset_right = 1920.0
-grow_vertical = 0
-size_flags_vertical = 0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="QuitButton" parent="CanvasLayer/BottomHBox" instance=ExtResource("1_gsqkf")]
+[node name="LeftBox" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/ProgressionScreen/HBoxContainer" unique_id=178935372]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="FighterBox" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/ProgressionScreen/HBoxContainer/LeftBox" unique_id=415946241]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/VBoxContainer/ProgressionScreen/HBoxContainer/LeftBox" unique_id=1264611886]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="CritterGrid" type="GridContainer" parent="CanvasLayer/VBoxContainer/ProgressionScreen/HBoxContainer/LeftBox/ScrollContainer" unique_id=528898090]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 4
+
+[node name="RightBox" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/ProgressionScreen/HBoxContainer" unique_id=1174023145]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CritterInfoPanel" parent="CanvasLayer/VBoxContainer/ProgressionScreen/HBoxContainer/RightBox" unique_id=343554223 instance=ExtResource("11_critter_panel")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BottomHBox" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=113368250]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="QuitButton" parent="CanvasLayer/VBoxContainer/BottomHBox" unique_id=1190262692 instance=ExtResource("1_gsqkf")]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 text = "Quit"
 
-[node name="EquipMenuButton" parent="CanvasLayer/BottomHBox" instance=ExtResource("1_gsqkf")]
+[node name="EquipMenuButton" parent="CanvasLayer/VBoxContainer/BottomHBox" unique_id=858936267 instance=ExtResource("1_gsqkf")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -139,7 +175,7 @@ theme_override_font_sizes/font_size = 32
 text = "Equipment"
 item_id = 2
 
-[node name="FighterButton0" parent="CanvasLayer/BottomHBox" instance=ExtResource("1_gsqkf")]
+[node name="FighterButton0" parent="CanvasLayer/VBoxContainer/BottomHBox" unique_id=1876555765 instance=ExtResource("1_gsqkf")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -147,7 +183,7 @@ theme_override_font_sizes/font_size = 32
 text = "Red Fighter"
 item_id = 4
 
-[node name="FighterButton1" parent="CanvasLayer/BottomHBox" instance=ExtResource("1_gsqkf")]
+[node name="FighterButton1" parent="CanvasLayer/VBoxContainer/BottomHBox" unique_id=1517466899 instance=ExtResource("1_gsqkf")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -155,7 +191,7 @@ theme_override_font_sizes/font_size = 32
 text = "Blue Fighter"
 item_id = 5
 
-[node name="FighterButton2" parent="CanvasLayer/BottomHBox" instance=ExtResource("1_gsqkf")]
+[node name="FighterButton2" parent="CanvasLayer/VBoxContainer/BottomHBox" unique_id=2020887354 instance=ExtResource("1_gsqkf")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -163,7 +199,7 @@ theme_override_font_sizes/font_size = 32
 text = "Green Fighter"
 item_id = 6
 
-[node name="FighterButton3" parent="CanvasLayer/BottomHBox" instance=ExtResource("1_gsqkf")]
+[node name="FighterButton3" parent="CanvasLayer/VBoxContainer/BottomHBox" unique_id=1519114407 instance=ExtResource("1_gsqkf")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -171,7 +207,7 @@ theme_override_font_sizes/font_size = 32
 text = "Yellow Fighter"
 item_id = 7
 
-[node name="SaveButton" parent="CanvasLayer/BottomHBox" instance=ExtResource("1_gsqkf")]
+[node name="SaveButton" parent="CanvasLayer/VBoxContainer/BottomHBox" unique_id=1541258784 instance=ExtResource("1_gsqkf")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -179,7 +215,7 @@ theme_override_font_sizes/font_size = 32
 text = "QuickSave"
 item_id = 9
 
-[node name="LoadButton" parent="CanvasLayer/BottomHBox" instance=ExtResource("1_gsqkf")]
+[node name="LoadButton" parent="CanvasLayer/VBoxContainer/BottomHBox" unique_id=1240459164 instance=ExtResource("1_gsqkf")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -188,7 +224,7 @@ text = "QuickLoad
 "
 item_id = 10
 
-[node name="ShrinesMenuButton" parent="CanvasLayer/BottomHBox" instance=ExtResource("1_gsqkf")]
+[node name="ShrinesMenuButton" parent="CanvasLayer/VBoxContainer/BottomHBox" unique_id=1168152879 instance=ExtResource("1_gsqkf")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -196,7 +232,7 @@ theme_override_font_sizes/font_size = 32
 text = "Battle"
 item_id = 3
 
-[node name="ProgressionMenuButton" parent="CanvasLayer/BottomHBox" instance=ExtResource("1_gsqkf")]
+[node name="ProgressionMenuButton" parent="CanvasLayer/VBoxContainer/BottomHBox" unique_id=884746819 instance=ExtResource("1_gsqkf")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1

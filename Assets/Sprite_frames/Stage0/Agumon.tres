@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://0ssrm0harrvl"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://0ssrm0harrvl"]
 
 [ext_resource type="Texture2D" uid="uid://k172t5x1ygd4" path="res://Assets/Sprites/Fighters/Stage 0/Agumon.png" id="1_kjdld"]
 

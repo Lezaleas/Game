@@ -9,6 +9,7 @@ func on_battle_started() -> void:
 	connect("timeout", Callable(self, "_on_timeout"))
 	wait_time = turn_duration
 	start()
+	Situation.turn_timer = self
 
 func _on_timeout() -> void:
 	EventBus.emit("turn_started")

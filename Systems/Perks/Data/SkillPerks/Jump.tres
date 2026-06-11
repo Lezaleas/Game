@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Perk" load_steps=6 format=3 uid="uid://b28aa5s781yy6"]
+[gd_resource type="Resource" script_class="Perk" format=3 uid="uid://b28aa5s781yy6"]
 
 [ext_resource type="Script" uid="uid://ctqshx5t1jl5d" path="res://Systems/Perks/Logic/PerkEffect.gd" id="1_ge2hq"]
 [ext_resource type="Script" uid="uid://cjjs4er837kph" path="res://Systems/Perks/Data/PerkEffects/SkillPerk.gd" id="2_qxy7m"]

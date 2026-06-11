@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyData" load_steps=8 format=3 uid="uid://wwesrl8130hg"]
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://wwesrl8130hg"]
 
 [ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="1_5icvb"]
 [ext_resource type="Texture2D" uid="uid://g1cm6fwm06hs" path="res://Assets/Sprites/Fighters/Stage 1/Seadramon.png" id="1_n0m1d"]

@@ -15,6 +15,9 @@ var villagers: Array[Villager]
 var reserve_villagers: Array[Villager]
 var loaded_run: RunState
 var levels: Array[LevelData] = []
+var critters: Array[Critter] = []
+var arena_record: = 0
+var skill_pool: SkillPool
 
 @export var skill_pools: Dictionary = {
 	Defines.PROG_TAG.Smithing: [] as Array[Skill],
@@ -61,6 +64,9 @@ func _ready() -> void:
 		
 	if buildings.is_empty():
 		reset_progression_data()
+		
+	if critters.is_empty():
+		reset_critters()
 
 func reset_levels() -> void:
 	levels = [
@@ -81,6 +87,18 @@ func reset_levels() -> void:
 		(load("res://Systems/Enemies/LevelData/Stage3/43.tres") as LevelData).duplicate(true),
 		(load("res://Systems/Enemies/LevelData/Stage3/44.tres") as LevelData).duplicate(true)
 	]
+
+func reset_critters() -> void:
+	critters.clear()
+	var base_path = "res://Systems/Run/Data/Critters/"
+	critters.append(load(base_path + "Agumon_Stage0.tres").duplicate(true))
+	critters.append(load(base_path + "Elecmon_Stage0.tres").duplicate(true))
+	critters.append(load(base_path + "Gazimon_Stage0.tres").duplicate(true))
+	critters.append(load(base_path + "Gomamon_Stage0.tres").duplicate(true))
+	critters.append(load(base_path + "Penguinmon_Stage0.tres").duplicate(true))
+	critters.append(load(base_path + "Salamon_Stage0.tres").duplicate(true))
+	critters.append(load(base_path + "Tentomon_Stage0.tres").duplicate(true))
+	critters.append(load(base_path + "ToyAgumon_Stage0.tres").duplicate(true))
 
 func reset_skill_pools() -> void:
 	for tag in skill_pools.keys():

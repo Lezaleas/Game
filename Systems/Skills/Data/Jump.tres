@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="Jump" load_steps=3 format=3 uid="uid://c6y8y7m1m7m"]
+[gd_resource type="Resource" script_class="Jump" format=3 uid="uid://c6y8y7m1m7m"]
 
 [ext_resource type="Script" uid="uid://dqoodkaws0ckq" path="res://Systems/Skills/Data/Jump.gd" id="1_jump"]
-[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="1_xipkb"]
 
 [resource]
 script = ExtResource("1_jump")
 skill_name = "Jump"
 description = "jump every 5 seconds"
-power = 100.0
+power = 15.0
 metadata/_custom_type_script = "uid://dqoodkaws0ckq"

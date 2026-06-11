@@ -149,4 +149,4 @@ var current_health
 var max_health
 		
 func _on_player_take_damage(amount) -> void:
-	Log.entry("Player's current health: " + str(current_health) + " / " + str(max_health), 1)
+	#Log.entry("Player's current health: " + str(current_health) + " / " + str(max_health), 1)

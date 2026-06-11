@@ -37,7 +37,8 @@ func _on_level_selected(data: LevelData) -> void:
 	get_tree().change_scene_to_file("res://Systems/Battle/Logic/BattleInstance.tscn")
 
 func _on_randomize_rewards_pressed() -> void:
-	var skill_lib: SkillLibrary = Defines.skills
+	ProgressionManager.produce_items()
+	"""var skill_lib: SkillLibrary = Defines.skills
 	if not skill_lib or skill_lib.regular_skills.is_empty():
 		push_warning("LevelSelection: No skills found in SkillLibrary.")
 		print("Randomize Rewards failed: No skills found in SkillLibrary.")
@@ -61,7 +62,7 @@ func _on_randomize_rewards_pressed() -> void:
 			level.rewards.append(reward)
 			print("Added random skill %s to level %s" % [reward.skill.skill_name, level.id])
 			
-	refresh(RunManager.levels)
+	refresh(RunManager.levels)"""
 
 func _on_increase_quality_pressed() -> void:
 	var count = 0

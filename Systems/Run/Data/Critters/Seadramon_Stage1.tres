@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="Critter" format=3 uid="uid://db71ljobm0v8j"]
+
+[ext_resource type="Script" uid="uid://v7t13w7elsp2" path="res://Systems/Perks/Logic/PerkTree.gd" id="1_12ea6"]
+[ext_resource type="Script" uid="uid://d04bsobu4odrk" path="res://Systems/Perks/Logic/PerkTier.gd" id="2_ek4g0"]
+[ext_resource type="Script" uid="uid://dy8fo3snvl7r6" path="res://Systems/Perks/Logic/Perk.gd" id="3_73q1c"]
+[ext_resource type="Script" uid="uid://ctqshx5t1jl5d" path="res://Systems/Perks/Logic/PerkEffect.gd" id="4_8ttcw"]
+[ext_resource type="Script" uid="uid://cjjs4er837kph" path="res://Systems/Perks/Data/PerkEffects/SkillPerk.gd" id="5_adsf6"]
+[ext_resource type="Resource" uid="uid://c6v8y7m1m7m" path="res://Systems/Skills/Data/Focus.tres" id="6_0vd83"]
+[ext_resource type="Resource" uid="uid://c748y7m1m7m" path="res://Systems/Skills/Data/Recoil.tres" id="7_fw4xc"]
+[ext_resource type="Script" uid="uid://b8cgagvdwx0xu" path="res://Systems/Run/State/Critter.gd" id="8_1kwa3"]
+[ext_resource type="SpriteFrames" uid="uid://m0c11hj76x5j" path="res://Assets/Sprite_frames/Stage1/Seadramon.tres" id="9_gv4xq"]
+
+[sub_resource type="Resource" id="Resource_12ea6"]
+script = ExtResource("5_adsf6")
+skill = ExtResource("6_0vd83")
+
+[sub_resource type="Resource" id="Resource_ek4g0"]
+script = ExtResource("3_73q1c")
+id = "Focus"
+display_name = "Focus"
+effects = Array[ExtResource("4_8ttcw")]([SubResource("Resource_12ea6")])
+
+[sub_resource type="Resource" id="Resource_73q1c"]
+script = ExtResource("2_ek4g0")
+perks = Array[ExtResource("3_73q1c")]([SubResource("Resource_ek4g0")])
+
+[sub_resource type="Resource" id="Resource_8ttcw"]
+script = ExtResource("5_adsf6")
+skill = ExtResource("7_fw4xc")
+
+[sub_resource type="Resource" id="Resource_adsf6"]
+script = ExtResource("3_73q1c")
+id = "Recoil"
+display_name = "Recoil"
+effects = Array[ExtResource("4_8ttcw")]([SubResource("Resource_8ttcw")])
+
+[sub_resource type="Resource" id="Resource_0vd83"]
+script = ExtResource("2_ek4g0")
+perks = Array[ExtResource("3_73q1c")]([SubResource("Resource_adsf6")])
+
+[sub_resource type="Resource" id="Resource_fw4xc"]
+script = ExtResource("1_12ea6")
+id = "Seadramon"
+display_name = "Seadramon"
+tiers = Array[ExtResource("2_ek4g0")]([SubResource("Resource_73q1c"), SubResource("Resource_0vd83")])
+
+[resource]
+script = ExtResource("8_1kwa3")
+id = "Seadramon"
+perk_tree = SubResource("Resource_fw4xc")
+attributes = [20, 20, 5, 5, 1, 1, 1, 1, 1, 1, 1]
+sprite = ExtResource("9_gv4xq")

@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="Critter" format=3 uid="uid://dqa63fvm7cgkm"]
+
+[ext_resource type="Script" uid="uid://v7t13w7elsp2" path="res://Systems/Perks/Logic/PerkTree.gd" id="1_k6kn1"]
+[ext_resource type="Script" uid="uid://d04bsobu4odrk" path="res://Systems/Perks/Logic/PerkTier.gd" id="2_vqi8d"]
+[ext_resource type="Script" uid="uid://dy8fo3snvl7r6" path="res://Systems/Perks/Logic/Perk.gd" id="3_e3bxc"]
+[ext_resource type="Script" uid="uid://ctqshx5t1jl5d" path="res://Systems/Perks/Logic/PerkEffect.gd" id="4_ytm73"]
+[ext_resource type="Script" uid="uid://cjjs4er837kph" path="res://Systems/Perks/Data/PerkEffects/SkillPerk.gd" id="5_ot3vy"]
+[ext_resource type="Resource" uid="uid://c6x8y7m1m7m" path="res://Systems/Skills/Data/Guerrilla.tres" id="6_y051t"]
+[ext_resource type="Resource" uid="uid://c6w8y7m1m7m" path="res://Systems/Skills/Data/FrostShield.tres" id="7_3uifn"]
+[ext_resource type="Script" uid="uid://b8cgagvdwx0xu" path="res://Systems/Run/State/Critter.gd" id="8_0tnqe"]
+[ext_resource type="SpriteFrames" uid="uid://dv34wt0vy0ux3" path="res://Assets/Sprite_frames/Stage1/Coelamon.tres" id="9_x8qe4"]
+
+[sub_resource type="Resource" id="Resource_k6kn1"]
+script = ExtResource("5_ot3vy")
+skill = ExtResource("6_y051t")
+
+[sub_resource type="Resource" id="Resource_vqi8d"]
+script = ExtResource("3_e3bxc")
+id = "Guerrilla"
+display_name = "Guerrilla"
+effects = Array[ExtResource("4_ytm73")]([SubResource("Resource_k6kn1")])
+
+[sub_resource type="Resource" id="Resource_e3bxc"]
+script = ExtResource("2_vqi8d")
+perks = Array[ExtResource("3_e3bxc")]([SubResource("Resource_vqi8d")])
+
+[sub_resource type="Resource" id="Resource_ytm73"]
+script = ExtResource("5_ot3vy")
+skill = ExtResource("7_3uifn")
+
+[sub_resource type="Resource" id="Resource_ot3vy"]
+script = ExtResource("3_e3bxc")
+id = "FrostShield"
+display_name = "FrostShield"
+effects = Array[ExtResource("4_ytm73")]([SubResource("Resource_ytm73")])
+
+[sub_resource type="Resource" id="Resource_y051t"]
+script = ExtResource("2_vqi8d")
+perks = Array[ExtResource("3_e3bxc")]([SubResource("Resource_ot3vy")])
+
+[sub_resource type="Resource" id="Resource_3uifn"]
+script = ExtResource("1_k6kn1")
+id = "Coelamon"
+display_name = "Coelamon"
+tiers = Array[ExtResource("2_vqi8d")]([SubResource("Resource_e3bxc"), SubResource("Resource_y051t")])
+
+[resource]
+script = ExtResource("8_0tnqe")
+id = "Coelamon"
+perk_tree = SubResource("Resource_3uifn")
+attributes = [10, 10, 5, 20, 1, 1, 1, 1, 1, 1, 1]
+sprite = ExtResource("9_x8qe4")

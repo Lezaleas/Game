@@ -23,6 +23,7 @@ var portrait_sprite: AnimatedSprite2D
 @onready var skill_label_3: PanelContainer = %SmallPanel4
 
 func _ready() -> void:
+	%CaptureButton.fighter_id = id
 	add_to_group("refresh")
 	# The portrait is inside the FighterPortraitDeluxe instanced sub-scene
 	var portrait_panel = get_node_or_null("VBox/PanelContainer2/Content/HBoxContainer/SmallPanel")

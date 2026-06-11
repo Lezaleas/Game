@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cnu5dkcfse3mh"]
+[gd_scene format=3 uid="uid://cnu5dkcfse3mh"]
 
 [ext_resource type="Script" uid="uid://d0ocgfwqb4c63" path="res://Systems/Battle/Visuals/BattleView.gd" id="1_4myeb"]
 [ext_resource type="Texture2D" uid="uid://yokx64p4ufm8" path="res://Assets/Sprites/Common/Free-Elven-Land-Game-Battle-Backgrounds4-720x480.webp" id="1_tb0xq"]
@@ -9,124 +9,136 @@
 [ext_resource type="PackedScene" uid="uid://gbsaxm7tkvjg" path="res://Systems/Battle/Visuals/ClashVisuals.tscn" id="6_8dxy3"]
 [ext_resource type="Script" uid="uid://2oanpg57jk47" path="res://Systems/Battle/Visuals/AttackVisuals.gd" id="7_jiex7"]
 
-[node name="BattleView" type="Node2D"]
+[node name="BattleView" type="Node2D" unique_id=1678103827]
 script = ExtResource("1_4myeb")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=708904718]
 z_index = -20
 position = Vector2(960, 540)
 scale = Vector2(2.667, 2.25)
 texture = ExtResource("1_tb0xq")
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1007930481]
 unique_name_in_owner = true
 
-[node name="TopPanel" type="Panel" parent="UI"]
-unique_name_in_owner = true
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.2
-grow_horizontal = 2
-grow_vertical = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="TeamPanel" type="Panel" parent="UI/TopPanel"]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-grow_vertical = 2
-
-[node name="ManaLabel" parent="UI/TopPanel/TeamPanel" instance=ExtResource("3_wyc7p")]
-layout_mode = 0
-
-[node name="BottomPanel" type="Panel" parent="UI"]
-anchors_preset = -1
-anchor_top = 0.62
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/BottomPanel"]
-layout_mode = 1
+[node name="Control" type="Control" parent="UI" unique_id=1345011274]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="FighterPanel0" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("5_mepl8")]
+[node name="TopPanel" type="Panel" parent="UI/Control" unique_id=983605262]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 1920.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="TeamPanel" type="Panel" parent="UI/Control/TopPanel" unique_id=974208910]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="ManaLabel" parent="UI/Control/TopPanel/TeamPanel" unique_id=129947209 instance=ExtResource("3_wyc7p")]
+layout_mode = 0
+
+[node name="BottomPanel" type="Panel" parent="UI/Control" unique_id=856132408]
+layout_mode = 0
+offset_top = 1080.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Control/BottomPanel" unique_id=533627592]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -305.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="FighterPanel0" parent="UI/Control/BottomPanel/HBoxContainer" unique_id=663922791 instance=ExtResource("5_mepl8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 
-[node name="Panel0" parent="UI/BottomPanel/HBoxContainer/FighterPanel0/Content" index="0" instance=ExtResource("4_3piun")]
+[node name="Panel0" parent="UI/Control/BottomPanel/HBoxContainer/FighterPanel0/Content" index="0" unique_id=2009174993 instance=ExtResource("4_3piun")]
 layout_mode = 2
 
-[node name="FighterPanel1" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("5_mepl8")]
+[node name="FighterPanel1" parent="UI/Control/BottomPanel/HBoxContainer" unique_id=767872889 instance=ExtResource("5_mepl8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 
-[node name="Panel0" parent="UI/BottomPanel/HBoxContainer/FighterPanel1/Content" index="0" instance=ExtResource("4_3piun")]
+[node name="Panel0" parent="UI/Control/BottomPanel/HBoxContainer/FighterPanel1/Content" index="0" unique_id=354826498 instance=ExtResource("4_3piun")]
 layout_mode = 2
 id = 1
 
-[node name="FighterPanel2" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("5_mepl8")]
+[node name="FighterPanel2" parent="UI/Control/BottomPanel/HBoxContainer" unique_id=574931612 instance=ExtResource("5_mepl8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 
-[node name="Panel0" parent="UI/BottomPanel/HBoxContainer/FighterPanel2/Content" index="0" instance=ExtResource("4_3piun")]
+[node name="Panel0" parent="UI/Control/BottomPanel/HBoxContainer/FighterPanel2/Content" index="0" unique_id=1061709232 instance=ExtResource("4_3piun")]
 layout_mode = 2
 id = 2
 
-[node name="FighterPanel3" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("5_mepl8")]
+[node name="FighterPanel3" parent="UI/Control/BottomPanel/HBoxContainer" unique_id=334570328 instance=ExtResource("5_mepl8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 
-[node name="Panel0" parent="UI/BottomPanel/HBoxContainer/FighterPanel3/Content" index="0" instance=ExtResource("4_3piun")]
+[node name="Panel0" parent="UI/Control/BottomPanel/HBoxContainer/FighterPanel3/Content" index="0" unique_id=1239607015 instance=ExtResource("4_3piun")]
 layout_mode = 2
 id = 3
 
-[node name="FighterPanel4" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("5_mepl8")]
+[node name="FighterPanel4" parent="UI/Control/BottomPanel/HBoxContainer" unique_id=1686258715 instance=ExtResource("5_mepl8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 
-[node name="Panel0" parent="UI/BottomPanel/HBoxContainer/FighterPanel4/Content" index="0" instance=ExtResource("4_3piun")]
+[node name="Panel0" parent="UI/Control/BottomPanel/HBoxContainer/FighterPanel4/Content" index="0" unique_id=381697831 instance=ExtResource("4_3piun")]
 layout_mode = 2
 id = 4
 
-[node name="FighterPanel5" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("5_mepl8")]
+[node name="FighterPanel5" parent="UI/Control/BottomPanel/HBoxContainer" unique_id=1034106701 instance=ExtResource("5_mepl8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 
-[node name="Panel0" parent="UI/BottomPanel/HBoxContainer/FighterPanel5/Content" index="0" instance=ExtResource("4_3piun")]
+[node name="Panel0" parent="UI/Control/BottomPanel/HBoxContainer/FighterPanel5/Content" index="0" unique_id=1239243019 instance=ExtResource("4_3piun")]
 layout_mode = 2
 id = 5
 
-[node name="FighterPanel6" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("5_mepl8")]
+[node name="FighterPanel6" parent="UI/Control/BottomPanel/HBoxContainer" unique_id=1717603399 instance=ExtResource("5_mepl8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 
-[node name="Panel0" parent="UI/BottomPanel/HBoxContainer/FighterPanel6/Content" index="0" instance=ExtResource("4_3piun")]
+[node name="Panel0" parent="UI/Control/BottomPanel/HBoxContainer/FighterPanel6/Content" index="0" unique_id=171059754 instance=ExtResource("4_3piun")]
 layout_mode = 2
 id = 6
 
-[node name="FighterPanel7" parent="UI/BottomPanel/HBoxContainer" instance=ExtResource("5_mepl8")]
+[node name="FighterPanel7" parent="UI/Control/BottomPanel/HBoxContainer" unique_id=894345350 instance=ExtResource("5_mepl8")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 
-[node name="Panel0" parent="UI/BottomPanel/HBoxContainer/FighterPanel7/Content" index="0" instance=ExtResource("4_3piun")]
+[node name="Panel0" parent="UI/Control/BottomPanel/HBoxContainer/FighterPanel7/Content" index="0" unique_id=1635771178 instance=ExtResource("4_3piun")]
 layout_mode = 2
 id = 7
 
-[node name="DebugOverlay" parent="." instance=ExtResource("3_lsuix")]
+[node name="DebugOverlay" parent="." unique_id=1275913381 instance=ExtResource("3_lsuix")]
 unique_name_in_owner = true
 offset_left = 1645.0
 offset_top = 215.0
@@ -134,47 +146,63 @@ offset_right = 1917.0
 offset_bottom = 361.0
 size_flags_horizontal = 0
 
-[node name="ClashVisuals" type="Node" parent="."]
+[node name="ClashVisuals" type="Node" parent="." unique_id=126946412]
 unique_name_in_owner = true
 
-[node name="ClashVisuals1" parent="ClashVisuals" instance=ExtResource("6_8dxy3")]
+[node name="ClashVisuals1" parent="ClashVisuals" unique_id=1568404291 instance=ExtResource("6_8dxy3")]
 unique_name_in_owner = true
 
-[node name="ClashVisuals2" parent="ClashVisuals" instance=ExtResource("6_8dxy3")]
+[node name="ClashVisuals2" parent="ClashVisuals" unique_id=1938760312 instance=ExtResource("6_8dxy3")]
 unique_name_in_owner = true
 
-[node name="ClashVisuals3" parent="ClashVisuals" instance=ExtResource("6_8dxy3")]
+[node name="ClashVisuals3" parent="ClashVisuals" unique_id=868449932 instance=ExtResource("6_8dxy3")]
 unique_name_in_owner = true
 
-[node name="ClashVisuals4" parent="ClashVisuals" instance=ExtResource("6_8dxy3")]
+[node name="ClashVisuals4" parent="ClashVisuals" unique_id=1830161935 instance=ExtResource("6_8dxy3")]
 unique_name_in_owner = true
 
-[node name="ClashVisuals5" parent="ClashVisuals" instance=ExtResource("6_8dxy3")]
+[node name="ClashVisuals5" parent="ClashVisuals" unique_id=73094704 instance=ExtResource("6_8dxy3")]
 unique_name_in_owner = true
 
-[node name="ClashVisuals6" parent="ClashVisuals" instance=ExtResource("6_8dxy3")]
+[node name="ClashVisuals6" parent="ClashVisuals" unique_id=1440664403 instance=ExtResource("6_8dxy3")]
 unique_name_in_owner = true
 
-[node name="ClashVisuals7" parent="ClashVisuals" instance=ExtResource("6_8dxy3")]
+[node name="ClashVisuals7" parent="ClashVisuals" unique_id=630755880 instance=ExtResource("6_8dxy3")]
 unique_name_in_owner = true
 
-[node name="ClashVisuals8" parent="ClashVisuals" instance=ExtResource("6_8dxy3")]
+[node name="ClashVisuals8" parent="ClashVisuals" unique_id=1304310212 instance=ExtResource("6_8dxy3")]
 unique_name_in_owner = true
 
-[node name="AttackVisuals" type="Node" parent="."]
+[node name="AttackVisuals" type="Node" parent="." unique_id=779187585]
 unique_name_in_owner = true
 script = ExtResource("7_jiex7")
 
-[editable path="UI/BottomPanel/HBoxContainer/FighterPanel0"]
-[editable path="UI/BottomPanel/HBoxContainer/FighterPanel0/Content/Panel0"]
-[editable path="UI/BottomPanel/HBoxContainer/FighterPanel0/Content/Panel0/VBox/PanelContainer2"]
-[editable path="UI/BottomPanel/HBoxContainer/FighterPanel0/Content/Panel0/VBox/PanelContainer2/Content/HBoxContainer/SmallPanel2"]
-[editable path="UI/BottomPanel/HBoxContainer/FighterPanel0/Content/Panel0/VBox/PanelContainer"]
-[editable path="UI/BottomPanel/HBoxContainer/FighterPanel0/Content/Panel0/VBox/PanelContainer3"]
-[editable path="UI/BottomPanel/HBoxContainer/FighterPanel1"]
-[editable path="UI/BottomPanel/HBoxContainer/FighterPanel2"]
-[editable path="UI/BottomPanel/HBoxContainer/FighterPanel3"]
-[editable path="UI/BottomPanel/HBoxContainer/FighterPanel4"]
-[editable path="UI/BottomPanel/HBoxContainer/FighterPanel5"]
-[editable path="UI/BottomPanel/HBoxContainer/FighterPanel6"]
-[editable path="UI/BottomPanel/HBoxContainer/FighterPanel7"]
+[node name="Control" type="Control" parent="." unique_id=4479847]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="BattleObscure" type="PanelContainer" parent="Control" unique_id=622342242]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[editable path="UI/Control/BottomPanel/HBoxContainer/FighterPanel0"]
+[editable path="UI/Control/BottomPanel/HBoxContainer/FighterPanel0/Content/Panel0"]
+[editable path="UI/Control/BottomPanel/HBoxContainer/FighterPanel0/Content/Panel0/VBox/PanelContainer2"]
+[editable path="UI/Control/BottomPanel/HBoxContainer/FighterPanel0/Content/Panel0/VBox/PanelContainer2/Content/HBoxContainer/SmallPanel2"]
+[editable path="UI/Control/BottomPanel/HBoxContainer/FighterPanel0/Content/Panel0/VBox/PanelContainer"]
+[editable path="UI/Control/BottomPanel/HBoxContainer/FighterPanel0/Content/Panel0/VBox/PanelContainer3"]
+[editable path="UI/Control/BottomPanel/HBoxContainer/FighterPanel1"]
+[editable path="UI/Control/BottomPanel/HBoxContainer/FighterPanel2"]
+[editable path="UI/Control/BottomPanel/HBoxContainer/FighterPanel3"]
+[editable path="UI/Control/BottomPanel/HBoxContainer/FighterPanel4"]
+[editable path="UI/Control/BottomPanel/HBoxContainer/FighterPanel5"]
+[editable path="UI/Control/BottomPanel/HBoxContainer/FighterPanel6"]
+[editable path="UI/Control/BottomPanel/HBoxContainer/FighterPanel7"]

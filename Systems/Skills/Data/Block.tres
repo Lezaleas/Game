@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="Block" load_steps=3 format=3 uid="uid://b8y7m1m7m7m"]
+[gd_resource type="Resource" script_class="Block" format=3 uid="uid://b8y7m1m7m7m"]
 
-[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="1_3lsdg"]
 [ext_resource type="Script" uid="uid://dqkimwh8vsmux" path="res://Systems/Skills/Data/Block.gd" id="1_block"]
 
 [resource]
 script = ExtResource("1_block")
 skill_name = "Block"
 description = "reduces damage"
-power = 100.0
+power = 15.0
 metadata/_custom_type_script = "uid://dqkimwh8vsmux"

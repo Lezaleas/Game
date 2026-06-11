@@ -40,7 +40,6 @@ func open_level_selection_screen() -> void:
 func open_progression_screen() -> void:
 	hide_all_screens()
 	progression_screen.visible = true
-	progression_screen.refresh()
 
 func open_save_load_screen() -> void:
 	# Note: save_load_screen reference was commented out in original code

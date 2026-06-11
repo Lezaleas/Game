@@ -2,10 +2,9 @@ class_name EquipmentGenerator
 extends Node
 
 ## Generates a new EquipmentState procedurally based on quality and type
-static func generate_item(quality_budget: float, type: Defines.EQUIP_TYPE, tags: Dictionary = {}) -> EquipmentState:
+static func generate_item(quality_budget: float, type: Defines.EQUIP_TYPE, get_skill:bool) -> EquipmentState:
 	var item = EquipmentState.new()
 	item.type = type
-	item.display_name = str(quality_budget) + " " + str(Defines.EQUIP_TYPE.keys()[type])
 	# Assign default icon based on type
 	match type:
 		Defines.EQUIP_TYPE.Sword:
@@ -20,7 +19,7 @@ static func generate_item(quality_budget: float, type: Defines.EQUIP_TYPE, tags:
 			item.icon = load("res://Assets/Sprites/Common/ElementalIcons/White.tres")
 	
 	# 1. Roll Weight (Weighted Bell Curve)
-	item.weight = get_weighted_weight() / 10
+	item.weight = get_weighted_weight()
 	
 	# 2. Calculate Perk Points (based on weight)
 	var upgrade_points = (item.weight) / 10
@@ -33,10 +32,17 @@ static func generate_item(quality_budget: float, type: Defines.EQUIP_TYPE, tags:
 	item.perk_points[attr_idx] = int(upgrade_points)
 	
 	# 5. Adjudicate Budget to that Attribute order
-	item.attributes[attr_idx] = int(quality_budget)
+	item.attributes[attr_idx] = int(round(float(quality_budget * item.weight) / 25.0))
+	
+	item.display_name = str(item.attributes[attr_idx]) + " - " + str(item.weight)
+	
+	if get_skill:
+		var skill = RunManager.skill_pool.draw_skill()
+		item.skill = skill
+		item.display_name += " " + skill.skill_name
 	
 	# 6. Roll for Skill
-	if not tags.is_empty():
+	"""if not tags.is_empty():
 		var total_tag_pressure = 0.0
 		for tag in tags:
 			total_tag_pressure += tags[tag]
@@ -56,7 +62,8 @@ static func generate_item(quality_budget: float, type: Defines.EQUIP_TYPE, tags:
 			var pool = RunManager.skill_pools.get(selected_tag, []) as Array[Skill]
 			if pool and not pool.is_empty():
 				var skill_idx = RunManager.run_rng.randi() % pool.size()
-				item.skill = pool[skill_idx].duplicate()
+				item.skill = pool[skill_idx].duplicate()"""
+				
 			
 	print("Generated Item: ", item.display_name, " Weight: ", item.weight, " Focus Index: ",
 	attr_idx, " Attr Bonus: ", item.attributes[attr_idx], " Perks: ", item.perk_points[attr_idx],

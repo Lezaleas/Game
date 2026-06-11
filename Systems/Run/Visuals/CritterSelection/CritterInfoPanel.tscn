@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Systems/Run/Visuals/CritterSelection/CritterInfoPanel.gd" id="1_script"]
+
+[node name="PanelContainer" type="PanelContainer"]
+script = ExtResource("1_script")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+
+[node name="NameLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+
+[node name="AttributesLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+
+[node name="SkillsLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true

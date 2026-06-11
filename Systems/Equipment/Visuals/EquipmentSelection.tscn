@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlu1hpkw80bl8"]
+[gd_scene format=3 uid="uid://dlu1hpkw80bl8"]
 
 [ext_resource type="Script" uid="uid://btthxhnoxyynp" path="res://Systems/Equipment/Visuals/EquipmentSelection.gd" id="1_ut6lr"]
 [ext_resource type="Script" uid="uid://cj8u1wan0yrys" path="res://Systems/Equipment/Visuals/EquipmentGrid.gd" id="2_grid"]
 [ext_resource type="Script" uid="uid://cbm3n2yg48cxc" path="res://Systems/Equipment/Visuals/EquipmentSwapHandler.gd" id="3_handler"]
 [ext_resource type="PackedScene" path="res://Systems/Equipment/Visuals/HeroEquipmentPanel.tscn" id="4_hero_panel"]
 
-[node name="EquipmentSelection" type="Control"]
+[node name="EquipmentSelection" type="Control" unique_id=1231527052]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,7 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ut6lr")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1539921598]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,7 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0784314, 0.0784314, 0.0784314, 0.941176)
 
-[node name="MainLayout" type="VBoxContainer" parent="."]
+[node name="MainLayout" type="VBoxContainer" parent="." unique_id=1071038699]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,43 +36,43 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30
 
-[node name="HeroPanels" type="HBoxContainer" parent="MainLayout"]
+[node name="HeroPanels" type="HBoxContainer" parent="MainLayout" unique_id=1405778409]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="HeroPanel0" parent="MainLayout/HeroPanels" instance=ExtResource("4_hero_panel")]
+[node name="HeroPanel0" parent="MainLayout/HeroPanels" unique_id=1831731239 instance=ExtResource("4_hero_panel")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="HeroPanel1" parent="MainLayout/HeroPanels" instance=ExtResource("4_hero_panel")]
+[node name="HeroPanel1" parent="MainLayout/HeroPanels" unique_id=59036585 instance=ExtResource("4_hero_panel")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="HeroPanel2" parent="MainLayout/HeroPanels" instance=ExtResource("4_hero_panel")]
+[node name="HeroPanel2" parent="MainLayout/HeroPanels" unique_id=1353181409 instance=ExtResource("4_hero_panel")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="HeroPanel3" parent="MainLayout/HeroPanels" instance=ExtResource("4_hero_panel")]
+[node name="HeroPanel3" parent="MainLayout/HeroPanels" unique_id=494705314 instance=ExtResource("4_hero_panel")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="InventorySection" type="VBoxContainer" parent="MainLayout"]
+[node name="InventorySection" type="VBoxContainer" parent="MainLayout" unique_id=1977702072]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="MainLayout/InventorySection"]
+[node name="Label" type="Label" parent="MainLayout/InventorySection" unique_id=1886899508]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "INVENTORY"
 horizontal_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MainLayout/InventorySection"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MainLayout/InventorySection" unique_id=1766710495]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="InventoryGrid" type="Control" parent="MainLayout/InventorySection/ScrollContainer"]
+[node name="InventoryGrid" type="Control" parent="MainLayout/InventorySection/ScrollContainer" unique_id=646949305]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
@@ -80,7 +80,7 @@ size_flags_horizontal = 3
 script = ExtResource("2_grid")
 columns = 8
 
-[node name="GridContainer" type="GridContainer" parent="MainLayout/InventorySection/ScrollContainer/InventoryGrid"]
+[node name="GridContainer" type="GridContainer" parent="MainLayout/InventorySection/ScrollContainer/InventoryGrid" unique_id=340708220]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -92,32 +92,32 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 8
 
-[node name="ActionButtons" type="HBoxContainer" parent="MainLayout"]
+[node name="ActionButtons" type="HBoxContainer" parent="MainLayout" unique_id=309095107]
 layout_mode = 2
-alignment = 1
 theme_override_constants/separation = 20
+alignment = 1
 
-[node name="DiscardButton" type="Button" parent="MainLayout/ActionButtons"]
+[node name="DiscardButton" type="Button" parent="MainLayout/ActionButtons" unique_id=809449199]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "DISCARD SELECTED"
 
-[node name="NextButton" type="Button" parent="MainLayout/ActionButtons"]
+[node name="ArenaButton" type="Button" parent="MainLayout/ActionButtons" unique_id=1337157376]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 28
-text = "START BATTLE"
+text = "START ARENA"
 
-[node name="EquipmentSwapHandler" type="Node" parent="."]
+[node name="EquipmentSwapHandler" type="Node" parent="." unique_id=943169792]
 script = ExtResource("3_handler")
 
-[node name="HintLabel" type="Label" parent="."]
+[node name="HintLabel" type="Label" parent="." unique_id=1676820362]
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -128,7 +128,6 @@ offset_right = -10.0
 offset_bottom = -10.0
 grow_horizontal = 0
 grow_vertical = 0
-mouse_filter = 2
 theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
 theme_override_font_sizes/font_size = 13
 text = "Right-click an item to discard it"

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyData" load_steps=8 format=3 uid="uid://0s3764jk378u"]
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://0s3764jk378u"]
 
 [ext_resource type="Texture2D" uid="uid://csbsgkmo5g4p2" path="res://Assets/Sprites/Fighters/Stage 1/Birdramon.png" id="1_4hbjm"]
 [ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="2_5uqmt"]

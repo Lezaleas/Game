@@ -9,10 +9,11 @@ class_name EquipmentSelection
 @onready var inventory_grid: EquipmentGrid = %InventoryGrid
 @onready var discard_button: Button = %DiscardButton
 @onready var swap_handler: EquipmentSwapHandler = $EquipmentSwapHandler
+@onready var arena_button: Button = %ArenaButton
 
 func _ready() -> void:
-	if discard_button:
-		discard_button.pressed.connect(_on_discard_pressed)
+	if discard_button: discard_button.pressed.connect(_on_discard_pressed)
+	if arena_button: arena_button.pressed.connect(_on_arena_pressed)
 	hero_panels = [hero_panel_0, hero_panel_1, hero_panel_2, hero_panel_3]
 	refresh()
 
@@ -53,3 +54,8 @@ func _on_discard_pressed() -> void:
 		print("Discarded equipment: ", item.display_name if item.display_name else "Unknown")
 	else:
 		print("No equipment selected to discard.")
+		
+func _on_arena_pressed():
+	var arena = Arena.new()
+	arena.start_arena()
+	

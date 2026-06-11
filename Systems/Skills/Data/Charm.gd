@@ -8,5 +8,5 @@ func SelfClashLink(command: CmdClashLink) -> CmdClashLink:
 	enemies = enemies.fighters
 	enemies = enemies.duplicate()
 	enemies.erase(command.loser)
-	Log.entry("won a clash and %s gets attacked by his team" % command.loser)
+	#Log.entry("won a clash and %s gets attacked by his team" % command.loser)
 	return command

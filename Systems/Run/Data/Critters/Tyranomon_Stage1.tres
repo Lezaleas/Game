@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="Critter" format=3 uid="uid://nsaiq68cex31"]
+
+[ext_resource type="Script" uid="uid://v7t13w7elsp2" path="res://Systems/Perks/Logic/PerkTree.gd" id="1_plngl"]
+[ext_resource type="Script" uid="uid://d04bsobu4odrk" path="res://Systems/Perks/Logic/PerkTier.gd" id="2_380gg"]
+[ext_resource type="Script" uid="uid://dy8fo3snvl7r6" path="res://Systems/Perks/Logic/Perk.gd" id="3_hq5tw"]
+[ext_resource type="Script" uid="uid://ctqshx5t1jl5d" path="res://Systems/Perks/Logic/PerkEffect.gd" id="4_d5xx8"]
+[ext_resource type="Script" uid="uid://cjjs4er837kph" path="res://Systems/Perks/Data/PerkEffects/SkillPerk.gd" id="5_7yd23"]
+[ext_resource type="Resource" uid="uid://c778y7m1m7m" path="res://Systems/Skills/Data/Sergeant.tres" id="6_wd8qv"]
+[ext_resource type="Resource" uid="uid://c6s8y7m1m7m" path="res://Systems/Skills/Data/Charm.tres" id="7_ndlvo"]
+[ext_resource type="Script" uid="uid://b8cgagvdwx0xu" path="res://Systems/Run/State/Critter.gd" id="8_88mwg"]
+[ext_resource type="SpriteFrames" uid="uid://bhgqr1hgwddi5" path="res://Assets/Sprite_frames/Stage1/Tyranomon.tres" id="9_pyi4f"]
+
+[sub_resource type="Resource" id="Resource_plngl"]
+script = ExtResource("5_7yd23")
+skill = ExtResource("6_wd8qv")
+
+[sub_resource type="Resource" id="Resource_380gg"]
+script = ExtResource("3_hq5tw")
+id = "Sergeant"
+display_name = "Sergeant"
+effects = Array[ExtResource("4_d5xx8")]([SubResource("Resource_plngl")])
+
+[sub_resource type="Resource" id="Resource_hq5tw"]
+script = ExtResource("2_380gg")
+perks = Array[ExtResource("3_hq5tw")]([SubResource("Resource_380gg")])
+
+[sub_resource type="Resource" id="Resource_d5xx8"]
+script = ExtResource("5_7yd23")
+skill = ExtResource("7_ndlvo")
+
+[sub_resource type="Resource" id="Resource_7yd23"]
+script = ExtResource("3_hq5tw")
+id = "Charm"
+display_name = "Charm"
+effects = Array[ExtResource("4_d5xx8")]([SubResource("Resource_d5xx8")])
+
+[sub_resource type="Resource" id="Resource_wd8qv"]
+script = ExtResource("2_380gg")
+perks = Array[ExtResource("3_hq5tw")]([SubResource("Resource_7yd23")])
+
+[sub_resource type="Resource" id="Resource_ndlvo"]
+script = ExtResource("1_plngl")
+id = "Tyranomon"
+display_name = "Tyranomon"
+tiers = Array[ExtResource("2_380gg")]([SubResource("Resource_hq5tw"), SubResource("Resource_wd8qv")])
+
+[resource]
+script = ExtResource("8_88mwg")
+id = "Tyranomon"
+perk_tree = SubResource("Resource_ndlvo")
+attributes = [20, 5, 10, 10, 1, 1, 1, 1, 1, 1, 1]
+sprite = ExtResource("9_pyi4f")

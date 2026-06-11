@@ -290,7 +290,7 @@ func start_session() -> void:
 
 
 ## Stores a log entry into the a .log file. [br]Example usage:[codeblock]
-## Log.entry(str("Player healed for ", item.heal_amount, "HP by consuming", item.item_name, "."), 1)[/codeblock]
+## #Log.entry(str("Player healed for ", item.heal_amount, "HP by consuming", item.item_name, "."), 1)[/codeblock]
 func entry(log_entry : String, category_index : int = 0) -> void:
 	config.load(PATH)
 	categories = config.get_value("plugin", "categories")

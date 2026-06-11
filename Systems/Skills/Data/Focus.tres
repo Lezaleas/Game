@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="Focus" load_steps=3 format=3 uid="uid://c6v8y7m1m7m"]
+[gd_resource type="Resource" script_class="Focus" format=3 uid="uid://c6v8y7m1m7m"]
 
-[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="1_6txy8"]
 [ext_resource type="Script" uid="uid://e24dnhe84hsl" path="res://Systems/Skills/Data/Focus.gd" id="1_focus"]
 
 [resource]
 script = ExtResource("1_focus")
 skill_name = "Focus"
-description = "Every second not damaged, gain a stack. Lose all stacks when getting damage. Stacks increase magic"
-power = 1.0
+description = "Every second not damaged, gain a stack. Lose all stacks when getting damage. Stacks increase magic by 1%"
+power = 0.01
 metadata/_custom_type_script = "uid://e24dnhe84hsl"

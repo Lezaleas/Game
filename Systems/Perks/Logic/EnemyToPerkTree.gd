@@ -6,6 +6,8 @@ static func Convert(enemy:EnemyData) -> PerkTree:
 	var perk_tree: = PerkTree.new()
 	var skills: Array[Skill] = enemy.skills.duplicate(true)
 	var perk_tiers = perk_tree.tiers
+	perk_tree.id = enemy.id
+	perk_tree.display_name = enemy.id
 	for skill in skills:
 		if not skill: continue
 		var tier = PerkTier.new()

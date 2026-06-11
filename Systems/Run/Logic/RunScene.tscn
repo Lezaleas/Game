@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://o46r8yv6hfi1"]
+[gd_scene format=3 uid="uid://o46r8yv6hfi1"]
 
 [ext_resource type="Script" uid="uid://c8vd20ewh87a0" path="res://Systems/Run/Logic/InitializeRun.gd" id="1_gilsf"]
 [ext_resource type="Script" uid="uid://b4rqpsmwynkng" path="res://Systems/Perks/Logic/PerkController.gd" id="2_bscfh"]
+[ext_resource type="Resource" uid="uid://t01el6jt3h8l" path="res://Systems/Run/Logic/DebugData.tres" id="2_qt2j8"]
 [ext_resource type="Script" uid="uid://qqk5jsv6e1m0" path="res://Systems/Run/Logic/ButtonHandler.gd" id="3_x3kjo"]
 [ext_resource type="PackedScene" uid="uid://55dvelk1sqsw" path="res://Systems/Run/Visuals/RunVisuals.tscn" id="4_qt2j8"]
 [ext_resource type="Script" uid="uid://4373cdugt2r4" path="res://addons/screen_debug/screen_debug.gd" id="5_bscfh"]
@@ -10,38 +11,41 @@
 [sub_resource type="Resource" id="Resource_qt2j8"]
 script = ExtResource("6_x3kjo")
 label = "expression"
-expression = "name"
+expression = "get_node(\"/root/RunManager\").critters"
 metadata/_custom_type_script = "uid://kstu5dn8bh6"
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=1212489753]
 
-[node name="Initialize" type="Node" parent="."]
+[node name="Initialize" type="Node" parent="." unique_id=897627148]
 unique_name_in_owner = true
 script = ExtResource("1_gilsf")
+debug_data = ExtResource("2_qt2j8")
 
-[node name="PerkController" type="Node" parent="."]
+[node name="PerkController" type="Node" parent="." unique_id=169042862]
 unique_name_in_owner = true
 script = ExtResource("2_bscfh")
 
-[node name="ShrineControler" type="Node" parent="."]
+[node name="ShrineControler" type="Node" parent="." unique_id=283633889]
 unique_name_in_owner = true
 
-[node name="EquipmentController" type="Node" parent="."]
+[node name="EquipmentController" type="Node" parent="." unique_id=1924374127]
 unique_name_in_owner = true
 
-[node name="HeroController" type="Node" parent="."]
+[node name="HeroController" type="Node" parent="." unique_id=1930094674]
 unique_name_in_owner = true
 
-[node name="InputController" type="Node" parent="."]
+[node name="InputController" type="Node" parent="." unique_id=133631811]
 unique_name_in_owner = true
 script = ExtResource("3_x3kjo")
 
-[node name="RunVisuals" parent="." instance=ExtResource("4_qt2j8")]
+[node name="RunVisuals" parent="." unique_id=1109400898 instance=ExtResource("4_qt2j8")]
 unique_name_in_owner = true
 
-[node name="ScreenDebug" type="CanvasLayer" parent="." node_paths=PackedStringArray("debug_target")]
+[node name="ScreenDebug" type="CanvasLayer" parent="." unique_id=325893287 node_paths=PackedStringArray("debug_target")]
+visible = false
 script = ExtResource("5_bscfh")
-debug_title = "titledoesshow"
+debug_active = false
+debug_title = "gdfg"
 debug_target = NodePath("../Initialize")
 not_allowed_methods = PackedStringArray("queue_free", "add_child", "set_process", "add_to_group", "move_and_slide")
 expressions = Array[ExtResource("6_x3kjo")]([SubResource("Resource_qt2j8")])

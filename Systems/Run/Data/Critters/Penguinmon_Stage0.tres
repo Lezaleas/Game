@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="Critter" format=3 uid="uid://bnniecsb272al"]
+
+[ext_resource type="Script" uid="uid://v7t13w7elsp2" path="res://Systems/Perks/Logic/PerkTree.gd" id="1_gbfxn"]
+[ext_resource type="Script" uid="uid://d04bsobu4odrk" path="res://Systems/Perks/Logic/PerkTier.gd" id="2_upj68"]
+[ext_resource type="Script" uid="uid://dy8fo3snvl7r6" path="res://Systems/Perks/Logic/Perk.gd" id="3_2ecsi"]
+[ext_resource type="Script" uid="uid://ctqshx5t1jl5d" path="res://Systems/Perks/Logic/PerkEffect.gd" id="4_w0rwk"]
+[ext_resource type="Script" uid="uid://cjjs4er837kph" path="res://Systems/Perks/Data/PerkEffects/SkillPerk.gd" id="5_i5dwu"]
+[ext_resource type="Resource" uid="uid://c6v8y7m1m7m" path="res://Systems/Skills/Data/Focus.tres" id="6_ypn81"]
+[ext_resource type="Script" uid="uid://b8cgagvdwx0xu" path="res://Systems/Run/State/Critter.gd" id="7_g3m83"]
+[ext_resource type="SpriteFrames" uid="uid://dt3m5tdiwejma" path="res://Assets/Sprite_frames/Stage0/Penguinmon.tres" id="8_u3ext"]
+
+[sub_resource type="Resource" id="Resource_gbfxn"]
+script = ExtResource("5_i5dwu")
+skill = ExtResource("6_ypn81")
+
+[sub_resource type="Resource" id="Resource_upj68"]
+script = ExtResource("3_2ecsi")
+id = "Focus"
+display_name = "Focus"
+effects = Array[ExtResource("4_w0rwk")]([SubResource("Resource_gbfxn")])
+
+[sub_resource type="Resource" id="Resource_2ecsi"]
+script = ExtResource("2_upj68")
+perks = Array[ExtResource("3_2ecsi")]([SubResource("Resource_upj68")])
+
+[sub_resource type="Resource" id="Resource_w0rwk"]
+script = ExtResource("1_gbfxn")
+id = "Penguinmon"
+display_name = "Penguinmon"
+tiers = Array[ExtResource("2_upj68")]([SubResource("Resource_2ecsi")])
+
+[resource]
+script = ExtResource("7_g3m83")
+id = "Penguinmon"
+perk_tree = SubResource("Resource_w0rwk")
+attributes = [10, 10, 2, 2, 1, 1, 1, 1, 1, 1, 1]
+sprite = ExtResource("8_u3ext")

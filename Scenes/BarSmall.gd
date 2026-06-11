@@ -54,7 +54,6 @@ func _update_fill():
 		var stylebox = panel.get_theme_stylebox("panel").duplicate()
 
 		if stylebox is StyleBoxFlat:
-			print(target_radius)
 			stylebox.corner_radius_bottom_right = int(target_radius)
 			stylebox.corner_radius_top_right = int(target_radius)
 

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PerkTree" load_steps=20 format=3 uid="uid://cv8vpxn7o4l6r"]
+[gd_resource type="Resource" script_class="PerkTree" format=3 uid="uid://cv8vpxn7o4l6r"]
 
 [ext_resource type="Script" uid="uid://v7t13w7elsp2" path="res://Systems/Perks/Logic/PerkTree.gd" id="1_eia52"]
 [ext_resource type="Script" uid="uid://d04bsobu4odrk" path="res://Systems/Perks/Logic/PerkTier.gd" id="2_e031i"]

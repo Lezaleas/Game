@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="Critter" format=3 uid="uid://ddk47vtrboq62"]
+
+[ext_resource type="Script" uid="uid://v7t13w7elsp2" path="res://Systems/Perks/Logic/PerkTree.gd" id="1_0cmx6"]
+[ext_resource type="Script" uid="uid://d04bsobu4odrk" path="res://Systems/Perks/Logic/PerkTier.gd" id="2_ifpu1"]
+[ext_resource type="Script" uid="uid://dy8fo3snvl7r6" path="res://Systems/Perks/Logic/Perk.gd" id="3_g7cqp"]
+[ext_resource type="Script" uid="uid://ctqshx5t1jl5d" path="res://Systems/Perks/Logic/PerkEffect.gd" id="4_4f304"]
+[ext_resource type="Script" uid="uid://cjjs4er837kph" path="res://Systems/Perks/Data/PerkEffects/SkillPerk.gd" id="5_8bplc"]
+[ext_resource type="Resource" uid="uid://c758y7m1m7m" path="res://Systems/Skills/Data/Reprisal.tres" id="6_xubqu"]
+[ext_resource type="Resource" uid="uid://c788y7m1m7m" path="res://Systems/Skills/Data/ShadowCast.tres" id="7_u5ef8"]
+[ext_resource type="Script" uid="uid://b8cgagvdwx0xu" path="res://Systems/Run/State/Critter.gd" id="8_5ipc4"]
+[ext_resource type="SpriteFrames" uid="uid://cqb5710humle3" path="res://Assets/Sprite_frames/Stage1/Airdramon.tres" id="9_ocfln"]
+
+[sub_resource type="Resource" id="Resource_0cmx6"]
+script = ExtResource("5_8bplc")
+skill = ExtResource("6_xubqu")
+
+[sub_resource type="Resource" id="Resource_ifpu1"]
+script = ExtResource("3_g7cqp")
+id = "Reprisal"
+display_name = "Reprisal"
+effects = Array[ExtResource("4_4f304")]([SubResource("Resource_0cmx6")])
+
+[sub_resource type="Resource" id="Resource_g7cqp"]
+script = ExtResource("2_ifpu1")
+perks = Array[ExtResource("3_g7cqp")]([SubResource("Resource_ifpu1")])
+
+[sub_resource type="Resource" id="Resource_4f304"]
+script = ExtResource("5_8bplc")
+skill = ExtResource("7_u5ef8")
+
+[sub_resource type="Resource" id="Resource_8bplc"]
+script = ExtResource("3_g7cqp")
+id = "ShadowCast"
+display_name = "ShadowCast"
+effects = Array[ExtResource("4_4f304")]([SubResource("Resource_4f304")])
+
+[sub_resource type="Resource" id="Resource_xubqu"]
+script = ExtResource("2_ifpu1")
+perks = Array[ExtResource("3_g7cqp")]([SubResource("Resource_8bplc")])
+
+[sub_resource type="Resource" id="Resource_u5ef8"]
+script = ExtResource("1_0cmx6")
+id = "Airdramon"
+display_name = "Airdramon"
+tiers = Array[ExtResource("2_ifpu1")]([SubResource("Resource_g7cqp"), SubResource("Resource_xubqu")])
+
+[resource]
+script = ExtResource("8_5ipc4")
+id = "Airdramon"
+perk_tree = SubResource("Resource_u5ef8")
+attributes = [10, 20, 7, 7, 1, 1, 1, 1, 1, 1, 1]
+sprite = ExtResource("9_ocfln")

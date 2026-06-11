@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="Critter" format=3 uid="uid://c4xfk8dbqdemw"]
+
+[ext_resource type="Script" uid="uid://v7t13w7elsp2" path="res://Systems/Perks/Logic/PerkTree.gd" id="1_g4qtx"]
+[ext_resource type="Script" uid="uid://d04bsobu4odrk" path="res://Systems/Perks/Logic/PerkTier.gd" id="2_0xmun"]
+[ext_resource type="Script" uid="uid://dy8fo3snvl7r6" path="res://Systems/Perks/Logic/Perk.gd" id="3_qfby1"]
+[ext_resource type="Script" uid="uid://ctqshx5t1jl5d" path="res://Systems/Perks/Logic/PerkEffect.gd" id="4_e6ytw"]
+[ext_resource type="Script" uid="uid://cjjs4er837kph" path="res://Systems/Perks/Data/PerkEffects/SkillPerk.gd" id="5_ap1fn"]
+[ext_resource type="Resource" uid="uid://c708y7m1m7m" path="res://Systems/Skills/Data/Manablade.tres" id="6_ojvey"]
+[ext_resource type="Resource" uid="uid://c738y7m1m7m" path="res://Systems/Skills/Data/Ranger.tres" id="7_5uh1d"]
+[ext_resource type="Script" uid="uid://b8cgagvdwx0xu" path="res://Systems/Run/State/Critter.gd" id="8_wd4q8"]
+[ext_resource type="SpriteFrames" uid="uid://ckcrpvuhseaj6" path="res://Assets/Sprite_frames/Stage1/Garurumon.tres" id="9_26d5m"]
+
+[sub_resource type="Resource" id="Resource_g4qtx"]
+script = ExtResource("5_ap1fn")
+skill = ExtResource("6_ojvey")
+
+[sub_resource type="Resource" id="Resource_0xmun"]
+script = ExtResource("3_qfby1")
+id = "Manablade"
+display_name = "Manablade"
+effects = Array[ExtResource("4_e6ytw")]([SubResource("Resource_g4qtx")])
+
+[sub_resource type="Resource" id="Resource_qfby1"]
+script = ExtResource("2_0xmun")
+perks = Array[ExtResource("3_qfby1")]([SubResource("Resource_0xmun")])
+
+[sub_resource type="Resource" id="Resource_e6ytw"]
+script = ExtResource("5_ap1fn")
+skill = ExtResource("7_5uh1d")
+
+[sub_resource type="Resource" id="Resource_ap1fn"]
+script = ExtResource("3_qfby1")
+id = "Ranger"
+display_name = "Ranger"
+effects = Array[ExtResource("4_e6ytw")]([SubResource("Resource_e6ytw")])
+
+[sub_resource type="Resource" id="Resource_ojvey"]
+script = ExtResource("2_0xmun")
+perks = Array[ExtResource("3_qfby1")]([SubResource("Resource_ap1fn")])
+
+[sub_resource type="Resource" id="Resource_5uh1d"]
+script = ExtResource("1_g4qtx")
+id = "Garurumon"
+display_name = "Garurumon"
+tiers = Array[ExtResource("2_0xmun")]([SubResource("Resource_qfby1"), SubResource("Resource_ojvey")])
+
+[resource]
+script = ExtResource("8_wd4q8")
+id = "Garurumon"
+perk_tree = SubResource("Resource_5uh1d")
+attributes = [14, 14, 7, 7, 1, 1, 1, 1, 1, 1, 1]
+sprite = ExtResource("9_26d5m")

@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="Critter" format=3 uid="uid://cgu0fdly26gew"]
+
+[ext_resource type="Script" uid="uid://v7t13w7elsp2" path="res://Systems/Perks/Logic/PerkTree.gd" id="1_y7ojn"]
+[ext_resource type="Script" uid="uid://d04bsobu4odrk" path="res://Systems/Perks/Logic/PerkTier.gd" id="2_cdl52"]
+[ext_resource type="Script" uid="uid://dy8fo3snvl7r6" path="res://Systems/Perks/Logic/Perk.gd" id="3_nm5dd"]
+[ext_resource type="Script" uid="uid://ctqshx5t1jl5d" path="res://Systems/Perks/Logic/PerkEffect.gd" id="4_73x3e"]
+[ext_resource type="Script" uid="uid://cjjs4er837kph" path="res://Systems/Perks/Data/PerkEffects/SkillPerk.gd" id="5_6m6d4"]
+[ext_resource type="Resource" uid="uid://c6y8y7m1m7m" path="res://Systems/Skills/Data/Jump.tres" id="6_awedi"]
+[ext_resource type="Resource" uid="uid://c6t8y7m1m7m" path="res://Systems/Skills/Data/Counter.tres" id="7_savw8"]
+[ext_resource type="Script" uid="uid://b8cgagvdwx0xu" path="res://Systems/Run/State/Critter.gd" id="8_q15p4"]
+[ext_resource type="SpriteFrames" uid="uid://b3mx65482nx24" path="res://Assets/Sprite_frames/Stage1/Birdramon.tres" id="9_gpavm"]
+
+[sub_resource type="Resource" id="Resource_y7ojn"]
+script = ExtResource("5_6m6d4")
+skill = ExtResource("6_awedi")
+
+[sub_resource type="Resource" id="Resource_cdl52"]
+script = ExtResource("3_nm5dd")
+id = "Jump"
+display_name = "Jump"
+effects = Array[ExtResource("4_73x3e")]([SubResource("Resource_y7ojn")])
+
+[sub_resource type="Resource" id="Resource_nm5dd"]
+script = ExtResource("2_cdl52")
+perks = Array[ExtResource("3_nm5dd")]([SubResource("Resource_cdl52")])
+
+[sub_resource type="Resource" id="Resource_73x3e"]
+script = ExtResource("5_6m6d4")
+skill = ExtResource("7_savw8")
+
+[sub_resource type="Resource" id="Resource_6m6d4"]
+script = ExtResource("3_nm5dd")
+id = "Counter"
+display_name = "Counter"
+effects = Array[ExtResource("4_73x3e")]([SubResource("Resource_73x3e")])
+
+[sub_resource type="Resource" id="Resource_awedi"]
+script = ExtResource("2_cdl52")
+perks = Array[ExtResource("3_nm5dd")]([SubResource("Resource_6m6d4")])
+
+[sub_resource type="Resource" id="Resource_savw8"]
+script = ExtResource("1_y7ojn")
+id = "Birdramon"
+display_name = "Birdramon"
+tiers = Array[ExtResource("2_cdl52")]([SubResource("Resource_nm5dd"), SubResource("Resource_awedi")])
+
+[resource]
+script = ExtResource("8_q15p4")
+id = "Birdramon"
+perk_tree = SubResource("Resource_savw8")
+attributes = [7, 14, 5, 20, 1, 1, 1, 1, 1, 1, 1]
+sprite = ExtResource("9_gpavm")

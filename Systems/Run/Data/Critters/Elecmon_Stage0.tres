@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="Critter" format=3 uid="uid://bjhimhxp6xu8s"]
+
+[ext_resource type="Script" uid="uid://v7t13w7elsp2" path="res://Systems/Perks/Logic/PerkTree.gd" id="1_bqpvc"]
+[ext_resource type="Script" uid="uid://d04bsobu4odrk" path="res://Systems/Perks/Logic/PerkTier.gd" id="2_kj7lt"]
+[ext_resource type="Script" uid="uid://dy8fo3snvl7r6" path="res://Systems/Perks/Logic/Perk.gd" id="3_w1ik1"]
+[ext_resource type="Script" uid="uid://ctqshx5t1jl5d" path="res://Systems/Perks/Logic/PerkEffect.gd" id="4_4dx6y"]
+[ext_resource type="Script" uid="uid://cjjs4er837kph" path="res://Systems/Perks/Data/PerkEffects/SkillPerk.gd" id="5_t5v30"]
+[ext_resource type="Resource" uid="uid://c6y8y7m1m7m" path="res://Systems/Skills/Data/Jump.tres" id="6_r7a3f"]
+[ext_resource type="Script" uid="uid://b8cgagvdwx0xu" path="res://Systems/Run/State/Critter.gd" id="7_s1okb"]
+[ext_resource type="SpriteFrames" uid="uid://de3dk68ftynmt" path="res://Assets/Sprite_frames/Stage0/Elecmon.tres" id="8_i3l7d"]
+
+[sub_resource type="Resource" id="Resource_bqpvc"]
+script = ExtResource("5_t5v30")
+skill = ExtResource("6_r7a3f")
+
+[sub_resource type="Resource" id="Resource_kj7lt"]
+script = ExtResource("3_w1ik1")
+id = "Jump"
+display_name = "Jump"
+effects = Array[ExtResource("4_4dx6y")]([SubResource("Resource_bqpvc")])
+
+[sub_resource type="Resource" id="Resource_w1ik1"]
+script = ExtResource("2_kj7lt")
+perks = Array[ExtResource("3_w1ik1")]([SubResource("Resource_kj7lt")])
+
+[sub_resource type="Resource" id="Resource_4dx6y"]
+script = ExtResource("1_bqpvc")
+id = "Elecmon"
+display_name = "Elecmon"
+tiers = Array[ExtResource("2_kj7lt")]([SubResource("Resource_w1ik1")])
+
+[resource]
+script = ExtResource("7_s1okb")
+id = "Elecmon"
+perk_tree = SubResource("Resource_4dx6y")
+attributes = [3, 7, 2, 10, 1, 1, 1, 1, 1, 1, 1]
+sprite = ExtResource("8_i3l7d")

@@ -9,5 +9,5 @@ func ApplyBuff(command: CmdApplyBuff) -> CmdApplyBuff:
 			return command
 			
 		Situation.attack_handler.cast(owner,element,power,Defines.TARGETING_TYPE.Choose,command.defender, [AttackHandler.Tag.COUNTER])
-		Log.entry("hexstrike casted on %s" % [command.defender], 1)
+		#Log.entry("hexstrike casted on %s" % [command.defender], 1)
 	return command

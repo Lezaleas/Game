@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="InitDebugData" format=3 uid="uid://t01el6jt3h8l"]
+
+[ext_resource type="Script" uid="uid://fa0qg8s12e3w" path="res://Systems/Run/Logic/DebugData.gd" id="1_a14jg"]
+[ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="2_0ifgi"]
+[ext_resource type="Resource" uid="uid://c6x8y7m1m7m" path="res://Systems/Skills/Data/Guerrilla.tres" id="3_gfema"]
+[ext_resource type="Resource" uid="uid://c808y7m1m7m" path="res://Systems/Skills/Data/Triumph.tres" id="4_dxr83"]
+[ext_resource type="Resource" uid="uid://c6v8y7m1m7m" path="res://Systems/Skills/Data/Focus.tres" id="5_yb1bi"]
+[ext_resource type="Resource" uid="uid://c788y7m1m7m" path="res://Systems/Skills/Data/ShadowCast.tres" id="6_3n7j6"]
+[ext_resource type="Resource" uid="uid://b8y7m1m7m7m" path="res://Systems/Skills/Data/Block.tres" id="7_qcrwr"]
+[ext_resource type="Resource" uid="uid://c708y7m1m7m" path="res://Systems/Skills/Data/Manablade.tres" id="8_p61c2"]
+[ext_resource type="Resource" uid="uid://c6t8y7m1m7m" path="res://Systems/Skills/Data/Counter.tres" id="9_pwwdi"]
+[ext_resource type="Resource" uid="uid://c758y7m1m7m" path="res://Systems/Skills/Data/Reprisal.tres" id="10_xhges"]
+
+[resource]
+script = ExtResource("1_a14jg")
+skill_pool = Array[ExtResource("2_0ifgi")]([ExtResource("3_gfema"), ExtResource("4_dxr83"), ExtResource("5_yb1bi"), ExtResource("6_3n7j6"), ExtResource("7_qcrwr"), ExtResource("8_p61c2"), ExtResource("9_pwwdi"), ExtResource("10_xhges")])
+metadata/_custom_type_script = "uid://fa0qg8s12e3w"

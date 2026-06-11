@@ -8,11 +8,15 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Game"
 run/main_scene="uid://o46r8yv6hfi1"
-config/features=PackedStringArray("4.5", "Mobile")
+config/features=PackedStringArray("4.6", "Mobile")
 run/max_fps=60
 boot_splash/show_image=false
 config/icon="res://Assets/Sprites/Common/icon.svg"
@@ -20,7 +24,7 @@ config/icon="res://Assets/Sprites/Common/icon.svg"
 [autoload]
 
 Defines="*res://Autoloads/Defines.gd"
-Log="*res://addons/GoLogger/Log.tscn"
+Log="res://addons/GoLogger/Log.tscn"
 EventBus="*res://Autoloads/EventBus.gd"
 Situation="*res://Autoloads/Situation.gd"
 AudioBus="*res://Autoloads/AudioBus.tscn"
@@ -32,13 +36,14 @@ ProgressionManager="*res://Systems/Progression/Logic/ProgressionManager.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/stretch/mode="viewport"
-window/stretch/scale_mode="integer"
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=4
 window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GoLogger/plugin.cfg", "res://addons/reactive_signal/plugin.cfg", "res://addons/screen_debug/plugin.cfg", "res://addons/simple_resource_icons/plugin.cfg", "res://addons/yard/plugin.cfg")
+enabled=PackedStringArray("res://addons/reactive_signal/plugin.cfg", "res://addons/screen_debug/plugin.cfg", "res://addons/simple_resource_icons/plugin.cfg", "res://addons/yard/plugin.cfg")
 
 [file_customization]
 
@@ -93,3 +98,4 @@ q={
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

@@ -12,6 +12,7 @@ class_name HeroState
 @export var unlocked_perks: Array[Perk]
 @export var equipment_slots: Array[EquipmentState] = [null,null,null,null]
 @export var weight: int = 0
+@export var critter: Critter
 
 func setup():
 	if not perk_trees:
@@ -19,28 +20,72 @@ func setup():
 	for x in range(perk_trees.size()):
 		perk_trees[x] = perk_trees[x].duplicate(true)
 		perk_trees[x].setup(id, x)
-	match id:
-		0: sprite = load("res://Assets/Sprite_frames/Stage1/Greymon.tres")
-		1: sprite = load("res://Assets/Sprite_frames/Stage1/Garurumon.tres")
-		2: sprite = load("res://Assets/Sprite_frames/Stage1/Birdramon.tres")
-		3: sprite = load("res://Assets/Sprite_frames/Stage1/Airdramon.tres")
+	if not critter:
+		var crit:Critter
+		match id:
+			0: crit = load("res://Systems/Run/Data/Critters/Agumon_Stage0.tres")
+			1: crit = load("res://Systems/Run/Data/Critters/Gazimon_Stage0.tres")
+			2: crit = load("res://Systems/Run/Data/Critters/Elecmon_Stage0.tres")
+			3: crit = load("res://Systems/Run/Data/Critters/Tentomon_Stage0.tres")
+		crit.equip_to_hero(self)
+		
+func reset_all() -> void:
+	reset_perk_trees()
+	reset_skills()
+	
+func reset_skills() -> void:
+	skills.clear()
+	for tree in perk_trees:
+		for tier in tree.tiers:
+			for perk in tier.perks:
+				if perk.unlocked:
+					if perk.effects[0] is SkillPerk:
+						grant_skill(perk.effects[0].skill)
+		
+func reset_perk_trees():
+	var new_perk_trees: Array[PerkTree] = []
+	for x in range(RunManager.heroes.size()):
+		if RunManager.heroes[x].critter:
+			new_perk_trees.append(RunManager.heroes[x].critter.perk_tree.duplicate(true))
+			var unlock_position: = perk_trees[x].get_unlock_position()
+			new_perk_trees[x].set_unlock_position(unlock_position)
+	for item in equipment_slots:
+		if item:
+			if item.skill:
+				new_perk_trees[item.type].convert_to_equipment_skill(item.skill)
+	for x in range(perk_trees.size()):
+		new_perk_trees[x].setup(id, x)
+	perk_trees = new_perk_trees
 		
 func swap_perk_tree(new_tree:PerkTree, position:int) -> void:
+	var unlocked_perk_index = -1
+	for tier in perk_trees[position].tiers:
+		for perk in tier.perks:
+			if perk.unlocked:
+				unlocked_perk_index = perk.tier_index
+				remove_perk(perk)
 	perk_trees[position] = new_tree.duplicate(true)
 	perk_trees[position].setup(id, position)
+	if unlocked_perk_index >= 0:
+		var new_perk = perk_trees[position].tiers[unlocked_perk_index].perks[0]
+		unlock_perk(new_perk)
+		new_perk.unlocked = true
+		
+func reset_item_stats() -> void:
+	pass
 		
 func equip(item:EquipmentState) -> void:
 	unequip(item.type)
 	equipment_slots[item.type] = item
 	weight += item.weight
-	if item.skill: skills.append(item.skill)
+	if item.skill: reset_all()
 	
 func unequip(type:Defines.EQUIP_TYPE) -> void:
 	var item = equipment_slots[type]
-	if item:
-		weight -= item.weight
+	if not item: return
+	weight -= item.weight
 	equipment_slots[type] = null
-	if item.skill: skills.erase(item.skill)
+	if item.skill: reset_all()
 
 func get_total_perk_points() -> Array[int]:
 	var result: Array[int] = [0, 0, 0, 0] # hardcoded stats size

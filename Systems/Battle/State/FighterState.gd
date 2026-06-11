@@ -18,6 +18,7 @@ var element: int = 0
 var view: FighterView
 var sprite: SpriteFrames
 var clashed := false
+var enemy_data: EnemyData
 
 func setup():
 	buffs = BuffsState.new(self)

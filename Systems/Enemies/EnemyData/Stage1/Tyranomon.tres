@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyData" load_steps=8 format=3 uid="uid://63x022fgcsw5"]
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://63x022fgcsw5"]
 
 [ext_resource type="Texture2D" uid="uid://bwbjiyxfis0iu" path="res://Assets/Sprites/Fighters/Stage 1/Tyrannomon.png" id="1_d4nms"]
 [ext_resource type="Script" uid="uid://biwdr6illl1qd" path="res://Systems/Skills/Logic/Skill.gd" id="1_dhqdo"]

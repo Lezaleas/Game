@@ -12,6 +12,7 @@ var fighters: Array[FighterState]
 var reservoirs: Array[ReservoirState]
 var attributes: Array[AttributeState]
 var anim_speed := 1.0
+var turn_timer: Timer
 
 func new_state():
 	battle = BattleState.new()
@@ -46,3 +47,9 @@ func clear_state_generic():
 			continue
 		if typeof(value) == TYPE_ARRAY:
 			value.clear()
+
+func start_battle(level:LevelData, player:Array[HeroState]=RunManager.heroes) -> void:
+	Situation.clear_state_generic()
+	Situation.level_data = level
+	Situation.player_team_data = player
+	get_tree().change_scene_to_file("res://Systems/Battle/Logic/BattleInstance.tscn")

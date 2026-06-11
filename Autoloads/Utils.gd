@@ -22,7 +22,12 @@ func _input(event: InputEvent) -> void:
 		get_tree().quit()
 		
 	if event.is_action_pressed("q"):
-		swap_perk_tree()
+		win()
+		
+		
+func start_arena():
+	var arena = Arena.new()
+	arena.start_arena()
 	
 func swap_perk_tree():
 	var hero = RunManager.heroes[0]
@@ -56,6 +61,14 @@ func HeroToFighter(hero:HeroState, fighter:FighterState) -> FighterState:
 	fighter.sprite = hero.sprite
 	return fighter
 
+func get_enemy_registry(level: int) -> Array[EnemyData]:
+	var result: Array[EnemyData] = []
+
+	for resource in Defines.enemies_by_level[level].load_all_blocking().values():
+		result.append(resource as EnemyData)
+
+	return result
+
 func _non_null(s):
 	return s != null
 	
@@ -68,17 +81,16 @@ func EnemyToFighter(enemy:EnemyData, fighter:FighterState) -> FighterState:
 	fighter.skills = (enemy.skills.duplicate(true) + enemy.passives.duplicate(true)).filter(_non_null)
 
 	fighter.sprite = enemy.sprite
+	fighter.enemy_data = enemy
 	return fighter
 
 func _on_reduce_stats_pressed() -> void:
-	print("tgsg")
 	for hero in RunManager.heroes:
 		if not hero:
 			continue
 		var attrs = [Defines.ATTRIBUTE.Pwr, Defines.ATTRIBUTE.Spi, Defines.ATTRIBUTE.Wis, Defines.ATTRIBUTE.Agi]
 		for attr in attrs:
 			var new_val = hero.attributes_base[attr] - 1
-			print(new_val)
 			if new_val < 0:
 				push_warning("Hero %s attribute %s would go below 0; clamped to 0" % [hero.id, attr])
 				hero.attributes_base[attr] = 0

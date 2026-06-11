@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c6oxoj08a2rn7"]
+[gd_scene format=3 uid="uid://c6oxoj08a2rn7"]
 
 [ext_resource type="Script" uid="uid://du7lyudpykfj8" path="res://Systems/Battle/Logic/BattleInstance.gd" id="1_abcde"]
 [ext_resource type="PackedScene" uid="uid://cnu5dkcfse3mh" path="res://Systems/Battle/Visuals/BattleView.tscn" id="2_fghij"]
@@ -10,36 +10,36 @@
 [ext_resource type="Script" uid="uid://cocinmc2x2rrh" path="res://Systems/Battle/Logic/AttackHandler.gd" id="8_2yutu"]
 [ext_resource type="Script" uid="uid://c5r0nkds3f2h4" path="res://Systems/Battle/Logic/ClashHandler.gd" id="9_ehww3"]
 
-[node name="BattleInstance" type="Node"]
+[node name="BattleInstance" type="Node" unique_id=2132144356]
 script = ExtResource("1_abcde")
 
-[node name="Simulator" type="Node" parent="."]
+[node name="Simulator" type="Node" parent="." unique_id=1693280982]
 unique_name_in_owner = true
 script = ExtResource("4_ubano")
 
-[node name="InputHandler" type="Node" parent="."]
+[node name="InputHandler" type="Node" parent="." unique_id=45958224]
 unique_name_in_owner = true
 script = ExtResource("4_kgc7g")
 
-[node name="FighterHandler" type="Node" parent="."]
+[node name="FighterHandler" type="Node" parent="." unique_id=1235284393]
 unique_name_in_owner = true
 script = ExtResource("5_1rp4n")
 
-[node name="ClashHandler" type="Node" parent="."]
+[node name="ClashHandler" type="Node" parent="." unique_id=1443929264]
 unique_name_in_owner = true
 script = ExtResource("9_ehww3")
 
-[node name="AttackHandler" type="Node" parent="."]
+[node name="AttackHandler" type="Node" parent="." unique_id=1602659866]
 unique_name_in_owner = true
 script = ExtResource("8_2yutu")
 
-[node name="WinHandler" type="Node" parent="."]
+[node name="WinHandler" type="Node" parent="." unique_id=354909874]
 unique_name_in_owner = true
 script = ExtResource("7_ehww3")
 
-[node name="TurnTimer" type="Timer" parent="."]
+[node name="TurnTimer" type="Timer" parent="." unique_id=798735030]
 unique_name_in_owner = true
 script = ExtResource("3_jcy1f")
 
-[node name="View" parent="." instance=ExtResource("2_fghij")]
+[node name="View" parent="." unique_id=145897963 instance=ExtResource("2_fghij")]
 unique_name_in_owner = true
