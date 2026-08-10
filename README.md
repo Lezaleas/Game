@@ -9,7 +9,7 @@ This project explores complex strategy RPG systems, including:
 - Character progression
 - AI behaviors
 - Data-driven game architecture
-The project is currently focused on gameplay systems and programming rather than final visual assets. Most art is temporary placeholder content.
+- The project is currently focused on gameplay systems and programming rather than final visual assets. Most art is temporary placeholder content.
 
 ## Game Systems
 
