@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bxhp4ksd12tb2"]
+[gd_scene format=3 uid="uid://bxhp4ksd12tb2"]
 
 [ext_resource type="Shader" uid="uid://cs4x6d3122lfg" path="res://Assets/Shaders/DefaultBorder2.gdshader" id="1_toujq"]
 [ext_resource type="Script" uid="uid://dfway0pjn8t3q" path="res://Scenes/BarSmall.gd" id="1_u6wq7"]
@@ -67,7 +67,7 @@ shader = ExtResource("2_nhgee")
 shader_parameter/brightness_strength = 0.1
 shader_parameter/mid_sharpness = 0.80000003474012
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6dekc"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhgee"]
 content_margin_left = 0.0
 content_margin_top = 0.0
 content_margin_right = 0.0
@@ -90,7 +90,7 @@ shader_parameter/mid_sharpness = 1.00000004424012
 shader_parameter/sheen_intensity = 0.10000000475
 shader_parameter/inner_stroke_thickness = 0.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06m5m"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fepy"]
 content_margin_left = 0.0
 content_margin_top = 0.0
 content_margin_right = 0.0
@@ -106,7 +106,7 @@ corner_radius_bottom_left = 8
 corner_detail = 20
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kq5b"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6dekc"]
 content_margin_left = 0.0
 content_margin_top = 0.0
 content_margin_right = 0.0
@@ -123,7 +123,7 @@ corner_radius_bottom_left = 8
 corner_detail = 20
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7q4b"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06m5m"]
 content_margin_left = 0.0
 content_margin_top = 0.0
 content_margin_right = 0.0
@@ -140,7 +140,7 @@ shadow_size = 2
 anti_aliasing = false
 anti_aliasing_size = 1.51
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" unique_id=1861514095]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 3
 anchors_preset = 0
@@ -148,7 +148,7 @@ offset_right = 79.0
 offset_bottom = 16.0
 script = ExtResource("1_u6wq7")
 
-[node name="SmallPanel" type="PanelContainer" parent="."]
+[node name="SmallPanel" type="PanelContainer" parent="." unique_id=1813188938]
 material = SubResource("ShaderMaterial_nhgee")
 layout_mode = 1
 anchors_preset = 15
@@ -159,17 +159,17 @@ grow_vertical = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_toujq")
 
-[node name="BlackLine2" type="Panel" parent="SmallPanel"]
+[node name="BlackLine2" type="Panel" parent="SmallPanel" unique_id=1871818852]
 material = SubResource("ShaderMaterial_u6wq7")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_u6wq7")
 
-[node name="BlackLine" type="Panel" parent="SmallPanel"]
+[node name="BlackLine" type="Panel" parent="SmallPanel" unique_id=1258306889]
 material = SubResource("ShaderMaterial_u6wq7")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2cgwh")
 
-[node name="Clipper" type="Control" parent="."]
+[node name="Clipper" type="Control" parent="." unique_id=217984984]
 unique_name_in_owner = true
 clip_contents = true
 layout_mode = 1
@@ -180,7 +180,7 @@ offset_right = -39.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Clipper"]
+[node name="MarginContainer" type="MarginContainer" parent="Clipper" unique_id=1591440842]
 material = SubResource("ShaderMaterial_pcb2s")
 layout_mode = 1
 anchors_preset = 15
@@ -193,26 +193,26 @@ theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Clipper/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Clipper/MarginContainer" unique_id=930012862]
 layout_mode = 2
 theme_override_constants/margin_left = 1
 theme_override_constants/margin_top = 1
 theme_override_constants/margin_right = 1
 theme_override_constants/margin_bottom = 1
 
-[node name="BackgroundBorderShadow" type="Panel" parent="Clipper/MarginContainer/MarginContainer"]
+[node name="BackgroundBorderShadow" type="Panel" parent="Clipper/MarginContainer/MarginContainer" unique_id=1078846093]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_2fepy")
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_6dekc")
+theme_override_styles/panel = SubResource("StyleBoxFlat_nhgee")
 
-[node name="MainBorder" type="Panel" parent="Clipper/MarginContainer"]
+[node name="MainBorder" type="Panel" parent="Clipper/MarginContainer" unique_id=225750025]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_ejise")
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_06m5m")
+theme_override_styles/panel = SubResource("StyleBoxFlat_2fepy")
 
-[node name="MarginContainer2" type="MarginContainer" parent="Clipper"]
+[node name="MarginContainer2" type="MarginContainer" parent="Clipper" unique_id=330648921]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -224,12 +224,12 @@ theme_override_constants/margin_top = 1
 theme_override_constants/margin_right = 1
 theme_override_constants/margin_bottom = 1
 
-[node name="OutsideBorderWall" type="Panel" parent="Clipper/MarginContainer2"]
+[node name="OutsideBorderWall" type="Panel" parent="Clipper/MarginContainer2" unique_id=522279441]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_1kq5b")
+theme_override_styles/panel = SubResource("StyleBoxFlat_6dekc")
 
-[node name="MarginContainer3" type="MarginContainer" parent="Clipper"]
+[node name="MarginContainer3" type="MarginContainer" parent="Clipper" unique_id=1999657225]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -242,7 +242,7 @@ theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="RightHighlitght" type="Panel" parent="Clipper/MarginContainer3"]
+[node name="RightHighlitght" type="Panel" parent="Clipper/MarginContainer3" unique_id=1472925929]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_m7q4b")
+theme_override_styles/panel = SubResource("StyleBoxFlat_06m5m")

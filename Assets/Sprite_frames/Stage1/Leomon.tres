@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://bpmvj6x06jptk"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://bpmvj6x06jptk"]
 
 [ext_resource type="Texture2D" uid="uid://ch6qbvm62r1mf" path="res://Assets/Sprites/Fighters/Stage 1/Leomon.png" id="1_o5s32"]
 

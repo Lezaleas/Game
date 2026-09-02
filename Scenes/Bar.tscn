@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bk3hi2irx6u7y"]
+[gd_scene format=3 uid="uid://bk3hi2irx6u7y"]
 
 [ext_resource type="Script" uid="uid://bwxts2nmyhtqi" path="res://Scenes/bar.gd" id="1_2vt6c"]
 [ext_resource type="Shader" uid="uid://cs4x6d3122lfg" path="res://Assets/Shaders/DefaultBorder2.gdshader" id="1_op7jc"]
@@ -217,7 +217,7 @@ expand_margin_right = 1.0
 expand_margin_bottom = 3.0
 anti_aliasing = false
 
-[node name="BarStatic" type="Control"]
+[node name="BarStatic" type="Control" unique_id=792409429]
 texture_filter = 1
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 3
@@ -226,7 +226,7 @@ offset_right = 98.0
 offset_bottom = 16.0
 script = ExtResource("1_2vt6c")
 
-[node name="Scaler" type="Control" parent="."]
+[node name="Scaler" type="Control" parent="." unique_id=1577326071]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -236,7 +236,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.33333334, 0.33333334)
 
-[node name="DefaultPanel" type="PanelContainer" parent="Scaler"]
+[node name="DefaultPanel" type="PanelContainer" parent="Scaler" unique_id=1661867863]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -247,32 +247,32 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_0c07c")
 
-[node name="MarginContainer" type="MarginContainer" parent="Scaler/DefaultPanel"]
+[node name="MarginContainer" type="MarginContainer" parent="Scaler/DefaultPanel" unique_id=738183250]
 layout_mode = 2
 theme_override_constants/margin_left = 1
 theme_override_constants/margin_top = 1
 theme_override_constants/margin_right = 1
 theme_override_constants/margin_bottom = 3
 
-[node name="Border" type="Panel" parent="Scaler/DefaultPanel/MarginContainer"]
+[node name="Border" type="Panel" parent="Scaler/DefaultPanel/MarginContainer" unique_id=656203624]
 texture_filter = 1
 material = SubResource("ShaderMaterial_r2204")
 clip_contents = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_j3dsh")
 
-[node name="MarginContainer" type="MarginContainer" parent="Scaler/DefaultPanel/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Scaler/DefaultPanel/MarginContainer" unique_id=956397653]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="InsideBlackLine" type="Panel" parent="Scaler/DefaultPanel/MarginContainer/MarginContainer"]
+[node name="InsideBlackLine" type="Panel" parent="Scaler/DefaultPanel/MarginContainer/MarginContainer" unique_id=1049418803]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2cgwh")
 
-[node name="MarginContainer" type="MarginContainer" parent="Scaler/DefaultPanel/MarginContainer/MarginContainer/InsideBlackLine"]
+[node name="MarginContainer" type="MarginContainer" parent="Scaler/DefaultPanel/MarginContainer/MarginContainer/InsideBlackLine" unique_id=799324753]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -284,24 +284,24 @@ theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Scaler/DefaultPanel/MarginContainer/MarginContainer/InsideBlackLine/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Scaler/DefaultPanel/MarginContainer/MarginContainer/InsideBlackLine/MarginContainer" unique_id=838777812]
 layout_mode = 2
 theme_override_constants/margin_left = 2
 theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="Panel" type="Panel" parent="Scaler/DefaultPanel/MarginContainer/MarginContainer/InsideBlackLine/MarginContainer/MarginContainer"]
+[node name="Panel" type="Panel" parent="Scaler/DefaultPanel/MarginContainer/MarginContainer/InsideBlackLine/MarginContainer/MarginContainer" unique_id=831141248]
 material = SubResource("ShaderMaterial_s3v1n")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tac1t")
 
-[node name="Panel" type="Panel" parent="Scaler/DefaultPanel/MarginContainer/MarginContainer/InsideBlackLine/MarginContainer"]
+[node name="Panel" type="Panel" parent="Scaler/DefaultPanel/MarginContainer/MarginContainer/InsideBlackLine/MarginContainer" unique_id=428548762]
 material = SubResource("ShaderMaterial_ejise")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_a7gpf")
 
-[node name="MarginContainer2" type="MarginContainer" parent="Scaler/DefaultPanel/MarginContainer/MarginContainer/InsideBlackLine"]
+[node name="MarginContainer2" type="MarginContainer" parent="Scaler/DefaultPanel/MarginContainer/MarginContainer/InsideBlackLine" unique_id=1385994087]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -313,35 +313,35 @@ theme_override_constants/margin_top = 1
 theme_override_constants/margin_right = 1
 theme_override_constants/margin_bottom = 1
 
-[node name="Panel" type="Panel" parent="Scaler/DefaultPanel/MarginContainer/MarginContainer/InsideBlackLine/MarginContainer2"]
+[node name="Panel" type="Panel" parent="Scaler/DefaultPanel/MarginContainer/MarginContainer/InsideBlackLine/MarginContainer2" unique_id=1971827994]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_r2204")
 
-[node name="Panel2" type="Panel" parent="Scaler/DefaultPanel/MarginContainer/MarginContainer/InsideBlackLine/MarginContainer2"]
+[node name="Panel2" type="Panel" parent="Scaler/DefaultPanel/MarginContainer/MarginContainer/InsideBlackLine/MarginContainer2" unique_id=563451524]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_er0mw")
 
-[node name="MarginContainer2" type="MarginContainer" parent="Scaler/DefaultPanel/MarginContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="Scaler/DefaultPanel/MarginContainer" unique_id=1134223116]
 layout_mode = 2
 theme_override_constants/margin_left = 1
 theme_override_constants/margin_top = 1
 theme_override_constants/margin_right = 1
 theme_override_constants/margin_bottom = 1
 
-[node name="LightHighlightBorder" type="Panel" parent="Scaler/DefaultPanel/MarginContainer/MarginContainer2"]
+[node name="LightHighlightBorder" type="Panel" parent="Scaler/DefaultPanel/MarginContainer/MarginContainer2" unique_id=419077935]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2vt6c")
 
-[node name="LightHighlightBorder2" type="Panel" parent="Scaler/DefaultPanel/MarginContainer"]
+[node name="LightHighlightBorder2" type="Panel" parent="Scaler/DefaultPanel/MarginContainer" unique_id=92597847]
 clip_contents = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_24mt1")
 
-[node name="ExternalBlackLine" type="Panel" parent="Scaler/DefaultPanel/MarginContainer"]
+[node name="ExternalBlackLine" type="Panel" parent="Scaler/DefaultPanel/MarginContainer" unique_id=287220531]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qpfo2")
 
-[node name="Content" type="MarginContainer" parent="."]
+[node name="Content" type="MarginContainer" parent="." unique_id=2118303859]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15

@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://dhkbs5jrkrkff"]
+[gd_scene format=3 uid="uid://dhkbs5jrkrkff"]
 
 [ext_resource type="Shader" uid="uid://cs4x6d3122lfg" path="res://Assets/Shaders/DefaultBorder2.gdshader" id="1_tse3h"]
-[ext_resource type="SpriteFrames" uid="uid://c4cphr1o62d7i" path="res://Assets/Sprite_frames/Stage1/Airdramon.tres" id="2_ls2aq"]
+[ext_resource type="SpriteFrames" uid="uid://cqb5710humle3" path="res://Assets/Sprite_frames/Stage1/Airdramon.tres" id="2_ls2aq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0c07c"]
 content_margin_left = 0.0
@@ -119,14 +119,14 @@ anti_aliasing = false
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rwev5"]
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" unique_id=1351621775]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 48.0
 offset_bottom = 48.0
 
-[node name="SmallPanel" type="PanelContainer" parent="."]
+[node name="SmallPanel" type="PanelContainer" parent="." unique_id=1937283503]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -143,12 +143,12 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_0c07c")
 
-[node name="BlackLine" type="Panel" parent="SmallPanel"]
+[node name="BlackLine" type="Panel" parent="SmallPanel" unique_id=2030741880]
 material = SubResource("ShaderMaterial_a7gpf")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2cgwh")
 
-[node name="MarginContainer" type="MarginContainer" parent="SmallPanel/BlackLine"]
+[node name="MarginContainer" type="MarginContainer" parent="SmallPanel/BlackLine" unique_id=748958376]
 material = SubResource("ShaderMaterial_pcb2s")
 layout_mode = 1
 anchors_preset = 15
@@ -161,28 +161,28 @@ theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 6
 
-[node name="MarginContainer" type="MarginContainer" parent="SmallPanel/BlackLine/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="SmallPanel/BlackLine/MarginContainer" unique_id=650213112]
 layout_mode = 2
 theme_override_constants/margin_left = 2
 theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="BackgroundBorderShadow" type="Panel" parent="SmallPanel/BlackLine/MarginContainer/MarginContainer"]
+[node name="BackgroundBorderShadow" type="Panel" parent="SmallPanel/BlackLine/MarginContainer/MarginContainer" unique_id=1696393770]
 material = SubResource("ShaderMaterial_4rl5p")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tac1t")
 
-[node name="MainBorder" type="Panel" parent="SmallPanel/BlackLine/MarginContainer"]
+[node name="MainBorder" type="Panel" parent="SmallPanel/BlackLine/MarginContainer" unique_id=1779954842]
 material = SubResource("ShaderMaterial_ejise")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_a7gpf")
 
-[node name="BottomBlackLine" type="Panel" parent="SmallPanel/BlackLine/MarginContainer"]
+[node name="BottomBlackLine" type="Panel" parent="SmallPanel/BlackLine/MarginContainer" unique_id=121981522]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_r2204")
 
-[node name="MarginContainer2" type="MarginContainer" parent="SmallPanel/BlackLine"]
+[node name="MarginContainer2" type="MarginContainer" parent="SmallPanel/BlackLine" unique_id=357674585]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -194,11 +194,11 @@ theme_override_constants/margin_top = 1
 theme_override_constants/margin_right = 1
 theme_override_constants/margin_bottom = 1
 
-[node name="OutsideBorderWall" type="Panel" parent="SmallPanel/BlackLine/MarginContainer2"]
+[node name="OutsideBorderWall" type="Panel" parent="SmallPanel/BlackLine/MarginContainer2" unique_id=1758211272]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ys7og")
 
-[node name="Content" type="MarginContainer" parent="SmallPanel"]
+[node name="Content" type="MarginContainer" parent="SmallPanel" unique_id=1937335665]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/margin_left = 8
@@ -206,13 +206,13 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 12
 
-[node name="PanelContainer" type="PanelContainer" parent="SmallPanel/Content"]
+[node name="PanelContainer" type="PanelContainer" parent="SmallPanel/Content" unique_id=76103139]
 clip_contents = true
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_rwev5")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SmallPanel/Content/PanelContainer"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SmallPanel/Content/PanelContainer" unique_id=1184578500]
 position = Vector2(16, 16)
 scale = Vector2(2, 2)
 sprite_frames = ExtResource("2_ls2aq")

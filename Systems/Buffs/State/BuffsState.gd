@@ -19,7 +19,7 @@ func apply_buff(buff_data: Buff, amount: float, applier: FighterState = null) ->
 		buffs[id] = BuffState.new(buff_data, owner)
 	
 	if buffs[id].add_amount(amount, applier):
-		#Log.entry("%s applied/triggered on %s" % [buff_data.display_name, owner])
+		Log.entry("%s applied/triggered on %s" % [buff_data.display_name, owner])
 
 func tick_all() -> void:
 	for id in buffs:

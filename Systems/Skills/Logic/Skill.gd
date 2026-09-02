@@ -15,4 +15,4 @@ func _to_string():
 	return (skill_name)
 
 func entry(log_entry: String) -> void:
-	#Log.entry(skill_name + " - " + str(owner) + " " + log_entry, 1)
+	Log.entry(skill_name + " - " + str(owner) + " " + log_entry, 1)

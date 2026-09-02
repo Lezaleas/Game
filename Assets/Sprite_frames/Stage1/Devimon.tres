@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://c4dga3ia0wn6x"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://c4dga3ia0wn6x"]
 
 [ext_resource type="Texture2D" uid="uid://vvr00288k2cu" path="res://Assets/Sprites/Fighters/Stage 1/Devimon.png" id="1_m3fbf"]
 

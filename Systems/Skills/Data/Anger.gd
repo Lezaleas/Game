@@ -12,7 +12,7 @@ func ClashLink(command: CmdClashLink) -> CmdClashLink:
 		
 func SelfReceiveDmg(command: CmdReceiveDmg) -> CmdReceiveDmg:
 	stacks += 1
-	#Log.entry("%s - %s is gaining %s power" % [skill_name, owner, stacks], 1)
+	Log.entry("%s - %s is gaining %s power" % [skill_name, owner, stacks], 1)
 	owner.attributes[Defines.ATTRIBUTE.Pwr].increase_base(power)
 	return command
 	

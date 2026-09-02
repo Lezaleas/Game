@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ca6cunujhdrs4"]
+
+[node name="FlowChart" type="Node2D" unique_id=925090264]
+
+[node name="Control" type="Control" parent="." unique_id=1829531809]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 305.0
+offset_top = 354.0
+offset_right = 483.0
+offset_bottom = 394.0

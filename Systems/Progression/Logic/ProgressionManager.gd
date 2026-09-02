@@ -67,14 +67,22 @@ func generate_item_via_pipeline(building: Building, global_modifiers: Array[Modi
 	var chosen_type = building.specialization
 
 	# Tag pressures influence base category weights
-	var smith = context.tags.get(Defines.PROG_TAG.Smithing, 0.0)
-	var war = context.tags.get(Defines.PROG_TAG.Warfare, 0.0)
-	var arc = context.tags.get(Defines.PROG_TAG.Arcane, 0.0)
-	var learn = context.tags.get(Defines.PROG_TAG.Learning, 0.0)
-	var craft = context.tags.get(Defines.PROG_TAG.Crafting, 0.0)
-	var steward = context.tags.get(Defines.PROG_TAG.Stewardry, 0.0)
-	var charis = context.tags.get(Defines.PROG_TAG.Charisma, 0.0)
-	var wild = context.tags.get(Defines.PROG_TAG.Wildcraft, 0.0)
+	@warning_ignore("unused_variable")
+	var _smith = context.tags.get(Defines.PROG_TAG.Smithing, 0.0)
+	@warning_ignore("unused_variable")
+	var _war = context.tags.get(Defines.PROG_TAG.Warfare, 0.0)
+	@warning_ignore("unused_variable")
+	var _arc = context.tags.get(Defines.PROG_TAG.Arcane, 0.0)
+	@warning_ignore("unused_variable")
+	var _learn = context.tags.get(Defines.PROG_TAG.Learning, 0.0)
+	@warning_ignore("unused_variable")
+	var _craft = context.tags.get(Defines.PROG_TAG.Crafting, 0.0)
+	@warning_ignore("unused_variable")
+	var _steward = context.tags.get(Defines.PROG_TAG.Stewardry, 0.0)
+	@warning_ignore("unused_variable")
+	var _charis = context.tags.get(Defines.PROG_TAG.Charisma, 0.0)
+	@warning_ignore("unused_variable")
+	var _wild = context.tags.get(Defines.PROG_TAG.Wildcraft, 0.0)
 
 	var item = EquipmentGenerator.generate_item(context.quality, chosen_type, context.tags)
 	context.generated_item = item

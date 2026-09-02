@@ -5,5 +5,5 @@ class_name Triumph
 
 func SelfClashLink(command: CmdClashLink) -> CmdClashLink:
 	command.damage_mult *= power
-	#Log.entry("won a clash and allies deal more damage")
+	Log.entry("won a clash and allies deal more damage")
 	return command

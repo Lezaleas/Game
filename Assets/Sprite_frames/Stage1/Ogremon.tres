@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://t848w2d8t4tv"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://t848w2d8t4tv"]
 
 [ext_resource type="Texture2D" uid="uid://dgdwk6socw86c" path="res://Assets/Sprites/Fighters/Stage 1/Ogremon.png" id="1_gkc4d"]
 

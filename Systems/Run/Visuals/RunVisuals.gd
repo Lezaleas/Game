@@ -5,12 +5,14 @@ extends Node2D
 @onready var equipment_selection_screen := %EquipmentSelectionScreen
 @onready var level_selection_screen := %LevelSelectionScreen
 @onready var progression_screen := %ProgressionScreen
+@onready var events_screen := %EventsScreen
 
 @onready var all_screens: Array[Control] = [
 	perk_selection_screen,
 	equipment_selection_screen,
 	level_selection_screen,
-	progression_screen
+	progression_screen,
+	events_screen
 ]
 
 func _ready() -> void:
@@ -40,6 +42,11 @@ func open_level_selection_screen() -> void:
 func open_progression_screen() -> void:
 	hide_all_screens()
 	progression_screen.visible = true
+	
+func open_events_screen() -> void:
+	hide_all_screens()
+	%ChoiceMatrix.setup(ChoiceSession.new(), ChoiceMatrix.new())
+	events_screen.visible = true
 
 func open_save_load_screen() -> void:
 	# Note: save_load_screen reference was commented out in original code

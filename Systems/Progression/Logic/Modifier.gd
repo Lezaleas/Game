@@ -27,5 +27,5 @@ var room: Room
 
 ## Main execution hook called during item generation phases.
 ## Subclasses must override this to implement custom behavior.
-func execute(hook: Defines.ModifierHook, context: GenerationContext) -> void:
+func execute(_hook: Defines.ModifierHook, _context: GenerationContext) -> void:
 	pass

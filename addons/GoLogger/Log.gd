@@ -68,6 +68,7 @@ func _input(event: InputEvent) -> void:
 
 
 func _ready() -> void:
+	if !FileAccess.file_exists(PATH): create_settings_file()
 	config.load(PATH)
 	base_directory = config.get_value("plugin", "base_directory")
 	header_string = get_header()
@@ -290,7 +291,7 @@ func start_session() -> void:
 
 
 ## Stores a log entry into the a .log file. [br]Example usage:[codeblock]
-## #Log.entry(str("Player healed for ", item.heal_amount, "HP by consuming", item.item_name, "."), 1)[/codeblock]
+## Log.entry(str("Player healed for ", item.heal_amount, "HP by consuming", item.item_name, "."), 1)[/codeblock]
 func entry(log_entry : String, category_index : int = 0) -> void:
 	config.load(PATH)
 	categories = config.get_value("plugin", "categories")
@@ -380,6 +381,7 @@ func entry(log_entry : String, category_index : int = 0) -> void:
 ## You can either call this method programmatically by calling this method and passing in a predetermined name or call it without and use the prompt to enter a name.
 ## You can also use the hotkey to initiate the prompt at runtime if you ever want to save a copy of the current session.
 func save_copy(_name: String = "") -> void:
+	return #TO_DO enable gologger debug popup windows
 	if session_status:
 		# No specified name -> prompt popup for name
 		if _name == "":	

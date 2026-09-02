@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cyvk37rx1hsnp"]
+
+[ext_resource type="Texture2D" uid="uid://cbvwak1x5tvsj" path="res://Assets/Sprites/Common/ElementalIcons/Blue.tres" id="1_3gym0"]
+[ext_resource type="Script" uid="uid://cp1ej0dclbpya" path="res://Systems/Choice/UI/ChoiceNodeButton.gd" id="1_cxiso"]
+
+[node name="Button" type="Button" unique_id=126757938]
+custom_minimum_size = Vector2(128, 128)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cxiso")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=929845540]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer" unique_id=692068812]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_3gym0")
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1964242683]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "choice"

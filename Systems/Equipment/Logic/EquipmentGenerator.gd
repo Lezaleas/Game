@@ -40,6 +40,8 @@ static func generate_item(quality_budget: float, type: Defines.EQUIP_TYPE, get_s
 		var skill = RunManager.skill_pool.draw_skill()
 		item.skill = skill
 		item.display_name += " " + skill.skill_name
+		
+	item.weight = 0
 	
 	# 6. Roll for Skill
 	"""if not tags.is_empty():

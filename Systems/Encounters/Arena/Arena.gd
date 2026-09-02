@@ -1,7 +1,7 @@
 extends Node
 class_name Arena
 
-const WAVE_REWARD = [3,4,5,6,8,10,12,16,20,24,32,40,48]
+const WAVE_REWARD = [6,7.5,9,10.5,12,15,18,21,24,30,36,42,48,60,72,84,96]
 
 var current_wave: int
 var current_encounter: LevelData
@@ -85,15 +85,8 @@ func on_battle_won(team_id) -> void:
 
 func generate_rewards(wave: int) -> Array:
 	var rewards: Array = []
-	var skill_seed = [0,0,0,0,0,0,0,0]
-	var first = randi_range(0, 7)
-	var second = first
-	while second == first:
-		second = randi_range(0, 7)
-	skill_seed[first] = 1
-	skill_seed[second] = 1
-	for x in range(8):
-		var get_skill = skill_seed[x]
+	for x in range(4):
+		var get_skill = Utils.roll_dice(4, RunManager.run_rng) == 1
 		var quality = WAVE_REWARD[wave]
 		rewards.append(EquipmentGenerator.generate_item(quality, x % 4, get_skill))
 	return rewards

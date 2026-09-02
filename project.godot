@@ -24,7 +24,7 @@ config/icon="res://Assets/Sprites/Common/icon.svg"
 [autoload]
 
 Defines="*res://Autoloads/Defines.gd"
-Log="res://addons/GoLogger/Log.tscn"
+Log="*uid://dm7mwwoselesw"
 EventBus="*res://Autoloads/EventBus.gd"
 Situation="*res://Autoloads/Situation.gd"
 AudioBus="*res://Autoloads/AudioBus.tscn"
@@ -43,7 +43,7 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/reactive_signal/plugin.cfg", "res://addons/screen_debug/plugin.cfg", "res://addons/simple_resource_icons/plugin.cfg", "res://addons/yard/plugin.cfg")
+enabled=PackedStringArray("res://addons/GoLogger/plugin.cfg", "res://addons/reactive_signal/plugin.cfg", "res://addons/screen_debug/plugin.cfg", "res://addons/simple_resource_icons/plugin.cfg", "res://addons/yard/plugin.cfg")
 
 [file_customization]
 
@@ -92,6 +92,11 @@ exit_game={
 q={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":113,"location":0,"echo":false,"script":null)
+]
+}
+toggle_fullscreen={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194342,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 

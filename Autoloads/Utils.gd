@@ -18,12 +18,15 @@ func hide_debug() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("exit_game"):
-		get_tree().quit()
-		
-	if event.is_action_pressed("q"):
-		win()
-		
+	if event.is_action_pressed("q"): win()
+	if event.is_action_pressed("exit_game"): get_tree().quit()
+	if event.is_action_pressed("toggle_fullscreen"): toggle_fullscreen()
+
+func toggle_fullscreen() -> void:
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)		
 		
 func start_arena():
 	var arena = Arena.new()
@@ -35,8 +38,9 @@ func swap_perk_tree():
 	hero.swap_perk_tree(perktree, 0)
 	
 func win():
-	for fighter in Situation.teams[0].fighters:
-		fighter.position_x = 3000
+	if Situation.teams:
+		for fighter in Situation.teams[0].fighters:
+			fighter.position_x = 3000
 		
 ## Returns a number between 1 and max_value inclusive.
 ## Pass the RNG instance you want to use.

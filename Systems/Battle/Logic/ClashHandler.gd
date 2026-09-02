@@ -9,10 +9,13 @@ var tiebreaker: = true
 
 func process_clash():
 	while _engage_range_detect():
-		EventBus.emit("request_pause", true)
-		_resolve_clash()
-		await get_tree().create_timer(0.50 / Situation.anim_speed).timeout
-		EventBus.emit("request_pause", false)
+		if Situation.battle.simulation:
+			_resolve_clash()
+		else:
+			EventBus.emit("request_pause", true)
+			_resolve_clash()
+			await get_tree().create_timer(0.50 / Situation.anim_speed).timeout
+			EventBus.emit("request_pause", false)
 
 func _engage_range_detect():
 	blue_clasher = Situation.teams[0].get_rightmost_fighter()

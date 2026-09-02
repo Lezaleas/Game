@@ -7,10 +7,9 @@ class_name LevelData
 @export var enemy2: EnemyData
 @export var enemy3: EnemyData
 @export var rewards: Array[LevelReward] = []
-@export var modifier = null
-@export var prerequisite: LevelData
 var battle_type: BattleState.BattleType = BattleState.BattleType.HUNT
 var cleared: bool = false
+var player_team :Array[HeroState] = []
 
 func _to_string() -> String:
 	var ids := [enemy0,enemy1,enemy2,enemy3].map(func(enemy): return enemy.id if enemy else "null")

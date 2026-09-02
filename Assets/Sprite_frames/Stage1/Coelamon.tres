@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://dv34wt0vy0ux3"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://dv34wt0vy0ux3"]
 
 [ext_resource type="Texture2D" uid="uid://lan5hiqfyurm" path="res://Assets/Sprites/Fighters/Stage 1/Coelamon.png" id="1_40gj0"]
 

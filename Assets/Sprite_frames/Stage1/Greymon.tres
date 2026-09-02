@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://cc7x2fe6l0vqq"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://cc7x2fe6l0vqq"]
 
 [ext_resource type="Texture2D" uid="uid://r20osdn07tm7" path="res://Assets/Sprites/Fighters/Stage 1/Greymon.png" id="1_sxyyo"]
 

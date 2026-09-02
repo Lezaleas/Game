@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://cv2m0omjdx04a"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://cv2m0omjdx04a"]
 
 [ext_resource type="Texture2D" uid="uid://d0e7ytkyfoexq" path="res://Assets/Sprites/Fighters/Stage 1/Ikkakumon.png" id="1_o66s5"]
 

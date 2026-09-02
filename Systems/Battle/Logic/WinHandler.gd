@@ -17,13 +17,15 @@ func check_win_condition():
 				_trigger_win(1)
 
 func _trigger_win(team_id: int) -> void:
-	#Log.entry("Battle Ended! Team %d Wins!" % team_id)
+	Situation.battle.finished = true
+	Log.entry("Battle Ended! Team %d Wins!" % team_id)
 	Situation.turn_timer.stop()
 	EventBus.emit("battle_won", team_id)
 	if team_id == 1:
 		_finish_battle(team_id)
 
 func _finish_battle(team_id: int) -> void:
+	Situation.battle.won = (team_id == 0)
 	if Situation.battle.battle_type == BattleState.BattleType.ARENA: return
 	if team_id == 0 and Situation.level_data:
 		Situation.level_data.cleared = true

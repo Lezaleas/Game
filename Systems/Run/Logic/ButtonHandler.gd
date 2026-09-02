@@ -12,7 +12,7 @@ enum ITEM_IDS {
 	fighter_1,
 	fighter_2,
 	fighter_3,
-	save_load_menu_button,
+	events,
 	save_button,
 	load_button,
 	progression_menu_button, }
@@ -36,8 +36,8 @@ func on_item_activated(item_id: ITEM_IDS) -> void:
 			run_visuals.open_perk_tree(2)
 		ITEM_IDS.fighter_3:
 			run_visuals.open_perk_tree(3)
-		ITEM_IDS.save_load_menu_button:
-			run_visuals.open_save_load_screen()
+		ITEM_IDS.events:
+			run_visuals.open_events_screen()
 		ITEM_IDS.save_button:
 			RunState.save_run()
 		ITEM_IDS.load_button:

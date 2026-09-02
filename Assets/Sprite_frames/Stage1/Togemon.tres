@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://dbgh15dkh7i5u"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://dbgh15dkh7i5u"]
 
 [ext_resource type="Texture2D" uid="uid://c4mlmm4dpk8nj" path="res://Assets/Sprites/Fighters/Stage 1/Togemon.png" id="1_lc5yq"]
 

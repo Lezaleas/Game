@@ -31,7 +31,6 @@ func display(data: LevelData) -> void:
 			if reward:
 				reward_strings.append(reward.get_description())
 		reward_label.text = "Rewards: " + ", ".join(reward_strings)
-	modifier_label.text = "Modifier: " + (str(data.modifier) if data.modifier else "None")
 
 
 func _add_label(text: String, tooltip: String = "") -> void:

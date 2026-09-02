@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://cshbro77glu44"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://cshbro77glu44"]
 
 [ext_resource type="Texture2D" uid="uid://b7fe8egnwb3nr" path="res://Assets/Sprites/Fighters/Stage 1/Monochromon.png" id="1_rlry1"]
 

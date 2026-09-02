@@ -12,6 +12,7 @@ unique_name_in_owner = true
 [node name="GoLoggerElements" type="CanvasLayer" parent="." unique_id=1801677285]
 unique_name_in_owner = true
 layer = 50
+visible = false
 
 [node name="Popup" type="CenterContainer" parent="GoLoggerElements" unique_id=863549896]
 unique_name_in_owner = true

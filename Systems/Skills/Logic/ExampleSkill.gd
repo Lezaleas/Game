@@ -15,7 +15,7 @@ func SelfClashLink(command: CmdClashLink) -> CmdClashLink:
 	# since this function has the self prefix, it will execute on clash links,
 	# but only if self = event main fighter
 	command.damage_mult *= power
-	# make sure to properly log each skill activation using the #Log.entry method
+	# make sure to properly log each skill activation using the Log.entry method
 	# the method will append skill name and owner fighter
-	#Log.entry("won a clash and allies deal more damage")
+	Log.entry("won a clash and allies deal more damage")
 	return command

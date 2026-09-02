@@ -67,6 +67,7 @@ func swap_perk_tree(new_tree:PerkTree, position:int) -> void:
 	perk_trees[position] = new_tree.duplicate(true)
 	perk_trees[position].setup(id, position)
 	if unlocked_perk_index >= 0:
+		if perk_trees[position].tiers.size() <= unlocked_perk_index: return
 		var new_perk = perk_trees[position].tiers[unlocked_perk_index].perks[0]
 		unlock_perk(new_perk)
 		new_perk.unlocked = true

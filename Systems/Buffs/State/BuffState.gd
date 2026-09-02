@@ -12,7 +12,7 @@ func _init(_data: Buff, _parent: FighterState) -> void:
 	data = _data
 	parent = _parent
 
-func add_amount(amount: float, applier: FighterState = null) -> bool:
+func add_amount(amount: float, _applier: FighterState = null) -> bool:
 	# returns true if the buff triggers/refreshes
 	if data.apply_immediately:
 		stacks += int(amount)

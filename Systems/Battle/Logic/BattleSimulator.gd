@@ -5,19 +5,28 @@ class_name BattleSimulator
 @onready var clash_handler: ClashHandler = %ClashHandler
 @onready var win_handler: WinHandler = %WinHandler
 
-func _ready():
-	EventBus.subscribe("turn_started", self)
+func on_battle_started():
+	if Situation.battle.simulation:
+		run_arena()
+	else:
+		EventBus.subscribe("turn_started", self)
+
+func run_arena():
+	while not Situation.battle.finished:
+		on_turn_started()
 
 # Processes a single turn of the battle
 func on_turn_started():
 	Situation.battle.turn += 1
-	#Log.entry("\n")
-	#Log.entry("--- Turn: %d ---" % Situation.battle.turn)
-	#Log.entry("Positions: %s" % str(Situation.fighters.map(func(f): return f.position_x)))
-	
+
+	Log.entry("\n")
+	Log.entry("--- Turn: %d ---" % Situation.battle.turn)
+	Log.entry("Positions: %s" % str(Situation.fighters.map(func(f): return f.position_x)))
+
 	# update entities
 	for attribute in Situation.attributes:
 		attribute.update()
+
 	for reservoir in Situation.reservoirs:
 		reservoir.update_multiplier()
 
@@ -35,6 +44,6 @@ func on_turn_started():
 
 	# check for clashes and resolve them
 	clash_handler.process_clash()
-	
-	# check if one side won the battle and execute the battle won signal
+
+	# check if the battle has ended
 	win_handler.check_win_condition()

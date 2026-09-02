@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://df2gmv4afb7jo" path="res://Systems/Run/Visuals/PerkTreeScene/PerkTree.tscn" id="2_twi4f"]
 [ext_resource type="PackedScene" path="res://Visuals/Intermission/SkillInfoPanel.tscn" id="3_2d4cy"]
 [ext_resource type="PackedScene" uid="uid://dlu1hpkw80bl8" path="res://Systems/Equipment/Visuals/EquipmentSelection.tscn" id="6_mkt83"]
+[ext_resource type="PackedScene" uid="uid://bouvmsry88ra1" path="res://Systems/Choice/UI/ChoiceMatrixUI.tscn" id="8_m08gm"]
 [ext_resource type="PackedScene" uid="uid://c1d2e3f4g5h6i" path="res://Systems/Enemies/Visuals/LevelSelection.tscn" id="9_extra"]
 [ext_resource type="Script" uid="uid://r3vvqaspeuft" path="res://Systems/Run/Visuals/CritterSelection/CritterSelectionController.gd" id="10_critter_script"]
 [ext_resource type="PackedScene" path="res://Systems/Run/Visuals/CritterSelection/CritterInfoPanel.tscn" id="11_critter_panel"]
@@ -157,6 +158,15 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="EventsScreen" type="Control" parent="CanvasLayer/VBoxContainer" unique_id=1705575431]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ChoiceMatrix" parent="CanvasLayer/VBoxContainer/EventsScreen" unique_id=1099015474 instance=ExtResource("8_m08gm")]
+unique_name_in_owner = true
+layout_mode = 1
+
 [node name="BottomHBox" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=113368250]
 layout_mode = 2
 size_flags_vertical = 8
@@ -166,6 +176,13 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 text = "Quit"
+
+[node name="EventsButton" parent="CanvasLayer/VBoxContainer/BottomHBox" unique_id=1882603865 instance=ExtResource("1_gsqkf")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Events"
+item_id = 8
 
 [node name="EquipMenuButton" parent="CanvasLayer/VBoxContainer/BottomHBox" unique_id=858936267 instance=ExtResource("1_gsqkf")]
 layout_mode = 2
